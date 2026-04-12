@@ -14,22 +14,23 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Smart Fellow — Your New AI Team Member">
 <meta name="twitter:description" content="An AI colleague trained for your business. Works in Slack, Telegram and KakaoTalk. Data stays in your office.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231a1814'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231c2b38'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --cream: #faf8f3; --warm-white: #ffffff; --sand: #f0ece2;
-  --sand-dark: #e2ddd2; --ink: #1a1814; --ink-light: #3d3a34;
-  --muted: #8a8478; --muted-light: #b8b2a6;
+  --cream: #f7f4ee; --warm-white: #ffffff; --sand: #edeae3;
+  --sand-dark: #d8d4cb; --ink: #1c2b38; --ink-light: #2d4055;
+  --muted: #7a8899; --muted-light: #a8b4be;
+  --accent: #c4673a;
   --radius: 16px; --radius-lg: 24px;
 }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   background: var(--cream); color: var(--ink);
   overflow-x: hidden; -webkit-font-smoothing: antialiased;
 }
@@ -43,13 +44,13 @@ nav {
   backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid rgba(26,24,20,0.07);
 }
-.nav-logo { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 500; color: var(--ink); }
+.nav-logo { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 500; color: var(--ink); }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a { font-size: 0.875rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--ink); }
 .nav-cta {
   font-size: 0.875rem; font-weight: 600; color: #fff;
-  background: var(--ink); padding: 0.6rem 1.5rem;
+  background: var(--accent); padding: 0.6rem 1.5rem;
   border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.2s;
 }
 .nav-cta:hover { opacity: 0.82; transform: scale(1.02); }
@@ -68,7 +69,7 @@ nav {
 }
 .nav-mobile.open { display: flex; }
 .nav-mobile ul { list-style: none; display: flex; flex-direction: column; align-items: center; gap: 2rem; }
-.nav-mobile ul a { font-family: 'Lora', serif; font-size: 1.75rem; color: var(--ink); text-decoration: none; }
+.nav-mobile ul a { font-family: 'Fraunces', serif; font-size: 1.75rem; color: var(--ink); text-decoration: none; }
 
 /* ── HERO ── */
 .hero {
@@ -88,7 +89,7 @@ nav {
 }
 .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #48bb78; animation: pulse 2s ease-in-out infinite; }
 .hero h1 {
-  font-family: 'Lora', serif;
+  font-family: 'Fraunces', serif;
   font-size: clamp(2.5rem, 4.5vw, 4.75rem);
   line-height: 1.08; letter-spacing: -0.025em; color: var(--ink);
   max-width: 14ch; margin: 0 auto 1.75rem;
@@ -105,8 +106,8 @@ nav {
   opacity: 0; animation: fadeUp 0.7s ease forwards 0.5s;
 }
 .btn-dark {
-  font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; color: #fff;
-  background: var(--ink); padding: 0.9rem 2.25rem;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 600; color: #fff;
+  background: var(--accent); padding: 0.9rem 2.25rem;
   border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.2s;
 }
 .btn-dark:hover { opacity: 0.82; transform: scale(1.02); }
@@ -166,10 +167,10 @@ nav {
 @keyframes ff6 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-9px,-9px); } }
 
 /* ── DARK STATEMENT ── */
-.dark-band { background: var(--ink); padding: 9rem 2rem; text-align: center; }
+.dark-band { background: linear-gradient(150deg, #1c2b38 0%, #152030 100%); padding: 9rem 2rem; text-align: center; }
 .eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 1.5rem; }
 .dark-band h2 {
-  font-family: 'Lora', serif; font-size: clamp(2rem, 4.5vw, 4rem);
+  font-family: 'Fraunces', serif; font-size: clamp(2rem, 4.5vw, 4rem);
   line-height: 1.1; letter-spacing: -0.025em; color: #fff;
   max-width: 18ch; margin: 0 auto 1.5rem;
 }
@@ -185,9 +186,9 @@ nav {
 }
 .story.flip { direction: rtl; }
 .story.flip > * { direction: ltr; }
-.story-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 1rem; }
+.story-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); opacity: 0.8; margin-bottom: 1rem; }
 .story h2 {
-  font-family: 'Lora', serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem);
   line-height: 1.12; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.25rem;
 }
 .story h2 em { font-style: italic; color: var(--muted); }
@@ -253,48 +254,48 @@ nav {
 /* ── PLANS ── */
 .plans-section { background: var(--sand); padding: 9rem 2rem; }
 .plans-head { text-align: center; margin-bottom: 4rem; }
-.plans-head h2 { font-family: 'Lora', serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.025em; color: var(--ink); margin-bottom: 1rem; }
+.plans-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.025em; color: var(--ink); margin-bottom: 1rem; }
 .plans-head p { font-size: 1.0625rem; font-weight: 300; color: var(--muted); max-width: 44ch; margin: 0 auto; line-height: 1.75; }
 .plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 960px; margin: 0 auto; }
 .plan-card { background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius-lg); padding: 2.25rem 2rem; position: relative; }
-.plan-card.featured { border-color: var(--ink); border-width: 2px; }
+.plan-card.featured { border-color: var(--accent); border-width: 2px; }
 .feat-badge {
   position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-  background: var(--ink); color: #fff;
+  background: var(--accent); color: #fff;
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
   padding: 0.3rem 1rem; border-radius: 100px; white-space: nowrap;
 }
 .plan-tier { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
-.plan-role { font-family: 'Lora', serif; font-size: 1.35rem; color: var(--ink); margin-bottom: 1.25rem; }
+.plan-role { font-family: 'Fraunces', serif; font-size: 1.35rem; color: var(--ink); margin-bottom: 1.25rem; }
 .plan-price { display: flex; align-items: baseline; gap: 0.25rem; margin-bottom: 0.3rem; }
-.plan-num { font-family: 'Lora', serif; font-size: 2.5rem; color: var(--ink); letter-spacing: -0.02em; }
+.plan-num { font-family: 'Fraunces', serif; font-size: 2.5rem; color: var(--ink); letter-spacing: -0.02em; }
 .plan-unit { font-size: 0.875rem; color: var(--muted); }
 .plan-hw { font-size: 0.8125rem; color: var(--muted); margin-bottom: 1.75rem; }
 .plan-rule { height: 1px; background: var(--sand); margin: 0 0 1.5rem; }
 .plan-feats { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
 .plan-feat { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.9rem; color: var(--ink-light); line-height: 1.45; }
-.pcheck { width: 16px; height: 16px; border-radius: 50%; background: #c6f6d5; color: #276749; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
-.plan-cta-btn { display: block; text-align: center; font-family: 'Nunito', sans-serif; font-size: 0.9375rem; font-weight: 600; padding: 0.8rem; border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.2s, border-color 0.2s; }
+.pcheck { width: 16px; height: 16px; border-radius: 50%; background: rgba(196,103,58,0.12); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+.plan-cta-btn { display: block; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 600; padding: 0.8rem; border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.2s, border-color 0.2s; }
 .outline { color: var(--ink); border: 1.5px solid var(--sand-dark); background: transparent; }
 .outline:hover { border-color: var(--ink); }
-.solid { color: #fff; background: var(--ink); }
+.solid { color: #fff; background: var(--accent); }
 .solid:hover { opacity: 0.83; transform: scale(1.01); }
 .plans-note { text-align: center; margin-top: 2.5rem; font-size: 0.875rem; color: var(--muted); }
 .plans-extras { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 960px; margin: 2.5rem auto 0; }
 .plans-extra-card { background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius-lg); padding: 2rem; }
 .plans-extra-icon { font-size: 1.5rem; margin-bottom: 1rem; }
-.plans-extra-card h3 { font-family: 'Lora', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 0.75rem; }
+.plans-extra-card h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 0.75rem; }
 .plans-extra-card p { font-size: 0.875rem; font-weight: 300; color: var(--muted); line-height: 1.8; margin-bottom: 0.75rem; }
 .plans-extra-card p:last-child { margin-bottom: 0; }
 
 /* ── HOW ── */
 .how-section { padding: 9rem 2rem; max-width: 1000px; margin: 0 auto; }
 .how-head { text-align: center; margin-bottom: 5rem; }
-.how-head h2 { font-family: 'Lora', serif; font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; }
+.how-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; }
 .how-head p { font-size: 1.0625rem; font-weight: 300; color: var(--muted); max-width: 42ch; margin: 0 auto; line-height: 1.75; }
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 .step { padding: 2rem 1.5rem; background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius); }
-.step-num { font-family: 'Lora', serif; font-size: 2.25rem; color: var(--sand-dark); line-height: 1; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+.step-num { font-family: 'Fraunces', serif; font-size: 2.25rem; color: var(--sand-dark); line-height: 1; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
 .step h3 { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.625rem; }
 .step p { font-size: 0.875rem; font-weight: 300; color: var(--muted); line-height: 1.75; }
 
@@ -304,18 +305,18 @@ nav {
   border-top: 1px solid var(--sand-dark); border-bottom: 1px solid var(--sand-dark);
 }
 .quote-break blockquote {
-  font-family: 'Lora', serif; font-style: italic;
+  font-family: 'Fraunces', serif; font-style: italic;
   font-size: clamp(1.5rem, 3vw, 2.75rem); line-height: 1.3; letter-spacing: -0.01em;
   color: var(--ink); max-width: 22ch; margin: 0 auto 1.5rem;
 }
 .quote-attr { font-size: 0.875rem; color: var(--muted-light); }
 
 /* ── CTA ── */
-.cta-section { background: var(--ink); padding: 10rem 2rem; text-align: center; }
-.cta-section h2 { font-family: 'Lora', serif; font-size: clamp(2.25rem, 5vw, 4.5rem); letter-spacing: -0.025em; color: #fff; margin-bottom: 1.25rem; line-height: 1.08; }
+.cta-section { background: linear-gradient(150deg, #1c2b38 0%, #152030 100%); padding: 10rem 2rem; text-align: center; }
+.cta-section h2 { font-family: 'Fraunces', serif; font-size: clamp(2.25rem, 5vw, 4.5rem); letter-spacing: -0.025em; color: #fff; margin-bottom: 1.25rem; line-height: 1.08; }
 .cta-section > p { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.45); max-width: 40ch; margin: 0 auto 3rem; line-height: 1.75; }
 .cta-calendly-btn {
-  font-family: 'Nunito', sans-serif; font-size: 1.05rem; font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
   color: var(--ink); background: #fff; border: none; border-radius: 100px;
   padding: 1rem 2.5rem; cursor: pointer;
   transition: opacity 0.2s, transform 0.2s; margin-bottom: 0.5rem;
@@ -324,8 +325,8 @@ nav {
 .cta-note { margin-top: 1.25rem; font-size: 0.8125rem; color: rgba(255,255,255,0.22); }
 
 /* ── FOOTER ── */
-footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; background: #0f0e0c; border-top: 1px solid rgba(255,255,255,0.05); }
-.footer-logo { font-family: 'Lora', serif; font-size: 1.1rem; color: rgba(255,255,255,0.4); }
+footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; background: #0d1a24; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; color: rgba(255,255,255,0.4); }
 .footer-links { display: flex; gap: 2rem; list-style: none; }
 .footer-links a { font-size: 0.8125rem; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: rgba(255,255,255,0.55); }
@@ -493,7 +494,7 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
       <div class="sov-arm a2"><div class="sov-node n-b"></div></div>
       <div class="sov-arm a3"><div class="sov-node n-a"></div></div>
     </div>
-    <div style="font-family:'Lora',serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.4rem">Your office</div>
+    <div style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.4rem">Your office</div>
     <div style="font-size:0.85rem;color:var(--muted);max-width:28ch;margin:0 auto 1.5rem;line-height:1.65">Local by default. Connect to external AI providers at any time. Your call.</div>
     <div style="border-top:1px solid var(--sand);padding-top:1.25rem;font-size:0.8rem;color:var(--muted-light);display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap">
       <span>✓ PIPA compliant</span>
