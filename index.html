@@ -15,6 +15,7 @@
 <meta name="twitter:title" content="Smart Fellow — Your New AI Team Member">
 <meta name="twitter:description" content="An AI colleague trained for your business. Works in Slack, Telegram and KakaoTalk. Data stays in your office.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231a1814'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -352,12 +353,13 @@ nav {
 .cta-section { background: var(--ink); padding: 10rem 2rem; text-align: center; }
 .cta-section h2 { font-family: 'Lora', serif; font-size: clamp(2.25rem, 5vw, 4.5rem); letter-spacing: -0.025em; color: #fff; margin-bottom: 1.25rem; line-height: 1.08; }
 .cta-section > p { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.45); max-width: 40ch; margin: 0 auto 3rem; line-height: 1.75; }
-.cta-form { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
-.cta-form input { font-family: 'Nunito', sans-serif; font-size: 1rem; color: var(--ink); background: rgba(255,255,255,0.95); border: 1px solid transparent; border-radius: 100px; padding: 0.9rem 1.75rem; width: 300px; outline: none; transition: border-color 0.2s; }
-.cta-form input::placeholder { color: var(--muted); }
-.cta-form button { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; color: var(--ink); background: #fff; border: none; border-radius: 100px; padding: 0.9rem 2rem; cursor: pointer; transition: opacity 0.2s, transform 0.2s; }
-.cta-form button:hover { opacity: 0.88; transform: scale(1.02); }
-#form-thanks { display: none; font-size: 1.1rem; color: rgba(255,255,255,0.55); margin-top: 2rem; }
+.cta-calendly-btn {
+  font-family: 'Nunito', sans-serif; font-size: 1.05rem; font-weight: 600;
+  color: var(--ink); background: #fff; border: none; border-radius: 100px;
+  padding: 1rem 2.5rem; cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s; margin-bottom: 0.5rem;
+}
+.cta-calendly-btn:hover { opacity: 0.88; transform: scale(1.02); }
 .cta-note { margin-top: 1.25rem; font-size: 0.8125rem; color: rgba(255,255,255,0.22); }
 
 /* ── FOOTER ── */
@@ -746,12 +748,10 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <h2 class="reveal">Ready to meet<br>your Fellow?</h2>
-  <p class="reveal">Tell us your email and we will set up a free 30-minute call to see if Smart Fellow is a good fit for your team. No technical knowledge needed, just a conversation.</p>
-  <form class="cta-form reveal" id="cta-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-    <input type="email" name="email" id="email-input" placeholder="your@company.com" required autocomplete="email">
-    <button type="submit">Book a free call</button>
-  </form>
-  <p id="form-thanks">Thank you. We will be in touch within one business day.</p>
+  <p class="reveal">Book a free 30-minute call directly in our calendar. We will walk through your team's needs and see if Smart Fellow is the right fit. No technical knowledge needed, just a conversation.</p>
+  <div class="reveal">
+    <button class="cta-calendly-btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;">Book a free call →</button>
+  </div>
   <p class="cta-note">We work in Korean and English. No commitment required.</p>
 </section>
 
@@ -981,30 +981,7 @@ if (chatEl) {
   chatObs.observe(chatEl);
 }
 
-/* ── FORM ── */
-const ctaForm = document.getElementById('cta-form');
-ctaForm.addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const btn = ctaForm.querySelector('button');
-  btn.textContent = 'Sending…'; btn.disabled = true;
-  try {
-    const res = await fetch(ctaForm.action, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: document.getElementById('email-input').value })
-    });
-    if (res.ok) {
-      ctaForm.style.display = 'none';
-      document.getElementById('form-thanks').style.display = 'block';
-    } else {
-      btn.textContent = 'Book a free call'; btn.disabled = false;
-      alert('Something went wrong — please try again or email us directly.');
-    }
-  } catch (_) {
-    btn.textContent = 'Book a free call'; btn.disabled = false;
-    alert('Something went wrong — please check your connection and try again.');
-  }
-});
 </script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
