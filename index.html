@@ -81,7 +81,7 @@ nav.nav-visible { transform: translateY(0); }
   padding: 9rem 2rem 6rem; background: var(--cream);
   position: relative; overflow: hidden;
 }
-.hero-center { position: relative; z-index: 2; max-width: 680px; }
+.hero-center { position: relative; z-index: 2; max-width: 680px; isolation: isolate; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: var(--sand); border: 1px solid var(--sand-dark);
@@ -138,11 +138,10 @@ nav.nav-visible { transform: translateY(0); }
 .fel-bubble {
   position: absolute; pointer-events: auto;
   display: flex; align-items: center; gap: 0.6rem;
-  background: rgba(255,255,255,0.88);
-  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: var(--warm-white);
   border: 1px solid var(--sand-dark); border-radius: 100px;
   padding: 0.5rem 1rem 0.5rem 0.5rem;
-  box-shadow: 0 4px 24px rgba(26,24,20,0.07);
+  box-shadow: 0 4px 24px rgba(28,43,56,0.08);
   white-space: nowrap; opacity: 0;
 }
 .fel-av {
@@ -178,7 +177,7 @@ nav.nav-visible { transform: translateY(0); }
   line-height: 1.1; letter-spacing: -0.025em; color: #fff;
   max-width: 18ch; margin: 0 auto 1.5rem;
 }
-.dark-band h2 em { font-style: italic; color: rgba(255,255,255,0.38); }
+.dark-band h2 em { font-style: italic; color: rgba(255,255,255,0.62); }
 .dark-band p { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.45); max-width: 44ch; margin: 0 auto; line-height: 1.8; }
 
 /* ── STORIES ── */
