@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Fellow — Your New AI Team Member</title>
+<meta name="description" content="Smart Fellow is a new team member that lives in your office, learns your business, and works inside the tools your team already uses: Slack, Telegram, KakaoTalk. Hardware included.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Smart Fellow — Your New AI Team Member">
+<meta property="og:description" content="An AI colleague trained for your business. Works in Slack, Telegram and KakaoTalk. Data stays in your office. Hardware included.">
+<meta property="og:url" content="https://smartfellow.ai">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Smart Fellow — Your New AI Team Member">
+<meta name="twitter:description" content="An AI colleague trained for your business. Works in Slack, Telegram and KakaoTalk. Data stays in your office.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231a1814'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #faf8f3; --warm-white: #ffffff; --sand: #f0ece2;
+  --sand-dark: #e2ddd2; --ink: #1a1814; --ink-light: #3d3a34;
+  --muted: #8a8478; --muted-light: #b8b2a6;
+  --radius: 16px; --radius-lg: 24px;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--cream); color: var(--ink);
+  overflow-x: hidden; -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 3rem;
+  background: rgba(250,248,243,0.92);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(26,24,20,0.07);
+}
+.nav-logo { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 500; color: var(--ink); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { font-size: 0.875rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  font-size: 0.875rem; font-weight: 600; color: #fff;
+  background: var(--ink); padding: 0.6rem 1.5rem;
+  border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.2s;
+}
+.nav-cta:hover { opacity: 0.82; transform: scale(1.02); }
+.nav-hamburger {
+  display: none; flex-direction: column; justify-content: center; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 101;
+}
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.nav-mobile {
+  display: none; position: fixed; inset: 0; z-index: 99;
+  background: var(--cream); flex-direction: column;
+  align-items: center; justify-content: center; gap: 2.5rem;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile ul { list-style: none; display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+.nav-mobile ul a { font-family: 'Lora', serif; font-size: 1.75rem; color: var(--ink); text-decoration: none; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: row;
+  align-items: center; gap: 5rem;
+  padding: 9rem 5rem 5rem; background: var(--cream);
+}
+.hero-text { flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+.hero-graphic {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  opacity: 0; animation: fadeUp 0.9s ease forwards 0.3s;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--sand); border: 1px solid var(--sand-dark);
+  border-radius: 100px; padding: 0.375rem 1rem;
+  font-size: 0.8125rem; font-weight: 500; color: var(--muted);
+  margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.7s ease forwards 0.1s;
+}
+.badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #48bb78; animation: pulse 2s ease-in-out infinite; }
+.hero h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.5rem, 4.5vw, 4.75rem);
+  line-height: 1.08; letter-spacing: -0.025em; color: var(--ink);
+  max-width: 14ch; margin: 0 0 1.75rem;
+  opacity: 0; animation: fadeUp 0.7s ease forwards 0.2s;
+}
+.hero h1 em { font-style: italic; color: var(--muted); }
+.hero-sub {
+  font-size: clamp(0.975rem, 1.6vw, 1.075rem); font-weight: 300; color: var(--muted);
+  max-width: 42ch; line-height: 1.85; margin: 0 0 2.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease forwards 0.35s;
+}
+.hero-actions {
+  display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.7s ease forwards 0.5s;
+}
+.btn-dark {
+  font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; color: #fff;
+  background: var(--ink); padding: 0.9rem 2.25rem;
+  border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.2s;
+}
+.btn-dark:hover { opacity: 0.82; transform: scale(1.02); }
+.btn-text {
+  font-size: 1rem; font-weight: 400; color: var(--muted); text-decoration: none;
+  display: flex; align-items: center; gap: 0.35rem; transition: color 0.2s;
+}
+.btn-text:hover { color: var(--ink); }
+.btn-text::after { content: '→'; }
+.hero-note { margin-top: 1.75rem; font-size: 0.8125rem; color: var(--muted-light); opacity: 0; animation: fadeUp 0.7s ease forwards 0.65s; }
+
+/* ── HERO CARD (animated) ── */
+.hero-card {
+  background: var(--warm-white); border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg); padding: 1.75rem 2rem;
+  box-shadow: 0 32px 80px rgba(26,24,20,0.1), 0 4px 20px rgba(26,24,20,0.05);
+  width: 100%; max-width: 400px;
+  animation: float 5s ease-in-out 1.5s infinite;
+}
+.hc-head {
+  display: flex; align-items: center; gap: 1rem;
+  padding-bottom: 1.25rem; border-bottom: 1px solid var(--sand); margin-bottom: 1.25rem;
+}
+.hc-avatar {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--ink); display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0; position: relative;
+}
+.hc-avatar-dot {
+  position: absolute; bottom: 1px; right: 1px; width: 12px; height: 12px;
+  border-radius: 50%; background: #48bb78; border: 2px solid var(--warm-white);
+}
+.hc-name { font-family: 'Lora', serif; font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.15rem; }
+.hc-role { font-size: 0.8rem; color: var(--muted); }
+
+/* ── TASK LIST ANIMATION ── */
+.hc-log { display: flex; flex-direction: column; gap: 0; margin-bottom: 1.25rem; overflow: hidden; }
+
+.hc-task {
+  display: flex; align-items: center; gap: 0.625rem;
+  font-size: 0.875rem; color: var(--ink-light); line-height: 1.4;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid transparent;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.hc-task.visible { opacity: 1; transform: translateY(0); }
+.hc-task.done { color: var(--ink-light); }
+.hc-task.active { color: var(--ink); font-weight: 500; }
+.hc-task.active .hc-tick { background: var(--sand); }
+.hc-task.queued { color: var(--muted-light); }
+.hc-task.queued .hc-tick { background: transparent; border: 1.5px dashed var(--sand-dark); }
+
+.hc-tick {
+  width: 20px; height: 20px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700; transition: background 0.4s ease;
+}
+.hc-task.done .hc-tick { background: #c6f6d5; color: #276749; }
+
+/* Progress bar on active task */
+.hc-task-text { flex: 1; position: relative; }
+.hc-progress-bar {
+  position: absolute; bottom: -2px; left: 0; height: 1.5px;
+  background: var(--ink); border-radius: 2px;
+  width: 0%; transition: width 0s linear;
+}
+
+.hc-foot { border-top: 1px solid var(--sand); padding-top: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.hc-foot-row { display: flex; align-items: center; gap: 0.625rem; font-size: 0.8rem; color: var(--muted); }
+.hc-apps { display: flex; gap: 0.35rem; }
+.hc-app { width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; }
+.hc-avail { display: flex; align-items: center; gap: 0.375rem; font-size: 0.8rem; color: var(--muted); }
+.hc-avail-dot { width: 7px; height: 7px; border-radius: 50%; background: #48bb78; animation: pulse 2s ease-in-out infinite; }
+
+/* Live counter strip */
+.hc-counter-strip {
+  display: flex; gap: 0; border: 1px solid var(--sand-dark); border-radius: 10px;
+  overflow: hidden; margin-bottom: 1.25rem;
+}
+.hc-counter {
+  flex: 1; padding: 0.625rem 0.5rem; text-align: center;
+  border-right: 1px solid var(--sand-dark); background: var(--sand);
+}
+.hc-counter:last-child { border-right: none; }
+.hc-counter-num {
+  font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 500; color: var(--ink);
+  line-height: 1; margin-bottom: 0.2rem;
+  transition: transform 0.3s ease;
+}
+.hc-counter-num.bump { transform: scale(1.25); }
+.hc-counter-label { font-size: 0.65rem; color: var(--muted); line-height: 1.3; }
+
+/* ── DARK STATEMENT ── */
+.dark-band { background: var(--ink); padding: 9rem 2rem; text-align: center; }
+.eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 1.5rem; }
+.dark-band h2 {
+  font-family: 'Lora', serif; font-size: clamp(2rem, 4.5vw, 4rem);
+  line-height: 1.1; letter-spacing: -0.025em; color: #fff;
+  max-width: 18ch; margin: 0 auto 1.5rem;
+}
+.dark-band h2 em { font-style: italic; color: rgba(255,255,255,0.38); }
+.dark-band p { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.45); max-width: 44ch; margin: 0 auto; line-height: 1.8; }
+
+/* ── STORIES ── */
+.story-wrap { background: var(--cream); }
+.rule { height: 1px; background: var(--sand-dark); max-width: 1080px; margin: 0 auto; }
+.story {
+  max-width: 1080px; margin: 0 auto; padding: 9rem 2rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+}
+.story.flip { direction: rtl; }
+.story.flip > * { direction: ltr; }
+.story-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 1rem; }
+.story h2 {
+  font-family: 'Lora', serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  line-height: 1.12; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.25rem;
+}
+.story h2 em { font-style: italic; color: var(--muted); }
+.story p { font-size: 1rem; font-weight: 300; color: var(--muted); line-height: 1.9; margin-bottom: 0.875rem; }
+.story p:last-child { margin-bottom: 0; }
+.story-vis {
+  background: var(--warm-white); border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg); padding: 2.25rem; min-height: 340px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+/* ── CHAT ── */
+.chat { display: flex; flex-direction: column; gap: 0.75rem; }
+.cmsg { display: flex; gap: 0.75rem; }
+.cmsg.r { flex-direction: row-reverse; }
+.cbubble { max-width: 80%; font-size: 0.9rem; line-height: 1.6; padding: 0.75rem 1rem; border-radius: 14px; }
+.cmsg .cbubble { background: var(--sand); color: var(--ink-light); border-bottom-left-radius: 4px; }
+.cmsg.r .cbubble { background: var(--ink); color: rgba(255,255,255,0.88); border-bottom-right-radius: 4px; }
+.clabel { font-size: 0.7rem; font-weight: 700; color: var(--muted-light); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem; }
+.cmsg-wrap { display: flex; flex-direction: column; }
+.cmsg.r .cmsg-wrap { align-items: flex-end; }
+.typing { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--muted-light); padding: 0.25rem 0; }
+.tdots { display: flex; gap: 3px; }
+.tdot { width: 5px; height: 5px; border-radius: 50%; background: var(--muted-light); animation: tdot 1.2s ease-in-out infinite; }
+.tdot:nth-child(2) { animation-delay: 0.2s; }
+.tdot:nth-child(3) { animation-delay: 0.4s; }
+
+/* ── MEMORY ── */
+.mem-list { display: flex; flex-direction: column; gap: 0.625rem; }
+.mem-item { display: flex; align-items: flex-start; gap: 0.875rem; background: var(--sand); border-radius: 10px; padding: 0.875rem 1rem; }
+.mem-icon { width: 28px; height: 28px; border-radius: 7px; background: var(--warm-white); border: 1px solid var(--sand-dark); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+.mem-text { font-size: 0.875rem; line-height: 1.5; color: var(--ink-light); }
+.mem-text strong { font-weight: 600; color: var(--ink); }
+.mem-time { font-size: 0.7rem; color: var(--muted-light); margin-top: 0.2rem; }
+.mem-new { margin-left: auto; font-size: 0.65rem; font-weight: 700; background: #c6f6d5; color: #276749; border-radius: 100px; padding: 0.15rem 0.5rem; flex-shrink: 0; }
+
+/* ── DATA SOVEREIGNTY VISUAL ── */
+.sov-scene { position: relative; width: 180px; height: 180px; margin: 0 auto 1.5rem; }
+.sov-ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 2px dashed var(--sand-dark);
+  animation: sovPulse 4s ease-in-out infinite;
+}
+@keyframes sovPulse {
+  0%,60%,100% { border-color: var(--sand-dark); box-shadow: none; }
+  30% { border-color: rgba(72,187,120,0.5); box-shadow: 0 0 24px rgba(72,187,120,0.12); }
+}
+.sov-center {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 68px; height: 68px; border-radius: 50%;
+  background: var(--sand); border: 1px solid var(--sand-dark);
+  display: flex; align-items: center; justify-content: center; font-size: 1.75rem; z-index: 2;
+}
+.sov-arm { position: absolute; inset: 14px; border-radius: 50%; }
+.sov-arm.a1 { animation: spin 7s linear infinite; }
+.sov-arm.a2 { animation: spin 11s linear infinite; animation-delay: -4s; }
+.sov-arm.a3 { animation: spin 9s linear infinite reverse; animation-delay: -2s; }
+.sov-node { position: absolute; width: 11px; height: 11px; border-radius: 50%; top: -5.5px; left: calc(50% - 5.5px); }
+.n-g { background: #68d391; box-shadow: 0 0 8px rgba(72,187,120,0.55); }
+.n-b { background: #63b3ed; box-shadow: 0 0 8px rgba(99,179,237,0.45); }
+.n-a { background: #f6ad55; box-shadow: 0 0 8px rgba(246,173,85,0.4); }
+
+/* ── PLANS ── */
+.plans-section { background: var(--sand); padding: 9rem 2rem; }
+.plans-head { text-align: center; margin-bottom: 4rem; }
+.plans-head h2 { font-family: 'Lora', serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.025em; color: var(--ink); margin-bottom: 1rem; }
+.plans-head p { font-size: 1.0625rem; font-weight: 300; color: var(--muted); max-width: 44ch; margin: 0 auto; line-height: 1.75; }
+.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 960px; margin: 0 auto; }
+.plan-card { background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius-lg); padding: 2.25rem 2rem; position: relative; }
+.plan-card.featured { border-color: var(--ink); border-width: 2px; }
+.feat-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--ink); color: #fff;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.3rem 1rem; border-radius: 100px; white-space: nowrap;
+}
+.plan-tier { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+.plan-role { font-family: 'Lora', serif; font-size: 1.35rem; color: var(--ink); margin-bottom: 1.25rem; }
+.plan-price { display: flex; align-items: baseline; gap: 0.25rem; margin-bottom: 0.3rem; }
+.plan-num { font-family: 'Lora', serif; font-size: 2.5rem; color: var(--ink); letter-spacing: -0.02em; }
+.plan-unit { font-size: 0.875rem; color: var(--muted); }
+.plan-hw { font-size: 0.8125rem; color: var(--muted); margin-bottom: 1.75rem; }
+.plan-rule { height: 1px; background: var(--sand); margin: 0 0 1.5rem; }
+.plan-feats { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+.plan-feat { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.9rem; color: var(--ink-light); line-height: 1.45; }
+.pcheck { width: 16px; height: 16px; border-radius: 50%; background: #c6f6d5; color: #276749; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+.plan-cta-btn { display: block; text-align: center; font-family: 'Nunito', sans-serif; font-size: 0.9375rem; font-weight: 600; padding: 0.8rem; border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.2s, border-color 0.2s; }
+.outline { color: var(--ink); border: 1.5px solid var(--sand-dark); background: transparent; }
+.outline:hover { border-color: var(--ink); }
+.solid { color: #fff; background: var(--ink); }
+.solid:hover { opacity: 0.83; transform: scale(1.01); }
+.plans-note { text-align: center; margin-top: 2.5rem; font-size: 0.875rem; color: var(--muted); }
+.plans-extras { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 960px; margin: 2.5rem auto 0; }
+.plans-extra-card { background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius-lg); padding: 2rem; }
+.plans-extra-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+.plans-extra-card h3 { font-family: 'Lora', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 0.75rem; }
+.plans-extra-card p { font-size: 0.875rem; font-weight: 300; color: var(--muted); line-height: 1.8; margin-bottom: 0.75rem; }
+.plans-extra-card p:last-child { margin-bottom: 0; }
+
+/* ── HOW ── */
+.how-section { padding: 9rem 2rem; max-width: 1000px; margin: 0 auto; }
+.how-head { text-align: center; margin-bottom: 5rem; }
+.how-head h2 { font-family: 'Lora', serif; font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; }
+.how-head p { font-size: 1.0625rem; font-weight: 300; color: var(--muted); max-width: 42ch; margin: 0 auto; line-height: 1.75; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.step { padding: 2rem 1.5rem; background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius); }
+.step-num { font-family: 'Lora', serif; font-size: 2.25rem; color: var(--sand-dark); line-height: 1; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+.step h3 { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.625rem; }
+.step p { font-size: 0.875rem; font-weight: 300; color: var(--muted); line-height: 1.75; }
+
+/* ── QUOTE ── */
+.quote-break {
+  background: var(--cream); padding: 8rem 2rem; text-align: center;
+  border-top: 1px solid var(--sand-dark); border-bottom: 1px solid var(--sand-dark);
+}
+.quote-break blockquote {
+  font-family: 'Lora', serif; font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 2.75rem); line-height: 1.3; letter-spacing: -0.01em;
+  color: var(--ink); max-width: 22ch; margin: 0 auto 1.5rem;
+}
+.quote-attr { font-size: 0.875rem; color: var(--muted-light); }
+
+/* ── CTA ── */
+.cta-section { background: var(--ink); padding: 10rem 2rem; text-align: center; }
+.cta-section h2 { font-family: 'Lora', serif; font-size: clamp(2.25rem, 5vw, 4.5rem); letter-spacing: -0.025em; color: #fff; margin-bottom: 1.25rem; line-height: 1.08; }
+.cta-section > p { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.45); max-width: 40ch; margin: 0 auto 3rem; line-height: 1.75; }
+.cta-form { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.cta-form input { font-family: 'Nunito', sans-serif; font-size: 1rem; color: var(--ink); background: rgba(255,255,255,0.95); border: 1px solid transparent; border-radius: 100px; padding: 0.9rem 1.75rem; width: 300px; outline: none; transition: border-color 0.2s; }
+.cta-form input::placeholder { color: var(--muted); }
+.cta-form button { font-family: 'Nunito', sans-serif; font-size: 1rem; font-weight: 600; color: var(--ink); background: #fff; border: none; border-radius: 100px; padding: 0.9rem 2rem; cursor: pointer; transition: opacity 0.2s, transform 0.2s; }
+.cta-form button:hover { opacity: 0.88; transform: scale(1.02); }
+#form-thanks { display: none; font-size: 1.1rem; color: rgba(255,255,255,0.55); margin-top: 2rem; }
+.cta-note { margin-top: 1.25rem; font-size: 0.8125rem; color: rgba(255,255,255,0.22); }
+
+/* ── FOOTER ── */
+footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; background: #0f0e0c; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-logo { font-family: 'Lora', serif; font-size: 1.1rem; color: rgba(255,255,255,0.4); }
+.footer-links { display: flex; gap: 2rem; list-style: none; }
+.footer-links a { font-size: 0.8125rem; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.55); }
+.footer-copy { font-size: 0.8125rem; color: rgba(255,255,255,0.18); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
+@keyframes tdot { 0%,60%,100% { transform:translateY(0); opacity:0.4; } 30% { transform:translateY(-4px); opacity:1; } }
+@keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+@keyframes spin { to { transform:rotate(360deg); } }
+@keyframes numBump { 0%,100% { transform:scale(1); } 50% { transform:scale(1.3); } }
+
+.reveal { opacity:0; transform:translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.d1 { transition-delay:0.1s; } .d2 { transition-delay:0.2s; } .d3 { transition-delay:0.3s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .hero { flex-direction: column; text-align: center; padding: 8rem 2rem 4rem; gap: 3rem; }
+  .hero-text { align-items: center; }
+  .hero h1 { max-width: 20ch; margin: 0 auto 1.75rem; }
+  .hero-actions { justify-content: center; }
+  .hero-graphic { width: 100%; max-width: 380px; }
+  .story, .story.flip { grid-template-columns:1fr; gap:2.5rem; direction:ltr; padding:5rem 1.5rem; }
+  .plans-grid, .plans-extras { grid-template-columns:1fr; max-width:420px; }
+  .steps { grid-template-columns:1fr 1fr; }
+  footer { flex-direction:column; gap:1.25rem; text-align:center; }
+}
+@media (max-width: 540px) { .steps { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Smart Fellow</div>
+  <ul class="nav-links">
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#plans">Plans</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Meet your Fellow</a>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Navigation">
+  <ul>
+    <li><a href="#how" onclick="closeMobileMenu()">How it works</a></li>
+    <li><a href="#plans" onclick="closeMobileMenu()">Plans</a></li>
+    <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta" onclick="closeMobileMenu()">Meet your Fellow</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge"><div class="badge-dot"></div>Now available across Korea</div>
+    <h1>Hire an AI team member. <em>Not software.</em></h1>
+    <p class="hero-sub">A Smart Fellow joins your team like any new hire. They arrive already skilled, never need briefing twice, and work inside the apps your team already uses. They get sharper the longer they stay.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-dark">Meet your Fellow →</a>
+      <a href="#how" class="btn-text">How it works</a>
+    </div>
+    <p class="hero-note">No technical knowledge needed. No IT department required. We handle everything.</p>
+  </div>
+
+  <!-- ANIMATED HERO CARD -->
+  <div class="hero-graphic">
+    <div class="hero-card">
+      <div class="hc-head">
+        <div class="hc-avatar">🤖<div class="hc-avatar-dot"></div></div>
+        <div>
+          <div class="hc-name">Your Smart Fellow</div>
+          <div class="hc-role" id="hc-role">Operations Assistant · Active now</div>
+        </div>
+      </div>
+
+      <!-- Live counters -->
+      <div class="hc-counter-strip">
+        <div class="hc-counter">
+          <div class="hc-counter-num" id="cnt-tasks">0</div>
+          <div class="hc-counter-label">Tasks today</div>
+        </div>
+        <div class="hc-counter">
+          <div class="hc-counter-num" id="cnt-time">0s</div>
+          <div class="hc-counter-label">Avg. response</div>
+        </div>
+        <div class="hc-counter">
+          <div class="hc-counter-num" id="cnt-days">0</div>
+          <div class="hc-counter-label">Days on team</div>
+        </div>
+      </div>
+
+      <!-- Animated task list -->
+      <div class="hc-log" id="hc-log">
+        <div class="hc-task done" id="task-0">
+          <div class="hc-tick">✓</div>
+          <div class="hc-task-text">Drafted follow-up email for Hanwha</div>
+        </div>
+        <div class="hc-task done" id="task-1">
+          <div class="hc-tick">✓</div>
+          <div class="hc-task-text">Summarised this morning's board meeting</div>
+        </div>
+        <div class="hc-task done" id="task-2">
+          <div class="hc-tick">✓</div>
+          <div class="hc-task-text">Booked Thursday's call with Samsung</div>
+        </div>
+        <div class="hc-task active" id="task-3">
+          <div class="hc-tick" id="active-tick"></div>
+          <div class="hc-task-text">
+            <span id="active-label">Preparing Q3 pricing report…</span>
+            <div class="hc-progress-bar" id="progress-bar"></div>
+          </div>
+        </div>
+        <div class="hc-task queued" id="task-4">
+          <div class="hc-tick"></div>
+          <div class="hc-task-text" id="queued-label">Writing weekly team update</div>
+        </div>
+      </div>
+
+      <div class="hc-foot">
+        <div class="hc-foot-row">
+          <span>Works in</span>
+          <div class="hc-apps">
+            <div class="hc-app" style="background:#4a154b;color:#fff" title="Slack">💬</div>
+            <div class="hc-app" style="background:#ffe812;color:#3b1e08" title="KakaoTalk">💛</div>
+            <div class="hc-app" style="background:#0088cc;color:#fff" title="Telegram">✈️</div>
+            <div class="hc-app" style="background:var(--sand);border:1px solid var(--sand-dark)" title="Email">📧</div>
+          </div>
+        </div>
+        <div class="hc-avail"><div class="hc-avail-dot"></div>Available 24/7 · Runs in your office</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK STATEMENT -->
+<section class="dark-band">
+  <p class="eyebrow">The idea is simple</p>
+  <h2>Think of it as hiring someone. <em>Not buying software.</em></h2>
+  <p>You onboard a new colleague. They learn your business, your processes, your way of doing things, and they keep getting better. Unlike software, they don't sit in a dashboard waiting to be configured. They work, just like anyone else on your team.</p>
+</section>
+
+<!-- STORIES -->
+<div class="story-wrap">
+
+<div class="rule"></div>
+<section class="story">
+  <div class="reveal">
+    <p class="story-eyebrow">Works where you work</p>
+    <h2>No new app to learn. <em>It comes to you.</em></h2>
+    <p>Your Smart Fellow joins the conversations your team is already having in Slack, Telegram, KakaoTalk, or email. You message it the same way you would message any colleague.</p>
+    <p>No dashboards. No logins to manage. No training sessions for your staff. It's simply there, ready to help.</p>
+  </div>
+  <div class="story-vis reveal d1">
+    <div class="chat" id="animated-chat" style="min-height:220px"></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+<section class="story flip">
+  <div class="reveal">
+    <p class="story-eyebrow">Gets better every week</p>
+    <h2>It learns your business. <em>Every single day.</em></h2>
+    <p>Each conversation makes your Smart Fellow more useful. It remembers your clients' names, your team's preferences, your way of working. It learns what good work looks like in your company.</p>
+    <p>After a few weeks, it starts anticipating what you need before you ask. Just like a great employee would.</p>
+  </div>
+  <div class="story-vis reveal d1">
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1rem">What your Fellow has learned</div>
+    <div class="mem-list">
+      <div class="mem-item">
+        <div class="mem-icon">🏢</div>
+        <div>
+          <div class="mem-text"><strong>Key client:</strong> Hanwha Systems. Always CC Minjun on proposals.</div>
+          <div class="mem-time">Learned 3 weeks ago</div>
+        </div>
+      </div>
+      <div class="mem-item">
+        <div class="mem-icon">✍️</div>
+        <div>
+          <div class="mem-text"><strong>Tone:</strong> Formal in Korean, relaxed in English</div>
+          <div class="mem-time">Learned 2 weeks ago</div>
+        </div>
+      </div>
+      <div class="mem-item">
+        <div class="mem-icon">📋</div>
+        <div>
+          <div class="mem-text"><strong>Meeting notes:</strong> Always include action items with owners</div>
+          <div class="mem-time">Learned last week</div>
+        </div>
+        <div class="mem-new">New</div>
+      </div>
+      <div class="mem-item">
+        <div class="mem-icon">📊</div>
+        <div>
+          <div class="mem-text"><strong>Reports:</strong> CEO prefers bullet points, max one page</div>
+          <div class="mem-time">Learned this week</div>
+        </div>
+        <div class="mem-new">New</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+<section class="story">
+  <div class="reveal">
+    <p class="story-eyebrow">AI sovereignty, by default</p>
+    <h2>Everything runs <em>inside your office.</em></h2>
+    <p>Your Smart Fellow runs on hardware we install on-site. By default, all intelligence stays in your building. Your conversations, documents, and business knowledge never touch an external server.</p>
+    <p>Want to optionally connect to a specific AI provider like Claude, GPT, or Naver HyperCLOVA? We add it with one toggle. You decide what is on and what isn't, at any time. Your data, your rules.</p>
+  </div>
+  <div class="story-vis reveal d1" style="text-align:center;padding:2rem">
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1rem">Where your data lives</div>
+    <div class="sov-scene">
+      <div class="sov-ring"></div>
+      <div class="sov-center">🏢</div>
+      <div class="sov-arm a1"><div class="sov-node n-g"></div></div>
+      <div class="sov-arm a2"><div class="sov-node n-b"></div></div>
+      <div class="sov-arm a3"><div class="sov-node n-a"></div></div>
+    </div>
+    <div style="font-family:'Lora',serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.4rem">Your office</div>
+    <div style="font-size:0.85rem;color:var(--muted);max-width:28ch;margin:0 auto 1.5rem;line-height:1.65">Local by default. Connect to external AI providers at any time. Your call.</div>
+    <div style="border-top:1px solid var(--sand);padding-top:1.25rem;font-size:0.8rem;color:var(--muted-light);display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap">
+      <span>✓ PIPA compliant</span>
+      <span>✓ Korean data law</span>
+      <span>✓ You control the APIs</span>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+<section class="story flip">
+  <div class="reveal">
+    <p class="story-eyebrow">Connects to your systems</p>
+    <h2>Ask it anything. <em>It looks it up.</em></h2>
+    <p>When you're ready, your Smart Fellow can be connected directly to the tools your business runs on: your CRM, inventory system, internal database, Google Drive, calendar.</p>
+    <p>You ask a question. It finds the answer. No copy-pasting. No switching tabs. Just work, done. We build all the connections. Your team doesn't touch a thing.</p>
+  </div>
+  <div class="story-vis reveal d1">
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1.25rem">Connected to</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem">
+      <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
+        <div style="font-size:1.25rem">📊</div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)">Your CRM</div><div style="font-size:0.7rem;color:var(--muted)">Reads and updates</div></div>
+      </div>
+      <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
+        <div style="font-size:1.25rem">📁</div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)">Google Drive</div><div style="font-size:0.7rem;color:var(--muted)">Reads and writes</div></div>
+      </div>
+      <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
+        <div style="font-size:1.25rem">📅</div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)">Calendar</div><div style="font-size:0.7rem;color:var(--muted)">Schedules and books</div></div>
+      </div>
+      <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
+        <div style="font-size:1.25rem">🏭</div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)">Your internal tools</div><div style="font-size:0.7rem;color:var(--muted)">Custom connection</div></div>
+      </div>
+    </div>
+    <div style="font-size:0.8rem;color:var(--muted);text-align:center;line-height:1.6">All integrations are built and maintained by Smart Fellow. Zero technical work for you.</div>
+  </div>
+</section>
+
+</div>
+
+<!-- PLANS -->
+<section class="plans-section" id="plans">
+  <div class="plans-head reveal">
+    <h2>Choose your Fellow</h2>
+    <p>Every Smart Fellow arrives on day one with pre-trained skills, long-term memory, and the ability to learn from your team. What changes across tiers is seniority: how much they can handle and how deep they go.</p>
+  </div>
+  <div class="plans-grid">
+    <div class="plan-card reveal">
+      <div class="plan-tier">Starter</div>
+      <div class="plan-role">The Capable Assistant</div>
+      <div class="plan-price"><span class="plan-num">₩1.5M</span><span class="plan-unit">/month</span></div>
+      <div class="plan-hw">Mac Studio included · No setup fee · No IT required</div>
+      <div class="plan-rule"></div>
+      <ul class="plan-feats">
+        <li class="plan-feat"><div class="pcheck">✓</div>Works in Slack, Telegram or KakaoTalk</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Drafts documents, emails, and summaries</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Remembers your clients, preferences, and tone</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Runs locally. Your data never leaves.</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Monthly check-in and training session</li>
+      </ul>
+      <a href="#contact" class="plan-cta-btn outline">Get started</a>
+    </div>
+    <div class="plan-card featured reveal d1">
+      <div class="feat-badge">Most popular</div>
+      <div class="plan-tier">Professional</div>
+      <div class="plan-role">The Senior Specialist</div>
+      <div class="plan-price"><span class="plan-num">₩3M</span><span class="plan-unit">/month</span></div>
+      <div class="plan-hw">High-performance Mac Studio · No setup fee</div>
+      <div class="plan-rule"></div>
+      <ul class="plan-feats">
+        <li class="plan-feat"><div class="pcheck">✓</div>Everything in Starter</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Connected to your CRM, Drive, and calendar</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Handles complex, multi-step workflows</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Summarises meetings and drives follow-ups</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Optional external AI connection (Claude, GPT, Naver)</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Bi-weekly performance review · Priority support</li>
+      </ul>
+      <a href="#contact" class="plan-cta-btn solid">Get started</a>
+    </div>
+    <div class="plan-card reveal d2">
+      <div class="plan-tier">Enterprise</div>
+      <div class="plan-role">The Department Lead</div>
+      <div class="plan-price"><span class="plan-num">Custom</span></div>
+      <div class="plan-hw">Tailored hardware · Built for your operation</div>
+      <div class="plan-rule"></div>
+      <ul class="plan-feats">
+        <li class="plan-feat"><div class="pcheck">✓</div>Everything in Professional</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Multiple Fellows across departments</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Deep integration with your internal systems</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Custom skills built for your exact workflows</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Dedicated account manager</li>
+      </ul>
+      <a href="#contact" class="plan-cta-btn outline">Talk to us</a>
+    </div>
+  </div>
+  <p class="plans-note">Hardware is installed and maintained by Smart Fellow at no extra cost. Your Fellow's skills, memory, and integrations are always yours. Cancel with 60 days notice.</p>
+  <div class="plans-extras reveal">
+    <div class="plans-extra-card">
+      <div class="plans-extra-icon">🛡</div>
+      <h3>AI sovereignty, by default</h3>
+      <p>Every Fellow runs on hardware in your office. All intelligence stays local. No data reaches an external server unless you choose it.</p>
+      <p>Want to connect to a specific AI provider (Claude, GPT, or Naver HyperCLOVA X)? We add it with one toggle. You decide what's on and what isn't, at any time.</p>
+    </div>
+    <div class="plans-extra-card">
+      <div class="plans-extra-icon">🔧</div>
+      <h3>Custom connectors and unique skills</h3>
+      <p>Every Fellow ships with pre-trained skills out of the box. Need something specific to your industry, ERP, or internal process? We build it.</p>
+      <p>Custom development is quoted based on scope. Most integrations are live within a week. Talk to us, no obligation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="how-head reveal">
+    <h2>How onboarding works</h2>
+    <p>From your first call to your Fellow's first day on the job, most businesses are up and running within two weeks.</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <h3>Discovery call</h3>
+      <p>We learn about your team, your tools, and what you want your Fellow to handle first. In Korean or English.</p>
+    </div>
+    <div class="step reveal d1">
+      <div class="step-num">02</div>
+      <h3>We set everything up</h3>
+      <p>Smart Fellow delivers the hardware, connects it to your network, and trains your Fellow on your business context.</p>
+    </div>
+    <div class="step reveal d2">
+      <div class="step-num">03</div>
+      <h3>Your team starts chatting</h3>
+      <p>Your Fellow joins your Slack or preferred app. Your team works with it just like any other colleague.</p>
+    </div>
+    <div class="step reveal d3">
+      <div class="step-num">04</div>
+      <h3>It keeps getting better</h3>
+      <p>We check in regularly, tune performance, and expand capabilities as your team discovers new use cases.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-break">
+  <blockquote>"The best colleague you've ever had: one who never forgets, never burns out, and always shows up."</blockquote>
+  <p class="quote-attr">The Smart Fellow promise</p>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2 class="reveal">Ready to meet<br>your Fellow?</h2>
+  <p class="reveal">Tell us your email and we will set up a free 30-minute call to see if Smart Fellow is a good fit for your team. No technical knowledge needed, just a conversation.</p>
+  <form class="cta-form reveal" id="cta-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+    <input type="email" name="email" id="email-input" placeholder="your@company.com" required autocomplete="email">
+    <button type="submit">Book a free call</button>
+  </form>
+  <p id="form-thanks">Thank you. We will be in touch within one business day.</p>
+  <p class="cta-note">We work in Korean and English. No commitment required.</p>
+</section>
+
+<footer>
+  <div class="footer-logo">Smart Fellow</div>
+  <ul class="footer-links">
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#plans">Plans</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Smart Fellow · Seoul, Korea</span>
+</footer>
+
+<script>
+/* ── Scroll reveal ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── Mobile nav ── */
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
+navToggle.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+function closeMobileMenu() {
+  navMobile.classList.remove('open'); navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+}
+
+/* ── HERO CARD ANIMATION ── */
+const TASKS = [
+  { label: 'Drafted follow-up email for Hanwha',      dur: 3200 },
+  { label: 'Summarised this morning\'s board meeting', dur: 2800 },
+  { label: 'Booked Thursday\'s call with Samsung',     dur: 2400 },
+  { label: 'Prepared the Q3 pricing report',           dur: 3600 },
+  { label: 'Wrote the weekly team update',             dur: 2600 },
+  { label: 'Researched competitor pricing',            dur: 3000 },
+  { label: 'Drafted proposal for LG Electronics',     dur: 3400 },
+  { label: 'Translated the Hyundai brief',             dur: 2200 },
+];
+
+const ROLES = [
+  'Operations Assistant', 'Research Analyst', 'Client Relations',
+  'Meeting Coordinator', 'Document Specialist', 'Market Researcher',
+];
+
+let taskCount = 12;
+let taskIdx   = 4;
+let roleIdx   = 0;
+
+const cntTasks = document.getElementById('cnt-tasks');
+const cntTime  = document.getElementById('cnt-time');
+const cntDays  = document.getElementById('cnt-days');
+const activeLabel  = document.getElementById('active-label');
+const queuedLabel  = document.getElementById('queued-label');
+const progressBar  = document.getElementById('progress-bar');
+const activeTick   = document.getElementById('active-tick');
+const hcRoleEl     = document.getElementById('hc-role');
+
+/* Animate counters on load */
+function animateCounter(el, target, suffix, duration) {
+  const start = performance.now();
+  const step = (now) => {
+    const p = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(ease * target) + (suffix || '');
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    animateCounter(cntTasks, taskCount, '',  1200);
+    animateCounter(cntTime,  4,         's', 900);
+    animateCounter(cntDays,  47,        '',  1400);
+  }, 900);
+});
+
+/* Bump a counter with a little scale pop */
+function bumpCounter(el, newVal, suffix) {
+  el.textContent = newVal + (suffix || '');
+  el.classList.add('bump');
+  setTimeout(() => el.classList.remove('bump'), 350);
+}
+
+/* Spinning progress bar on the active task */
+let progressRaf = null;
+let progressStart = null;
+
+function runProgress(duration, onDone) {
+  if (progressRaf) cancelAnimationFrame(progressRaf);
+  progressBar.style.transition = 'none';
+  progressBar.style.width = '0%';
+  progressStart = null;
+
+  const tick = (now) => {
+    if (!progressStart) progressStart = now;
+    const elapsed = now - progressStart;
+    const pct = Math.min((elapsed / duration) * 100, 100);
+    progressBar.style.width = pct + '%';
+    if (pct < 100) {
+      progressRaf = requestAnimationFrame(tick);
+    } else {
+      progressBar.style.width = '0%';
+      onDone();
+    }
+  };
+  progressRaf = requestAnimationFrame(tick);
+}
+
+/* Blinking cursor on the active task tick */
+let blinkInterval = null;
+function startBlink() {
+  let on = true;
+  clearInterval(blinkInterval);
+  blinkInterval = setInterval(() => {
+    activeTick.textContent = on ? '…' : '';
+    on = !on;
+  }, 500);
+}
+startBlink();
+
+/* Cycle tasks */
+function cycleTask() {
+  const current = TASKS[taskIdx % TASKS.length];
+  const next    = TASKS[(taskIdx + 1) % TASKS.length];
+
+  activeLabel.textContent = current.label + '…';
+  queuedLabel.textContent = next.label;
+
+  runProgress(current.dur, () => {
+    /* Complete current task */
+    taskCount++;
+    bumpCounter(cntTasks, taskCount, '');
+    activeLabel.textContent = current.label;
+    activeTick.textContent  = '✓';
+    activeTick.style.background    = '#c6f6d5';
+    activeTick.style.color         = '#276749';
+    clearInterval(blinkInterval);
+
+    setTimeout(() => {
+      /* Reset tick for next task */
+      activeTick.style.background = 'var(--sand)';
+      activeTick.style.color      = '';
+      activeTick.textContent      = '';
+      startBlink();
+      taskIdx++;
+      cycleTask();
+    }, 1200);
+  });
+}
+
+/* Role cycling */
+function cycleRole() {
+  hcRoleEl.style.opacity = '0';
+  setTimeout(() => {
+    roleIdx = (roleIdx + 1) % ROLES.length;
+    hcRoleEl.textContent = ROLES[roleIdx] + ' · Active now';
+    hcRoleEl.style.opacity = '1';
+  }, 300);
+}
+hcRoleEl.style.transition = 'opacity 0.3s ease';
+
+/* Start everything after a short delay */
+setTimeout(() => {
+  cycleTask();
+  setInterval(cycleRole, 4000);
+}, 1500);
+
+/* ── ANIMATED CHAT (story section) ── */
+const chatEl = document.getElementById('animated-chat');
+
+function buildMsg(type, html) {
+  const wrap = document.createElement('div');
+  wrap.className = type === 'user' ? 'cmsg' : 'cmsg r';
+  wrap.style.cssText = 'opacity:0;transform:translateY(10px);transition:opacity 0.4s ease,transform 0.4s ease';
+  const mwrap = document.createElement('div'); mwrap.className = 'cmsg-wrap';
+  if (type === 'bot') mwrap.style.alignItems = 'flex-end';
+  const label = document.createElement('div'); label.className = 'clabel';
+  label.textContent = type === 'user' ? 'You' : 'Smart Fellow';
+  const bubble = document.createElement('div'); bubble.className = 'cbubble';
+  bubble.innerHTML = html;
+  mwrap.append(label, bubble);
+  wrap.appendChild(mwrap);
+  return wrap;
+}
+
+function buildTyping() {
+  const row = document.createElement('div');
+  row.style.cssText = 'display:flex;align-items:center;gap:0.5rem;padding:0.35rem 0;opacity:0;transition:opacity 0.3s ease';
+  row.innerHTML = '<div style="width:26px;height:26px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0">🤖</div>'
+    + '<div class="typing">Smart Fellow is thinking<div class="tdots"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div></div>';
+  return row;
+}
+
+function playChatSeq() {
+  if (!chatEl) return;
+  chatEl.innerHTML = '';
+  const u = buildMsg('user', 'Can you draft a follow-up email for the Hanwha meeting? Warm but professional.');
+  const t = buildTyping();
+  const b = buildMsg('bot',
+    'Of course. Based on your meeting notes:<br><br>'
+    + '<em>"Hi Jisoo, great to align on Monday. We\'ll send the updated proposal by Thursday — I\'ll make sure it reflects the new Q2 targets we discussed."</em>'
+    + '<br><br>Want a different tone, or should I also draft the Korean version?');
+  chatEl.append(u, t, b);
+
+  const show = (el, delay) => setTimeout(() => { el.style.opacity='1'; el.style.transform='translateY(0)'; }, delay);
+  show(u, 200);
+  setTimeout(() => { t.style.opacity = '1'; }, 1100);
+  setTimeout(() => { t.style.opacity = '0'; show(b, 300); }, 2800);
+  setTimeout(() => {
+    [u, t, b].forEach(el => { el.style.transition = 'opacity 0.6s ease'; el.style.opacity = '0'; });
+    setTimeout(playChatSeq, 700);
+  }, 9000);
+}
+
+if (chatEl) {
+  const chatObs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) { chatObs.disconnect(); playChatSeq(); }
+  }, { threshold: 0.3 });
+  chatObs.observe(chatEl);
+}
+
+/* ── FORM ── */
+const ctaForm = document.getElementById('cta-form');
+ctaForm.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = ctaForm.querySelector('button');
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  try {
+    const res = await fetch(ctaForm.action, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: document.getElementById('email-input').value })
+    });
+    if (res.ok) {
+      ctaForm.style.display = 'none';
+      document.getElementById('form-thanks').style.display = 'block';
+    } else {
+      btn.textContent = 'Book a free call'; btn.disabled = false;
+      alert('Something went wrong — please try again or email us directly.');
+    }
+  } catch (_) {
+    btn.textContent = 'Book a free call'; btn.disabled = false;
+    alert('Something went wrong — please check your connection and try again.');
+  }
+});
+</script>
+</body>
+</html>
