@@ -162,12 +162,12 @@ nav.nav-visible { transform: translateY(0); }
 .fel-bubble.b5 { bottom: 20%; left: 14%; }
 .fel-bubble.b6 { bottom: 18%; right: 14%; }
 
-@keyframes ff1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(5px,-14px); } }
-@keyframes ff2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-7px,-12px); } }
-@keyframes ff3 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(9px,-10px); } }
-@keyframes ff4 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-6px,-16px); } }
-@keyframes ff5 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(7px,-11px); } }
-@keyframes ff6 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-9px,-9px); } }
+@keyframes ff1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(8px,-22px); } }
+@keyframes ff2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-11px,-18px); } }
+@keyframes ff3 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(14px,-16px); } }
+@keyframes ff4 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-10px,-24px); } }
+@keyframes ff5 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(11px,-17px); } }
+@keyframes ff6 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-14px,-14px); } }
 
 /* ── DARK STATEMENT ── */
 .dark-band { background: linear-gradient(150deg, #1c2b38 0%, #152030 100%); padding: 9rem 2rem; text-align: center; }
@@ -177,7 +177,11 @@ nav.nav-visible { transform: translateY(0); }
   line-height: 1.1; letter-spacing: -0.025em; color: #fff;
   max-width: 18ch; margin: 0 auto 1.5rem;
 }
-.dark-band h2 em { font-style: italic; color: rgba(255,255,255,0.62); }
+.dark-band h2 em {
+  font-style: italic;
+  color: #d9a088; /* light terracotta (accent family) if color-mix unsupported */
+  color: color-mix(in srgb, var(--accent) 78%, #fff 22%);
+}
 .dark-band p { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.45); max-width: 44ch; margin: 0 auto; line-height: 1.8; }
 
 /* ── STORIES ── */
