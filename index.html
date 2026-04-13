@@ -264,7 +264,7 @@ nav.nav-visible { transform: translateY(0); }
 .plans-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.025em; color: var(--ink); margin-bottom: 1rem; }
 .plans-head p { font-size: 1.0625rem; font-weight: 300; color: var(--muted); max-width: 44ch; margin: 0 auto; line-height: 1.75; }
 .plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 960px; margin: 0 auto; }
-.plan-card { background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius-lg); padding: 2.25rem 2rem; position: relative; }
+.plan-card { background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius-lg); padding: 2.25rem 2rem; position: relative; display: flex; flex-direction: column; }
 .plan-card.featured { border-color: var(--accent); border-width: 2px; }
 .feat-badge {
   position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
@@ -279,10 +279,13 @@ nav.nav-visible { transform: translateY(0); }
 .plan-unit { font-size: 0.875rem; color: var(--muted); }
 .plan-hw { font-size: 0.8125rem; color: var(--muted); margin-bottom: 1.75rem; }
 .plan-rule { height: 1px; background: var(--sand); margin: 0 0 1.5rem; }
-.plan-feats { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
-.plan-feat { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.9rem; color: var(--ink-light); line-height: 1.45; }
+.plan-section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-light); margin: 0.75rem 0 0.55rem; }
+.plan-rule + .plan-section-label { margin-top: 0; }
+.plan-feats { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.25rem; }
+.plan-feat { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.875rem; color: var(--ink-light); line-height: 1.45; }
+.plan-eg { font-size: 0.75rem; color: var(--muted-light); display: block; margin-top: 0.15rem; }
 .pcheck { width: 16px; height: 16px; border-radius: 50%; background: rgba(196,103,58,0.12); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
-.plan-cta-btn { display: block; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 600; padding: 0.8rem; border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.2s, border-color 0.2s; }
+.plan-cta-btn { display: block; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 600; padding: 0.8rem; border-radius: 100px; text-decoration: none; margin-top: auto; transition: opacity 0.2s, transform 0.2s, border-color 0.2s; }
 .outline { color: var(--ink); border: 1.5px solid var(--sand-dark); background: transparent; }
 .outline:hover { border-color: var(--ink); }
 .solid { color: #fff; background: var(--accent); }
@@ -560,53 +563,108 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
     <p>Every Smart Fellow arrives on day one with pre-trained skills, long-term memory, and the ability to learn from your team. What changes across tiers is seniority: how much they can handle and how deep they go.</p>
   </div>
   <div class="plans-grid">
+ 
     <div class="plan-card reveal">
       <div class="plan-tier">Starter</div>
       <div class="plan-role">The Capable Assistant</div>
       <div class="plan-price"><span class="plan-num">₩1.5M</span><span class="plan-unit">/month</span></div>
-      <div class="plan-hw">Mac Studio included · No setup fee · No IT required</div>
+      <div class="plan-hw">Mac Studio 64GB · No setup fee · No IT required</div>
       <div class="plan-rule"></div>
+      <div class="plan-section-label">Works in</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Works in Slack, Telegram or KakaoTalk</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Slack, Telegram, KakaoTalk, Teams, Email</li>
+      </ul>
+      <div class="plan-section-label">What it does</div>
+      <ul class="plan-feats">
         <li class="plan-feat"><div class="pcheck">✓</div>Drafts documents, emails, and summaries</li>
         <li class="plan-feat"><div class="pcheck">✓</div>Remembers your clients, preferences, and tone</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Runs locally. Your data never leaves.</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Monthly check-in and training session</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Runs locally — your data never leaves</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Optional external AI (Claude, GPT, Naver)</li>
+      </ul>
+      <div class="plan-section-label">Proactive tasks</div>
+      <ul class="plan-feats">
+        <li class="plan-feat"><div class="pcheck">✓</div>2 automated daily tasks <span class="plan-eg">e.g. morning briefing, daily report</span></li>
+      </ul>
+      <div class="plan-section-label">Tool connections</div>
+      <ul class="plan-feats">
+        <li class="plan-feat"><div class="pcheck">✓</div>Google Drive, Calendar, Gmail</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Notion, Slack, basic webhook support</li>
+      </ul>
+      <div class="plan-section-label">Support</div>
+      <ul class="plan-feats">
+        <li class="plan-feat"><div class="pcheck">✓</div>Monthly check-in and tuning session</li>
       </ul>
       <a href="#contact" class="plan-cta-btn outline">Get started</a>
     </div>
+ 
     <div class="plan-card featured reveal d1">
       <div class="feat-badge">Most popular</div>
       <div class="plan-tier">Professional</div>
       <div class="plan-role">The Senior Specialist</div>
       <div class="plan-price"><span class="plan-num">₩3M</span><span class="plan-unit">/month</span></div>
-      <div class="plan-hw">High-performance Mac Studio · No setup fee</div>
+      <div class="plan-hw">Mac Studio 128GB · Faster execution · More at once</div>
       <div class="plan-rule"></div>
+      <div class="plan-section-label">Works in</div>
       <ul class="plan-feats">
         <li class="plan-feat"><div class="pcheck">✓</div>Everything in Starter</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Connected to your CRM, Drive, and calendar</li>
+      </ul>
+      <div class="plan-section-label">What it does</div>
+      <ul class="plan-feats">
+        <li class="plan-feat"><div class="pcheck">✓</div>Everything in Starter, faster and in parallel</li>
         <li class="plan-feat"><div class="pcheck">✓</div>Handles complex, multi-step workflows</li>
         <li class="plan-feat"><div class="pcheck">✓</div>Summarises meetings and drives follow-ups</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Optional external AI connection (Claude, GPT, Naver)</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Bi-weekly performance review · Priority support</li>
+      </ul>
+      <div class="plan-section-label">Proactive tasks</div>
+      <ul class="plan-feats">
+        <li class="plan-feat"><div class="pcheck">✓</div>4 automated daily tasks <span class="plan-eg">e.g. pipeline update, client digest, weekly report, meeting prep</span></li>
+      </ul>
+      <div class="plan-section-label">Tool connections</div>
+      <ul class="plan-feats">
+        <li class="plan-feat"><div class="pcheck">✓</div>Everything in Starter</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Salesforce, HubSpot, Pipedrive</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Jira, Linear, Asana</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Custom database read access</li>
+      </ul>
+      <div class="plan-section-label">Support</div>
+      <ul class="plan-feats">
+        <li class="plan-feat"><div class="pcheck">✓</div>Bi-weekly performance review</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Priority support</li>
       </ul>
       <a href="#contact" class="plan-cta-btn solid">Get started</a>
     </div>
+ 
     <div class="plan-card reveal d2">
       <div class="plan-tier">Enterprise</div>
       <div class="plan-role">The Department Lead</div>
       <div class="plan-price"><span class="plan-num">Custom</span></div>
-      <div class="plan-hw">Tailored hardware · Built for your operation</div>
+      <div class="plan-hw">Hardware specced for your operation</div>
       <div class="plan-rule"></div>
+      <div class="plan-section-label">Works in</div>
       <ul class="plan-feats">
         <li class="plan-feat"><div class="pcheck">✓</div>Everything in Professional</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Any platform — we build the connector</li>
+      </ul>
+      <div class="plan-section-label">What it does</div>
+      <ul class="plan-feats">
         <li class="plan-feat"><div class="pcheck">✓</div>Multiple Fellows across departments</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Deep integration with your internal systems</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Custom skills built for your exact workflows</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Unlimited automated tasks</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Reads from cameras, sensors, or any data feed</li>
+      </ul>
+      <div class="plan-section-label">Tool connections</div>
+      <ul class="plan-feats">
+        <li class="plan-feat"><div class="pcheck">✓</div>Everything in Professional</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Custom MCP built for your internal systems</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>ERP, inventory, manufacturing systems</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Physical integrations — cameras, sensors, IoT</li>
+      </ul>
+      <div class="plan-section-label">Support</div>
+      <ul class="plan-feats">
         <li class="plan-feat"><div class="pcheck">✓</div>Dedicated account manager</li>
+        <li class="plan-feat"><div class="pcheck">✓</div>Custom SLA</li>
       </ul>
       <a href="#contact" class="plan-cta-btn outline">Talk to us</a>
     </div>
+ 
   </div>
   <p class="plans-note">Hardware is installed and maintained by Smart Fellow at no extra cost. Your Fellow's skills, memory, and integrations are always yours. Cancel with 60 days notice.</p>
   <div class="plans-extras reveal">
