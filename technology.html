@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Technology — Smart Fellow</title>
+<meta name="description" content="How Smart Fellow works: the skills, memory, and character that make your AI colleague genuinely useful — explained without jargon.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231a1814'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+
+/* HERO */
+.tech-hero {
+  padding: 10rem 2rem 6rem; text-align: center; background: var(--ink);
+  position: relative; overflow: hidden;
+}
+.tech-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(72,187,120,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.tech-hero-eyebrow {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); margin-bottom: 1.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease forwards 0.1s;
+}
+.tech-hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 1.08; letter-spacing: -0.025em; color: #fff;
+  max-width: 18ch; margin: 0 auto 1.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease forwards 0.25s;
+}
+.tech-hero h1 em { font-style: italic; color: rgba(255,255,255,0.4); }
+.tech-hero p {
+  font-size: 1.125rem; font-weight: 300; color: rgba(255,255,255,0.45);
+  max-width: 48ch; margin: 0 auto;
+  line-height: 1.8;
+  opacity: 0; animation: fadeUp 0.7s ease forwards 0.4s;
+}
+
+/* SECTION SHARED */
+.tech-section { padding: 8rem 2rem; max-width: 1080px; margin: 0 auto; }
+.tech-section-dark { background: var(--ink); padding: 8rem 2rem; }
+.tech-section-dark-inner { max-width: 1080px; margin: 0 auto; }
+.tech-section-sand { background: var(--sand); padding: 8rem 2rem; }
+.tech-section-sand-inner { max-width: 1080px; margin: 0 auto; }
+
+.section-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 1rem; }
+.section-eyebrow-light { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 1rem; }
+.section-h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.25rem; }
+.section-h2 em { font-style: italic; color: var(--muted); }
+.section-h2-light { font-family: 'Fraunces', serif; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin-bottom: 1.25rem; }
+.section-h2-light em { font-style: italic; color: rgba(255,255,255,0.38); }
+.section-lead { font-size: 1.0625rem; font-weight: 300; color: var(--muted); line-height: 1.85; max-width: 56ch; }
+.section-lead-light { font-size: 1.0625rem; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.85; max-width: 56ch; }
+.rule { height: 1px; background: var(--sand-dark); max-width: 1080px; margin: 0 auto; }
+
+/* TWO COL */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.two-col.flip { direction: rtl; }
+.two-col.flip > * { direction: ltr; }
+
+/* VIS BOX */
+.vis-box {
+  background: var(--warm-white); border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg); padding: 2.25rem; min-height: 320px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.vis-box-dark {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg); padding: 2.25rem; min-height: 320px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.vis-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 1.25rem; }
+.vis-label-light { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 1.25rem; }
+
+/* SKILLS VIS */
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.625rem; }
+.skill-chip {
+  display: flex; align-items: center; gap: 0.625rem;
+  background: var(--sand); border: 1px solid var(--sand-dark);
+  border-radius: 10px; padding: 0.75rem 0.875rem;
+  font-size: 0.8125rem; font-weight: 500; color: var(--ink-light);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.skill-chip.active { background: var(--ink); color: rgba(255,255,255,0.9); border-color: var(--ink); }
+.skill-chip.active .skill-dot { background: var(--green); box-shadow: 0 0 6px rgba(72,187,120,0.6); }
+.skill-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--sand-dark); flex-shrink: 0; transition: background 0.3s ease; }
+.skills-note { font-size: 0.8rem; color: var(--muted-light); margin-top: 1rem; text-align: center; line-height: 1.6; }
+
+/* MEMORY VIS */
+.memory-rings { position: relative; width: 160px; height: 160px; margin: 0 auto 1.5rem; }
+.mem-ring {
+  position: absolute; border-radius: 50%; border: 1.5px solid;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+}
+.mem-ring-1 { width: 50px; height: 50px; border-color: rgba(72,187,120,0.8); background: rgba(72,187,120,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+.mem-ring-2 { width: 95px; height: 95px; border-color: rgba(72,187,120,0.4); animation: memPulse 3s ease-in-out infinite; }
+.mem-ring-3 { width: 145px; height: 145px; border-color: rgba(72,187,120,0.15); animation: memPulse 3s ease-in-out infinite 0.8s; }
+@keyframes memPulse { 0%,100% { opacity:0.4; transform:translate(-50%,-50%) scale(1); } 50% { opacity:1; transform:translate(-50%,-50%) scale(1.04); } }
+
+.mem-items { display: flex; flex-direction: column; gap: 0.5rem; }
+.mem-chip {
+  display: flex; align-items: center; gap: 0.625rem;
+  background: var(--sand); border-radius: 8px; padding: 0.625rem 0.875rem;
+  font-size: 0.8125rem; color: var(--ink-light);
+}
+.mem-chip-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.mem-chip-dot.stm { background: var(--blue); }
+.mem-chip-dot.ltm { background: var(--green); }
+.mem-chip-dot.ep  { background: var(--amber); }
+.mem-legend { display: flex; gap: 1rem; margin-top: 0.875rem; flex-wrap: wrap; }
+.mem-legend-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.7rem; color: var(--muted-light); font-weight: 600; letter-spacing: 0.04em; }
+.mem-legend-dot { width: 7px; height: 7px; border-radius: 50%; }
+
+/* SOUL VIS */
+.soul-traits { display: flex; flex-direction: column; gap: 0.75rem; }
+.soul-trait {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.875rem 1rem; background: var(--sand); border-radius: 10px;
+}
+.soul-trait-label { font-size: 0.8125rem; font-weight: 500; color: var(--ink); min-width: 100px; }
+.soul-trait-bar { flex: 1; height: 4px; background: var(--sand-dark); border-radius: 100px; overflow: hidden; }
+.soul-trait-fill { height: 100%; border-radius: 100px; background: var(--ink); transition: width 1.2s ease; width: 0; }
+.soul-trait-val { font-size: 0.75rem; color: var(--muted); min-width: 36px; text-align: right; }
+
+/* ════════════════════════════════════════════
+   WORKFLOW ANIMATION — centrepiece
+   ════════════════════════════════════════════ */
+.workflow-section { padding: 8rem 2rem; background: var(--ink); }
+.workflow-inner { max-width: 900px; margin: 0 auto; }
+.workflow-header { text-align: center; margin-bottom: 4rem; }
+
+.workflow-canvas {
+  position: relative;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  overflow: hidden;
+}
+
+/* Office perimeter */
+.wf-perimeter {
+  position: absolute; inset: 1.25rem;
+  border: 1.5px dashed rgba(72,187,120,0.25);
+  border-radius: 18px;
+  pointer-events: none;
+}
+.wf-perimeter-label {
+  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+  background: var(--ink); padding: 0 0.75rem;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(72,187,120,0.6);
+}
+
+/* Workflow grid */
+.wf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 1rem 2rem;
+  position: relative;
+  padding: 1rem 0;
+}
+
+/* Nodes */
+.wf-node {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  position: relative;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.wf-node.lit {
+  background: rgba(72,187,120,0.08);
+  border-color: rgba(72,187,120,0.4);
+  box-shadow: 0 0 20px rgba(72,187,120,0.1);
+}
+.wf-node.lit-blue {
+  background: rgba(99,179,237,0.08);
+  border-color: rgba(99,179,237,0.4);
+  box-shadow: 0 0 20px rgba(99,179,237,0.1);
+}
+.wf-node.lit-amber {
+  background: rgba(246,173,85,0.08);
+  border-color: rgba(246,173,85,0.4);
+  box-shadow: 0 0 20px rgba(246,173,85,0.1);
+}
+.wf-node-icon { font-size: 1.5rem; margin-bottom: 0.4rem; display: block; }
+.wf-node-name { font-size: 0.8125rem; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 0.2rem; }
+.wf-node-desc { font-size: 0.7rem; color: rgba(255,255,255,0.3); line-height: 1.4; }
+
+/* Input row */
+.wf-input-row {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 1rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px; padding: 0.875rem 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.wf-input-app { font-size: 1.1rem; }
+.wf-input-bubble {
+  flex: 1; font-size: 0.8125rem; color: rgba(255,255,255,0.5);
+  font-style: italic; line-height: 1.5;
+  transition: color 0.4s ease;
+}
+.wf-input-bubble.active { color: rgba(255,255,255,0.85); }
+.wf-input-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.2); }
+
+/* Output row */
+.wf-output-row {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 1rem;
+  background: rgba(72,187,120,0.05);
+  border: 1px solid rgba(72,187,120,0.15);
+  border-radius: 10px; padding: 0.875rem 1.25rem;
+  margin-top: 0.5rem;
+  opacity: 0; transition: opacity 0.6s ease;
+}
+.wf-output-row.visible { opacity: 1; }
+.wf-output-bubble {
+  flex: 1; font-size: 0.8125rem; color: rgba(255,255,255,0.3);
+  font-style: italic; line-height: 1.5;
+  transition: color 0.6s ease;
+}
+.wf-output-bubble.active { color: rgba(255,255,255,0.75); }
+.wf-output-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(72,187,120,0.5); }
+
+/* Flow arrows between nodes */
+.wf-connectors {
+  position: absolute; inset: 0; pointer-events: none;
+  overflow: visible;
+}
+
+/* Animated packet travelling along a path */
+.wf-packet {
+  width: 8px; height: 8px; border-radius: 50%;
+  position: absolute; opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.wf-packet.green  { background: var(--green); box-shadow: 0 0 8px rgba(72,187,120,0.8); }
+.wf-packet.blue   { background: var(--blue);  box-shadow: 0 0 8px rgba(99,179,237,0.8); }
+.wf-packet.amber  { background: var(--amber); box-shadow: 0 0 8px rgba(246,173,85,0.8); }
+
+/* Step log */
+.wf-log {
+  margin-top: 1.75rem;
+  display: flex; flex-direction: column; gap: 0.4rem;
+  min-height: 5rem;
+}
+.wf-log-line {
+  font-size: 0.8125rem; color: rgba(255,255,255,0.25);
+  display: flex; align-items: center; gap: 0.625rem;
+  transition: color 0.4s ease;
+}
+.wf-log-line.active { color: rgba(255,255,255,0.7); }
+.wf-log-line.done { color: rgba(72,187,120,0.6); }
+.wf-log-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+/* Secure badge */
+.wf-secure-strip {
+  display: flex; align-items: center; justify-content: center; gap: 1.5rem;
+  margin-top: 1.5rem; padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  flex-wrap: wrap;
+}
+.wf-secure-item { font-size: 0.8rem; color: rgba(72,187,120,0.65); display: flex; align-items: center; gap: 0.375rem; }
+
+
+/* DIFFERENTIATORS GRID */
+.diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.diff-card { background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius); padding: 1.75rem; }
+.diff-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+.diff-card h3 { font-family: 'Fraunces', serif; font-size: 1.0625rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; line-height: 1.3; }
+.diff-card p { font-size: 0.9rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+
+/* WHY NOT SECTION */
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2rem; }
+.why-card {
+  background: var(--warm-white); border: 1px solid var(--sand-dark);
+  border-radius: var(--radius); padding: 1.75rem;
+}
+.why-q { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.875rem; line-height: 1.4; }
+.why-a { font-size: 0.9rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+
+/* FINE TUNING */
+.ft-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+.ft-step { text-align: center; padding: 1.5rem 1rem; }
+.ft-step-num { font-family: 'Fraunces', serif; font-size: 2rem; color: var(--sand-dark); margin-bottom: 1rem; }
+.ft-step-icon { font-size: 1.75rem; margin-bottom: 0.875rem; display: block; }
+.ft-step h3 { font-size: 0.9375rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+.ft-step p { font-size: 0.8125rem; font-weight: 300; color: var(--muted); line-height: 1.75; }
+
+/* CTA */
+.tech-cta { background: var(--cream); padding: 8rem 2rem; text-align: center; border-top: 1px solid var(--sand-dark); }
+.tech-cta h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.025em; color: var(--ink); margin-bottom: 1.25rem; }
+.tech-cta p { font-size: 1.0625rem; font-weight: 300; color: var(--muted); max-width: 40ch; margin: 0 auto 2.5rem; line-height: 1.75; }
+.cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* PAGE ANIMATIONS */
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .two-col, .two-col.flip { grid-template-columns: 1fr; gap: 2.5rem; direction: ltr; }
+  .diff-grid, .why-grid { grid-template-columns: 1fr; }
+  .ft-steps { grid-template-columns: 1fr 1fr; }
+  .wf-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) { .ft-steps { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">Smart Fellow</a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/technology.html" class="active">The technology</a></li>
+    <li><a href="/#plans">Plans</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <a href="/#contact" class="nav-cta">Meet your Fellow</a>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <ul>
+    <li><a href="/" onclick="closeMobileMenu()">Home</a></li>
+    <li><a href="/technology.html" onclick="closeMobileMenu()">The technology</a></li>
+    <li><a href="/#plans" onclick="closeMobileMenu()">Plans</a></li>
+    <li><a href="/#contact" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+  <a href="/#contact" class="nav-cta" onclick="closeMobileMenu()">Meet your Fellow</a>
+</div>
+
+<!-- HERO -->
+<section class="tech-hero">
+  <p class="tech-hero-eyebrow">Under the hood</p>
+  <h1>Meet the mind behind <em>your Fellow.</em></h1>
+  <p>When you hire a person, they bring three things: what they know how to do, the ability to remember and learn, and a consistent way of working. A Smart Fellow is built exactly the same way — deliberately, and on hardware that never leaves your office.</p>
+</section>
+
+<!-- SKILLS -->
+<div style="background:var(--cream)">
+<section class="tech-section">
+  <div class="two-col">
+    <div class="reveal">
+      <p class="section-eyebrow">Layer one</p>
+      <h2 class="section-h2">Skills — <em>what it already knows.</em></h2>
+      <p class="section-lead" style="margin-bottom:1.25rem">Every Smart Fellow arrives on day one with a library of pre-trained capabilities — things it can do immediately, without any setup from your team. Drafting emails, summarising meetings, doing research, scheduling, following up with clients.</p>
+      <p class="section-lead">Skills can be deepened or extended. When a client needs their Fellow to understand a specific domain — manufacturing specs, legal contract language, medical terminology, financial reporting — we train it directly on that material. It arrives knowing the job. It gets better at your job over time.</p>
+    </div>
+    <div class="vis-box reveal d1">
+      <div class="vis-label">Active skills — your Fellow</div>
+      <div class="skills-grid" id="skills-grid">
+        <div class="skill-chip" data-skill="0"><div class="skill-dot"></div>Document drafting</div>
+        <div class="skill-chip" data-skill="1"><div class="skill-dot"></div>Email writing</div>
+        <div class="skill-chip" data-skill="2"><div class="skill-dot"></div>Meeting summaries</div>
+        <div class="skill-chip" data-skill="3"><div class="skill-dot"></div>Client research</div>
+        <div class="skill-chip" data-skill="4"><div class="skill-dot"></div>Scheduling</div>
+        <div class="skill-chip" data-skill="5"><div class="skill-dot"></div>Data extraction</div>
+        <div class="skill-chip" data-skill="6"><div class="skill-dot"></div>Translation</div>
+        <div class="skill-chip" data-skill="7"><div class="skill-dot"></div>Report writing</div>
+      </div>
+      <p class="skills-note">Skills activate as tasks come in. New skills can be added at any time.</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- MEMORY -->
+<section class="tech-section">
+  <div class="two-col flip">
+    <div class="reveal">
+      <p class="section-eyebrow">Layer two</p>
+      <h2 class="section-h2">Memory — <em>what it learns about you.</em></h2>
+      <p class="section-lead" style="margin-bottom:1.25rem">A Smart Fellow has three kinds of memory, working together. Short-term memory is the current conversation — everything said in this session. Long-term memory is the persistent store of everything learned about your business over time: client names, preferences, tone, processes, who to CC on what.</p>
+      <p class="section-lead">Episodic memory captures specific events — "last Tuesday, Minjun asked to delay the Hanwha proposal" — and uses them to inform future decisions. All three memory stores live on the hardware in your office. They are never uploaded, never synced to a cloud, never shared. The longer your Fellow stays, the richer its understanding of your business becomes.</p>
+    </div>
+    <div class="vis-box reveal d1">
+      <div class="vis-label">Memory architecture</div>
+      <div class="memory-rings">
+        <div class="mem-ring mem-ring-3"></div>
+        <div class="mem-ring mem-ring-2"></div>
+        <div class="mem-ring mem-ring-1">🧠</div>
+      </div>
+      <div class="mem-items">
+        <div class="mem-chip"><div class="mem-chip-dot stm"></div>Right now: "Draft the Hanwha follow-up"</div>
+        <div class="mem-chip"><div class="mem-chip-dot ltm"></div>Always: CC Minjun on Hanwha proposals</div>
+        <div class="mem-chip"><div class="mem-chip-dot ltm"></div>Always: Formal tone in Korean, casual in English</div>
+        <div class="mem-chip"><div class="mem-chip-dot ep"></div>Last Tuesday: CEO asked for shorter reports</div>
+      </div>
+      <div class="mem-legend">
+        <div class="mem-legend-item"><div class="mem-legend-dot" style="background:var(--blue)"></div>Short-term</div>
+        <div class="mem-legend-item"><div class="mem-legend-dot" style="background:var(--green)"></div>Long-term</div>
+        <div class="mem-legend-item"><div class="mem-legend-dot" style="background:var(--amber)"></div>Episodic</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- SOUL -->
+<section class="tech-section">
+  <div class="two-col">
+    <div class="reveal">
+      <p class="section-eyebrow">Layer three</p>
+      <h2 class="section-h2">Character — <em>how it shows up.</em></h2>
+      <p class="section-lead" style="margin-bottom:1.25rem">The third layer is what makes your Fellow feel like a colleague rather than a search engine. We call it character — the consistent values, tone, and working style that define how your Fellow approaches every task.</p>
+      <p class="section-lead">During onboarding, we configure your Fellow's character to match your company culture. Professional and precise, or warm and conversational? Proactive or responsive? Bilingual with formal Korean defaults, or fully casual? These traits are set deliberately and remain consistent across every interaction, every day.</p>
+    </div>
+    <div class="vis-box reveal d1">
+      <div class="vis-label">Character profile — your Fellow</div>
+      <div class="soul-traits" id="soul-traits">
+        <div class="soul-trait">
+          <div class="soul-trait-label">Proactivity</div>
+          <div class="soul-trait-bar"><div class="soul-trait-fill" data-width="78"></div></div>
+          <div class="soul-trait-val">High</div>
+        </div>
+        <div class="soul-trait">
+          <div class="soul-trait-label">Formality</div>
+          <div class="soul-trait-bar"><div class="soul-trait-fill" data-width="62"></div></div>
+          <div class="soul-trait-val">Balanced</div>
+        </div>
+        <div class="soul-trait">
+          <div class="soul-trait-label">Detail level</div>
+          <div class="soul-trait-bar"><div class="soul-trait-fill" data-width="85"></div></div>
+          <div class="soul-trait-val">Thorough</div>
+        </div>
+        <div class="soul-trait">
+          <div class="soul-trait-label">Tone</div>
+          <div class="soul-trait-bar"><div class="soul-trait-fill" data-width="55"></div></div>
+          <div class="soul-trait-val">Warm</div>
+        </div>
+        <div class="soul-trait">
+          <div class="soul-trait-label">Languages</div>
+          <div class="soul-trait-bar"><div class="soul-trait-fill" data-width="100"></div></div>
+          <div class="soul-trait-val">KO + EN</div>
+        </div>
+      </div>
+      <p style="font-size:0.8rem;color:var(--muted-light);margin-top:1rem;line-height:1.6">Character is configured during onboarding and can be adjusted at any time.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- WORKFLOW ANIMATION -->
+<section class="workflow-section">
+  <div class="workflow-inner">
+    <div class="workflow-header reveal">
+      <p class="section-eyebrow-light">Transparent by design</p>
+      <h2 class="section-h2-light">Your team sees a reply in Slack. <em>Here's what happened.</em></h2>
+      <p class="section-lead-light" style="margin:0 auto;text-align:center">From your team's perspective, it's just a conversation — in the app they already use. Behind that reply, every step runs on hardware in your office. Nothing reaches the internet unless you've chosen it.</p>
+    </div>
+
+    <div class="workflow-canvas reveal" style="margin-top:3rem">
+      <div class="wf-perimeter">
+        <span class="wf-perimeter-label">Your office — secure perimeter</span>
+      </div>
+
+      <!-- INPUT -->
+      <div class="wf-input-row" id="wf-input">
+        <div class="wf-input-app">💬</div>
+        <div class="wf-input-bubble" id="wf-input-text">Waiting for a message from your team…</div>
+        <div class="wf-input-label">Incoming</div>
+      </div>
+
+      <!-- CORE NODES -->
+      <div class="wf-grid">
+        <div class="wf-node" id="wf-node-memory">
+          <span class="wf-node-icon">🧠</span>
+          <div class="wf-node-name">Memory lookup</div>
+          <div class="wf-node-desc">Retrieves context about this client, task, and history</div>
+        </div>
+        <div class="wf-node" id="wf-node-skill">
+          <span class="wf-node-icon">⚡</span>
+          <div class="wf-node-name">Skill selection</div>
+          <div class="wf-node-desc">Chooses the right capability for this request</div>
+        </div>
+        <div class="wf-node" id="wf-node-reason">
+          <span class="wf-node-icon">💡</span>
+          <div class="wf-node-name">Reasoning</div>
+          <div class="wf-node-desc">Thinks through the task using the local model</div>
+        </div>
+        <div class="wf-node" id="wf-node-tools">
+          <span class="wf-node-icon">🔗</span>
+          <div class="wf-node-name">Tool use</div>
+          <div class="wf-node-desc">Connects to CRM, calendar, Drive if needed</div>
+        </div>
+        <div class="wf-node" id="wf-node-char">
+          <span class="wf-node-icon">🎭</span>
+          <div class="wf-node-name">Character filter</div>
+          <div class="wf-node-desc">Applies your company's tone and style</div>
+        </div>
+        <div class="wf-node" id="wf-node-store">
+          <span class="wf-node-icon">💾</span>
+          <div class="wf-node-name">Memory write</div>
+          <div class="wf-node-desc">Stores what was learned from this interaction</div>
+        </div>
+      </div>
+
+      <!-- OUTPUT -->
+      <div class="wf-output-row" id="wf-output">
+        <div class="wf-output-app" style="font-size:1.1rem">💬</div>
+        <div class="wf-output-bubble" id="wf-output-text">Your Fellow's response appears here…</div>
+        <div class="wf-output-label">Response sent</div>
+      </div>
+
+      <!-- STEP LOG -->
+      <div class="wf-log" id="wf-log"></div>
+
+      <!-- SECURE STRIP -->
+      <div class="wf-secure-strip">
+        <div class="wf-secure-item">✓ No data leaves this perimeter</div>
+        <div class="wf-secure-item">✓ Local model — no cloud API required</div>
+        <div class="wf-secure-item">✓ Memory stored on-site</div>
+        <div class="wf-secure-item">✓ PIPA compliant by design</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HARDWARE -->
+<div style="background:var(--cream)">
+<section class="tech-section">
+  <div class="two-col reveal">
+    <div>
+      <p class="section-eyebrow">The hardware layer</p>
+      <h2 class="section-h2">Why a Mac Studio. <em>Why it matters.</em></h2>
+      <p class="section-lead" style="margin-bottom:1.25rem">Cloud AI services are powerful and capable — but they're built for individuals asking general questions, not for teams that need a colleague trained on their specific business. Every query travels to someone else's data centre, is processed on shared infrastructure, and returns a response with no persistent knowledge of who you are or how your business works.</p>
+      <p class="section-lead" style="margin-bottom:1.25rem">A Mac Studio runs your Fellow on dedicated hardware in your office. Apple's unified memory architecture means the model and the data it's reasoning over sit in the same memory pool — no bottleneck, faster inference, larger context window than most cloud setups at this price point.</p>
+      <p class="section-lead">The Starter tier uses a 64GB configuration, which comfortably runs a full business-grade model with room for tool connections and memory operations simultaneously. The Professional tier's 128GB allows multiple tasks in parallel and significantly faster execution on complex workflows.</p>
+    </div>
+    <div class="vis-box reveal d1" style="text-align:center">
+      <div class="vis-label">On-site vs cloud</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem">
+        <div style="background:var(--ink);border-radius:12px;padding:1.5rem 1rem;text-align:center">
+          <div style="font-size:1.75rem;margin-bottom:0.75rem">🖥️</div>
+          <div style="font-size:0.8125rem;font-weight:600;color:#fff;margin-bottom:0.5rem">Smart Fellow</div>
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);line-height:1.65">Dedicated hardware<br>Your memory, always<br>No per-query cost<br>Data never leaves</div>
+        </div>
+        <div style="background:var(--sand);border-radius:12px;padding:1.5rem 1rem;text-align:center">
+          <div style="font-size:1.75rem;margin-bottom:0.75rem">☁️</div>
+          <div style="font-size:0.8125rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem">Cloud AI</div>
+          <div style="font-size:0.75rem;color:var(--muted);line-height:1.65">Shared infrastructure<br>Resets every session<br>Cost scales with usage<br>Data leaves your building</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--muted-light);line-height:1.6">Smart Fellow can optionally connect to external AI providers for specific tasks — always at your discretion, always with data controls you set.</div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- WHAT'S DIFFERENT -->
+<section class="tech-section reveal">
+  <p class="section-eyebrow">What's genuinely different</p>
+  <h2 class="section-h2">Not a smarter chatbot. <em>A different category.</em></h2>
+  <p class="section-lead" style="margin-bottom:2.5rem">Modern AI tools are genuinely impressive at general tasks. Smart Fellow isn't built to replace them — it's built to give your specific business an AI colleague it actually owns: trained on your domain, integrated into your tools, and running privately on hardware in your office.</p>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <div class="diff-icon">🎓</div>
+      <h3>Skills built for your domain</h3>
+      <p>Your Fellow doesn't just respond to prompts — it arrives with pre-trained skills that deepen over time as we train it on your specific industry, processes, and terminology. It gets better at your job, not jobs in general.</p>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">🔒</div>
+      <h3>Data sovereignty, by default</h3>
+      <p>Every inference runs on hardware in your office. Your conversations, documents, and business knowledge never leave your building unless you explicitly choose to connect an external provider. PIPA compliant by design.</p>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">🔗</div>
+      <h3>Integrated, not bolted on</h3>
+      <p>Your Fellow lives natively in Slack, KakaoTalk, or Teams. We build the connections to your CRM, calendar, and internal tools. No new interface to learn. No context-switching. No tab to open.</p>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">💳</div>
+      <h3>One flat monthly cost</h3>
+      <p>No per-message fees. No token costs that scale with usage. One predictable monthly fee, however much your team uses it — so you're never penalised for getting value from it.</p>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- WHY NOT CHATGPT -->
+<section class="tech-section reveal">
+  <p class="section-eyebrow">The honest answer</p>
+  <h2 class="section-h2">Why not just <em>use ChatGPT?</em></h2>
+  <p class="section-lead">It's the right question. Modern AI tools are genuinely good. Here's where the difference actually lies.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-q">ChatGPT is excellent and well-priced. Why pay ₩1.5M a month?</div>
+      <div class="why-a">ChatGPT is great for general tasks and one-off questions. The difference is ownership and depth. Your Smart Fellow is specifically trained on your domain, natively integrated into the tools your team already uses, and runs entirely on hardware you control. It's not a general assistant — it's a colleague trained for your business.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-q">Can't I just use a team plan and share access?</div>
+      <div class="why-a">You can — and some teams do. But shared access to a general model still means switching to a separate interface and using a tool that isn't connected to your CRM, calendar, or internal systems. Your Fellow is already integrated, already contextual, and already working in the apps your team uses every day.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-q">What about data privacy? Is local AI actually better?</div>
+      <div class="why-a">Meaningfully so. Cloud AI services process your prompts and documents on their infrastructure. For Korean businesses, this creates compliance exposure under PIPA. Smart Fellow runs entirely on hardware in your office. Nothing leaves unless you explicitly connect an external provider and choose to send something there.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-q">Is a local model as capable as GPT-4?</div>
+      <div class="why-a">For broad general knowledge, top cloud models are hard to beat. For your specific business tasks — drafting in your tone, knowing your clients, following your processes — a model fine-tuned on your business performs better than one that knows nothing about you. And Smart Fellow can optionally connect to external models when needed, so you don't have to choose.</div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- FINE TUNING -->
+<section class="tech-section reveal">
+  <p class="section-eyebrow">Going deeper</p>
+  <h2 class="section-h2">When we fine-tune — <em>and why.</em></h2>
+  <p class="section-lead">Every Fellow learns from your team through normal use. For businesses with specialised needs, we go further — training the model directly on your domain knowledge so it arrives already expert in your field.</p>
+  <div class="ft-steps">
+    <div class="ft-step">
+      <span class="ft-step-icon">📂</span>
+      <h3>Gather</h3>
+      <p>We collect examples of your work — past emails, reports, decisions, documents — that represent how your business thinks and communicates.</p>
+    </div>
+    <div class="ft-step">
+      <span class="ft-step-icon">🧹</span>
+      <h3>Prepare</h3>
+      <p>The data is cleaned, structured, and formatted into training examples. Sensitive information is handled carefully throughout.</p>
+    </div>
+    <div class="ft-step">
+      <span class="ft-step-icon">🔥</span>
+      <h3>Train</h3>
+      <p>The base model is fine-tuned on your examples. This happens on-site or in a controlled environment — your data never touches a public training pipeline.</p>
+    </div>
+    <div class="ft-step">
+      <span class="ft-step-icon">✓</span>
+      <h3>Deploy</h3>
+      <p>The fine-tuned model is deployed to your Fellow. From day one it knows your domain, your terminology, and your standard of work.</p>
+    </div>
+  </div>
+  <p style="font-size:0.875rem;color:var(--muted);margin-top:2rem;max-width:56ch;line-height:1.75">Fine-tuning is available on Professional and Enterprise plans, and quoted based on the volume and complexity of training data. Most fine-tuning projects complete within two weeks.</p>
+</section>
+</div>
+
+<!-- CTA -->
+<section class="tech-cta">
+  <h2 class="reveal">Seen enough to<br>want a conversation?</h2>
+  <p class="reveal">Book a free 30-minute call. We'll walk through your team's specific needs and show you exactly what a Smart Fellow would look like in your workflow.</p>
+  <div class="cta-btns reveal">
+    <a href="/#contact" class="btn-dark">Book a free call →</a>
+    <a href="/" class="btn-outline">Back to main site</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Smart Fellow</div>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/technology.html">The technology</a></li>
+    <li><a href="/#plans">Plans</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Smart Fellow · Seoul, Korea</span>
+</footer>
+
+<script>
+/* ── Scroll reveal ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── Mobile nav ── */
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
+navToggle.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+function closeMobileMenu() {
+  navMobile.classList.remove('open'); navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded','false'); document.body.style.overflow = '';
+}
+
+/* ── Skills animation ── */
+const skillChips = document.querySelectorAll('.skill-chip');
+let skillActive = [];
+function pulseSkills() {
+  skillChips.forEach(c => c.classList.remove('active'));
+  const count = 2 + Math.floor(Math.random() * 3);
+  const indices = [];
+  while (indices.length < count) {
+    const i = Math.floor(Math.random() * skillChips.length);
+    if (!indices.includes(i)) indices.push(i);
+  }
+  indices.forEach(i => skillChips[i].classList.add('active'));
+}
+pulseSkills();
+setInterval(pulseSkills, 2200);
+
+/* ── Soul trait bars ── */
+const traitObserver = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    document.querySelectorAll('.soul-trait-fill').forEach(el => {
+      el.style.width = el.dataset.width + '%';
+    });
+    traitObserver.disconnect();
+  }
+}, { threshold: 0.3 });
+const soultEl = document.getElementById('soul-traits');
+if (soultEl) traitObserver.observe(soultEl);
+
+/* ── WORKFLOW ANIMATION ── */
+const SCENARIOS = [
+  {
+    input: 'Can you draft the follow-up email for the Hanwha meeting this morning?',
+    output: 'Done. Draft ready in your Slack — warm tone, references the Q2 targets you discussed. Want me to also prepare the Korean version?',
+    steps: [
+      { node: 'wf-node-memory', color: 'lit',       log: 'Retrieving Hanwha client profile and meeting history…' },
+      { node: 'wf-node-skill',  color: 'lit-blue',  log: 'Selecting: email drafting skill + client context…' },
+      { node: 'wf-node-reason', color: 'lit-amber', log: 'Reasoning through the email structure and tone…' },
+      { node: 'wf-node-char',   color: 'lit',       log: 'Applying your company tone: warm, professional, bilingual…' },
+      { node: 'wf-node-store',  color: 'lit-blue',  log: 'Storing: follow-up sent to Hanwha, Q2 targets mentioned…' },
+    ]
+  },
+  {
+    input: 'What did we agree with Samsung last Thursday? I need a summary before my 3pm call.',
+    output: 'Here\'s your summary: Samsung agreed to a pilot of 3 units by end of Q2. Key contact is Jihoon Park. Action item: send technical specs by Friday — still outstanding.',
+    steps: [
+      { node: 'wf-node-memory', color: 'lit',       log: 'Searching episodic memory for Samsung — last Thursday…' },
+      { node: 'wf-node-tools',  color: 'lit-blue',  log: 'Checking calendar and meeting notes for context…' },
+      { node: 'wf-node-skill',  color: 'lit-amber', log: 'Selecting: meeting summarisation + action item extraction…' },
+      { node: 'wf-node-reason', color: 'lit',       log: 'Compiling summary with open action items…' },
+      { node: 'wf-node-char',   color: 'lit-blue',  log: 'Formatting for pre-call briefing — concise, structured…' },
+    ]
+  },
+  {
+    input: 'Please book a 30-minute intro call with Sojung from LG for next week.',
+    output: 'Done. Scheduled for Tuesday 10am — calendar invite sent to Sojung and added to your calendar. Brief agenda attached based on your LG notes.',
+    steps: [
+      { node: 'wf-node-memory', color: 'lit',       log: 'Retrieving Sojung\'s contact details and LG context…' },
+      { node: 'wf-node-tools',  color: 'lit-blue',  log: 'Checking your calendar for availability next week…' },
+      { node: 'wf-node-skill',  color: 'lit-amber', log: 'Selecting: scheduling skill + calendar write access…' },
+      { node: 'wf-node-reason', color: 'lit',       log: 'Selecting optimal slot, drafting invite and agenda…' },
+      { node: 'wf-node-store',  color: 'lit-blue',  log: 'Storing: LG intro call booked, Sojung confirmed…' },
+    ]
+  }
+];
+
+let scenarioIdx = 0;
+let wfRunning = false;
+
+const wfInputText  = document.getElementById('wf-input-text');
+const wfOutputText = document.getElementById('wf-output-text');
+const wfOutput     = document.getElementById('wf-output');
+const wfLog        = document.getElementById('wf-log');
+
+function clearNodes() {
+  document.querySelectorAll('.wf-node').forEach(n => n.className = 'wf-node');
+}
+function lightNode(id, cls) {
+  const el = document.getElementById(id);
+  if (el) el.className = 'wf-node ' + cls;
+}
+function addLog(text, state) {
+  const line = document.createElement('div');
+  line.className = 'wf-log-line ' + (state || '');
+  line.innerHTML = '<div class="wf-log-dot"></div>' + text;
+  wfLog.appendChild(line);
+  if (wfLog.children.length > 5) wfLog.removeChild(wfLog.firstChild);
+  setTimeout(() => line.classList.add('active'), 30);
+}
+
+function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function runScenario() {
+  if (wfRunning) return;
+  wfRunning = true;
+
+  const s = SCENARIOS[scenarioIdx % SCENARIOS.length];
+  scenarioIdx++;
+
+  wfLog.innerHTML = '';
+  clearNodes();
+  wfOutput.classList.remove('visible');
+  wfOutputText.classList.remove('active');
+  wfOutputText.textContent = 'Preparing response…';
+
+  /* Show input */
+  wfInputText.classList.add('active');
+  wfInputText.textContent = s.input;
+  await delay(800);
+
+  /* Run steps */
+  for (const step of s.steps) {
+    lightNode(step.node, step.color);
+    addLog(step.log, 'active');
+    await delay(1100);
+    /* Mark previous log lines as done */
+    const lines = wfLog.querySelectorAll('.wf-log-line.active');
+    lines.forEach(l => { l.classList.remove('active'); l.classList.add('done'); });
+  }
+
+  await delay(600);
+  clearNodes();
+
+  /* Show output */
+  wfOutput.classList.add('visible');
+  wfOutputText.textContent = s.output;
+  wfOutputText.classList.add('active');
+  addLog('Response delivered to Slack.', 'done');
+
+  await delay(5000);
+
+  /* Reset */
+  wfInputText.classList.remove('active');
+  wfInputText.textContent = 'Waiting for a message from your team…';
+  wfOutput.classList.remove('visible');
+  wfOutputText.classList.remove('active');
+  wfLog.innerHTML = '';
+
+  await delay(1500);
+  wfRunning = false;
+  runScenario();
+}
+
+/* Start workflow when in view */
+const wfCanvas = document.querySelector('.workflow-canvas');
+const wfObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) { wfObs.disconnect(); setTimeout(runScenario, 800); }
+}, { threshold: 0.3 });
+if (wfCanvas) wfObs.observe(wfCanvas);
+</script>
+</body>
+</html>

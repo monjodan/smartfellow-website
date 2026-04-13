@@ -19,60 +19,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --cream: #f7f4ee; --warm-white: #ffffff; --sand: #edeae3;
-  --sand-dark: #d8d4cb; --ink: #1c2b38; --ink-light: #2d4055;
-  --muted: #7a8899; --muted-light: #a8b4be;
-  --accent: #c4673a;
-  --radius: 16px; --radius-lg: 24px;
-}
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background: var(--cream); color: var(--ink);
-  overflow-x: hidden; -webkit-font-smoothing: antialiased;
-}
-
-/* ── NAV ── */
+/* ── NAV scroll-hide behaviour (home page only) ── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1.25rem 3rem;
-  background: rgba(247,244,238,0.94);
-  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(28,43,56,0.08);
   transform: translateY(-100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 nav.nav-visible { transform: translateY(0); }
-.nav-logo { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 500; color: var(--ink); }
-.nav-links { display: flex; gap: 2.5rem; list-style: none; }
-.nav-links a { font-size: 0.875rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--ink); }
-.nav-cta {
-  font-size: 0.875rem; font-weight: 600; color: #fff;
-  background: var(--accent); padding: 0.6rem 1.5rem;
-  border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.2s;
-}
-.nav-cta:hover { opacity: 0.82; transform: scale(1.02); }
-.nav-hamburger {
-  display: none; flex-direction: column; justify-content: center; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 0.5rem; z-index: 101;
-}
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform 0.25s ease, opacity 0.25s ease; }
-.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-.nav-mobile {
-  display: none; position: fixed; inset: 0; z-index: 99;
-  background: var(--cream); flex-direction: column;
-  align-items: center; justify-content: center; gap: 2.5rem;
-}
-.nav-mobile.open { display: flex; }
-.nav-mobile ul { list-style: none; display: flex; flex-direction: column; align-items: center; gap: 2rem; }
-.nav-mobile ul a { font-family: 'Fraunces', serif; font-size: 1.75rem; color: var(--ink); text-decoration: none; }
 
 /* ── HERO ── */
 .hero {
@@ -108,12 +62,6 @@ nav.nav-visible { transform: translateY(0); }
   display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;
   opacity: 0; animation: fadeUp 0.7s ease forwards 0.5s;
 }
-.btn-dark {
-  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 600; color: #fff;
-  background: var(--accent); padding: 0.9rem 2.25rem;
-  border-radius: 100px; text-decoration: none; transition: opacity 0.2s, transform 0.2s;
-}
-.btn-dark:hover { opacity: 0.82; transform: scale(1.02); }
 .btn-text {
   font-size: 1rem; font-weight: 400; color: var(--muted); text-decoration: none;
   display: flex; align-items: center; gap: 0.35rem; transition: color 0.2s;
@@ -186,7 +134,6 @@ nav.nav-visible { transform: translateY(0); }
 
 /* ── STORIES ── */
 .story-wrap { background: var(--cream); }
-.rule { height: 1px; background: var(--sand-dark); max-width: 1080px; margin: 0 auto; }
 .story {
   max-width: 1080px; margin: 0 auto; padding: 9rem 2rem;
   display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
@@ -334,31 +281,15 @@ nav.nav-visible { transform: translateY(0); }
 .cta-calendly-btn:hover { opacity: 0.88; transform: scale(1.02); }
 .cta-note { margin-top: 1.25rem; font-size: 0.8125rem; color: rgba(255,255,255,0.22); }
 
-/* ── FOOTER ── */
-footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; background: #0d1a24; border-top: 1px solid rgba(255,255,255,0.06); }
-.footer-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; color: rgba(255,255,255,0.4); }
-.footer-links { display: flex; gap: 2rem; list-style: none; }
-.footer-links a { font-size: 0.8125rem; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: rgba(255,255,255,0.55); }
-.footer-copy { font-size: 0.8125rem; color: rgba(255,255,255,0.18); }
-
-/* ── ANIMATIONS ── */
-@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+/* ── PAGE-SPECIFIC ANIMATIONS ── */
 @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
 @keyframes tdot { 0%,60%,100% { transform:translateY(0); opacity:0.4; } 30% { transform:translateY(-4px); opacity:1; } }
 @keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
 @keyframes spin { to { transform:rotate(360deg); } }
 @keyframes numBump { 0%,100% { transform:scale(1); } 50% { transform:scale(1.3); } }
 
-.reveal { opacity:0; transform:translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
-.reveal.visible { opacity:1; transform:translateY(0); }
-.d1 { transition-delay:0.1s; } .d2 { transition-delay:0.2s; } .d3 { transition-delay:0.3s; }
-
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  nav { padding: 1rem 1.5rem; }
-  .nav-links, .nav-cta { display: none; }
-  .nav-hamburger { display: flex; }
   .hero { padding: 8rem 2rem 5rem; }
   .fel-net { display: none; }
   .fel-info { display: none; }
@@ -372,7 +303,6 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
   .story, .story.flip { grid-template-columns:1fr; gap:2.5rem; direction:ltr; padding:5rem 1.5rem; }
   .plans-grid, .plans-extras { grid-template-columns:1fr; max-width:420px; }
   .steps { grid-template-columns:1fr 1fr; }
-  footer { flex-direction:column; gap:1.25rem; text-align:center; }
 }
 @media (max-width: 540px) { .steps { grid-template-columns:1fr; } }
 </style>
@@ -384,6 +314,7 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
   <div class="nav-logo">Smart Fellow</div>
   <ul class="nav-links">
     <li><a href="#how">How it works</a></li>
+    <li><a href="/technology.html">The technology</a></li>
     <li><a href="#plans">Plans</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -396,6 +327,7 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
 <div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Navigation">
   <ul>
     <li><a href="#how" onclick="closeMobileMenu()">How it works</a></li>
+    <li><a href="/technology.html" onclick="closeMobileMenu()">The technology</a></li>
     <li><a href="#plans" onclick="closeMobileMenu()">Plans</a></li>
     <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
   </ul>
@@ -735,6 +667,7 @@ footer { padding: 2.5rem 3rem; display: flex; align-items: center; justify-conte
   <div class="footer-logo">Smart Fellow</div>
   <ul class="footer-links">
     <li><a href="#how">How it works</a></li>
+    <li><a href="/technology.html">The technology</a></li>
     <li><a href="#plans">Plans</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
