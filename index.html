@@ -237,6 +237,7 @@
 .plans-extra-card h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 0.75rem; }
 .plans-extra-card p { font-size: 0.875rem; font-weight: 300; color: var(--muted); line-height: 1.8; margin-bottom: 0.75rem; }
 .plans-extra-card p:last-child { margin-bottom: 0; }
+.plans-tech-link { text-align: center; margin-top: 2rem; }
 
 /* ── HOW ── */
 .how-section { padding: 9rem 2rem; max-width: 1000px; margin: 0 auto; }
@@ -304,27 +305,27 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Smart Fellow</div>
+  <a href="/" class="nav-logo">Smart Fellow</a>
   <ul class="nav-links">
-    <li><a href="#how">How it works</a></li>
+    <li><a href="/#how">How it works</a></li>
     <li><a href="/technology.html">The technology</a></li>
-    <li><a href="#plans">Plans</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="/#plans">Plans</a></li>
+    <li><a href="/#contact">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta">Meet your Fellow</a>
-  <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+  <a href="/#contact" class="nav-cta">Meet your Fellow</a>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<div class="nav-mobile" id="nav-mobile" role="dialog" aria-label="Navigation">
+<div class="nav-mobile" id="nav-mobile">
   <ul>
-    <li><a href="#how" onclick="closeMobileMenu()">How it works</a></li>
+    <li><a href="/#how" onclick="closeMobileMenu()">How it works</a></li>
     <li><a href="/technology.html" onclick="closeMobileMenu()">The technology</a></li>
-    <li><a href="#plans" onclick="closeMobileMenu()">Plans</a></li>
-    <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+    <li><a href="/#plans" onclick="closeMobileMenu()">Plans</a></li>
+    <li><a href="/#contact" onclick="closeMobileMenu()">Contact</a></li>
   </ul>
-  <a href="#contact" class="nav-cta" onclick="closeMobileMenu()">Meet your Fellow</a>
+  <a href="/#contact" class="nav-cta" onclick="closeMobileMenu()">Meet your Fellow</a>
 </div>
 
 <!-- HERO -->
@@ -607,6 +608,9 @@
       <p>Every Fellow ships with pre-trained skills out of the box. Need something specific to your industry, ERP, or internal process? We build it.</p>
       <p>Custom development is quoted based on scope. Most integrations are live within a week. Talk to us, no obligation.</p>
     </div>
+  </div>
+  <div class="plans-tech-link reveal">
+    <a href="/technology.html" class="btn-outline">Learn more about the technology →</a>
   </div>
 </section>
 
