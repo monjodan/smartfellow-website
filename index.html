@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Fellow — Your New AI Team Member</title>
+<title data-i18n="page.title">Smart Fellow — Your New AI Team Member</title>
 <meta name="description" content="Smart Fellow is a new team member that lives in your office, learns your business, and works inside the tools your team already uses: Slack, Telegram, KakaoTalk. Hardware included.">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
@@ -120,7 +120,7 @@
 }
 .dark-band h2 em {
   font-style: italic;
-  color: #d9a088; /* light terracotta (accent family) if color-mix unsupported */
+  color: #d9a088;
   color: color-mix(in srgb, var(--accent) 78%, #fff 22%);
 }
 .dark-band p { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.45); max-width: 44ch; margin: 0 auto; line-height: 1.8; }
@@ -307,12 +307,15 @@
 <nav>
   <a href="/" class="nav-logo">Smart Fellow</a>
   <ul class="nav-links">
-    <li><a href="/#how">How it works</a></li>
-    <li><a href="/technology.html">The technology</a></li>
-    <li><a href="/#plans">Plans</a></li>
-    <li><a href="/#contact">Contact</a></li>
+    <li><a href="/#how" data-i18n="nav.how">How it works</a></li>
+    <li><a href="/technology.html" data-i18n="nav.technology">The technology</a></li>
+    <li><a href="/#plans" data-i18n="nav.plans">Plans</a></li>
+    <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
-  <a href="/#contact" class="nav-cta">Meet your Fellow</a>
+  <div class="nav-right">
+    <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">한국어</button>
+    <a href="/#contact" class="nav-cta" data-i18n="nav.cta">Meet your Fellow</a>
+  </div>
   <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -320,12 +323,13 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
-    <li><a href="/#how" onclick="closeMobileMenu()">How it works</a></li>
-    <li><a href="/technology.html" onclick="closeMobileMenu()">The technology</a></li>
-    <li><a href="/#plans" onclick="closeMobileMenu()">Plans</a></li>
-    <li><a href="/#contact" onclick="closeMobileMenu()">Contact</a></li>
+    <li><a href="/#how" onclick="closeMobileMenu()" data-i18n="nav.how">How it works</a></li>
+    <li><a href="/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">The technology</a></li>
+    <li><a href="/#plans" onclick="closeMobileMenu()" data-i18n="nav.plans">Plans</a></li>
+    <li><a href="/#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">Contact</a></li>
   </ul>
-  <a href="/#contact" class="nav-cta" onclick="closeMobileMenu()">Meet your Fellow</a>
+  <a href="/#contact" class="nav-cta" onclick="closeMobileMenu()" data-i18n="nav.cta">Meet your Fellow</a>
+  <button id="lang-toggle-mobile" class="lang-toggle-mobile">한국어</button>
 </div>
 
 <!-- HERO -->
@@ -333,31 +337,31 @@
   <svg class="fel-net" id="fel-net" aria-hidden="true"></svg>
 
   <div class="fel-bubbles" aria-hidden="true">
-    <div class="fel-bubble b1"><div class="fel-av">🔍</div><div class="fel-info"><div class="fel-role">Research Analyst</div><div class="fel-status"><div class="fel-dot"></div>Active</div></div></div>
-    <div class="fel-bubble b2"><div class="fel-av">📅</div><div class="fel-info"><div class="fel-role">Meeting Coordinator</div><div class="fel-status"><div class="fel-dot"></div>Active</div></div></div>
-    <div class="fel-bubble b3"><div class="fel-av">🤝</div><div class="fel-info"><div class="fel-role">Client Relations</div><div class="fel-status"><div class="fel-dot"></div>Active</div></div></div>
-    <div class="fel-bubble b4"><div class="fel-av">🗂️</div><div class="fel-info"><div class="fel-role">Operations Assistant</div><div class="fel-status"><div class="fel-dot"></div>Active</div></div></div>
-    <div class="fel-bubble b5"><div class="fel-av">📝</div><div class="fel-info"><div class="fel-role">Document Specialist</div><div class="fel-status"><div class="fel-dot"></div>Active</div></div></div>
-    <div class="fel-bubble b6"><div class="fel-av">📊</div><div class="fel-info"><div class="fel-role">Market Researcher</div><div class="fel-status"><div class="fel-dot"></div>Active</div></div></div>
+    <div class="fel-bubble b1"><div class="fel-av">🔍</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b1.role">Research Analyst</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b2"><div class="fel-av">📅</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b2.role">Meeting Coordinator</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b3"><div class="fel-av">🤝</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b3.role">Client Relations</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b4"><div class="fel-av">🗂️</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b4.role">Operations Assistant</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b5"><div class="fel-av">📝</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b5.role">Document Specialist</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b6"><div class="fel-av">📊</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b6.role">Market Researcher</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
   </div>
 
   <div class="hero-center">
-    <div class="hero-badge"><div class="badge-dot"></div>Now available across Korea</div>
-    <h1>Hire an AI team member. <em>Not software.</em></h1>
-    <p class="hero-sub">A Smart Fellow joins your team like any new hire. They arrive already skilled, never need briefing twice, and work inside the apps your team already uses. They get sharper the longer they stay.</p>
+    <div class="hero-badge"><div class="badge-dot"></div><span data-i18n="hero.badge">Now available across Korea</span></div>
+    <h1 data-i18n-html="hero.h1">Hire an AI team member. <em>Not software.</em></h1>
+    <p class="hero-sub" data-i18n="hero.sub">A Smart Fellow joins your team like any new hire. They arrive already skilled, never need briefing twice, and work inside the apps your team already uses. They get sharper the longer they stay.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-dark">Meet your Fellow →</a>
-      <a href="#how" class="btn-text">How it works</a>
+      <a href="#contact" class="btn-dark" data-i18n="hero.cta">Meet your Fellow →</a>
+      <a href="#how" class="btn-text" data-i18n="hero.how">How it works</a>
     </div>
-    <p class="hero-note">No technical knowledge needed. No IT department required. We handle everything.</p>
+    <p class="hero-note" data-i18n="hero.note">No technical knowledge needed. No IT department required. We handle everything.</p>
   </div>
 </section>
 
 <!-- DARK STATEMENT -->
 <section class="dark-band">
-  <p class="eyebrow">The idea is simple</p>
-  <h2>Think of it as hiring someone. <em>Not buying software.</em></h2>
-  <p>You onboard a new colleague. They learn your business, your processes, your way of doing things, and they keep getting better. Unlike software, they don't sit in a dashboard waiting to be configured. They work, just like anyone else on your team.</p>
+  <p class="eyebrow" data-i18n="dark.eyebrow">The idea is simple</p>
+  <h2 data-i18n-html="dark.h2">Think of it as hiring someone. <em>Not buying software.</em></h2>
+  <p data-i18n="dark.p">You onboard a new colleague. They learn your business, your processes, your way of doing things, and they keep getting better. Unlike software, they don't sit in a dashboard waiting to be configured. They work, just like anyone else on your team.</p>
 </section>
 
 <!-- STORIES -->
@@ -366,10 +370,10 @@
 <div class="rule"></div>
 <section class="story">
   <div class="reveal">
-    <p class="story-eyebrow">Works where you work</p>
-    <h2>No new app to learn. <em>It comes to you.</em></h2>
-    <p>Your Smart Fellow joins the conversations your team is already having in Slack, Telegram, KakaoTalk, or email. You message it the same way you would message any colleague.</p>
-    <p>No dashboards. No logins to manage. No training sessions for your staff. It's simply there, ready to help.</p>
+    <p class="story-eyebrow" data-i18n="s1.eyebrow">Works where you work</p>
+    <h2 data-i18n-html="s1.h2">No new app to learn. <em>It comes to you.</em></h2>
+    <p data-i18n="s1.p1">Your Smart Fellow joins the conversations your team is already having in Slack, Telegram, KakaoTalk, or email. You message it the same way you would message any colleague.</p>
+    <p data-i18n="s1.p2">No dashboards. No logins to manage. No training sessions for your staff. It's simply there, ready to help.</p>
   </div>
   <div class="story-vis reveal d1">
     <div class="chat" id="animated-chat" style="min-height:220px"></div>
@@ -379,43 +383,43 @@
 <div class="rule"></div>
 <section class="story flip">
   <div class="reveal">
-    <p class="story-eyebrow">Gets better every week</p>
-    <h2>It learns your business. <em>Every single day.</em></h2>
-    <p>Each conversation makes your Smart Fellow more useful. It remembers your clients' names, your team's preferences, your way of working. It learns what good work looks like in your company.</p>
-    <p>After a few weeks, it starts anticipating what you need before you ask. Just like a great employee would.</p>
+    <p class="story-eyebrow" data-i18n="s2.eyebrow">Gets better every week</p>
+    <h2 data-i18n-html="s2.h2">It learns your business. <em>Every single day.</em></h2>
+    <p data-i18n="s2.p1">Each conversation makes your Smart Fellow more useful. It remembers your clients' names, your team's preferences, your way of working. It learns what good work looks like in your company.</p>
+    <p data-i18n="s2.p2">After a few weeks, it starts anticipating what you need before you ask. Just like a great employee would.</p>
   </div>
   <div class="story-vis reveal d1">
-    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1rem">What your Fellow has learned</div>
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1rem" data-i18n="mem.label">What your Fellow has learned</div>
     <div class="mem-list">
       <div class="mem-item">
         <div class="mem-icon">🏢</div>
         <div>
-          <div class="mem-text"><strong>Key client:</strong> Hanwha Systems. Always CC Minjun on proposals.</div>
-          <div class="mem-time">Learned 3 weeks ago</div>
+          <div class="mem-text" data-i18n-html="mem.1.text"><strong>Key client:</strong> Hanwha Systems. Always CC Minjun on proposals.</div>
+          <div class="mem-time" data-i18n="mem.1.time">Learned 3 weeks ago</div>
         </div>
       </div>
       <div class="mem-item">
         <div class="mem-icon">✍️</div>
         <div>
-          <div class="mem-text"><strong>Tone:</strong> Formal in Korean, relaxed in English</div>
-          <div class="mem-time">Learned 2 weeks ago</div>
+          <div class="mem-text" data-i18n-html="mem.2.text"><strong>Tone:</strong> Formal in Korean, relaxed in English</div>
+          <div class="mem-time" data-i18n="mem.2.time">Learned 2 weeks ago</div>
         </div>
       </div>
       <div class="mem-item">
         <div class="mem-icon">📋</div>
         <div>
-          <div class="mem-text"><strong>Meeting notes:</strong> Always include action items with owners</div>
-          <div class="mem-time">Learned last week</div>
+          <div class="mem-text" data-i18n-html="mem.3.text"><strong>Meeting notes:</strong> Always include action items with owners</div>
+          <div class="mem-time" data-i18n="mem.3.time">Learned last week</div>
         </div>
-        <div class="mem-new">New</div>
+        <div class="mem-new" data-i18n="mem.new">New</div>
       </div>
       <div class="mem-item">
         <div class="mem-icon">📊</div>
         <div>
-          <div class="mem-text"><strong>Reports:</strong> CEO prefers bullet points, max one page</div>
-          <div class="mem-time">Learned this week</div>
+          <div class="mem-text" data-i18n-html="mem.4.text"><strong>Reports:</strong> CEO prefers bullet points, max one page</div>
+          <div class="mem-time" data-i18n="mem.4.time">Learned this week</div>
         </div>
-        <div class="mem-new">New</div>
+        <div class="mem-new" data-i18n="mem.new">New</div>
       </div>
     </div>
   </div>
@@ -424,13 +428,13 @@
 <div class="rule"></div>
 <section class="story">
   <div class="reveal">
-    <p class="story-eyebrow">AI sovereignty, by default</p>
-    <h2>Everything runs <em>inside your office.</em></h2>
-    <p>Your Smart Fellow runs on hardware we install on-site. By default, all intelligence stays in your building. Your conversations, documents, and business knowledge never touch an external server.</p>
-    <p>Want to optionally connect to a specific AI provider like Claude, GPT, or Naver HyperCLOVA? We add it with one toggle. You decide what is on and what isn't, at any time. Your data, your rules.</p>
+    <p class="story-eyebrow" data-i18n="s3.eyebrow">AI sovereignty, by default</p>
+    <h2 data-i18n-html="s3.h2">Everything runs <em>inside your office.</em></h2>
+    <p data-i18n="s3.p1">Your Smart Fellow runs on hardware we install on-site. By default, all intelligence stays in your building. Your conversations, documents, and business knowledge never touch an external server.</p>
+    <p data-i18n="s3.p2">Want to optionally connect to a specific AI provider like Claude, GPT, or Naver HyperCLOVA? We add it with one toggle. You decide what is on and what isn't, at any time. Your data, your rules.</p>
   </div>
   <div class="story-vis reveal d1" style="text-align:center;padding:2rem">
-    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1rem">Where your data lives</div>
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1rem" data-i18n="s3.vis.label">Where your data lives</div>
     <div class="sov-scene">
       <div class="sov-ring"></div>
       <div class="sov-center">🏢</div>
@@ -438,12 +442,12 @@
       <div class="sov-arm a2"><div class="sov-node n-b"></div></div>
       <div class="sov-arm a3"><div class="sov-node n-a"></div></div>
     </div>
-    <div style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.4rem">Your office</div>
-    <div style="font-size:0.85rem;color:var(--muted);max-width:28ch;margin:0 auto 1.5rem;line-height:1.65">Local by default. Connect to external AI providers at any time. Your call.</div>
+    <div style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.4rem" data-i18n="s3.vis.title">Your office</div>
+    <div style="font-size:0.85rem;color:var(--muted);max-width:28ch;margin:0 auto 1.5rem;line-height:1.65" data-i18n="s3.vis.sub">Local by default. Connect to external AI providers at any time. Your call.</div>
     <div style="border-top:1px solid var(--sand);padding-top:1.25rem;font-size:0.8rem;color:var(--muted-light);display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap">
-      <span>✓ PIPA compliant</span>
-      <span>✓ Korean data law</span>
-      <span>✓ You control the APIs</span>
+      <span data-i18n="s3.vis.pipa">✓ PIPA compliant</span>
+      <span data-i18n="s3.vis.law">✓ Korean data law</span>
+      <span data-i18n="s3.vis.api">✓ You control the APIs</span>
     </div>
   </div>
 </section>
@@ -451,32 +455,32 @@
 <div class="rule"></div>
 <section class="story flip">
   <div class="reveal">
-    <p class="story-eyebrow">Connects to your systems</p>
-    <h2>Ask it anything. <em>It looks it up.</em></h2>
-    <p>When you're ready, your Smart Fellow can be connected directly to the tools your business runs on: your CRM, inventory system, internal database, Google Drive, calendar.</p>
-    <p>You ask a question. It finds the answer. No copy-pasting. No switching tabs. Just work, done. We build all the connections. Your team doesn't touch a thing.</p>
+    <p class="story-eyebrow" data-i18n="s4.eyebrow">Connects to your systems</p>
+    <h2 data-i18n-html="s4.h2">Ask it anything. <em>It looks it up.</em></h2>
+    <p data-i18n="s4.p1">When you're ready, your Smart Fellow can be connected directly to the tools your business runs on: your CRM, inventory system, internal database, Google Drive, calendar.</p>
+    <p data-i18n="s4.p2">You ask a question. It finds the answer. No copy-pasting. No switching tabs. Just work, done. We build all the connections. Your team doesn't touch a thing.</p>
   </div>
   <div class="story-vis reveal d1">
-    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1.25rem">Connected to</div>
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1.25rem" data-i18n="s4.vis.label">Connected to</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem">
       <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
         <div style="font-size:1.25rem">📊</div>
-        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)">Your CRM</div><div style="font-size:0.7rem;color:var(--muted)">Reads and updates</div></div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)" data-i18n="s4.crm.name">Your CRM</div><div style="font-size:0.7rem;color:var(--muted)" data-i18n="s4.crm.desc">Reads and updates</div></div>
       </div>
       <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
         <div style="font-size:1.25rem">📁</div>
-        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)">Google Drive</div><div style="font-size:0.7rem;color:var(--muted)">Reads and writes</div></div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)" data-i18n="s4.drive.name">Google Drive</div><div style="font-size:0.7rem;color:var(--muted)" data-i18n="s4.drive.desc">Reads and writes</div></div>
       </div>
       <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
         <div style="font-size:1.25rem">📅</div>
-        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)">Calendar</div><div style="font-size:0.7rem;color:var(--muted)">Schedules and books</div></div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)" data-i18n="s4.cal.name">Calendar</div><div style="font-size:0.7rem;color:var(--muted)" data-i18n="s4.cal.desc">Schedules and books</div></div>
       </div>
       <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
         <div style="font-size:1.25rem">🏭</div>
-        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)">Your internal tools</div><div style="font-size:0.7rem;color:var(--muted)">Custom connection</div></div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)" data-i18n="s4.internal.name">Your internal tools</div><div style="font-size:0.7rem;color:var(--muted)" data-i18n="s4.internal.desc">Custom connection</div></div>
       </div>
     </div>
-    <div style="font-size:0.8rem;color:var(--muted);text-align:center;line-height:1.6">All integrations are built and maintained by Smart Fellow. Zero technical work for you.</div>
+    <div style="font-size:0.8rem;color:var(--muted);text-align:center;line-height:1.6" data-i18n="s4.vis.note">All integrations are built and maintained by Smart Fellow. Zero technical work for you.</div>
   </div>
 </section>
 
@@ -485,192 +489,193 @@
 <!-- PLANS -->
 <section class="plans-section" id="plans">
   <div class="plans-head reveal">
-    <h2>Choose your Fellow</h2>
-    <p>Every Smart Fellow arrives on day one with pre-trained skills, long-term memory, and the ability to learn from your team. What changes across tiers is seniority: how much they can handle and how deep they go.</p>
+    <h2 data-i18n="plans.h2">Choose your Fellow</h2>
+    <p data-i18n="plans.sub">Every Smart Fellow arrives on day one with pre-trained skills, long-term memory, and the ability to learn from your team. What changes across tiers is seniority: how much they can handle and how deep they go.</p>
   </div>
   <div class="plans-grid">
  
     <div class="plan-card reveal">
-      <div class="plan-tier">Starter</div>
-      <div class="plan-role">The Capable Assistant</div>
-      <div class="plan-price"><span class="plan-num">₩1.5M</span><span class="plan-unit">/month</span></div>
-      <div class="plan-hw">Mac Studio 64GB · No setup fee · No IT required</div>
+      <div class="plan-tier" data-i18n="plan.starter.tier">Starter</div>
+      <div class="plan-role" data-i18n="plan.starter.role">The Capable Assistant</div>
+      <div class="plan-price"><span class="plan-num">₩1.5M</span><span class="plan-unit" data-i18n="plan.starter.unit">/month</span></div>
+      <div class="plan-hw" data-i18n="plan.starter.hw">Mac Studio 64GB · No setup fee · No IT required</div>
       <div class="plan-rule"></div>
-      <div class="plan-section-label">Works in</div>
+      <div class="plan-section-label" data-i18n="plan.label.works">Works in</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Slack, Telegram, KakaoTalk, Teams, Email</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.channels">Slack, Telegram, KakaoTalk, Teams, Email</span></li>
       </ul>
-      <div class="plan-section-label">What it does</div>
+      <div class="plan-section-label" data-i18n="plan.label.does">What it does</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Drafts documents, emails, and summaries</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Reads and writes Excel, Word, and PowerPoint files</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Browses the web to research and summarise</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Remembers your clients, preferences, and tone</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Runs locally — your data never leaves</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Optional external AI (Claude, GPT, Naver)</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f1">Drafts documents, emails, and summaries</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f2">Reads and writes Excel, Word, and PowerPoint files</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f3">Browses the web to research and summarise</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f4">Remembers your clients, preferences, and tone</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f5">Runs locally — your data never leaves</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f6">Optional external AI (Claude, GPT, Naver)</span></li>
       </ul>
-      <div class="plan-section-label">Proactive tasks</div>
+      <div class="plan-section-label" data-i18n="plan.label.proactive">Proactive tasks</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><div>2 automated daily tasks<span class="plan-eg">e.g. morning briefing, daily report</span></div></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><div><span data-i18n="plan.starter.proactive">2 automated daily tasks</span><span class="plan-eg" data-i18n="plan.starter.proactive.eg">e.g. morning briefing, daily report</span></div></li>
       </ul>
-      <div class="plan-section-label">Tool connections</div>
+      <div class="plan-section-label" data-i18n="plan.label.tools">Tool connections</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Google Drive, Calendar, Gmail</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Notion, Slack, basic webhook support</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.tools1">Google Drive, Calendar, Gmail</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.tools2">Notion, Slack, basic webhook support</span></li>
       </ul>
-      <div class="plan-section-label">Support</div>
+      <div class="plan-section-label" data-i18n="plan.label.support">Support</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Monthly check-in and tuning session</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.support">Monthly check-in and tuning session</span></li>
       </ul>
-      <a href="#contact" class="plan-cta-btn outline">Get started</a>
+      <a href="#contact" class="plan-cta-btn outline" data-i18n="plan.starter.cta">Get started</a>
     </div>
  
     <div class="plan-card featured reveal d1">
-      <div class="feat-badge">Most popular</div>
-      <div class="plan-tier">Professional</div>
-      <div class="plan-role">The Senior Specialist</div>
-      <div class="plan-price"><span class="plan-num">₩3M</span><span class="plan-unit">/month</span></div>
-      <div class="plan-hw">Mac Studio 128GB · Faster execution · More at once</div>
+      <div class="feat-badge" data-i18n="plan.pro.badge">Most popular</div>
+      <div class="plan-tier" data-i18n="plan.pro.tier">Professional</div>
+      <div class="plan-role" data-i18n="plan.pro.role">The Senior Specialist</div>
+      <div class="plan-price"><span class="plan-num">₩3M</span><span class="plan-unit" data-i18n="plan.pro.unit">/month</span></div>
+      <div class="plan-hw" data-i18n="plan.pro.hw">Mac Studio 128GB · Faster execution · More at once</div>
       <div class="plan-rule"></div>
-      <div class="plan-section-label">Works in</div>
+      <div class="plan-section-label" data-i18n="plan.label.works">Works in</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Everything in Starter</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.works">Everything in Starter</span></li>
       </ul>
-      <div class="plan-section-label">What it does</div>
+      <div class="plan-section-label" data-i18n="plan.label.does">What it does</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Everything in Starter, faster and in parallel</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Handles complex, multi-step workflows</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Summarises meetings and drives follow-ups</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.f1">Everything in Starter, faster and in parallel</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.f2">Handles complex, multi-step workflows</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.f3">Summarises meetings and drives follow-ups</span></li>
       </ul>
-      <div class="plan-section-label">Proactive tasks</div>
+      <div class="plan-section-label" data-i18n="plan.label.proactive">Proactive tasks</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><div>4 automated daily tasks<span class="plan-eg">e.g. pipeline update, client digest, weekly report, meeting prep</span></div></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><div><span data-i18n="plan.pro.proactive">4 automated daily tasks</span><span class="plan-eg" data-i18n="plan.pro.proactive.eg">e.g. pipeline update, client digest, weekly report, meeting prep</span></div></li>
       </ul>
-      <div class="plan-section-label">Tool connections</div>
+      <div class="plan-section-label" data-i18n="plan.label.tools">Tool connections</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Everything in Starter</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Salesforce, HubSpot, Pipedrive</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Jira, Linear, Asana</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Custom database read access</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.tools1">Everything in Starter</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.tools2">Salesforce, HubSpot, Pipedrive</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.tools3">Jira, Linear, Asana</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.tools4">Custom database read access</span></li>
       </ul>
-      <div class="plan-section-label">Support</div>
+      <div class="plan-section-label" data-i18n="plan.label.support">Support</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Bi-weekly performance review</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Priority support</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.support1">Bi-weekly performance review</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.support2">Priority support</span></li>
       </ul>
-      <a href="#contact" class="plan-cta-btn solid">Get started</a>
+      <a href="#contact" class="plan-cta-btn solid" data-i18n="plan.pro.cta">Get started</a>
     </div>
  
     <div class="plan-card reveal d2">
-      <div class="plan-tier">Enterprise</div>
-      <div class="plan-role">The Department Lead</div>
+      <div class="plan-tier" data-i18n="plan.ent.tier">Enterprise</div>
+      <div class="plan-role" data-i18n="plan.ent.role">The Department Lead</div>
       <div class="plan-price"><span class="plan-num">Custom</span></div>
-      <div class="plan-hw">Hardware specced for your operation</div>
+      <div class="plan-hw" data-i18n="plan.ent.hw">Hardware specced for your operation</div>
       <div class="plan-rule"></div>
-      <div class="plan-section-label">Works in</div>
+      <div class="plan-section-label" data-i18n="plan.label.works">Works in</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Everything in Professional</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Any platform — we build the connector</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.works1">Everything in Professional</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.works2">Any platform — we build the connector</span></li>
       </ul>
-      <div class="plan-section-label">What it does</div>
+      <div class="plan-section-label" data-i18n="plan.label.does">What it does</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Multiple Fellows across departments</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Unlimited automated tasks</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Reads from cameras, sensors, or any data feed</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.f1">Multiple Fellows across departments</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.f2">Unlimited automated tasks</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.f3">Reads from cameras, sensors, or any data feed</span></li>
       </ul>
-      <div class="plan-section-label">Tool connections</div>
+      <div class="plan-section-label" data-i18n="plan.label.tools">Tool connections</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Everything in Professional</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Custom MCP built for your internal systems</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>ERP, inventory, manufacturing systems</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Physical integrations — cameras, sensors, IoT</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.tools1">Everything in Professional</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.tools2">Custom MCP built for your internal systems</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.tools3">ERP, inventory, manufacturing systems</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.tools4">Physical integrations — cameras, sensors, IoT</span></li>
       </ul>
-      <div class="plan-section-label">Support</div>
+      <div class="plan-section-label" data-i18n="plan.label.support">Support</div>
       <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div>Dedicated account manager</li>
-        <li class="plan-feat"><div class="pcheck">✓</div>Custom SLA</li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.support1">Dedicated account manager</span></li>
+        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.support2">Custom SLA</span></li>
       </ul>
-      <a href="#contact" class="plan-cta-btn outline">Talk to us</a>
+      <a href="#contact" class="plan-cta-btn outline" data-i18n="plan.ent.cta">Talk to us</a>
     </div>
  
   </div>
-  <p class="plans-note">Hardware is installed and maintained by Smart Fellow at no extra cost. Your Fellow's skills, memory, and integrations are always yours. Cancel with 60 days notice.</p>
+  <p class="plans-note" data-i18n="plans.note">Hardware is installed and maintained by Smart Fellow at no extra cost. Your Fellow's skills, memory, and integrations are always yours. Cancel with 60 days notice.</p>
   <div class="plans-extras reveal">
     <div class="plans-extra-card">
       <div class="plans-extra-icon">🛡</div>
-      <h3>AI sovereignty, by default</h3>
-      <p>Every Fellow runs on hardware in your office. All intelligence stays local. No data reaches an external server unless you choose it.</p>
-      <p>Want to connect to a specific AI provider (Claude, GPT, or Naver HyperCLOVA X)? We add it with one toggle. You decide what's on and what isn't, at any time.</p>
+      <h3 data-i18n="plans.extra1.title">AI sovereignty, by default</h3>
+      <p data-i18n="plans.extra1.p1">Every Fellow runs on hardware in your office. All intelligence stays local. No data reaches an external server unless you choose it.</p>
+      <p data-i18n="plans.extra1.p2">Want to connect to a specific AI provider (Claude, GPT, or Naver HyperCLOVA X)? We add it with one toggle. You decide what's on and what isn't, at any time.</p>
     </div>
     <div class="plans-extra-card">
       <div class="plans-extra-icon">🔧</div>
-      <h3>Custom connectors and unique skills</h3>
-      <p>Every Fellow ships with pre-trained skills out of the box. Need something specific to your industry, ERP, or internal process? We build it.</p>
-      <p>Custom development is quoted based on scope. Most integrations are live within a week. Talk to us, no obligation.</p>
+      <h3 data-i18n="plans.extra2.title">Custom connectors and unique skills</h3>
+      <p data-i18n="plans.extra2.p1">Every Fellow ships with pre-trained skills out of the box. Need something specific to your industry, ERP, or internal process? We build it.</p>
+      <p data-i18n="plans.extra2.p2">Custom development is quoted based on scope. Most integrations are live within a week. Talk to us, no obligation.</p>
     </div>
   </div>
   <div class="plans-tech-link reveal">
-    <a href="/technology.html" class="btn-outline">Learn more about the technology →</a>
+    <a href="/technology.html" class="btn-outline" data-i18n="plans.tech.link">Learn more about the technology →</a>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
 <section class="how-section" id="how">
   <div class="how-head reveal">
-    <h2>How onboarding works</h2>
-    <p>From your first call to your Fellow's first day on the job, most businesses are up and running within two weeks.</p>
+    <h2 data-i18n="how.h2">How onboarding works</h2>
+    <p data-i18n="how.sub">From your first call to your Fellow's first day on the job, most businesses are up and running within two weeks.</p>
   </div>
   <div class="steps">
     <div class="step reveal">
       <div class="step-num">01</div>
-      <h3>Discovery call</h3>
-      <p>We learn about your team, your tools, and what you want your Fellow to handle first. In Korean or English.</p>
+      <h3 data-i18n="how.s1.title">Discovery call</h3>
+      <p data-i18n="how.s1.p">We learn about your team, your tools, and what you want your Fellow to handle first. In Korean or English.</p>
     </div>
     <div class="step reveal d1">
       <div class="step-num">02</div>
-      <h3>We set everything up</h3>
-      <p>Smart Fellow delivers the hardware, connects it to your network, and trains your Fellow on your business context.</p>
+      <h3 data-i18n="how.s2.title">We set everything up</h3>
+      <p data-i18n="how.s2.p">Smart Fellow delivers the hardware, connects it to your network, and trains your Fellow on your business context.</p>
     </div>
     <div class="step reveal d2">
       <div class="step-num">03</div>
-      <h3>Your team starts chatting</h3>
-      <p>Your Fellow joins your Slack or preferred app. Your team works with it just like any other colleague.</p>
+      <h3 data-i18n="how.s3.title">Your team starts chatting</h3>
+      <p data-i18n="how.s3.p">Your Fellow joins your Slack or preferred app. Your team works with it just like any other colleague.</p>
     </div>
     <div class="step reveal d3">
       <div class="step-num">04</div>
-      <h3>It keeps getting better</h3>
-      <p>We check in regularly, tune performance, and expand capabilities as your team discovers new use cases.</p>
+      <h3 data-i18n="how.s4.title">It keeps getting better</h3>
+      <p data-i18n="how.s4.p">We check in regularly, tune performance, and expand capabilities as your team discovers new use cases.</p>
     </div>
   </div>
 </section>
 
 <!-- QUOTE -->
 <section class="quote-break">
-  <blockquote>"The best colleague you've ever had: one who never forgets, never burns out, and always shows up."</blockquote>
-  <p class="quote-attr">The Smart Fellow promise</p>
+  <blockquote data-i18n="quote.text">"The best colleague you've ever had: one who never forgets, never burns out, and always shows up."</blockquote>
+  <p class="quote-attr" data-i18n="quote.attr">The Smart Fellow promise</p>
 </section>
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
-  <h2 class="reveal">Ready to meet<br>your Fellow?</h2>
-  <p class="reveal">Book a free 30-minute call directly in our calendar. We will walk through your team's needs and see if Smart Fellow is the right fit. No technical knowledge needed, just a conversation.</p>
+  <h2 class="reveal" data-i18n-html="cta.h2">Ready to meet<br>your Fellow?</h2>
+  <p class="reveal" data-i18n="cta.p">Book a free 30-minute call directly in our calendar. We will walk through your team's needs and see if Smart Fellow is the right fit. No technical knowledge needed, just a conversation.</p>
   <div class="reveal">
-    <button class="cta-calendly-btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;">Book a free call →</button>
+    <button class="cta-calendly-btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="cta.btn">Book a free call →</button>
   </div>
-  <p class="cta-note">We work in Korean and English. No commitment required.</p>
+  <p class="cta-note" data-i18n="cta.note">We work in Korean and English. No commitment required.</p>
 </section>
 
 <footer>
   <div class="footer-logo">Smart Fellow</div>
   <ul class="footer-links">
-    <li><a href="#how">How it works</a></li>
-    <li><a href="/technology.html">The technology</a></li>
-    <li><a href="#plans">Plans</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#how" data-i18n="footer.how">How it works</a></li>
+    <li><a href="/technology.html" data-i18n="footer.tech">The technology</a></li>
+    <li><a href="#plans" data-i18n="footer.plans">Plans</a></li>
+    <li><a href="#contact" data-i18n="footer.contact">Contact</a></li>
   </ul>
-  <span class="footer-copy">© 2026 Smart Fellow · Seoul, Korea</span>
+  <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>
 </footer>
 
+<script src="i18n.js"></script>
 <script>
 /* ── Scroll reveal ── */
 const obs = new IntersectionObserver(entries => {
@@ -698,13 +703,12 @@ function closeMobileMenu() {
   let lastY = 0;
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
-    /* Keep nav visible while mobile menu is open */
     if (navMobile.classList.contains('open')) { lastY = y; return; }
-    if (Math.abs(y - lastY) < 6) return;          /* ignore tiny jitter */
-    if (y < lastY) {
-      navEl.classList.add('nav-visible');          /* scrolling up → show */
+    if (Math.abs(y - lastY) < 6) return;
+    if (y <= 0 || y < lastY) {
+      navEl.classList.remove('nav-hidden');   /* scrolling up or at top → show */
     } else {
-      navEl.classList.remove('nav-visible');       /* scrolling down → hide */
+      navEl.classList.add('nav-hidden');      /* scrolling down → hide */
     }
     lastY = y;
   }, { passive: true });
@@ -719,7 +723,6 @@ function closeMobileMenu() {
   const ANIMS = ['ff1','ff2','ff3','ff4','ff5','ff6'];
   const DURS  = ['7s','8.5s','6.5s','9s','7.5s','8s'];
 
-  /* Stagger bubbles in, then attach float animation */
   bubbles.forEach((b, i) => {
     setTimeout(() => {
       b.style.transition = 'opacity 0.7s ease';
@@ -734,7 +737,6 @@ function closeMobileMenu() {
     }, 600 + i * 140);
   });
 
-  /* Draw SVG lines from each bubble centre to the hero centre */
   function drawLines() {
     const hr = heroEl.getBoundingClientRect();
     const cx = hr.width  / 2;
@@ -761,13 +763,14 @@ function closeMobileMenu() {
 const chatEl = document.getElementById('animated-chat');
 
 function buildMsg(type, html) {
+  const t = SF.i18n.t;
   const wrap = document.createElement('div');
   wrap.className = type === 'user' ? 'cmsg' : 'cmsg r';
   wrap.style.cssText = 'opacity:0;transform:translateY(10px);transition:opacity 0.4s ease,transform 0.4s ease';
   const mwrap = document.createElement('div'); mwrap.className = 'cmsg-wrap';
   if (type === 'bot') mwrap.style.alignItems = 'flex-end';
   const label = document.createElement('div'); label.className = 'clabel';
-  label.textContent = type === 'user' ? 'You' : 'Smart Fellow';
+  label.textContent = type === 'user' ? t('chat.label.you') : t('chat.label.fellow');
   const bubble = document.createElement('div'); bubble.className = 'cbubble';
   bubble.innerHTML = html;
   mwrap.append(label, bubble);
@@ -779,27 +782,24 @@ function buildTyping() {
   const row = document.createElement('div');
   row.style.cssText = 'display:flex;align-items:center;gap:0.5rem;padding:0.35rem 0;opacity:0;transition:opacity 0.3s ease';
   row.innerHTML = '<div style="width:26px;height:26px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0">🤖</div>'
-    + '<div class="typing">Smart Fellow is thinking<div class="tdots"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div></div>';
+    + '<div class="typing">' + SF.i18n.t('chat.typing') + '<div class="tdots"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div></div>';
   return row;
 }
 
 function playChatSeq() {
   if (!chatEl) return;
   chatEl.innerHTML = '';
-  const u = buildMsg('user', 'Can you draft a follow-up email for the Hanwha meeting? Warm but professional.');
-  const t = buildTyping();
-  const b = buildMsg('bot',
-    'Of course. Based on your meeting notes:<br><br>'
-    + '<em>"Hi Jisoo, great to align on Monday. We\'ll send the updated proposal by Thursday — I\'ll make sure it reflects the new Q2 targets we discussed."</em>'
-    + '<br><br>Want a different tone, or should I also draft the Korean version?');
-  chatEl.append(u, t, b);
+  const u = buildMsg('user', SF.i18n.t('chat.user'));
+  const ty = buildTyping();
+  const b = buildMsg('bot', SF.i18n.t('chat.bot'));
+  chatEl.append(u, ty, b);
 
   const show = (el, delay) => setTimeout(() => { el.style.opacity='1'; el.style.transform='translateY(0)'; }, delay);
   show(u, 200);
-  setTimeout(() => { t.style.opacity = '1'; }, 1100);
-  setTimeout(() => { t.style.opacity = '0'; show(b, 300); }, 2800);
+  setTimeout(() => { ty.style.opacity = '1'; }, 1100);
+  setTimeout(() => { ty.style.opacity = '0'; show(b, 300); }, 2800);
   setTimeout(() => {
-    [u, t, b].forEach(el => { el.style.transition = 'opacity 0.6s ease'; el.style.opacity = '0'; });
+    [u, ty, b].forEach(el => { el.style.transition = 'opacity 0.6s ease'; el.style.opacity = '0'; });
     setTimeout(playChatSeq, 700);
   }, 9000);
 }
@@ -811,6 +811,10 @@ if (chatEl) {
   chatObs.observe(chatEl);
 }
 
+/* Replay chat on language change */
+SF.i18n.onLangChange(function () {
+  if (chatEl && chatEl.children.length > 0) { playChatSeq(); }
+});
 </script>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
