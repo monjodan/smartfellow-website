@@ -130,12 +130,12 @@
       /* Role: Cross-Border Expansion Specialist */
       'role.exp.badge': 'Most hired',
       'role.exp.title': 'Cross-Border Expansion Specialist',
-      'role.exp.about': 'Connects your home base with up to five target countries through language and culture. Market and regulatory research, email and document review, and messaging tuned to local expectations.',
-      'role.exp.s1': 'Deep context on up to five target markets',
-      'role.exp.s2': 'Regulation and compliance-oriented research',
-      'role.exp.s3': 'Bilingual email and document drafting & review',
-      'role.exp.s4': 'Tone and nuance for local business expectations',
-      'role.exp.s5': 'Learns your expansion roadmap and terminology',
+      'role.exp.about': 'Supports expansion into new markets with local language and business context. Handles research, regulation checks, and document review across up to five countries.',
+      'role.exp.s1': 'Market research across five countries',
+      'role.exp.s2': 'Local regulation checks',
+      'role.exp.s3': 'Bilingual emails and documents',
+      'role.exp.s4': 'Local tone and business nuance',
+      'role.exp.s5': 'Learns your markets and terms',
 
       /* Role: Tailored Fellow */
       'role.tf.title': 'Tailored Fellow',
@@ -493,12 +493,12 @@
       /* Role: Cross-Border Expansion Specialist */
       'role.exp.badge': '인기 채용',
       'role.exp.title': '국경 간 확장 전문가',
-      'role.exp.about': '본사와 최대 5개 목표 국가를 언어와 문화로 연결합니다. 시장 및 규제 리서치와 이메일과 문서 검토로 해외 진출을 돕습니다.',
-      'role.exp.s1': '최대 5개 목표 시장에 대한 심층 맥락',
-      'role.exp.s2': '규제·컴플라이언스 중심 리서치',
-      'role.exp.s3': '이메일·문서의 이중 언어 작성 및 검토',
-      'role.exp.s4': '현지 비즈니스 기대에 맞는 톤과 뉘앙스',
-      'role.exp.s5': '진출 로드맵과 용어를 학습',
+      'role.exp.about': '현지 언어와 비즈니스 맥락으로 해외 진출을 돕습니다. 최대 5개 국가의 시장 조사, 규제 확인, 이메일과 문서 검토를 지원합니다.',
+      'role.exp.s1': '최대 5개 국가 시장 조사',
+      'role.exp.s2': '현지 규제 확인',
+      'role.exp.s3': '이중 언어 이메일·문서',
+      'role.exp.s4': '현지 톤과 비즈니스 뉘앙스',
+      'role.exp.s5': '시장과 내부 용어를 학습',
 
       /* Role: Tailored Fellow */
       'role.tf.title': '맞춤형 Fellow',
