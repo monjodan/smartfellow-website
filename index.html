@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="page.title">Smart Fellow — Your New AI Team Member</title>
-<meta name="description" content="Smart Fellow is a new team member that lives in your office, learns your business, and works inside the tools your team already uses: Slack, Telegram, KakaoTalk. Hardware included.">
+<title data-i18n="page.title">Smart Fellow — Hire an AI Team Member</title>
+<meta name="description" content="Smart Fellow is an AI colleague you hire like a new team member. Already trained, works in Slack, Telegram, KakaoTalk. Browse roles, pick one, they start this week.">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Smart Fellow — Your New AI Team Member">
-<meta property="og:description" content="An AI colleague trained for your business. Works in Slack, Telegram and KakaoTalk. Data stays in your office. Hardware included.">
+<meta property="og:title" content="Smart Fellow — Your Next Great Hire Is Already Trained">
+<meta property="og:description" content="An AI colleague trained for your business. Works in Slack, Telegram and KakaoTalk. Browse roles, pick a plan, they start this week.">
 <meta property="og:url" content="https://smartfellow.ai">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Smart Fellow — Your New AI Team Member">
-<meta name="twitter:description" content="An AI colleague trained for your business. Works in Slack, Telegram and KakaoTalk. Data stays in your office.">
+<meta name="twitter:title" content="Smart Fellow — Your Next Great Hire Is Already Trained">
+<meta name="twitter:description" content="An AI colleague trained for your business. Works in Slack, Telegram and KakaoTalk. Browse roles, pick a plan, they start this week.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231c2b38'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -198,55 +198,82 @@
 .n-b { background: #63b3ed; box-shadow: 0 0 8px rgba(99,179,237,0.45); }
 .n-a { background: #f6ad55; box-shadow: 0 0 8px rgba(246,173,85,0.4); }
 
-/* ── PLANS ── */
-.plans-section { background: var(--sand); padding: 9rem 2rem; }
-.plans-head { text-align: center; margin-bottom: 4rem; }
-.plans-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.025em; color: var(--ink); margin-bottom: 1rem; }
-.plans-head p { font-size: 1.0625rem; font-weight: 300; color: var(--muted); max-width: 44ch; margin: 0 auto; line-height: 1.75; }
-.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 960px; margin: 0 auto; }
-.plan-card { background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius-lg); padding: 2.25rem 2rem; position: relative; display: flex; flex-direction: column; }
-.plan-card.featured { border-color: var(--accent); border-width: 2px; }
-.feat-badge {
-  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-  background: var(--accent); color: #fff;
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 0.3rem 1rem; border-radius: 100px; white-space: nowrap;
+/* ── ROLES (deck layout) ── */
+.roles-section { background: var(--sand); padding: 9rem 2rem; }
+.roles-head { text-align: center; margin-bottom: 4rem; }
+.roles-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.025em; color: var(--ink); margin-bottom: 1rem; }
+.roles-head p { font-size: 1.0625rem; font-weight: 300; color: var(--muted); max-width: 48ch; margin: 0 auto; line-height: 1.75; }
+.roles-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;
+  max-width: 1120px; margin: 0 auto; align-items: start;
 }
-.plan-tier { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
-.plan-role { font-family: 'Fraunces', serif; font-size: 1.35rem; color: var(--ink); margin-bottom: 1.25rem; }
-.plan-price { display: flex; align-items: baseline; gap: 0.25rem; margin-bottom: 0.3rem; }
-.plan-num { font-family: 'Fraunces', serif; font-size: 2.5rem; color: var(--ink); letter-spacing: -0.02em; }
-.plan-unit { font-size: 0.875rem; color: var(--muted); }
-.plan-hw { font-size: 0.8125rem; color: var(--muted); margin-bottom: 1.75rem; }
-.plan-rule { height: 1px; background: var(--sand); margin: 0 0 1.5rem; }
-.plan-section-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-light); margin: 0.75rem 0 0.55rem; }
-.plan-rule + .plan-section-label { margin-top: 0; }
-.plan-feats { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.25rem; }
-.plan-feat { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.875rem; color: var(--ink-light); line-height: 1.45; }
-.plan-eg { font-size: 0.75rem; color: var(--muted-light); display: block; margin-top: 0.25rem; font-style: italic; }
-.pcheck { width: 16px; height: 16px; border-radius: 50%; background: rgba(196,103,58,0.12); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
-.plan-cta-btn { display: block; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.9375rem; font-weight: 600; padding: 0.8rem; border-radius: 100px; text-decoration: none; margin-top: auto; transition: opacity 0.2s, transform 0.2s, border-color 0.2s; }
-.outline { color: var(--ink); border: 1.5px solid var(--sand-dark); background: transparent; }
-.outline:hover { border-color: var(--ink); }
-.solid { color: #fff; background: var(--accent); }
-.solid:hover { opacity: 0.83; transform: scale(1.01); }
-.plans-note { text-align: center; margin-top: 2.5rem; font-size: 0.875rem; color: var(--muted); }
-.plans-extras { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 960px; margin: 2.5rem auto 0; }
-.plans-extra-card { background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius-lg); padding: 2rem; }
-.plans-extra-icon { font-size: 1.5rem; margin-bottom: 1rem; }
-.plans-extra-card h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--ink); margin-bottom: 0.75rem; }
-.plans-extra-card p { font-size: 0.875rem; font-weight: 300; color: var(--muted); line-height: 1.8; margin-bottom: 0.75rem; }
-.plans-extra-card p:last-child { margin-bottom: 0; }
-.plans-tech-link { text-align: center; margin-top: 2rem; }
+.role-card {
+  background: var(--warm-white); border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg); padding: 1.75rem 1.5rem;
+  display: flex; flex-direction: column; position: relative;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04); z-index: 1;
+}
+.role-card:hover {
+  transform: translateY(-18px);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.12);
+  z-index: 3;
+}
+.role-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+.role-card h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; color: var(--ink); margin-bottom: 0.6rem; }
+.role-about { font-size: 0.8125rem; font-weight: 300; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+.role-skills { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+.role-skill { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.8rem; color: var(--ink-light); line-height: 1.4; }
+.pcheck { width: 15px; height: 15px; border-radius: 50%; background: rgba(196,103,58,0.12); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 9px; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+.role-salary { border-top: 1px solid var(--sand); padding-top: 1rem; margin-top: auto; padding-bottom: 0.15rem; }
+.salary-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 0.4rem; }
+.salary-toggle { display: flex; background: var(--sand); border-radius: 100px; padding: 3px; margin-bottom: 0.5rem; }
+.salary-toggle button {
+  flex: 1; padding: 0.35rem 0.5rem; border: none; background: transparent;
+  border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem; font-weight: 600; cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s; color: var(--muted);
+}
+.salary-toggle button.active { background: var(--warm-white); color: var(--ink); box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.salary-price { display: flex; align-items: baseline; gap: 0.2rem; margin-bottom: 0.25rem; }
+.salary-amount { font-family: 'Fraunces', serif; font-size: 1.5rem; color: var(--ink); letter-spacing: -0.02em; transition: opacity 0.15s ease; }
+.salary-unit { font-size: 0.75rem; color: var(--muted); }
+.salary-note { font-size: 0.72rem; color: var(--muted-light); line-height: 1.45; margin: 0; min-height: 1.1em; transition: opacity 0.15s ease; }
+.role-cta {
+  display: block; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.825rem; font-weight: 600; color: var(--accent); text-decoration: none;
+  padding: 0.65rem; border: 1.5px solid var(--sand-dark); border-radius: 100px;
+  margin-top: 1rem; transition: border-color 0.2s, color 0.2s;
+}
+.role-cta:hover { border-color: var(--accent); }
+.roles-grid .role-card.visible {
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, opacity 0.75s ease;
+}
+.roles-grid .role-card.visible:hover {
+  transform: translateY(-18px);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.12); z-index: 3;
+}
+.roles-note { text-align: center; margin-top: 4rem; font-size: 0.875rem; color: var(--muted); max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+.roles-tech-link { text-align: center; margin-top: 2rem; }
+
+/* ── FAQ ── */
+.faq-section { background: var(--sand); padding: 7rem 2rem; }
+.faq-head { text-align: center; margin-bottom: 3rem; }
+.faq-head h2 { font-family: 'Fraunces', serif; font-size: clamp(1.75rem, 3.5vw, 2.5rem); letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.75rem; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 800px; margin: 0 auto; }
+.faq-item { background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius); padding: 1.75rem; }
+.faq-item h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-style: italic; color: var(--ink); margin-bottom: 0.75rem; }
+.faq-item p { font-size: 0.875rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
 
 /* ── HOW ── */
 .how-section { padding: 9rem 2rem; max-width: 1000px; margin: 0 auto; }
 .how-head { text-align: center; margin-bottom: 5rem; }
 .how-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; }
 .how-head p { font-size: 1.0625rem; font-weight: 300; color: var(--muted); max-width: 42ch; margin: 0 auto; line-height: 1.75; }
-.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .step { padding: 2rem 1.5rem; background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius); }
-.step-num { font-family: 'Fraunces', serif; font-size: 2.25rem; color: var(--sand-dark); line-height: 1; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+.step-num { font-family: 'Fraunces', serif; font-size: 1.35rem; color: var(--accent); line-height: 1; margin-bottom: 1.25rem; letter-spacing: -0.02em; font-weight: 500; }
 .step h3 { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.625rem; }
 .step p { font-size: 0.875rem; font-weight: 300; color: var(--muted); line-height: 1.75; }
 
@@ -283,6 +310,9 @@
 @keyframes numBump { 0%,100% { transform:scale(1); } 50% { transform:scale(1.3); } }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 1080px) {
+  .roles-grid { grid-template-columns: repeat(2, 1fr); max-width: 640px; margin-left:auto; margin-right:auto; }
+}
 @media (max-width: 900px) {
   .hero { padding: 8rem 2rem 5rem; }
   .fel-net { display: none; }
@@ -295,10 +325,15 @@
   .fel-bubble.b5 { bottom: 22%; left: 1rem; }
   .fel-bubble.b6 { bottom: 20%; right: 1rem; }
   .story, .story.flip { grid-template-columns:1fr; gap:2.5rem; direction:ltr; padding:5rem 1.5rem; }
-  .plans-grid, .plans-extras { grid-template-columns:1fr; max-width:420px; }
-  .steps { grid-template-columns:1fr 1fr; }
+  .faq-grid { grid-template-columns:1fr; }
+  .steps { grid-template-columns:1fr; }
 }
-@media (max-width: 540px) { .steps { grid-template-columns:1fr; } }
+@media (max-width: 600px) {
+  .roles-grid { grid-template-columns: 1fr; max-width: 380px; }
+  .roles-grid .role-card.visible:hover,
+  .role-card:hover { transform: none; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+}
+@media (max-width: 540px) { .steps { grid-template-columns:1fr; } .faq-grid { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -309,7 +344,7 @@
   <ul class="nav-links">
     <li><a href="/#how" data-i18n="nav.how">How it works</a></li>
     <li><a href="/technology.html" data-i18n="nav.technology">The technology</a></li>
-    <li><a href="/#plans" data-i18n="nav.plans">Plans</a></li>
+    <li><a href="/#roles" data-i18n="nav.roles">Roles</a></li>
     <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -325,7 +360,7 @@
   <ul>
     <li><a href="/#how" onclick="closeMobileMenu()" data-i18n="nav.how">How it works</a></li>
     <li><a href="/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">The technology</a></li>
-    <li><a href="/#plans" onclick="closeMobileMenu()" data-i18n="nav.plans">Plans</a></li>
+    <li><a href="/#roles" onclick="closeMobileMenu()" data-i18n="nav.roles">Roles</a></li>
     <li><a href="/#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">Contact</a></li>
   </ul>
   <a href="/#contact" class="nav-cta" onclick="closeMobileMenu()" data-i18n="nav.cta">Meet your Fellow</a>
@@ -338,8 +373,8 @@
 
   <div class="fel-bubbles" aria-hidden="true">
     <div class="fel-bubble b1"><div class="fel-av">🔍</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b1.role">Research Analyst</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
-    <div class="fel-bubble b2"><div class="fel-av">📅</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b2.role">Meeting Coordinator</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
-    <div class="fel-bubble b3"><div class="fel-av">🤝</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b3.role">Client Relations</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b2"><div class="fel-av">📋</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b2.role">Executive Assistant</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b3"><div class="fel-av">📈</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b3.role">Sales Dev Rep</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
     <div class="fel-bubble b4"><div class="fel-av">🗂️</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b4.role">Operations Assistant</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
     <div class="fel-bubble b5"><div class="fel-av">📝</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b5.role">Document Specialist</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
     <div class="fel-bubble b6"><div class="fel-av">📊</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b6.role">Market Researcher</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
@@ -347,8 +382,8 @@
 
   <div class="hero-center">
     <div class="hero-badge"><div class="badge-dot"></div><span data-i18n="hero.badge">Now available across Korea</span></div>
-    <h1 data-i18n-html="hero.h1">Hire an AI team member. <em>Not software.</em></h1>
-    <p class="hero-sub" data-i18n="hero.sub">A Smart Fellow joins your team like any new hire. They arrive already skilled, never need briefing twice, and work inside the apps your team already uses. They get sharper the longer they stay.</p>
+    <h1 data-i18n-html="hero.h1">Your next great hire <em>is already trained.</em></h1>
+    <p class="hero-sub" data-i18n="hero.sub">A Smart Fellow is an AI colleague that joins your team like a new hire. They work in the apps you already use, learn your business every day, and get sharper the longer they stay. Browse the roles. Pick one. They start this week.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-dark" data-i18n="hero.cta">Meet your Fellow →</a>
       <a href="#how" class="btn-text" data-i18n="hero.how">How it works</a>
@@ -429,8 +464,8 @@
 <section class="story">
   <div class="reveal">
     <p class="story-eyebrow" data-i18n="s3.eyebrow">AI sovereignty, by default</p>
-    <h2 data-i18n-html="s3.h2">Everything runs <em>inside your office.</em></h2>
-    <p data-i18n="s3.p1">Your Smart Fellow runs on hardware we install on-site. By default, all intelligence stays in your building. Your conversations, documents, and business knowledge never touch an external server.</p>
+    <h2 data-i18n-html="s3.h2">Runs on dedicated hardware. <em>Yours alone.</em></h2>
+    <p data-i18n="s3.p1">Your Smart Fellow runs on hardware dedicated entirely to your business, managed by us. All intelligence stays on your machine. Your conversations, documents, and business knowledge never touch an external server.</p>
     <p data-i18n="s3.p2">Want to optionally connect to a specific AI provider like Claude, GPT, or Naver HyperCLOVA? We add it with one toggle. You decide what is on and what isn't, at any time. Your data, your rules.</p>
   </div>
   <div class="story-vis reveal d1" style="text-align:center;padding:2rem">
@@ -442,8 +477,8 @@
       <div class="sov-arm a2"><div class="sov-node n-b"></div></div>
       <div class="sov-arm a3"><div class="sov-node n-a"></div></div>
     </div>
-    <div style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.4rem" data-i18n="s3.vis.title">Your office</div>
-    <div style="font-size:0.85rem;color:var(--muted);max-width:28ch;margin:0 auto 1.5rem;line-height:1.65" data-i18n="s3.vis.sub">Local by default. Connect to external AI providers at any time. Your call.</div>
+    <div style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.4rem" data-i18n="s3.vis.title">Your dedicated machine</div>
+    <div style="font-size:0.85rem;color:var(--muted);max-width:28ch;margin:0 auto 1.5rem;line-height:1.65" data-i18n="s3.vis.sub">Private by default. Connect to external AI providers at any time. Your call.</div>
     <div style="border-top:1px solid var(--sand);padding-top:1.25rem;font-size:0.8rem;color:var(--muted-light);display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap">
       <span data-i18n="s3.vis.pipa">✓ PIPA compliant</span>
       <span data-i18n="s3.vis.law">✓ Korean data law</span>
@@ -486,164 +521,169 @@
 
 </div>
 
-<!-- PLANS -->
-<section class="plans-section" id="plans">
-  <div class="plans-head reveal">
-    <h2 data-i18n="plans.h2">Choose your Fellow</h2>
-    <p data-i18n="plans.sub">Every Smart Fellow arrives on day one with pre-trained skills, long-term memory, and the ability to learn from your team. What changes across tiers is seniority: how much they can handle and how deep they go.</p>
+<!-- ROLES -->
+<section class="roles-section" id="roles">
+  <div class="roles-head reveal">
+    <h2 data-i18n="roles.h2">Who would you like to hire?</h2>
+    <p data-i18n="roles.sub">Every Fellow arrives trained and ready to work. Pick the role your team needs — they can start this week.</p>
   </div>
-  <div class="plans-grid">
- 
-    <div class="plan-card reveal">
-      <div class="plan-tier" data-i18n="plan.starter.tier">Starter</div>
-      <div class="plan-role" data-i18n="plan.starter.role">The Capable Assistant</div>
-      <div class="plan-price"><span class="plan-num">₩1.5M</span><span class="plan-unit" data-i18n="plan.starter.unit">/month</span></div>
-      <div class="plan-hw" data-i18n="plan.starter.hw">Mac Studio 64GB · No setup fee · No IT required</div>
-      <div class="plan-rule"></div>
-      <div class="plan-section-label" data-i18n="plan.label.works">Works in</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.channels">Slack, Telegram, KakaoTalk, Teams, Email</span></li>
+
+  <div class="roles-grid">
+
+    <!-- Research Analyst -->
+    <div class="role-card reveal">
+      <div class="role-icon">🔍</div>
+      <h3 data-i18n="role.ra.title">Research Analyst</h3>
+      <p class="role-about" data-i18n="role.ra.about">Gathers market intelligence, compiles competitor analysis, summarizes industry reports, and turns raw data into clear briefings your team can act on.</p>
+      <ul class="role-skills">
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ra.s1">Market &amp; competitor research</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ra.s2">Industry report summaries</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ra.s3">Data synthesis &amp; trend tracking</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ra.s4">Web research on demand</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ra.s5">Learns your preferences over time</span></li>
       </ul>
-      <div class="plan-section-label" data-i18n="plan.label.does">What it does</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f1">Drafts documents, emails, and summaries</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f2">Reads and writes Excel, Word, and PowerPoint files</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f3">Browses the web to research and summarise</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f4">Remembers your clients, preferences, and tone</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f5">Runs locally — your data never leaves</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.f6">Optional external AI (Claude, GPT, Naver)</span></li>
-      </ul>
-      <div class="plan-section-label" data-i18n="plan.label.proactive">Proactive tasks</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><div><span data-i18n="plan.starter.proactive">2 automated daily tasks</span><span class="plan-eg" data-i18n="plan.starter.proactive.eg">e.g. morning briefing, daily report</span></div></li>
-      </ul>
-      <div class="plan-section-label" data-i18n="plan.label.tools">Tool connections</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.tools1">Google Drive, Calendar, Gmail</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.tools2">Notion, Slack, basic webhook support</span></li>
-      </ul>
-      <div class="plan-section-label" data-i18n="plan.label.support">Support</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.starter.support">Monthly check-in and tuning session</span></li>
-      </ul>
-      <a href="#contact" class="plan-cta-btn outline" data-i18n="plan.starter.cta">Get started</a>
+      <div class="role-salary">
+        <div class="salary-label" data-i18n="salary.label">Monthly salary</div>
+        <div class="salary-toggle">
+          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud</button>
+          <button data-mode="private" data-i18n="salary.private">🔒 Private</button>
+        </div>
+        <div class="salary-price">
+          <span class="salary-amount">₩0.8M</span><span class="salary-unit" data-i18n="salary.unit">/month</span>
+        </div>
+        <p class="salary-note" data-i18n="salary.note.cloud">Your files stay local — tasks via secure cloud API</p>
+      </div>
+      <a href="#contact" class="role-cta" data-i18n="role.cta">Hire this Fellow →</a>
     </div>
- 
-    <div class="plan-card featured reveal d1">
-      <div class="feat-badge" data-i18n="plan.pro.badge">Most popular</div>
-      <div class="plan-tier" data-i18n="plan.pro.tier">Professional</div>
-      <div class="plan-role" data-i18n="plan.pro.role">The Senior Specialist</div>
-      <div class="plan-price"><span class="plan-num">₩3M</span><span class="plan-unit" data-i18n="plan.pro.unit">/month</span></div>
-      <div class="plan-hw" data-i18n="plan.pro.hw">Mac Studio 128GB · Faster execution · More at once</div>
-      <div class="plan-rule"></div>
-      <div class="plan-section-label" data-i18n="plan.label.works">Works in</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.works">Everything in Starter</span></li>
+
+    <!-- Executive Assistant -->
+    <div class="role-card reveal d1">
+      <div class="role-icon">📋</div>
+      <h3 data-i18n="role.ea.title">Executive Assistant</h3>
+      <p class="role-about" data-i18n="role.ea.about">Manages calendars, drafts emails, prepares meeting briefs, tracks follow-ups, and keeps documents organized so you can focus on decisions, not admin.</p>
+      <ul class="role-skills">
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ea.s1">Calendar &amp; scheduling management</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ea.s2">Email drafting &amp; follow-ups</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ea.s3">Meeting prep &amp; minutes</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ea.s4">Document formatting &amp; filing</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ea.s5">Learns your tone &amp; routines</span></li>
       </ul>
-      <div class="plan-section-label" data-i18n="plan.label.does">What it does</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.f1">Everything in Starter, faster and in parallel</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.f2">Handles complex, multi-step workflows</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.f3">Summarises meetings and drives follow-ups</span></li>
-      </ul>
-      <div class="plan-section-label" data-i18n="plan.label.proactive">Proactive tasks</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><div><span data-i18n="plan.pro.proactive">4 automated daily tasks</span><span class="plan-eg" data-i18n="plan.pro.proactive.eg">e.g. pipeline update, client digest, weekly report, meeting prep</span></div></li>
-      </ul>
-      <div class="plan-section-label" data-i18n="plan.label.tools">Tool connections</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.tools1">Everything in Starter</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.tools2">Salesforce, HubSpot, Pipedrive</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.tools3">Jira, Linear, Asana</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.tools4">Custom database read access</span></li>
-      </ul>
-      <div class="plan-section-label" data-i18n="plan.label.support">Support</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.support1">Bi-weekly performance review</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.pro.support2">Priority support</span></li>
-      </ul>
-      <a href="#contact" class="plan-cta-btn solid" data-i18n="plan.pro.cta">Get started</a>
+      <div class="role-salary">
+        <div class="salary-label" data-i18n="salary.label">Monthly salary</div>
+        <div class="salary-toggle">
+          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud</button>
+          <button data-mode="private" data-i18n="salary.private">🔒 Private</button>
+        </div>
+        <div class="salary-price">
+          <span class="salary-amount">₩0.8M</span><span class="salary-unit" data-i18n="salary.unit">/month</span>
+        </div>
+        <p class="salary-note" data-i18n="salary.note.cloud">Your files stay local — tasks via secure cloud API</p>
+      </div>
+      <a href="#contact" class="role-cta" data-i18n="role.cta">Hire this Fellow →</a>
     </div>
- 
-    <div class="plan-card reveal d2">
-      <div class="plan-tier" data-i18n="plan.ent.tier">Enterprise</div>
-      <div class="plan-role" data-i18n="plan.ent.role">The Department Lead</div>
-      <div class="plan-price"><span class="plan-num">Custom</span></div>
-      <div class="plan-hw" data-i18n="plan.ent.hw">Hardware specced for your operation</div>
-      <div class="plan-rule"></div>
-      <div class="plan-section-label" data-i18n="plan.label.works">Works in</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.works1">Everything in Professional</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.works2">Any platform — we build the connector</span></li>
+
+    <!-- Sales Development Rep -->
+    <div class="role-card reveal d2">
+      <div class="role-icon">📈</div>
+      <h3 data-i18n="role.sdr.title">Sales Development Rep</h3>
+      <p class="role-about" data-i18n="role.sdr.about">Researches leads, drafts personalized outreach, tracks your pipeline, qualifies prospects, and handles meeting logistics so your sales team closes more.</p>
+      <ul class="role-skills">
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.sdr.s1">Lead research &amp; qualification</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.sdr.s2">Personalized outreach drafting</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.sdr.s3">Pipeline tracking &amp; CRM updates</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.sdr.s4">Meeting scheduling &amp; prep</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.sdr.s5">Learns your sales process</span></li>
       </ul>
-      <div class="plan-section-label" data-i18n="plan.label.does">What it does</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.f1">Multiple Fellows across departments</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.f2">Unlimited automated tasks</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.f3">Reads from cameras, sensors, or any data feed</span></li>
-      </ul>
-      <div class="plan-section-label" data-i18n="plan.label.tools">Tool connections</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.tools1">Everything in Professional</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.tools2">Custom MCP built for your internal systems</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.tools3">ERP, inventory, manufacturing systems</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.tools4">Physical integrations — cameras, sensors, IoT</span></li>
-      </ul>
-      <div class="plan-section-label" data-i18n="plan.label.support">Support</div>
-      <ul class="plan-feats">
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.support1">Dedicated account manager</span></li>
-        <li class="plan-feat"><div class="pcheck">✓</div><span data-i18n="plan.ent.support2">Custom SLA</span></li>
-      </ul>
-      <a href="#contact" class="plan-cta-btn outline" data-i18n="plan.ent.cta">Talk to us</a>
+      <div class="role-salary">
+        <div class="salary-label" data-i18n="salary.label">Monthly salary</div>
+        <div class="salary-toggle">
+          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud</button>
+          <button data-mode="private" data-i18n="salary.private">🔒 Private</button>
+        </div>
+        <div class="salary-price">
+          <span class="salary-amount">₩0.8M</span><span class="salary-unit" data-i18n="salary.unit">/month</span>
+        </div>
+        <p class="salary-note" data-i18n="salary.note.cloud">Your files stay local — tasks via secure cloud API</p>
+      </div>
+      <a href="#contact" class="role-cta" data-i18n="role.cta">Hire this Fellow →</a>
     </div>
- 
+
+    <!-- Tailored Fellow -->
+    <div class="role-card reveal d3">
+      <div class="role-icon">🎯</div>
+      <h3 data-i18n="role.tf.title">Tailored Fellow</h3>
+      <p class="role-about" data-i18n="role.tf.about">Need a role that's not on our bench? We train a Fellow specifically for your industry, processes, and terminology. A specialist, built from the ground up.</p>
+      <ul class="role-skills">
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s1">Custom-trained on your domain</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s2">Industry-specific knowledge built in</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s3">Everything a Private Fellow offers</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s4">Custom integrations included</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s5">Dedicated account manager</span></li>
+      </ul>
+      <div class="role-salary">
+        <div class="salary-label" data-i18n="salary.label">Monthly salary</div>
+        <div class="salary-price">
+          <span class="salary-amount" data-i18n="role.tf.price">Custom</span>
+        </div>
+        <p class="salary-note" data-i18n="role.tf.salary.note">Scoped to your needs — let's talk</p>
+      </div>
+      <a href="#contact" class="role-cta" data-i18n="role.tf.cta">Talk to us →</a>
+    </div>
+
   </div>
-  <p class="plans-note" data-i18n="plans.note">Hardware is installed and maintained by Smart Fellow at no extra cost. Your Fellow's skills, memory, and integrations are always yours. Cancel with 60 days notice.</p>
-  <div class="plans-extras reveal">
-    <div class="plans-extra-card">
-      <div class="plans-extra-icon">🛡</div>
-      <h3 data-i18n="plans.extra1.title">AI sovereignty, by default</h3>
-      <p data-i18n="plans.extra1.p1">Every Fellow runs on hardware in your office. All intelligence stays local. No data reaches an external server unless you choose it.</p>
-      <p data-i18n="plans.extra1.p2">Want to connect to a specific AI provider (Claude, GPT, or Naver HyperCLOVA X)? We add it with one toggle. You decide what's on and what isn't, at any time.</p>
-    </div>
-    <div class="plans-extra-card">
-      <div class="plans-extra-icon">🔧</div>
-      <h3 data-i18n="plans.extra2.title">Custom connectors and unique skills</h3>
-      <p data-i18n="plans.extra2.p1">Every Fellow ships with pre-trained skills out of the box. Need something specific to your industry, ERP, or internal process? We build it.</p>
-      <p data-i18n="plans.extra2.p2">Custom development is quoted based on scope. Most integrations are live within a week. Talk to us, no obligation.</p>
-    </div>
-  </div>
-  <div class="plans-tech-link reveal">
-    <a href="/technology.html" class="btn-outline" data-i18n="plans.tech.link">Learn more about the technology →</a>
+
+  <p class="roles-note" data-i18n="roles.note">Every Fellow works in Slack, Teams, KakaoTalk, Telegram, and Email. Hardware included and maintained. Cancel with 60 days notice.</p>
+  <div class="roles-tech-link reveal">
+    <a href="/technology.html" class="btn-outline" data-i18n="roles.tech.link">Learn more about the technology →</a>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- HOW A FELLOW JOINS -->
 <section class="how-section" id="how">
   <div class="how-head reveal">
-    <h2 data-i18n="how.h2">How onboarding works</h2>
-    <p data-i18n="how.sub">From your first call to your Fellow's first day on the job, most businesses are up and running within two weeks.</p>
+    <h2 data-i18n="how.h2">How a Fellow joins your team</h2>
+    <p data-i18n="how.sub">From your decision to your Fellow's first day. No surprises, no hidden complexity.</p>
   </div>
   <div class="steps">
     <div class="step reveal">
-      <div class="step-num">01</div>
-      <h3 data-i18n="how.s1.title">Discovery call</h3>
-      <p data-i18n="how.s1.p">We learn about your team, your tools, and what you want your Fellow to handle first. In Korean or English.</p>
+      <div class="step-num" data-i18n="how.s1.num">Week 1</div>
+      <h3 data-i18n="how.s1.title">Setup & first workflows</h3>
+      <p data-i18n="how.s1.p">Role definition, access setup, communication preferences. Your Fellow handles its first real tasks and starts learning your business context.</p>
     </div>
     <div class="step reveal d1">
-      <div class="step-num">02</div>
-      <h3 data-i18n="how.s2.title">We set everything up</h3>
-      <p data-i18n="how.s2.p">Smart Fellow delivers the hardware, connects it to your network, and trains your Fellow on your business context.</p>
+      <div class="step-num" data-i18n="how.s2.num">Week 2</div>
+      <h3 data-i18n="how.s2.title">Calibration</h3>
+      <p data-i18n="how.s2.p">Refinement based on early output review. Tone, format, and priorities are dialed in. Your Fellow starts to feel like it understands how your team works.</p>
     </div>
     <div class="step reveal d2">
-      <div class="step-num">03</div>
-      <h3 data-i18n="how.s3.title">Your team starts chatting</h3>
-      <p data-i18n="how.s3.p">Your Fellow joins your Slack or preferred app. Your team works with it just like any other colleague.</p>
+      <div class="step-num" data-i18n="how.s3.num">Ongoing</div>
+      <h3 data-i18n="how.s3.title">Gets sharper over time</h3>
+      <p data-i18n="how.s3.p">Memory improves, workflows sharpen, new tasks can be added as your team discovers new use cases. The longer they stay, the better they get.</p>
     </div>
-    <div class="step reveal d3">
-      <div class="step-num">04</div>
-      <h3 data-i18n="how.s4.title">It keeps getting better</h3>
-      <p data-i18n="how.s4.p">We check in regularly, tune performance, and expand capabilities as your team discovers new use cases.</p>
+  </div>
+</section>
+
+<!-- BUYER FAQ -->
+<section class="faq-section">
+  <div class="faq-head reveal">
+    <h2 data-i18n="faq.h2">Questions you're probably asking</h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item reveal">
+      <h3 data-i18n="faq.q1.title">"What if it doesn't deliver?"</h3>
+      <p data-i18n="faq.q1.p">No long-term lock-in. Cancel with 60 days notice. We work closely with you during onboarding to make sure your Fellow is right for the role.</p>
+    </div>
+    <div class="faq-item reveal d1">
+      <h3 data-i18n="faq.q2.title">"Will my team actually use it?"</h3>
+      <p data-i18n="faq.q2.p">Your Fellow works in Slack, KakaoTalk, Teams — the apps your team already uses every day. No new tool to learn. No training required.</p>
+    </div>
+    <div class="faq-item reveal d2">
+      <h3 data-i18n="faq.q3.title">"Is our data safe?"</h3>
+      <p data-i18n="faq.q3.p">Private Fellows run 100% on local hardware. Cloud Fellows keep your files on your machine — only task requests touch the cloud. Either way, you control everything.</p>
+    </div>
+    <div class="faq-item reveal d3">
+      <h3 data-i18n="faq.q4.title">"How fast will we see results?"</h3>
+      <p data-i18n="faq.q4.p">Most teams get useful output in week one. By week two, your Fellow is calibrated to your tone, your formats, and your way of doing things.</p>
     </div>
   </div>
 </section>
@@ -669,7 +709,7 @@
   <ul class="footer-links">
     <li><a href="#how" data-i18n="footer.how">How it works</a></li>
     <li><a href="/technology.html" data-i18n="footer.tech">The technology</a></li>
-    <li><a href="#plans" data-i18n="footer.plans">Plans</a></li>
+    <li><a href="#roles" data-i18n="footer.roles">Roles</a></li>
     <li><a href="#contact" data-i18n="footer.contact">Contact</a></li>
   </ul>
   <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>
@@ -815,6 +855,43 @@ if (chatEl) {
 SF.i18n.onLangChange(function () {
   if (chatEl && chatEl.children.length > 0) { playChatSeq(); }
 });
+
+/* ── Salary toggle (Cloud ↔ Private) ── */
+(function () {
+  var CLOUD_PRICE = '₩0.8M';
+  var PRIVATE_PRICE = '₩1.5M';
+
+  function applyToggle(card) {
+    var active = card.querySelector('.salary-toggle button.active');
+    if (!active) return;
+    var mode = active.dataset.mode;
+    var amount = card.querySelector('.salary-amount');
+    var note = card.querySelector('.salary-note');
+    if (mode === 'cloud') {
+      amount.textContent = CLOUD_PRICE;
+      note.textContent = SF.i18n.t('salary.note.cloud');
+    } else {
+      amount.textContent = PRIVATE_PRICE;
+      note.textContent = SF.i18n.t('salary.note.private');
+    }
+  }
+
+  document.querySelectorAll('.salary-toggle').forEach(function (toggle) {
+    toggle.addEventListener('click', function (e) {
+      var btn = e.target.closest('button');
+      if (!btn) return;
+      toggle.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyToggle(toggle.closest('.role-card'));
+    });
+  });
+
+  SF.i18n.onLangChange(function () {
+    document.querySelectorAll('.salary-toggle').forEach(function (toggle) {
+      applyToggle(toggle.closest('.role-card'));
+    });
+  });
+})();
 </script>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
