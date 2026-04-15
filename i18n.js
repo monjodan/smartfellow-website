@@ -24,7 +24,7 @@
       /* Hero */
       'hero.badge': 'Now available across Korea',
       'hero.h1':    'Your next great hire <em>is already trained.</em>',
-      'hero.sub':   'A Smart Fellow is an AI colleague that joins your team like a new hire. They work in the apps you already use, learn your business every day, and get sharper the longer they stay. Browse the roles. Pick one. They start this week.',
+      'hero.sub':   'Smart Fellow is an AI colleague you hire by role. Think staffing, not another app subscription. They work where your team already works, learn your business over time, and can start within days.',
       'hero.cta':   'Meet your Fellow →',
       'hero.how':   'How it works',
       'hero.note':  'No technical knowledge needed. No IT department required. We handle everything.',
@@ -96,8 +96,8 @@
       's4.vis.note':      'All integrations are built and maintained by Smart Fellow. Zero technical work for you.',
 
       /* Roles section */
-      'roles.h2':  'Who would you like to hire?',
-      'roles.sub': 'Every Fellow arrives trained and ready to work. Pick the role your team needs — they can start this week.',
+      'roles.h2':  'Choose a role',
+      'roles.sub': 'Each card is a position you can staff today: what the Fellow does, the monthly salary, and a privacy choice between Cloud AI and Sovereign AI. Pick the profile that fits your team.',
       'roles.note': 'Every Fellow works in Slack, Teams, KakaoTalk, Telegram, and Email. Hardware included and maintained. Cancel with 60 days notice.',
       'roles.tech.link': 'Learn more about the technology →',
 
@@ -387,7 +387,7 @@
       /* Hero */
       'hero.badge': '이제 한국 전역에서 이용 가능',
       'hero.h1':    '다음 채용, <em>이미 훈련이 끝났습니다.</em>',
-      'hero.sub':   'Smart Fellow는 신규 입사자처럼 팀에 합류하는 AI 동료입니다. 이미 사용하는 앱에서 일하고, 매일 비즈니스를 배우며, 함께할수록 더 능숙해집니다. 포지션을 선택하세요. 이번 주에 시작합니다.',
+      'hero.sub':   'Smart Fellow는 앱 구독이 아니라 역할별로 채용하는 AI 동료입니다. 팀이 이미 쓰는 도구에서 일하고, 회사를 알아가며 며칠 안에 시작할 수 있습니다.',
       'hero.cta':   'Fellow 만나기 →',
       'hero.how':   '작동 방식',
       'hero.note':  '기술 지식 불필요. IT 부서도 필요 없습니다. 모든 설정은 저희가 처리합니다.',
@@ -459,8 +459,8 @@
       's4.vis.note':      '모든 통합은 Smart Fellow가 구축하고 유지합니다. 기술적인 작업은 전혀 없습니다.',
 
       /* Roles section */
-      'roles.h2':  '누구를 채용하시겠습니까?',
-      'roles.sub': '모든 Fellow는 훈련을 마치고 바로 일할 준비가 되어 있습니다. 팀에 필요한 포지션을 선택하세요 — 이번 주에 시작할 수 있습니다.',
+      'roles.h2':  '역할 선택',
+      'roles.sub': '각 카드는 지금 채용할 수 있는 포지션입니다. 하는 일, 월급, 그리고 클라우드 AI와 소버린 AI 중 어떻게 둘지까지 안내합니다. 팀에 맞는 프로필을 고르세요.',
       'roles.note': '모든 Fellow는 Slack, Teams, KakaoTalk, Telegram, 이메일에서 작동합니다. 하드웨어 포함 및 유지. 60일 전 통보로 해지 가능.',
       'roles.tech.link': '기술에 대해 더 알아보기 →',
 
