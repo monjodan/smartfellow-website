@@ -32,7 +32,7 @@
       /* Bubbles */
       'bubble.b1.role': 'Research Analyst',
       'bubble.b2.role': 'Executive Assistant',
-      'bubble.b3.role': 'Sales Dev Rep',
+      'bubble.b3.role': 'Cross-border expansion',
       'bubble.b4.role': 'Operations Assistant',
       'bubble.b5.role': 'Document Specialist',
       'bubble.b6.role': 'Market Researcher',
@@ -127,14 +127,14 @@
       'role.ea.s4': 'Document formatting & filing',
       'role.ea.s5': 'Learns your tone & routines',
 
-      /* Role: Sales Development Rep */
-      'role.sdr.title': 'Sales Development Rep',
-      'role.sdr.about': 'Researches leads, drafts personalized outreach, tracks your pipeline, qualifies prospects, and handles meeting logistics so your sales team closes more.',
-      'role.sdr.s1': 'Lead research & qualification',
-      'role.sdr.s2': 'Personalized outreach drafting',
-      'role.sdr.s3': 'Pipeline tracking & CRM updates',
-      'role.sdr.s4': 'Meeting scheduling & prep',
-      'role.sdr.s5': 'Learns your sales process',
+      /* Role: Cross-Border Expansion Specialist */
+      'role.exp.title': 'Cross-Border Expansion Specialist',
+      'role.exp.about': 'When a Korean company explores France—or any home market and target abroad—this Fellow bridges languages and local culture. They support expansion with market and regulatory research, email and document review, and messaging that fits both sides. You set up to five target countries; they learn how your company works at home and overseas.',
+      'role.exp.s1': 'Deep context on up to five target markets',
+      'role.exp.s2': 'Regulation and compliance-oriented research',
+      'role.exp.s3': 'Bilingual email and document drafting & review',
+      'role.exp.s4': 'Tone and nuance for local business expectations',
+      'role.exp.s5': 'Learns your expansion roadmap and terminology',
 
       /* Role: Tailored Fellow */
       'role.tf.title': 'Tailored Fellow',
@@ -394,7 +394,7 @@
       /* Bubbles */
       'bubble.b1.role': '리서치 애널리스트',
       'bubble.b2.role': '경영 비서',
-      'bubble.b3.role': '영업 개발 담당',
+      'bubble.b3.role': '해외 진출·확장',
       'bubble.b4.role': '운영 어시스턴트',
       'bubble.b5.role': '문서 전문가',
       'bubble.b6.role': '시장 조사원',
@@ -489,14 +489,14 @@
       'role.ea.s4': '문서 서식 및 정리',
       'role.ea.s5': '말투와 루틴을 학습',
 
-      /* Role: Sales Development Rep */
-      'role.sdr.title': '영업 개발 담당(SDR)',
-      'role.sdr.about': '리드를 리서치하고, 맞춤 아웃리치를 작성하며, 파이프라인을 추적하고, 잠재고객을 검증하며, 미팅 물류를 처리하여 영업팀의 성과를 높입니다.',
-      'role.sdr.s1': '리드 리서치 및 검증',
-      'role.sdr.s2': '맞춤형 아웃리치 작성',
-      'role.sdr.s3': '파이프라인 추적 및 CRM 업데이트',
-      'role.sdr.s4': '미팅 스케줄링 및 준비',
-      'role.sdr.s5': '영업 프로세스를 학습',
+      /* Role: Cross-Border Expansion Specialist */
+      'role.exp.title': '국경 간 확장 전문가',
+      'role.exp.about': '한국 기업이 프랑스 시장을 탐색하는 경우처럼, 본사와 목표 국가를 잇는 역할을 합니다. 언어와 현지 문화·비즈니스 관습을 고려한 소통, 시장 및 규제 리서치, 이메일·문서 검토까지 지원합니다. 목표 국가는 최대 5개까지 설정하고, 국내와 해외에서 회사가 어떻게 일하는지 학습합니다.',
+      'role.exp.s1': '최대 5개 목표 시장에 대한 심층 맥락',
+      'role.exp.s2': '규제·컴플라이언스 중심 리서치',
+      'role.exp.s3': '이메일·문서의 이중 언어 작성 및 검토',
+      'role.exp.s4': '현지 비즈니스 기대에 맞는 톤과 뉘앙스',
+      'role.exp.s5': '진출 로드맵과 용어를 학습',
 
       /* Role: Tailored Fellow */
       'role.tf.title': '맞춤형 Fellow',
