@@ -847,41 +847,40 @@ SF.i18n.onLangChange(function () {
 
 /* ── Salary toggle (Cloud AI ↔ Sovereign AI) ── */
 (function () {
-  var CLOUD_PRICE = '₩0.8M';
+  var CLOUD_PRICE  = '₩0.8M';
   var PRIVATE_PRICE = '₩1.5M';
 
-  function applyToggle(card, mode) {
+  function updateCard(card, mode) {
     var amount = card.querySelector('.salary-amount');
-    var note = card.querySelector('.salary-note');
+    var note   = card.querySelector('.salary-note');
     if (!amount || !note) return;
-    if (mode === 'cloud') {
-      amount.textContent = CLOUD_PRICE;
-      note.textContent = SF.i18n.t('salary.note.cloud');
-      note.setAttribute('data-i18n', 'salary.note.cloud');
-    } else {
-      amount.textContent = PRIVATE_PRICE;
-      note.textContent = SF.i18n.t('salary.note.private');
-      note.setAttribute('data-i18n', 'salary.note.private');
-    }
+    amount.textContent = (mode === 'cloud') ? CLOUD_PRICE : PRIVATE_PRICE;
+    var noteKey = (mode === 'cloud') ? 'salary.note.cloud' : 'salary.note.private';
+    note.textContent = SF.i18n.t(noteKey);
+    note.setAttribute('data-i18n', noteKey);
   }
 
-  document.querySelectorAll('.salary-toggle button').forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var toggle = btn.parentElement;
-      var card = btn.closest('.role-card');
-      var mode = btn.getAttribute('data-mode');
-      toggle.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      applyToggle(card, mode);
-    });
+  document.addEventListener('click', function (e) {
+    var btn = e.target;
+    if (btn.tagName !== 'BUTTON') btn = btn.closest('button');
+    if (!btn) return;
+    var toggle = btn.closest('.salary-toggle');
+    if (!toggle) return;
+    var card = btn.closest('.role-card');
+    if (!card) return;
+    var mode = btn.getAttribute('data-mode');
+    if (!mode) return;
+    toggle.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    updateCard(card, mode);
   });
 
   SF.i18n.onLangChange(function () {
-    document.querySelectorAll('.salary-toggle').forEach(function (toggle) {
-      var active = toggle.querySelector('button.active');
+    document.querySelectorAll('.salary-toggle').forEach(function (tgl) {
+      var active = tgl.querySelector('button.active');
       if (active) {
-        applyToggle(toggle.closest('.role-card'), active.getAttribute('data-mode'));
+        var card = tgl.closest('.role-card');
+        if (card) updateCard(card, active.getAttribute('data-mode'));
       }
     });
   });
