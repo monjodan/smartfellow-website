@@ -138,14 +138,14 @@
 
       /* Role: Tailored Fellow */
       'role.tf.title': 'Tailored Fellow',
-      'role.tf.about': 'Need a role that\\'s not on our bench? We train a Fellow specifically for your industry, processes, and terminology. A specialist, built from the ground up.',
+      'role.tf.about': 'Need a role that\'s not on our bench? We train a Fellow specifically for your industry, processes, and terminology. A specialist, built from the ground up.',
       'role.tf.s1': 'Custom-trained on your domain',
       'role.tf.s2': 'Industry-specific knowledge built in',
       'role.tf.s3': 'Everything a Sovereign Fellow offers',
       'role.tf.s4': 'Custom integrations included',
       'role.tf.s5': 'Dedicated account manager',
       'role.tf.price': 'Custom',
-      'role.tf.salary.note': 'Scoped to your needs — let\\'s talk',
+      'role.tf.salary.note': 'Scoped to your needs — let\'s talk',
       'role.tf.cta': 'Talk to us →',
 
       /* Shared CTA */
