@@ -103,8 +103,8 @@
 
       /* Salary toggle */
       'salary.label':        'Monthly salary',
-      'salary.cloud':        '☁️ Cloud',
-      'salary.private':      '🔒 Private',
+      'salary.cloud':        '☁️ Cloud AI',
+      'salary.private':      '🔒 Sovereign AI',
       'salary.unit':         '/month',
       'salary.note.cloud':   'Your files stay local — tasks via secure cloud API',
       'salary.note.private': 'Runs on dedicated hardware — data never leaves your machine',
@@ -141,7 +141,7 @@
       'role.tf.about': 'Need a role that\\'s not on our bench? We train a Fellow specifically for your industry, processes, and terminology. A specialist, built from the ground up.',
       'role.tf.s1': 'Custom-trained on your domain',
       'role.tf.s2': 'Industry-specific knowledge built in',
-      'role.tf.s3': 'Everything a Private Fellow offers',
+      'role.tf.s3': 'Everything a Sovereign Fellow offers',
       'role.tf.s4': 'Custom integrations included',
       'role.tf.s5': 'Dedicated account manager',
       'role.tf.price': 'Custom',
@@ -465,8 +465,8 @@
 
       /* Salary toggle */
       'salary.label':        '월급',
-      'salary.cloud':        '☁️ 클라우드',
-      'salary.private':      '🔒 프라이빗',
+      'salary.cloud':        '☁️ 클라우드 AI',
+      'salary.private':      '🔒 소버린 AI',
       'salary.unit':         '/월',
       'salary.note.cloud':   '파일은 로컬 유지 — 작업만 보안 클라우드 API 처리',
       'salary.note.private': '전용 하드웨어에서 실행 — 데이터가 귀사의 머신을 떠나지 않음',
@@ -503,7 +503,7 @@
       'role.tf.about': '벤치에 없는 포지션이 필요하신가요? 귀사의 산업, 프로세스, 용어에 맞춰 Fellow를 특별히 훈련합니다. 처음부터 만드는 전문가입니다.',
       'role.tf.s1': '귀사 도메인에 맞춤 훈련',
       'role.tf.s2': '산업 특화 지식 내장',
-      'role.tf.s3': '프라이빗 Fellow의 모든 기능',
+      'role.tf.s3': '소버린 Fellow의 모든 기능',
       'role.tf.s4': '맞춤 통합 포함',
       'role.tf.s5': '전담 계정 관리자',
       'role.tf.price': '맞춤 견적',

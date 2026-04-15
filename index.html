@@ -545,8 +545,8 @@
       <div class="role-salary">
         <div class="salary-label" data-i18n="salary.label">Monthly salary</div>
         <div class="salary-toggle">
-          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud</button>
-          <button data-mode="private" data-i18n="salary.private">🔒 Private</button>
+          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud AI</button>
+          <button data-mode="private" data-i18n="salary.private">🔒 Sovereign AI</button>
         </div>
         <div class="salary-price">
           <span class="salary-amount">₩0.8M</span><span class="salary-unit" data-i18n="salary.unit">/month</span>
@@ -571,8 +571,8 @@
       <div class="role-salary">
         <div class="salary-label" data-i18n="salary.label">Monthly salary</div>
         <div class="salary-toggle">
-          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud</button>
-          <button data-mode="private" data-i18n="salary.private">🔒 Private</button>
+          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud AI</button>
+          <button data-mode="private" data-i18n="salary.private">🔒 Sovereign AI</button>
         </div>
         <div class="salary-price">
           <span class="salary-amount">₩0.8M</span><span class="salary-unit" data-i18n="salary.unit">/month</span>
@@ -597,8 +597,8 @@
       <div class="role-salary">
         <div class="salary-label" data-i18n="salary.label">Monthly salary</div>
         <div class="salary-toggle">
-          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud</button>
-          <button data-mode="private" data-i18n="salary.private">🔒 Private</button>
+          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud AI</button>
+          <button data-mode="private" data-i18n="salary.private">🔒 Sovereign AI</button>
         </div>
         <div class="salary-price">
           <span class="salary-amount">₩0.8M</span><span class="salary-unit" data-i18n="salary.unit">/month</span>
@@ -616,7 +616,7 @@
       <ul class="role-skills">
         <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s1">Custom-trained on your domain</span></li>
         <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s2">Industry-specific knowledge built in</span></li>
-        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s3">Everything a Private Fellow offers</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s3">Everything a Sovereign Fellow offers</span></li>
         <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s4">Custom integrations included</span></li>
         <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s5">Dedicated account manager</span></li>
       </ul>
@@ -856,39 +856,44 @@ SF.i18n.onLangChange(function () {
   if (chatEl && chatEl.children.length > 0) { playChatSeq(); }
 });
 
-/* ── Salary toggle (Cloud ↔ Private) ── */
+/* ── Salary toggle (Cloud AI ↔ Sovereign AI) ── */
 (function () {
   var CLOUD_PRICE = '₩0.8M';
   var PRIVATE_PRICE = '₩1.5M';
 
-  function applyToggle(card) {
-    var active = card.querySelector('.salary-toggle button.active');
-    if (!active) return;
-    var mode = active.dataset.mode;
+  function applyToggle(card, mode) {
     var amount = card.querySelector('.salary-amount');
     var note = card.querySelector('.salary-note');
+    if (!amount || !note) return;
     if (mode === 'cloud') {
       amount.textContent = CLOUD_PRICE;
       note.textContent = SF.i18n.t('salary.note.cloud');
+      note.setAttribute('data-i18n', 'salary.note.cloud');
     } else {
       amount.textContent = PRIVATE_PRICE;
       note.textContent = SF.i18n.t('salary.note.private');
+      note.setAttribute('data-i18n', 'salary.note.private');
     }
   }
 
-  document.querySelectorAll('.salary-toggle').forEach(function (toggle) {
-    toggle.addEventListener('click', function (e) {
-      var btn = e.target.closest('button');
-      if (!btn) return;
+  document.querySelectorAll('.salary-toggle button').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var toggle = btn.parentElement;
+      var card = btn.closest('.role-card');
+      var mode = btn.getAttribute('data-mode');
       toggle.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      applyToggle(toggle.closest('.role-card'));
+      applyToggle(card, mode);
     });
   });
 
   SF.i18n.onLangChange(function () {
     document.querySelectorAll('.salary-toggle').forEach(function (toggle) {
-      applyToggle(toggle.closest('.role-card'));
+      var active = toggle.querySelector('button.active');
+      if (active) {
+        applyToggle(toggle.closest('.role-card'), active.getAttribute('data-mode'));
+      }
     });
   });
 })();
