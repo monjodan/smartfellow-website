@@ -128,8 +128,9 @@
       'role.ea.s5': 'Learns your tone & routines',
 
       /* Role: Cross-Border Expansion Specialist */
+      'role.exp.badge': 'Most hired',
       'role.exp.title': 'Cross-Border Expansion Specialist',
-      'role.exp.about': 'When a Korean company explores France—or any home market and target abroad—this Fellow bridges languages and local culture. They support expansion with market and regulatory research, email and document review, and messaging that fits both sides. You set up to five target countries; they learn how your company works at home and overseas.',
+      'role.exp.about': 'Connects your home base with up to five target countries through language and culture. Market and regulatory research, email and document review, and messaging tuned to local expectations.',
       'role.exp.s1': 'Deep context on up to five target markets',
       'role.exp.s2': 'Regulation and compliance-oriented research',
       'role.exp.s3': 'Bilingual email and document drafting & review',
@@ -490,8 +491,9 @@
       'role.ea.s5': '말투와 루틴을 학습',
 
       /* Role: Cross-Border Expansion Specialist */
+      'role.exp.badge': '인기 채용',
       'role.exp.title': '국경 간 확장 전문가',
-      'role.exp.about': '한국 기업이 프랑스 시장을 탐색하는 경우처럼, 본사와 목표 국가를 잇는 역할을 합니다. 언어와 현지 문화·비즈니스 관습을 고려한 소통, 시장 및 규제 리서치, 이메일·문서 검토까지 지원합니다. 목표 국가는 최대 5개까지 설정하고, 국내와 해외에서 회사가 어떻게 일하는지 학습합니다.',
+      'role.exp.about': '본사와 최대 5개 목표 국가를 언어와 문화로 연결합니다. 시장 및 규제 리서치와 이메일과 문서 검토로 해외 진출을 돕습니다.',
       'role.exp.s1': '최대 5개 목표 시장에 대한 심층 맥락',
       'role.exp.s2': '규제·컴플라이언스 중심 리서치',
       'role.exp.s3': '이메일·문서의 이중 언어 작성 및 검토',
