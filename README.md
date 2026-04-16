@@ -4,15 +4,22 @@ Marketing website for [Smart Fellow](https://smartfellow.kr), an AI team member 
 
 ## Stack
 
-Single-page static site — plain HTML, CSS, and vanilla JavaScript. No build step required.
+Static marketing site generated from shared HTML templates, locale data, and vanilla JavaScript.
 
-- **Fonts:** Lora (serif) + Nunito (sans-serif) via Google Fonts
+- **Fonts:** Fraunces (serif) + Plus Jakarta Sans (sans-serif) via Google Fonts
 - **Forms:** [Formspree](https://formspree.io) for email capture
 - **Hosting:** GitHub Pages
+- **Locales:** English, French, Korean
 
 ## Local development
 
-No build tools needed. Open `index.html` directly in a browser, or serve it with any static server:
+Build the localized pages first:
+
+```bash
+node scripts/build-site.js
+```
+
+Then serve the repository root with any static server:
 
 ```bash
 # Python 3
@@ -20,6 +27,25 @@ python -m http.server 8080
 
 # Node (npx)
 npx serve .
+```
+
+The build updates:
+
+- `index.html` and `technology.html` redirects at the site root
+- localized pages under `en/`, `fr/`, and `ko/`
+- `sitemap.xml`
+
+## Editing content
+
+- Shared page shells live in `templates/index.template.html` and `templates/technology.template.html`
+- English and Korean strings live in `i18n.js`
+- French strings live in `data/fr-locale.js`
+- Shared SEO metadata and locale settings live in `data/site-data.js`
+
+After changing templates, copy, or metadata, rerun:
+
+```bash
+node scripts/build-site.js
 ```
 
 ## Deploying to GitHub Pages

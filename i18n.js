@@ -184,7 +184,7 @@
       'cta.h2':  'Ready to meet<br>your Fellow?',
       'cta.p':   'Book a free 30-minute call directly in our calendar. We will walk through your team\'s needs and see if Smart Fellow is the right fit. No technical knowledge needed, just a conversation.',
       'cta.btn': 'Book a free call →',
-      'cta.note':'We work in Korean and English. No commitment required.',
+      'cta.note':'We work in Korean, English, and French. No commitment required.',
 
       /* Footer */
       'footer.copy':    '© 2026 Smart Fellow · Seoul, Korea',
@@ -547,7 +547,7 @@
       'cta.h2':  '지금 Fellow를<br>만날 준비가 되셨나요?',
       'cta.p':   '캘린더에서 30분 무료 통화를 직접 예약하세요. 팀의 필요 사항을 살펴보고 Smart Fellow가 적합한지 확인합니다. 기술 지식이 필요 없습니다, 대화만 하면 됩니다.',
       'cta.btn': '무료 통화 예약 →',
-      'cta.note':'한국어와 영어로 작업합니다. 약정 없음.',
+      'cta.note':'한국어, 영어, 프랑스어로 작업합니다. 약정 없음.',
 
       /* Footer */
       'footer.copy':    '© 2026 Smart Fellow · 서울, 한국',
@@ -733,12 +733,34 @@
     }
   };
 
+  var _extraLocales = (typeof window !== 'undefined' && window.SF_EXTRA_LOCALES) ? window.SF_EXTRA_LOCALES : null;
+  if (_extraLocales) {
+    Object.keys(_extraLocales).forEach(function (lang) {
+      T[lang] = Object.assign({}, T[lang] || {}, _extraLocales[lang]);
+    });
+  }
+
   /* ── RUNTIME ── */
 
-  /* Detect and set language immediately (before DOM ready) */
-  const _saved  = localStorage.getItem('sf-lang');
-  const _browser = (navigator.language || navigator.userLanguage || '').toLowerCase();
-  let _lang = _saved || (_browser.startsWith('ko') ? 'ko' : 'en');
+  function isKnownLang(lang) {
+    return !!(lang && T[lang]);
+  }
+
+  function detectBrowserLang() {
+    var browser = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    if (browser.indexOf('ko') === 0) return 'ko';
+    if (browser.indexOf('fr') === 0) return 'fr';
+    return 'en';
+  }
+
+  var _fixedLang = (typeof window !== 'undefined' && window.SF_CONFIG && window.SF_CONFIG.locale) || null;
+  var _saved = null;
+  try { _saved = localStorage.getItem('sf-lang'); } catch (e) {}
+  var _lang = isKnownLang(_fixedLang) ? _fixedLang : (isKnownLang(_saved) ? _saved : detectBrowserLang());
+
+  if (_fixedLang && _fixedLang !== _saved) {
+    try { localStorage.setItem('sf-lang', _fixedLang); } catch (e) {}
+  }
 
   const _callbacks = [];
 
@@ -761,16 +783,6 @@
       el.innerHTML = t(el.dataset.i18nHtml);
     });
 
-    /* Language toggle button labels */
-    var btn = document.getElementById('lang-toggle');
-    if (btn) btn.textContent = t('nav.lang');
-    var mobileBtn2 = document.getElementById('lang-toggle-mobile');
-    if (mobileBtn2) mobileBtn2.textContent = t('nav.lang');
-    /* Current language indicator */
-    document.querySelectorAll('.lang-current').forEach(function (el) {
-      el.textContent = t('nav.lang.current');
-    });
-
     /* Page title */
     var titleEl = document.querySelector('title[data-i18n]');
     if (titleEl) document.title = t(titleEl.dataset.i18n);
@@ -780,12 +792,19 @@
   }
 
   function setLang(lang, save) {
+    if (!isKnownLang(lang)) return;
     _lang = lang;
-    if (save !== false) localStorage.setItem('sf-lang', lang);
+    if (save !== false) {
+      try { localStorage.setItem('sf-lang', lang); } catch (e) {}
+    }
     apply();
   }
 
-  function toggle() { setLang(_lang === 'en' ? 'ko' : 'en'); }
+  function toggle() {
+    var ordered = ['en', 'fr', 'ko'].filter(isKnownLang);
+    var idx = ordered.indexOf(_lang);
+    setLang(ordered[(idx + 1) % ordered.length]);
+  }
 
   /* Expose API */
   window.SF = window.SF || {};
@@ -800,19 +819,5 @@
   /* Apply on DOM ready */
   document.addEventListener('DOMContentLoaded', function () {
     apply();
-    var btn = document.getElementById('lang-toggle');
-    if (btn) btn.addEventListener('click', toggle);
-
-    /* Also wire up mobile menu toggle button if present */
-    var mobileBtn = document.getElementById('lang-toggle-mobile');
-    if (mobileBtn) mobileBtn.addEventListener('click', function () {
-      toggle();
-      /* Close mobile menu */
-      var nm = document.getElementById('nav-mobile');
-      var nt = document.getElementById('nav-toggle');
-      if (nm) nm.classList.remove('open');
-      if (nt) { nt.classList.remove('open'); nt.setAttribute('aria-expanded', 'false'); }
-      document.body.style.overflow = '';
-    });
   });
 })();

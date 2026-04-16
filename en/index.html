@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Fellow — Hire an AI Team Member</title>
+<meta name="description" content="Smart Fellow is an AI colleague you hire like a new team member. Already trained, works in Slack, Telegram, KakaoTalk. Browse roles, pick one, they start this week.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smartfellow.ai/en/">
+<link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/">
+<link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/">
+<link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/">
+<link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Smart Fellow — Your Next Great Hire Is Already Trained">
+<meta property="og:description" content="An AI colleague trained for your business. Works in Slack, Telegram and KakaoTalk. Browse roles, pick a plan, they start this week.">
+<meta property="og:url" content="https://smartfellow.ai/en/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Smart Fellow — Your Next Great Hire Is Already Trained">
+<meta name="twitter:description" content="An AI colleague trained for your business. Works in Slack, Telegram and KakaoTalk. Browse roles, pick a plan, they start this week.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231c2b38'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared.css">
+<style>
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  padding: 9rem 2rem 6rem; background: var(--cream);
+  position: relative; overflow: hidden;
+}
+.hero-center { position: relative; z-index: 2; max-width: 680px; isolation: isolate; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--sand); border: 1px solid var(--sand-dark);
+  border-radius: 100px; padding: 0.375rem 1rem;
+  font-size: 0.8125rem; font-weight: 500; color: var(--muted);
+  margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.7s ease forwards 0.1s;
+}
+.badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #48bb78; animation: pulse 2s ease-in-out infinite; }
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 4.5vw, 4.75rem);
+  line-height: 1.08; letter-spacing: -0.025em; color: var(--ink);
+  max-width: 14ch; margin: 0 auto 1.75rem;
+  opacity: 0; animation: fadeUp 0.7s ease forwards 0.2s;
+}
+.hero h1 em { font-style: italic; color: var(--muted); }
+.hero-sub {
+  font-size: clamp(0.975rem, 1.6vw, 1.075rem); font-weight: 300; color: var(--muted);
+  max-width: 42ch; line-height: 1.85; margin: 0 auto 2.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease forwards 0.35s;
+}
+.hero-actions {
+  display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.7s ease forwards 0.5s;
+}
+.btn-text {
+  font-size: 1rem; font-weight: 400; color: var(--muted); text-decoration: none;
+  display: flex; align-items: center; gap: 0.35rem; transition: color 0.2s;
+}
+.btn-text:hover { color: var(--ink); }
+.btn-text::after { content: '→'; }
+.hero-note { margin-top: 1.75rem; font-size: 0.8125rem; color: var(--muted-light); opacity: 0; animation: fadeUp 0.7s ease forwards 0.65s; }
+
+/* ── FELLOW BUBBLES ── */
+.fel-net {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 1;
+}
+.fel-net line {
+  stroke: var(--sand-dark); stroke-width: 1;
+  stroke-dasharray: 5 7; opacity: 0;
+  animation: lineIn 0.8s ease forwards;
+}
+@keyframes lineIn { to { opacity: 0.45; } }
+
+.fel-bubbles { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.fel-bubble {
+  position: absolute; pointer-events: auto;
+  display: flex; align-items: center; gap: 0.6rem;
+  background: var(--warm-white);
+  border: 1px solid var(--sand-dark); border-radius: 100px;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+  box-shadow: 0 4px 24px rgba(28,43,56,0.08);
+  white-space: nowrap; opacity: 0;
+}
+.fel-av {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--warm-white); border: 1px solid var(--sand-dark);
+  display: flex; align-items: center;
+  justify-content: center; font-size: 0.95rem; flex-shrink: 0;
+}
+.fel-info { text-align: left; }
+.fel-role { font-size: 0.78rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
+.fel-status { display: flex; align-items: center; gap: 0.3rem; font-size: 0.68rem; color: var(--muted); margin-top: 0.1rem; }
+.fel-dot { width: 5px; height: 5px; border-radius: 50%; background: #48bb78; animation: pulse 2s ease-in-out infinite; flex-shrink: 0; }
+
+.fel-bubble.b1 { top: 19%; left: 14%; }
+.fel-bubble.b2 { top: 14%; right: 14%; }
+.fel-bubble.b3 { top: 50%; left: 12%; }
+.fel-bubble.b4 { top: 52%; right: 12%; }
+.fel-bubble.b5 { bottom: 20%; left: 14%; }
+.fel-bubble.b6 { bottom: 18%; right: 14%; }
+
+@keyframes ff1 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(8px,-22px); } }
+@keyframes ff2 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-11px,-18px); } }
+@keyframes ff3 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(14px,-16px); } }
+@keyframes ff4 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-10px,-24px); } }
+@keyframes ff5 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(11px,-17px); } }
+@keyframes ff6 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-14px,-14px); } }
+
+/* ── DARK STATEMENT ── */
+.dark-band { background: linear-gradient(150deg, #1c2b38 0%, #152030 100%); padding: 9rem 2rem; text-align: center; }
+.eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.28); margin-bottom: 1.5rem; }
+.dark-band h2 {
+  font-family: 'Fraunces', serif; font-size: clamp(2rem, 4.5vw, 4rem);
+  line-height: 1.1; letter-spacing: -0.025em; color: #fff;
+  max-width: 18ch; margin: 0 auto 1.5rem;
+}
+.dark-band h2 em {
+  font-style: italic;
+  color: #d9a088;
+  color: color-mix(in srgb, var(--accent) 78%, #fff 22%);
+}
+.dark-band p { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.45); max-width: 44ch; margin: 0 auto; line-height: 1.8; }
+
+/* ── STORIES ── */
+.story-wrap { background: var(--cream); }
+.story {
+  max-width: 1080px; margin: 0 auto; padding: 9rem 2rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+}
+.story.flip { direction: rtl; }
+.story.flip > * { direction: ltr; }
+.story-eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); opacity: 0.8; margin-bottom: 1rem; }
+.story h2 {
+  font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  line-height: 1.12; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1.25rem;
+}
+.story h2 em { font-style: italic; color: var(--muted); }
+.story p { font-size: 1rem; font-weight: 300; color: var(--muted); line-height: 1.9; margin-bottom: 0.875rem; }
+.story p:last-child { margin-bottom: 0; }
+.story-vis {
+  background: var(--warm-white); border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg); padding: 2.25rem; min-height: 340px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+/* ── CHAT ── */
+.chat { display: flex; flex-direction: column; gap: 0.75rem; }
+.cmsg { display: flex; gap: 0.75rem; }
+.cmsg.r { flex-direction: row-reverse; }
+.cbubble { max-width: 80%; font-size: 0.9rem; line-height: 1.6; padding: 0.75rem 1rem; border-radius: 14px; }
+.cmsg .cbubble { background: var(--sand); color: var(--ink-light); border-bottom-left-radius: 4px; }
+.cmsg.r .cbubble { background: var(--ink); color: rgba(255,255,255,0.88); border-bottom-right-radius: 4px; }
+.clabel { font-size: 0.7rem; font-weight: 700; color: var(--muted-light); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem; }
+.cmsg-wrap { display: flex; flex-direction: column; }
+.cmsg.r .cmsg-wrap { align-items: flex-end; }
+.typing { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--muted-light); padding: 0.25rem 0; }
+.tdots { display: flex; gap: 3px; }
+.tdot { width: 5px; height: 5px; border-radius: 50%; background: var(--muted-light); animation: tdot 1.2s ease-in-out infinite; }
+.tdot:nth-child(2) { animation-delay: 0.2s; }
+.tdot:nth-child(3) { animation-delay: 0.4s; }
+
+/* ── MEMORY ── */
+.mem-list { display: flex; flex-direction: column; gap: 0.625rem; }
+.mem-item { display: flex; align-items: flex-start; gap: 0.875rem; background: var(--sand); border-radius: 10px; padding: 0.875rem 1rem; }
+.mem-icon { width: 28px; height: 28px; border-radius: 7px; background: var(--warm-white); border: 1px solid var(--sand-dark); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+.mem-text { font-size: 0.875rem; line-height: 1.5; color: var(--ink-light); }
+.mem-text strong { font-weight: 600; color: var(--ink); }
+.mem-time { font-size: 0.7rem; color: var(--muted-light); margin-top: 0.2rem; }
+.mem-new { margin-left: auto; font-size: 0.65rem; font-weight: 700; background: #c6f6d5; color: #276749; border-radius: 100px; padding: 0.15rem 0.5rem; flex-shrink: 0; }
+
+/* ── DATA SOVEREIGNTY VISUAL ── */
+.sov-scene { position: relative; width: 180px; height: 180px; margin: 0 auto 1.5rem; }
+.sov-ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 2px dashed var(--sand-dark);
+  animation: sovPulse 4s ease-in-out infinite;
+}
+@keyframes sovPulse {
+  0%,60%,100% { border-color: var(--sand-dark); box-shadow: none; }
+  30% { border-color: rgba(72,187,120,0.5); box-shadow: 0 0 24px rgba(72,187,120,0.12); }
+}
+.sov-center {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 68px; height: 68px; border-radius: 50%;
+  background: var(--sand); border: 1px solid var(--sand-dark);
+  display: flex; align-items: center; justify-content: center; font-size: 1.75rem; z-index: 2;
+}
+.sov-arm { position: absolute; inset: 14px; border-radius: 50%; }
+.sov-arm.a1 { animation: spin 7s linear infinite; }
+.sov-arm.a2 { animation: spin 11s linear infinite; animation-delay: -4s; }
+.sov-arm.a3 { animation: spin 9s linear infinite reverse; animation-delay: -2s; }
+.sov-node { position: absolute; width: 11px; height: 11px; border-radius: 50%; top: -5.5px; left: calc(50% - 5.5px); }
+.n-g { background: #68d391; box-shadow: 0 0 8px rgba(72,187,120,0.55); }
+.n-b { background: #63b3ed; box-shadow: 0 0 8px rgba(99,179,237,0.45); }
+.n-a { background: #f6ad55; box-shadow: 0 0 8px rgba(246,173,85,0.4); }
+
+/* ── ROLES (deck layout) ── */
+.roles-section { background: var(--sand); padding: 9rem 2rem; }
+.roles-head { text-align: center; margin-bottom: 4rem; }
+.roles-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.025em; color: var(--ink); margin-bottom: 1rem; }
+.roles-head p { font-size: 1.0625rem; font-weight: 300; color: var(--muted); max-width: 48ch; margin: 0 auto; line-height: 1.75; }
+.roles-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem;
+  max-width: 1120px; margin: 0 auto; align-items: start;
+}
+.role-card {
+  background: var(--warm-white); border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg); padding: 1.75rem 1.5rem;
+  display: flex; flex-direction: column; position: relative;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.role-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  border-color: var(--accent);
+}
+.role-card.featured {
+  border-color: var(--accent);
+  border-width: 2px;
+  box-shadow: 0 4px 24px rgba(196, 103, 58, 0.12);
+}
+.role-card.featured:hover {
+  box-shadow: 0 8px 36px rgba(196, 103, 58, 0.18);
+  border-color: var(--accent);
+}
+.role-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--accent); color: #fff;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 0.3rem 0.9rem; border-radius: 100px; white-space: nowrap;
+}
+.role-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+.role-card h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; color: var(--ink); margin-bottom: 0.6rem; }
+.role-about { font-size: 0.8125rem; font-weight: 300; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+.role-skills { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.25rem; }
+.role-skill { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.8rem; color: var(--ink-light); line-height: 1.4; }
+.pcheck { width: 15px; height: 15px; border-radius: 50%; background: rgba(196,103,58,0.12); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 9px; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
+.role-salary { border-top: 1px solid var(--sand); padding-top: 1rem; margin-top: auto; padding-bottom: 0.15rem; }
+.salary-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-light); margin-bottom: 0.4rem; }
+.salary-toggle { display: flex; background: var(--sand); border-radius: 100px; padding: 3px; margin-bottom: 0.5rem; }
+.salary-toggle button {
+  flex: 1; padding: 0.35rem 0.5rem; border: none; background: transparent;
+  border-radius: 100px; font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem; font-weight: 600; cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s; color: var(--muted);
+}
+.salary-toggle button.active { background: var(--warm-white); color: var(--ink); box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+.salary-price { display: flex; align-items: baseline; gap: 0.2rem; margin-bottom: 0.25rem; }
+.salary-amount { font-family: 'Fraunces', serif; font-size: 1.5rem; color: var(--ink); letter-spacing: -0.02em; transition: opacity 0.15s ease; }
+.salary-unit { font-size: 0.75rem; color: var(--muted); }
+.salary-note { font-size: 0.72rem; color: var(--muted-light); line-height: 1.45; margin: 0; min-height: 1.1em; transition: opacity 0.15s ease; }
+.role-cta {
+  display: block; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.825rem; font-weight: 600; color: var(--accent); text-decoration: none;
+  padding: 0.65rem; border: 1.5px solid var(--sand-dark); border-radius: 100px;
+  margin-top: 1rem; transition: border-color 0.2s, color 0.2s;
+}
+.role-cta:hover { border-color: var(--accent); }
+.roles-note { text-align: center; margin-top: 4rem; font-size: 0.875rem; color: var(--muted); max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.75; }
+.roles-tech-link { text-align: center; margin-top: 2rem; }
+
+/* ── FAQ ── */
+.faq-section { background: var(--sand); padding: 7rem 2rem; }
+.faq-head { text-align: center; margin-bottom: 3rem; }
+.faq-head h2 { font-family: 'Fraunces', serif; font-size: clamp(1.75rem, 3.5vw, 2.5rem); letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.75rem; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 800px; margin: 0 auto; }
+.faq-item { background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius); padding: 1.75rem; }
+.faq-item h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-style: italic; color: var(--ink); margin-bottom: 0.75rem; }
+.faq-item p { font-size: 0.875rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+
+/* ── HOW ── */
+.how-section { padding: 9rem 2rem; max-width: 1000px; margin: 0 auto; }
+.how-head { text-align: center; margin-bottom: 5rem; }
+.how-head h2 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -0.02em; color: var(--ink); margin-bottom: 1rem; }
+.how-head p { font-size: 1.0625rem; font-weight: 300; color: var(--muted); max-width: 42ch; margin: 0 auto; line-height: 1.75; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.step { padding: 2rem 1.5rem; background: var(--warm-white); border: 1px solid var(--sand-dark); border-radius: var(--radius); }
+.step-num { font-family: 'Fraunces', serif; font-size: 1.35rem; color: var(--accent); line-height: 1; margin-bottom: 1.25rem; letter-spacing: -0.02em; font-weight: 500; }
+.step h3 { font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.625rem; }
+.step p { font-size: 0.875rem; font-weight: 300; color: var(--muted); line-height: 1.75; }
+
+/* ── QUOTE ── */
+.quote-break {
+  background: var(--cream); padding: 8rem 2rem; text-align: center;
+  border-top: 1px solid var(--sand-dark); border-bottom: 1px solid var(--sand-dark);
+}
+.quote-break blockquote {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 2.75rem); line-height: 1.3; letter-spacing: -0.01em;
+  color: var(--ink); max-width: 22ch; margin: 0 auto 1.5rem;
+}
+.quote-attr { font-size: 0.875rem; color: var(--muted-light); }
+
+/* ── CTA ── */
+.cta-section { background: linear-gradient(150deg, #1c2b38 0%, #152030 100%); padding: 10rem 2rem; text-align: center; }
+.cta-section h2 { font-family: 'Fraunces', serif; font-size: clamp(2.25rem, 5vw, 4.5rem); letter-spacing: -0.025em; color: #fff; margin-bottom: 1.25rem; line-height: 1.08; }
+.cta-section > p { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.45); max-width: 40ch; margin: 0 auto 3rem; line-height: 1.75; }
+.cta-calendly-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.05rem; font-weight: 600;
+  color: var(--ink); background: #fff; border: none; border-radius: 100px;
+  padding: 1rem 2.5rem; cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s; margin-bottom: 0.5rem;
+}
+.cta-calendly-btn:hover { opacity: 0.88; transform: scale(1.02); }
+.cta-note { margin-top: 1.25rem; font-size: 0.8125rem; color: rgba(255,255,255,0.22); }
+
+/* ── PAGE-SPECIFIC ANIMATIONS ── */
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
+@keyframes tdot { 0%,60%,100% { transform:translateY(0); opacity:0.4; } 30% { transform:translateY(-4px); opacity:1; } }
+@keyframes float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-8px); } }
+@keyframes spin { to { transform:rotate(360deg); } }
+@keyframes numBump { 0%,100% { transform:scale(1); } 50% { transform:scale(1.3); } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1080px) {
+  .roles-grid { grid-template-columns: repeat(2, 1fr); max-width: 640px; margin-left:auto; margin-right:auto; }
+}
+@media (max-width: 900px) {
+  .hero { padding: 8rem 2rem 5rem; }
+  .fel-net { display: none; }
+  .fel-info { display: none; }
+  .fel-bubble { padding: 0.35rem; border-radius: 50%; gap: 0; }
+  .fel-bubble.b3,
+  .fel-bubble.b4 { display: none; }
+  .fel-bubble.b1 { top: 16%; left: 1rem; }
+  .fel-bubble.b2 { top: 14%; right: 1rem; }
+  .fel-bubble.b5 { bottom: 22%; left: 1rem; }
+  .fel-bubble.b6 { bottom: 20%; right: 1rem; }
+  .story, .story.flip { grid-template-columns:1fr; gap:2.5rem; direction:ltr; padding:5rem 1.5rem; }
+  .faq-grid { grid-template-columns:1fr; }
+  .steps { grid-template-columns:1fr; }
+}
+@media (max-width: 600px) {
+  .roles-grid { grid-template-columns: 1fr; max-width: 380px; }
+}
+@media (max-width: 540px) { .steps { grid-template-columns:1fr; } .faq-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/en/" class="nav-logo">Smart Fellow</a>
+  <ul class="nav-links">
+    <li><a href="/en/#how" data-i18n="nav.how">How it works</a></li>
+    <li><a href="/en/technology.html" data-i18n="nav.technology">The technology</a></li>
+    <li><a href="/en/#roles" data-i18n="nav.roles">Roles</a></li>
+    <li><a href="/en/#contact" data-i18n="nav.contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher" role="group" aria-label="Choose language"><a href="/en/" class="lang-option is-current" data-locale="en" lang="en" aria-current="page">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+    <a href="/en/#contact" class="nav-cta" data-i18n="nav.cta">Meet your Fellow</a>
+  </div>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <ul>
+    <li><a href="/en/#how" onclick="closeMobileMenu()" data-i18n="nav.how">How it works</a></li>
+    <li><a href="/en/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">The technology</a></li>
+    <li><a href="/en/#roles" onclick="closeMobileMenu()" data-i18n="nav.roles">Roles</a></li>
+    <li><a href="/en/#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">Contact</a></li>
+  </ul>
+  <a href="/en/#contact" class="nav-cta" onclick="closeMobileMenu()" data-i18n="nav.cta">Meet your Fellow</a>
+  <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choose language"><a href="/en/" class="lang-option is-current" data-locale="en" lang="en" aria-current="page">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <svg class="fel-net" id="fel-net" aria-hidden="true"></svg>
+
+  <div class="fel-bubbles" aria-hidden="true">
+    <div class="fel-bubble b1"><div class="fel-av">🔍</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b1.role">Research Analyst</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b2"><div class="fel-av">📋</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b2.role">Executive Assistant</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b3"><div class="fel-av">🌍</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b3.role">Cross-border expansion</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b4"><div class="fel-av">🗂️</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b4.role">Operations Assistant</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b5"><div class="fel-av">📝</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b5.role">Document Specialist</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+    <div class="fel-bubble b6"><div class="fel-av">📊</div><div class="fel-info"><div class="fel-role" data-i18n="bubble.b6.role">Market Researcher</div><div class="fel-status"><div class="fel-dot"></div><span data-i18n="bubble.status">Active</span></div></div></div>
+  </div>
+
+  <div class="hero-center">
+    <div class="hero-badge"><div class="badge-dot"></div><span data-i18n="hero.badge">Now available across Korea</span></div>
+    <h1 data-i18n-html="hero.h1">Your next great hire <em>is already trained.</em></em></h1>
+    <p class="hero-sub" data-i18n="hero.sub">A Smart Fellow is an AI colleague that joins your team like a new hire. They work in the apps you already use, learn your business every day, and get sharper the longer they stay. Browse the roles. Pick one. They start this week.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-dark" data-i18n="hero.cta">Meet your Fellow →</a>
+      <a href="#how" class="btn-text" data-i18n="hero.how">How it works</a>
+    </div>
+    <p class="hero-note" data-i18n="hero.note">No technical knowledge needed. No IT department required. We handle everything.</p>
+  </div>
+</section>
+
+<!-- DARK STATEMENT -->
+<section class="dark-band">
+  <p class="eyebrow" data-i18n="dark.eyebrow">The idea is simple</p>
+  <h2 data-i18n-html="dark.h2">Think of it as hiring someone. <em>Not buying software.</em></em></h2>
+  <p data-i18n="dark.p">You onboard a new colleague. They learn your business, your processes, your way of doing things, and they keep getting better. Unlike software, they don't sit in a dashboard waiting to be configured. They work, just like anyone else on your team.</p>
+</section>
+
+<!-- STORIES -->
+<div class="story-wrap">
+
+<div class="rule"></div>
+<section class="story">
+  <div class="reveal">
+    <p class="story-eyebrow" data-i18n="s1.eyebrow">Works where you work</p>
+    <h2 data-i18n-html="s1.h2">No new app to learn. <em>It comes to you.</em></em></h2>
+    <p data-i18n="s1.p1">Your Smart Fellow joins the conversations your team is already having in Slack, Telegram, KakaoTalk, or email. You message it the same way you would message any colleague.</p>
+    <p data-i18n="s1.p2">No dashboards. No logins to manage. No training sessions for your staff. It's simply there, ready to help.</p>
+  </div>
+  <div class="story-vis reveal d1">
+    <div class="chat" id="animated-chat" style="min-height:220px"></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+<section class="story flip">
+  <div class="reveal">
+    <p class="story-eyebrow" data-i18n="s2.eyebrow">Gets better every week</p>
+    <h2 data-i18n-html="s2.h2">It learns your business. <em>Every single day.</em></em></h2>
+    <p data-i18n="s2.p1">Each conversation makes your Smart Fellow more useful. It remembers your clients' names, your team's preferences, your way of working. It learns what good work looks like in your company.</p>
+    <p data-i18n="s2.p2">After a few weeks, it starts anticipating what you need before you ask. Just like a great employee would.</p>
+  </div>
+  <div class="story-vis reveal d1">
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1rem" data-i18n="mem.label">What your Fellow has learned</div>
+    <div class="mem-list">
+      <div class="mem-item">
+        <div class="mem-icon">🏢</div>
+        <div>
+          <div class="mem-text" data-i18n-html="mem.1.text"><strong>Key client:</strong> Hanwha Systems. Always CC Minjun on proposals.</strong> Hanwha Systems. Always CC Minjun on proposals.</div>
+          <div class="mem-time" data-i18n="mem.1.time">Learned 3 weeks ago</div>
+        </div>
+      </div>
+      <div class="mem-item">
+        <div class="mem-icon">✍️</div>
+        <div>
+          <div class="mem-text" data-i18n-html="mem.2.text"><strong>Tone:</strong> Formal in Korean, relaxed in English</strong> Formal in Korean, relaxed in English</div>
+          <div class="mem-time" data-i18n="mem.2.time">Learned 2 weeks ago</div>
+        </div>
+      </div>
+      <div class="mem-item">
+        <div class="mem-icon">📋</div>
+        <div>
+          <div class="mem-text" data-i18n-html="mem.3.text"><strong>Meeting notes:</strong> Always include action items with owners</strong> Always include action items with owners</div>
+          <div class="mem-time" data-i18n="mem.3.time">Learned last week</div>
+        </div>
+        <div class="mem-new" data-i18n="mem.new">New</div>
+      </div>
+      <div class="mem-item">
+        <div class="mem-icon">📊</div>
+        <div>
+          <div class="mem-text" data-i18n-html="mem.4.text"><strong>Reports:</strong> CEO prefers bullet points, max one page</strong> CEO prefers bullet points, max one page</div>
+          <div class="mem-time" data-i18n="mem.4.time">Learned this week</div>
+        </div>
+        <div class="mem-new" data-i18n="mem.new">New</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+<section class="story">
+  <div class="reveal">
+    <p class="story-eyebrow" data-i18n="s3.eyebrow">AI sovereignty, by default</p>
+    <h2 data-i18n-html="s3.h2">Runs on dedicated hardware. <em>Yours alone.</em></em></h2>
+    <p data-i18n="s3.p1">Your Smart Fellow runs on hardware dedicated entirely to your business, managed by us. All intelligence stays on your machine. Your conversations, documents, and business knowledge never touch an external server.</p>
+    <p data-i18n="s3.p2">Want to optionally connect to a specific AI provider like Claude, GPT, or Naver HyperCLOVA? We add it with one toggle. You decide what is on and what isn't, at any time. Your data, your rules.</p>
+  </div>
+  <div class="story-vis reveal d1" style="text-align:center;padding:2rem">
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1rem" data-i18n="s3.vis.label">Where your data lives</div>
+    <div class="sov-scene">
+      <div class="sov-ring"></div>
+      <div class="sov-center">🏢</div>
+      <div class="sov-arm a1"><div class="sov-node n-g"></div></div>
+      <div class="sov-arm a2"><div class="sov-node n-b"></div></div>
+      <div class="sov-arm a3"><div class="sov-node n-a"></div></div>
+    </div>
+    <div style="font-family:'Fraunces',serif;font-size:1.05rem;color:var(--ink);margin-bottom:0.4rem" data-i18n="s3.vis.title">Your dedicated machine</div>
+    <div style="font-size:0.85rem;color:var(--muted);max-width:28ch;margin:0 auto 1.5rem;line-height:1.65" data-i18n="s3.vis.sub">Private by default. Connect to external AI providers at any time. Your call.</div>
+    <div style="border-top:1px solid var(--sand);padding-top:1.25rem;font-size:0.8rem;color:var(--muted-light);display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap">
+      <span data-i18n="s3.vis.pipa">✓ PIPA compliant</span>
+      <span data-i18n="s3.vis.law">✓ Korean data law</span>
+      <span data-i18n="s3.vis.api">✓ You control the APIs</span>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+<section class="story flip">
+  <div class="reveal">
+    <p class="story-eyebrow" data-i18n="s4.eyebrow">Connects to your systems</p>
+    <h2 data-i18n-html="s4.h2">Ask it anything. <em>It looks it up.</em></em></h2>
+    <p data-i18n="s4.p1">When you're ready, your Smart Fellow can be connected directly to the tools your business runs on: your CRM, inventory system, internal database, Google Drive, calendar.</p>
+    <p data-i18n="s4.p2">You ask a question. It finds the answer. No copy-pasting. No switching tabs. Just work, done. We build all the connections. Your team doesn't touch a thing.</p>
+  </div>
+  <div class="story-vis reveal d1">
+    <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted-light);margin-bottom:1.25rem" data-i18n="s4.vis.label">Connected to</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem">
+      <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
+        <div style="font-size:1.25rem">📊</div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)" data-i18n="s4.crm.name">Your CRM</div><div style="font-size:0.7rem;color:var(--muted)" data-i18n="s4.crm.desc">Reads and updates</div></div>
+      </div>
+      <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
+        <div style="font-size:1.25rem">📁</div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)" data-i18n="s4.drive.name">Google Drive</div><div style="font-size:0.7rem;color:var(--muted)" data-i18n="s4.drive.desc">Reads and writes</div></div>
+      </div>
+      <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
+        <div style="font-size:1.25rem">📅</div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)" data-i18n="s4.cal.name">Calendar</div><div style="font-size:0.7rem;color:var(--muted)" data-i18n="s4.cal.desc">Schedules and books</div></div>
+      </div>
+      <div style="background:var(--sand);border-radius:10px;padding:1rem;display:flex;align-items:center;gap:0.75rem">
+        <div style="font-size:1.25rem">🏭</div>
+        <div><div style="font-size:0.8rem;font-weight:600;color:var(--ink)" data-i18n="s4.internal.name">Your internal tools</div><div style="font-size:0.7rem;color:var(--muted)" data-i18n="s4.internal.desc">Custom connection</div></div>
+      </div>
+    </div>
+    <div style="font-size:0.8rem;color:var(--muted);text-align:center;line-height:1.6" data-i18n="s4.vis.note">All integrations are built and maintained by Smart Fellow. Zero technical work for you.</div>
+  </div>
+</section>
+
+</div>
+
+<!-- ROLES -->
+<section class="roles-section" id="roles">
+  <div class="roles-head reveal">
+    <h2 data-i18n="roles.h2">Who would you like to hire?</h2>
+    <p data-i18n="roles.sub">Every Fellow arrives trained and ready to work. Pick the role your team needs — they can start this week.</p>
+  </div>
+
+  <div class="roles-grid">
+
+    <!-- Research Analyst -->
+    <div class="role-card reveal">
+      <div class="role-icon">🔍</div>
+      <h3 data-i18n="role.ra.title">Research Analyst</h3>
+      <p class="role-about" data-i18n="role.ra.about">Gathers market intelligence, compiles competitor analysis, summarizes industry reports, and turns raw data into clear briefings your team can act on.</p>
+      <ul class="role-skills">
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ra.s1">Market &amp; competitor research</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ra.s2">Industry report summaries</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ra.s3">Data synthesis &amp; trend tracking</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ra.s4">Web research on demand</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ra.s5">Learns your preferences over time</span></li>
+      </ul>
+      <div class="role-salary">
+        <div class="salary-label" data-i18n="salary.label">Monthly salary</div>
+        <div class="salary-toggle">
+          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud AI</button>
+          <button data-mode="private" data-i18n="salary.private">🔒 Sovereign AI</button>
+        </div>
+        <div class="salary-price">
+          <span class="salary-amount">₩0.8M</span><span class="salary-unit" data-i18n="salary.unit">/month</span>
+        </div>
+        <p class="salary-note" data-i18n="salary.note.cloud">Your files stay local — tasks via secure cloud API</p>
+      </div>
+      <a href="#contact" class="role-cta" data-i18n="role.cta">Hire this Fellow →</a>
+    </div>
+
+    <!-- Executive Assistant -->
+    <div class="role-card reveal d1">
+      <div class="role-icon">📋</div>
+      <h3 data-i18n="role.ea.title">Executive Assistant</h3>
+      <p class="role-about" data-i18n="role.ea.about">Manages calendars, drafts emails, prepares meeting briefs, tracks follow-ups, and keeps documents organized so you can focus on decisions, not admin.</p>
+      <ul class="role-skills">
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ea.s1">Calendar &amp; scheduling management</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ea.s2">Email drafting &amp; follow-ups</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ea.s3">Meeting prep &amp; minutes</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ea.s4">Document formatting &amp; filing</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.ea.s5">Learns your tone &amp; routines</span></li>
+      </ul>
+      <div class="role-salary">
+        <div class="salary-label" data-i18n="salary.label">Monthly salary</div>
+        <div class="salary-toggle">
+          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud AI</button>
+          <button data-mode="private" data-i18n="salary.private">🔒 Sovereign AI</button>
+        </div>
+        <div class="salary-price">
+          <span class="salary-amount">₩0.8M</span><span class="salary-unit" data-i18n="salary.unit">/month</span>
+        </div>
+        <p class="salary-note" data-i18n="salary.note.cloud">Your files stay local — tasks via secure cloud API</p>
+      </div>
+      <a href="#contact" class="role-cta" data-i18n="role.cta">Hire this Fellow →</a>
+    </div>
+
+    <!-- Cross-Border Expansion Specialist -->
+    <div class="role-card featured reveal d2">
+      <div class="role-badge" data-i18n="role.exp.badge">Most hired</div>
+      <div class="role-icon">🌍</div>
+      <h3 data-i18n="role.exp.title">Cross-Border Expansion Specialist</h3>
+      <p class="role-about" data-i18n="role.exp.about">Supports expansion into new markets with local language and business context. Handles research, regulation checks, and document review across up to five countries.</p>
+      <ul class="role-skills">
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.exp.s1">Market research across five countries</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.exp.s2">Local regulation checks</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.exp.s3">Bilingual emails and documents</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.exp.s4">Local tone and business nuance</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.exp.s5">Learns your markets and terms</span></li>
+      </ul>
+      <div class="role-salary">
+        <div class="salary-label" data-i18n="salary.label">Monthly salary</div>
+        <div class="salary-toggle">
+          <button class="active" data-mode="cloud" data-i18n="salary.cloud">☁️ Cloud AI</button>
+          <button data-mode="private" data-i18n="salary.private">🔒 Sovereign AI</button>
+        </div>
+        <div class="salary-price">
+          <span class="salary-amount">₩0.8M</span><span class="salary-unit" data-i18n="salary.unit">/month</span>
+        </div>
+        <p class="salary-note" data-i18n="salary.note.cloud">Your files stay local — tasks via secure cloud API</p>
+      </div>
+      <a href="#contact" class="role-cta" data-i18n="role.cta">Hire this Fellow →</a>
+    </div>
+
+    <!-- Tailored Fellow -->
+    <div class="role-card reveal d3">
+      <div class="role-icon">🎯</div>
+      <h3 data-i18n="role.tf.title">Tailored Fellow</h3>
+      <p class="role-about" data-i18n="role.tf.about">Need a role that's not on our bench? We train a Fellow specifically for your industry, processes, and terminology. A specialist, built from the ground up.</p>
+      <ul class="role-skills">
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s1">Custom-trained on your domain</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s2">Industry-specific knowledge built in</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s3">Everything a Sovereign Fellow offers</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s4">Custom integrations included</span></li>
+        <li class="role-skill"><div class="pcheck">✓</div><span data-i18n="role.tf.s5">Dedicated account manager</span></li>
+      </ul>
+      <div class="role-salary">
+        <div class="salary-label" data-i18n="salary.label">Monthly salary</div>
+        <div class="salary-price">
+          <span class="salary-amount" data-i18n="role.tf.price">Custom</span>
+        </div>
+        <p class="salary-note" data-i18n="role.tf.salary.note">Scoped to your needs — let's talk</p>
+      </div>
+      <a href="#contact" class="role-cta" data-i18n="role.tf.cta">Talk to us →</a>
+    </div>
+
+  </div>
+
+  <p class="roles-note" data-i18n="roles.note">Every Fellow works in Slack, Teams, KakaoTalk, Telegram, and Email. Hardware included and maintained. Cancel with 60 days notice.</p>
+  <div class="roles-tech-link reveal">
+    <a href="/en/technology.html" class="btn-outline" data-i18n="roles.tech.link">Learn more about the technology →</a>
+  </div>
+</section>
+
+<!-- HOW A FELLOW JOINS -->
+<section class="how-section" id="how">
+  <div class="how-head reveal">
+    <h2 data-i18n="how.h2">How a Fellow joins your team</h2>
+    <p data-i18n="how.sub">From your decision to your Fellow's first day. No surprises, no hidden complexity.</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num" data-i18n="how.s1.num">Week 1</div>
+      <h3 data-i18n="how.s1.title">Setup &amp; first workflows</h3>
+      <p data-i18n="how.s1.p">Role definition, access setup, communication preferences. Your Fellow handles its first real tasks and starts learning your business context.</p>
+    </div>
+    <div class="step reveal d1">
+      <div class="step-num" data-i18n="how.s2.num">Week 2</div>
+      <h3 data-i18n="how.s2.title">Calibration</h3>
+      <p data-i18n="how.s2.p">Refinement based on early output review. Tone, format, and priorities are dialed in. Your Fellow starts to feel like it understands how your team works.</p>
+    </div>
+    <div class="step reveal d2">
+      <div class="step-num" data-i18n="how.s3.num">Ongoing</div>
+      <h3 data-i18n="how.s3.title">Gets sharper over time</h3>
+      <p data-i18n="how.s3.p">Memory improves, workflows sharpen, new tasks can be added as your team discovers new use cases. The longer they stay, the better they get.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BUYER FAQ -->
+<section class="faq-section">
+  <div class="faq-head reveal">
+    <h2 data-i18n="faq.h2">Questions you're probably asking</h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item reveal">
+      <h3 data-i18n="faq.q1.title">"What if it doesn't deliver?"</h3>
+      <p data-i18n="faq.q1.p">No long-term lock-in. Cancel with 60 days notice. We work closely with you during onboarding to make sure your Fellow is right for the role.</p>
+    </div>
+    <div class="faq-item reveal d1">
+      <h3 data-i18n="faq.q2.title">"Will my team actually use it?"</h3>
+      <p data-i18n="faq.q2.p">Your Fellow works in Slack, KakaoTalk, Teams — the apps your team already uses every day. No new tool to learn. No training required.</p>
+    </div>
+    <div class="faq-item reveal d2">
+      <h3 data-i18n="faq.q3.title">"Is our data safe?"</h3>
+      <p data-i18n="faq.q3.p">Private Fellows run 100% on local hardware. Cloud Fellows keep your files on your machine — only task requests touch the cloud. Either way, you control everything.</p>
+    </div>
+    <div class="faq-item reveal d3">
+      <h3 data-i18n="faq.q4.title">"How fast will we see results?"</h3>
+      <p data-i18n="faq.q4.p">Most teams get useful output in week one. By week two, your Fellow is calibrated to your tone, your formats, and your way of doing things.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote-break">
+  <blockquote data-i18n="quote.text">"The best colleague you've ever had: one who never forgets, never burns out, and always shows up."</blockquote>
+  <p class="quote-attr" data-i18n="quote.attr">The Smart Fellow promise</p>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2 class="reveal" data-i18n-html="cta.h2">Ready to meet<br>your Fellow?</h2>
+  <p class="reveal" data-i18n="cta.p">Book a free 30-minute call directly in our calendar. We will walk through your team's needs and see if Smart Fellow is the right fit. No technical knowledge needed, just a conversation.</p>
+  <div class="reveal">
+    <button class="cta-calendly-btn" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="cta.btn">Book a free call →</button>
+  </div>
+  <p class="cta-note" data-i18n="cta.note">We work in Korean, English, and French. No commitment required.</p>
+</section>
+
+<footer>
+  <div class="footer-logo">Smart Fellow</div>
+  <ul class="footer-links">
+    <li><a href="#how" data-i18n="footer.how">How it works</a></li>
+    <li><a href="/en/technology.html" data-i18n="footer.tech">The technology</a></li>
+    <li><a href="#roles" data-i18n="footer.roles">Roles</a></li>
+    <li><a href="#contact" data-i18n="footer.contact">Contact</a></li>
+  </ul>
+  <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>
+</footer>
+
+<script>window.SF_CONFIG={"locale":"en"};</script>
+
+<script src="/i18n.js"></script>
+<script>
+/* ── Scroll reveal ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ── Mobile nav ── */
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
+navToggle.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+function closeMobileMenu() {
+  navMobile.classList.remove('open'); navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = '';
+}
+
+/* ── Hide / reveal nav on scroll ── */
+(function () {
+  const navEl = document.querySelector('nav');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (navMobile.classList.contains('open')) { lastY = y; return; }
+    if (Math.abs(y - lastY) < 6) return;
+    if (y <= 0 || y < lastY) {
+      navEl.classList.remove('nav-hidden');   /* scrolling up or at top → show */
+    } else {
+      navEl.classList.add('nav-hidden');      /* scrolling down → hide */
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+
+/* ── HERO BUBBLE CONSTELLATION ── */
+(function () {
+  const heroEl  = document.querySelector('.hero');
+  const netSvg  = document.getElementById('fel-net');
+  const bubbles = Array.from(document.querySelectorAll('.fel-bubble'));
+
+  const ANIMS = ['ff1','ff2','ff3','ff4','ff5','ff6'];
+  const DURS  = ['7s','8.5s','6.5s','9s','7.5s','8s'];
+
+  bubbles.forEach((b, i) => {
+    setTimeout(() => {
+      b.style.transition = 'opacity 0.7s ease';
+      b.style.opacity    = '1';
+      setTimeout(() => {
+        b.style.transition              = '';
+        b.style.animationName           = ANIMS[i];
+        b.style.animationDuration       = DURS[i];
+        b.style.animationTimingFunction = 'ease-in-out';
+        b.style.animationIterationCount = 'infinite';
+      }, 750);
+    }, 600 + i * 140);
+  });
+
+  function drawLines() {
+    const hr = heroEl.getBoundingClientRect();
+    const cx = hr.width  / 2;
+    const cy = hr.height / 2;
+    netSvg.setAttribute('viewBox', `0 0 ${hr.width} ${hr.height}`);
+
+    bubbles.forEach((b, i) => {
+      const br = b.getBoundingClientRect();
+      const bx = br.left - hr.left + br.width  / 2;
+      const by = br.top  - hr.top  + br.height / 2;
+      const ln = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      ln.setAttribute('x1', bx); ln.setAttribute('y1', by);
+      ln.setAttribute('x2', cx); ln.setAttribute('y2', cy);
+      ln.style.animationDelay = (0.9 + i * 0.12) + 's';
+      netSvg.appendChild(ln);
+    });
+  }
+
+  window.addEventListener('load', () => setTimeout(drawLines, 120));
+  window.addEventListener('resize', () => { netSvg.innerHTML = ''; drawLines(); });
+})();
+
+/* ── ANIMATED CHAT (story section) ── */
+const chatEl = document.getElementById('animated-chat');
+
+function buildMsg(type, html) {
+  const t = SF.i18n.t;
+  const wrap = document.createElement('div');
+  wrap.className = type === 'user' ? 'cmsg' : 'cmsg r';
+  wrap.style.cssText = 'opacity:0;transform:translateY(10px);transition:opacity 0.4s ease,transform 0.4s ease';
+  const mwrap = document.createElement('div'); mwrap.className = 'cmsg-wrap';
+  if (type === 'bot') mwrap.style.alignItems = 'flex-end';
+  const label = document.createElement('div'); label.className = 'clabel';
+  label.textContent = type === 'user' ? t('chat.label.you') : t('chat.label.fellow');
+  const bubble = document.createElement('div'); bubble.className = 'cbubble';
+  bubble.innerHTML = html;
+  mwrap.append(label, bubble);
+  wrap.appendChild(mwrap);
+  return wrap;
+}
+
+function buildTyping() {
+  const row = document.createElement('div');
+  row.style.cssText = 'display:flex;align-items:center;gap:0.5rem;padding:0.35rem 0;opacity:0;transition:opacity 0.3s ease';
+  row.innerHTML = '<div style="width:26px;height:26px;border-radius:50%;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0">🤖</div>'
+    + '<div class="typing">' + SF.i18n.t('chat.typing') + '<div class="tdots"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div></div>';
+  return row;
+}
+
+function playChatSeq() {
+  if (!chatEl) return;
+  chatEl.innerHTML = '';
+  const u = buildMsg('user', SF.i18n.t('chat.user'));
+  const ty = buildTyping();
+  const b = buildMsg('bot', SF.i18n.t('chat.bot'));
+  chatEl.append(u, ty, b);
+
+  const show = (el, delay) => setTimeout(() => { el.style.opacity='1'; el.style.transform='translateY(0)'; }, delay);
+  show(u, 200);
+  setTimeout(() => { ty.style.opacity = '1'; }, 1100);
+  setTimeout(() => { ty.style.opacity = '0'; show(b, 300); }, 2800);
+  setTimeout(() => {
+    [u, ty, b].forEach(el => { el.style.transition = 'opacity 0.6s ease'; el.style.opacity = '0'; });
+    setTimeout(playChatSeq, 700);
+  }, 9000);
+}
+
+if (chatEl) {
+  const chatObs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) { chatObs.disconnect(); playChatSeq(); }
+  }, { threshold: 0.3 });
+  chatObs.observe(chatEl);
+}
+
+/* Replay chat on language change */
+SF.i18n.onLangChange(function () {
+  if (chatEl && chatEl.children.length > 0) { playChatSeq(); }
+});
+
+/* ── Salary toggle (Cloud AI ↔ Sovereign AI) ── */
+(function () {
+  var CLOUD_PRICE  = '₩0.8M';
+  var PRIVATE_PRICE = '₩1.5M';
+
+  function updateCard(card, mode) {
+    var amount = card.querySelector('.salary-amount');
+    var note   = card.querySelector('.salary-note');
+    if (!amount || !note) return;
+    amount.textContent = (mode === 'cloud') ? CLOUD_PRICE : PRIVATE_PRICE;
+    var noteKey = (mode === 'cloud') ? 'salary.note.cloud' : 'salary.note.private';
+    note.textContent = SF.i18n.t(noteKey);
+    note.setAttribute('data-i18n', noteKey);
+  }
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target;
+    if (btn.tagName !== 'BUTTON') btn = btn.closest('button');
+    if (!btn) return;
+    var toggle = btn.closest('.salary-toggle');
+    if (!toggle) return;
+    var card = btn.closest('.role-card');
+    if (!card) return;
+    var mode = btn.getAttribute('data-mode');
+    if (!mode) return;
+    toggle.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    updateCard(card, mode);
+  });
+
+  SF.i18n.onLangChange(function () {
+    document.querySelectorAll('.salary-toggle').forEach(function (tgl) {
+      var active = tgl.querySelector('button.active');
+      if (active) {
+        var card = tgl.closest('.role-card');
+        if (card) updateCard(card, active.getAttribute('data-mode'));
+      }
+    });
+  });
+})();
+</script>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
