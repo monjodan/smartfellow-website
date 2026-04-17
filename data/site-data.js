@@ -21,6 +21,8 @@ module.exports = {
   },
   pages: {
     home: {
+      path: '/',
+      template: 'index.template.html',
       output: 'index.html',
       meta: {
         en: {
@@ -44,6 +46,8 @@ module.exports = {
       }
     },
     technology: {
+      path: '/technology.html',
+      template: 'technology.template.html',
       output: 'technology.html',
       meta: {
         en: {
@@ -63,6 +67,31 @@ module.exports = {
           description: 'Smart Fellow가 어떻게 작동하는지, AI 동료를 실제로 유용하게 만드는 기술, 기억, 캐릭터를 쉽게 설명합니다.',
           ogTitle: 'Smart Fellow를 움직이는 기술',
           ogDescription: 'Smart Fellow를 구성하는 기술, 기억, 캐릭터, 그리고 하드웨어 아키텍처를 살펴보세요.'
+        }
+      }
+    },
+    sovereign: {
+      path: '/sovereign/',
+      template: 'sovereign.template.html',
+      output: 'sovereign/index.html',
+      meta: {
+        en: {
+          title: 'Smart Fellow Sovereign — Offline AI for Confidential Work',
+          description: 'A dedicated offline AI machine for confidential documents, internal analysis, R&D, and multilingual work. Local processing, encrypted memory, approved inputs only.',
+          ogTitle: 'Smart Fellow Sovereign — Offline AI for Confidential Work',
+          ogDescription: 'Bring AI into sensitive workflows without sending confidential work outside your controlled environment.'
+        },
+        fr: {
+          title: 'Smart Fellow Sovereign — IA hors ligne pour le travail confidentiel',
+          description: 'Une machine IA dédiée et hors ligne pour les documents confidentiels, l’analyse interne, la R&D et le travail multilingue. Traitement local, mémoire chiffrée, entrées approuvées uniquement.',
+          ogTitle: 'Smart Fellow Sovereign — IA hors ligne pour le travail confidentiel',
+          ogDescription: 'Faites entrer l’IA dans les workflows sensibles sans faire sortir le travail confidentiel de votre environnement contrôlé.'
+        },
+        ko: {
+          title: 'Smart Fellow Sovereign — 기밀 업무를 위한 오프라인 AI',
+          description: '기밀 문서, 내부 분석, R&D, 다국어 업무를 위한 전용 오프라인 AI 머신. 로컬 처리, 암호화된 메모리, 승인된 입력만 사용합니다.',
+          ogTitle: 'Smart Fellow Sovereign — 기밀 업무를 위한 오프라인 AI',
+          ogDescription: '기밀 업무를 통제된 환경 밖으로 보내지 않고도 AI를 도입하세요.'
         }
       }
     }

@@ -31,7 +31,8 @@ function escapeAttribute(value) {
 }
 
 function urlFor(locale, pageName) {
-  return pageName === 'home' ? `/${locale}/` : `/${locale}/technology.html`;
+  const pagePath = siteData.pages[pageName].path;
+  return pagePath === '/' ? `/${locale}/` : `/${locale}${pagePath}`;
 }
 
 function absoluteUrl(pathname) {
@@ -77,7 +78,7 @@ function buildSeo(pageName, locale) {
     .map((targetLocale) => `<meta property="og:locale:alternate" content="${siteData.localeMeta[targetLocale].ogLocale}">`)
     .join('\n');
 
-  const xDefault = absoluteUrl(pageName === 'home' ? '/en/' : '/en/technology.html');
+  const xDefault = absoluteUrl(urlFor('en', pageName));
 
   return [
     `<title>${escapeHtml(meta.title)}</title>`,
@@ -131,9 +132,15 @@ function transformTemplate(template, pageName, locale, localeStrings) {
   return html;
 }
 
+function rootOutputForPage(pageName) {
+  const pagePath = siteData.pages[pageName].path;
+  if (pagePath === '/') return 'index.html';
+  return pagePath.endsWith('/') ? `${pagePath.slice(1)}index.html` : pagePath.slice(1);
+}
+
 function buildRedirect(pageName) {
-  const suffix = pageName === 'home' ? '' : 'technology.html';
-  const fallback = pageName === 'home' ? '/en/' : '/en/technology.html';
+  const pagePath = siteData.pages[pageName].path;
+  const fallback = pagePath === '/' ? '/en/' : `/en${pagePath}`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,7 +154,7 @@ function buildRedirect(pageName) {
   try { saved = localStorage.getItem('sf-lang'); } catch (e) {}
   var browser = (navigator.language || navigator.userLanguage || '').toLowerCase();
   var locale = saved || (browser.indexOf('ko') === 0 ? 'ko' : browser.indexOf('fr') === 0 ? 'fr' : 'en');
-  window.location.replace('/' + locale + '/${suffix}');
+  window.location.replace('/' + locale + '${pagePath}');
 })();
 </script>
 <noscript><meta http-equiv="refresh" content="0; url=${fallback}"></noscript>
@@ -160,8 +167,9 @@ function buildRedirect(pageName) {
 function buildSitemap() {
   const paths = [];
   siteData.localeOrder.forEach((locale) => {
-    paths.push(urlFor(locale, 'home'));
-    paths.push(urlFor(locale, 'technology'));
+    Object.keys(siteData.pages).forEach((pageName) => {
+      paths.push(urlFor(locale, pageName));
+    });
   });
   const body = paths
     .map((pathname) => `  <url><loc>${absoluteUrl(pathname)}</loc></url>`)
@@ -174,13 +182,15 @@ ${body}
 }
 
 function writeFile(relativePath, contents) {
-  fs.writeFileSync(path.join(rootDir, relativePath), contents);
+  const fullPath = path.join(rootDir, relativePath);
+  fs.mkdirSync(path.dirname(fullPath), { recursive: true });
+  fs.writeFileSync(fullPath, contents);
 }
 
 function buildSite() {
   const locales = readTranslations();
   Object.keys(siteData.pages).forEach((pageName) => {
-    const templatePath = path.join(templatesDir, siteData.pages[pageName].output === 'index.html' ? 'index.template.html' : 'technology.template.html');
+    const templatePath = path.join(templatesDir, siteData.pages[pageName].template);
     const template = fs.readFileSync(templatePath, 'utf8');
     siteData.localeOrder.forEach((locale) => {
       const outDir = path.join(rootDir, locale);
@@ -190,8 +200,9 @@ function buildSite() {
     });
   });
 
-  writeFile('index.html', buildRedirect('home'));
-  writeFile('technology.html', buildRedirect('technology'));
+  Object.keys(siteData.pages).forEach((pageName) => {
+    writeFile(rootOutputForPage(pageName), buildRedirect(pageName));
+  });
   writeFile('sitemap.xml', buildSitemap());
 }
 

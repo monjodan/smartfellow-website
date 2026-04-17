@@ -2,8 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://smartfellow.ai/en/</loc></url>
   <url><loc>https://smartfellow.ai/en/technology.html</loc></url>
+  <url><loc>https://smartfellow.ai/en/sovereign/</loc></url>
   <url><loc>https://smartfellow.ai/fr/</loc></url>
   <url><loc>https://smartfellow.ai/fr/technology.html</loc></url>
+  <url><loc>https://smartfellow.ai/fr/sovereign/</loc></url>
   <url><loc>https://smartfellow.ai/ko/</loc></url>
   <url><loc>https://smartfellow.ai/ko/technology.html</loc></url>
+  <url><loc>https://smartfellow.ai/ko/sovereign/</loc></url>
 </urlset>
