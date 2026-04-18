@@ -30,12 +30,12 @@
       'hero.note':  'Managed for your team. Local models first. Cloud only when useful.',
 
       /* Bubbles */
-      'bubble.b1.role': 'Internal Research Analyst',
-      'bubble.b2.role': 'Private Executive Assistant',
-      'bubble.b3.role': 'Cross-border Specialist',
-      'bubble.b4.role': 'Operations Assistant',
-      'bubble.b5.role': 'Confidential Document Specialist',
-      'bubble.b6.role': 'Internal Knowledge Researcher',
+      'bubble.b1.role': 'R&D Analyst',
+      'bubble.b2.role': 'Sensitive Data Ops',
+      'bubble.b3.role': 'Document Analyst',
+      'bubble.b4.role': 'Due Diligence',
+      'bubble.b5.role': 'Board Materials',
+      'bubble.b6.role': 'Internal Knowledge',
       'bubble.status':  'Runs locally',
 
       /* Dark band */
@@ -575,12 +575,12 @@
       'hero.note':  '팀을 위한 관리형 서비스. 기본은 로컬 모델. 클라우드는 필요할 때만.',
 
       /* Bubbles */
-      'bubble.b1.role': '내부 리서치 애널리스트',
-      'bubble.b2.role': '프라이빗 경영 비서',
-      'bubble.b3.role': '해외 확장 스페셜리스트',
-      'bubble.b4.role': '운영 어시스턴트',
-      'bubble.b5.role': '기밀 문서 스페셜리스트',
-      'bubble.b6.role': '내부 지식 리서처',
+      'bubble.b1.role': 'R&D 분석가',
+      'bubble.b2.role': '민감 데이터 운영',
+      'bubble.b3.role': '문서 분석가',
+      'bubble.b4.role': '실사 지원',
+      'bubble.b5.role': '이사회 자료',
+      'bubble.b6.role': '내부 지식',
       'bubble.status':  '로컬 실행',
 
       /* Dark band */
