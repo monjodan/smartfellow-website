@@ -40,14 +40,14 @@ function absoluteUrl(pathname) {
 }
 
 function replaceLocalizedBlocks(html, localeStrings) {
-  html = html.replace(/(<[^>]+data-i18n-html="([^"]+)"[^>]*>)([\s\S]*?)(<\/[^>]+>)/g, (full, open, key, inner, close) => {
+  html = html.replace(/<([a-z0-9:-]+)([^>]*data-i18n-html="([^"]+)"[^>]*)>([\s\S]*?)<\/\1>/gi, (full, tag, attrs, key) => {
     if (!Object.prototype.hasOwnProperty.call(localeStrings, key)) return full;
-    return `${open}${localeStrings[key]}${close}`;
+    return `<${tag}${attrs}>${localeStrings[key]}</${tag}>`;
   });
 
-  html = html.replace(/(<[^>]+data-i18n="([^"]+)"[^>]*>)([\s\S]*?)(<\/[^>]+>)/g, (full, open, key, inner, close) => {
+  html = html.replace(/<([a-z0-9:-]+)([^>]*data-i18n="([^"]+)"[^>]*)>([\s\S]*?)<\/\1>/gi, (full, tag, attrs, key) => {
     if (!Object.prototype.hasOwnProperty.call(localeStrings, key)) return full;
-    return `${open}${escapeHtml(localeStrings[key])}${close}`;
+    return `<${tag}${attrs}>${escapeHtml(localeStrings[key])}</${tag}>`;
   });
 
   return html;
@@ -125,7 +125,7 @@ function transformTemplate(template, pageName, locale, localeStrings) {
   html = html.replace(/<script src="https:\/\/assets\.calendly\.com\/assets\/external\/widget\.js" async><\/script>/g, '');
   html = html.replace(/<script src="\/i18n\.js"><\/script>/, `${buildConfigScript(locale)}\n${buildLocaleScript(locale)}\n<script src="/i18n.js"></script>`);
 
-  if (pageName === 'home') {
+  if (pageName === 'home' || pageName === 'sovereign') {
     html = html.replace('</body>', '<script src="https://assets.calendly.com/assets/external/widget.js" async></script>\n</body>');
   }
 

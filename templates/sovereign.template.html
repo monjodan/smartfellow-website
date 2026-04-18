@@ -6,6 +6,7 @@
 <title>Smart Fellow Sovereign</title>
 <meta name="description" content="Offline AI for confidential work.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231c2b38'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -959,6 +960,11 @@
   background: #fff;
   padding: 0.9rem 2.1rem;
   border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   transition: opacity 0.2s, transform 0.2s;
 }
@@ -1075,7 +1081,7 @@
       <h1 class="reveal d1" data-i18n-html="sov.hero.h1">Offline AI for work that must stay confidential.</h1>
       <p class="reveal d2" data-i18n="sov.hero.sub">Smart Fellow Sovereign is a dedicated AI machine for sensitive documents, internal analysis, R&D, client files, and multilingual work. It runs locally, can operate without internet access, and only works with the data your team explicitly provides.</p>
       <div class="sov-hero-actions reveal d3">
-        <a href="/#contact" class="btn-light" data-i18n="sov.hero.ctaPrimary">Book a sovereign workflow review</a>
+        <button type="button" class="btn-light" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sov.hero.ctaPrimary">Book a sovereign workflow review</button>
         <a href="#offline-mode" class="btn-outline" data-i18n="sov.hero.ctaSecondary">See how Offline Mode works</a>
       </div>
       <div class="sov-hero-note reveal d3" data-i18n="sov.hero.note">Local AI. Encrypted memory. No internet required. Controlled access by design.</div>
@@ -1370,7 +1376,7 @@
   <h2 class="reveal" data-i18n-html="sov.cta.h2">Bring AI into confidential work without sending the work outside.</h2>
   <p class="reveal" data-i18n="sov.cta.p">Tell us what your team wants to do with AI, what information needs to stay protected, and whether the workflow should be local, offline, or hybrid.</p>
   <div class="cta-actions reveal d1">
-    <a href="/#contact" class="btn-light" data-i18n="sov.cta.primary">Book a sovereign workflow review</a>
+    <button type="button" class="btn-light" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sov.cta.primary">Book a sovereign workflow review</button>
     <a href="/technology.html" class="btn-outline" data-i18n="sov.cta.secondary">See the technology</a>
   </div>
 </section>

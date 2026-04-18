@@ -22,6 +22,7 @@
 <meta name="twitter:title" content="Smart Fellow Sovereign — 기밀 업무를 위한 오프라인 AI">
 <meta name="twitter:description" content="기밀 업무를 통제된 환경 밖으로 보내지 않고도 AI를 도입하세요.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231c2b38'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -975,6 +976,11 @@
   background: #fff;
   padding: 0.9rem 2.1rem;
   border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   transition: opacity 0.2s, transform 0.2s;
 }
@@ -1091,7 +1097,7 @@
       <h1 class="reveal d1" data-i18n-html="sov.hero.h1">반드시 <em>기밀로</em> 남아야 하는 업무를 위한 오프라인 AI</h1>
       <p class="reveal d2" data-i18n="sov.hero.sub">Smart Fellow Sovereign은 민감한 문서, 내부 분석, R&amp;D, 고객 파일, 다국어 업무를 위한 전용 AI 머신입니다. 로컬에서 실행되며 인터넷 없이도 운영할 수 있고, 팀이 명시적으로 제공한 데이터로만 작동합니다.</p>
       <div class="sov-hero-actions reveal d3">
-        <a href="/ko/#contact" class="btn-light" data-i18n="sov.hero.ctaPrimary">소버린 워크플로우 리뷰 예약</a>
+        <button type="button" class="btn-light" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sov.hero.ctaPrimary">소버린 워크플로우 리뷰 예약</button>
         <a href="#offline-mode" class="btn-outline" data-i18n="sov.hero.ctaSecondary">오프라인 모드 작동 방식 보기</a>
       </div>
       <div class="sov-hero-note reveal d3" data-i18n="sov.hero.note">로컬 AI. 암호화된 메모리. 인터넷 불필요. 설계된 통제.</div>
@@ -1386,7 +1392,7 @@
   <h2 class="reveal" data-i18n-html="sov.cta.h2">기밀 업무를 밖으로 보내지 않고도 <em>AI를 도입하세요.</em></h2>
   <p class="reveal" data-i18n="sov.cta.p">팀이 AI로 무엇을 하고 싶은지, 어떤 정보가 보호되어야 하는지, 워크플로우가 로컬인지 오프라인인지 하이브리드인지 알려주세요.</p>
   <div class="cta-actions reveal d1">
-    <a href="/ko/#contact" class="btn-light" data-i18n="sov.cta.primary">소버린 워크플로우 리뷰 예약</a>
+    <button type="button" class="btn-light" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sov.cta.primary">소버린 워크플로우 리뷰 예약</button>
     <a href="/ko/technology.html" class="btn-outline" data-i18n="sov.cta.secondary">기술 보기</a>
   </div>
 </section>
@@ -1537,5 +1543,6 @@ questionEntries.forEach((entry) => {
 });
 runLogoGlitch();
 </script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
