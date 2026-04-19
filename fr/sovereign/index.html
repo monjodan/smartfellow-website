@@ -203,6 +203,48 @@
   margin-top: 2rem;
 }
 
+/* ── Scramble animation ── */
+.sov-scramble {
+  padding: 5rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.sov-scramble-inner {
+  text-align: center;
+}
+
+.scramble-display {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.scramble-word {
+  display: inline-block;
+  color: var(--accent);
+  min-width: 4.2ch;
+  transition: color 0.5s ease;
+}
+
+.scramble-word.is-settled {
+  color: var(--ink);
+}
+
+.scramble-caption {
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
 @media (max-width: 980px) {
   .sov-boundary-grid,
   .sov-security-grid {
@@ -211,6 +253,10 @@
 
   .sov-security-features {
     grid-template-columns: 1fr;
+  }
+
+  .scramble-display {
+    white-space: normal;
   }
 }
 </style>
@@ -221,13 +267,13 @@
   <a href="/fr/" class="nav-logo">Smart Fellow</a>
   <ul class="nav-links">
     <li><a href="/fr/#how" data-i18n="nav.how">Comment ça marche</a></li>
-    <li><a href="/fr/technology.html" data-i18n="nav.technology">La technologie</a></li>
+    <li><a href="/fr/technology.html" data-i18n="nav.technology">Technologie</a></li>
     <li><a href="/fr/#roles" data-i18n="nav.roles">Rôles</a></li>
     <li><a href="/fr/#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switcher" role="group" aria-label="Choisir la langue"><a href="/en/sovereign/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/sovereign/" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/sovereign/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
-    <a href="/fr/#contact" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Rencontrez votre Fellow</a>
+    <a href="/fr/#contact" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Réserver un appel</a>
   </div>
   <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -237,50 +283,60 @@
 <div class="nav-mobile" id="nav-mobile">
   <ul>
     <li><a href="/fr/#how" onclick="closeMobileMenu()" data-i18n="nav.how">Comment ça marche</a></li>
-    <li><a href="/fr/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">La technologie</a></li>
+    <li><a href="/fr/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">Technologie</a></li>
     <li><a href="/fr/#roles" onclick="closeMobileMenu()" data-i18n="nav.roles">Rôles</a></li>
     <li><a href="/fr/#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">Contact</a></li>
   </ul>
-  <a href="/fr/#contact" class="nav-cta" onclick="closeMobileMenu(); Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Rencontrez votre Fellow</a>
+  <a href="/fr/#contact" class="nav-cta" onclick="closeMobileMenu(); Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Réserver un appel</a>
   <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choisir la langue"><a href="/en/sovereign/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/sovereign/" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/sovereign/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
 </div>
 
 <!-- Hero -->
 <section class="sov-hero">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="sovv2.hero.eyebrow">For high-sensitivity workflows</p>
-    <h1 class="hero-title reveal d1" data-i18n-html="sovv2.hero.h1">Offline AI for work that must <em>stay confidential.</em></h1>
-    <p class="lede reveal d2" data-i18n="sovv2.hero.body">Smart Fellow Sovereign is a dedicated AI machine for sensitive documents, internal analysis, R&amp;amp;D, client files, and multilingual work. It runs locally, can operate without internet access, and only works with the data your team explicitly provides.</p>
+    <p class="eyebrow reveal" data-i18n="sovv2.hero.eyebrow">Pour les workflows très sensibles</p>
+    <h1 class="hero-title reveal d1" data-i18n-html="sovv2.hero.h1">Une IA hors ligne pour le travail qui doit rester <em>confidentiel.</em></h1>
+    <p class="lede reveal d2" data-i18n="sovv2.hero.body">Smart Fellow Sovereign est une machine IA dédiée pour les documents sensibles, l'analyse interne, la R&amp;amp;D, les dossiers clients et le travail multilingue. Elle fonctionne en local, peut opérer sans accès internet et ne travaille qu'avec les données que votre équipe lui fournit explicitement.</p>
     <div class="hero-actions reveal d3">
-      <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.hero.primary">Book a sovereign workflow review</button>
-      <a href="#the-problem" class="btn-outline" data-i18n="sovv2.hero.secondary">See the problem it solves</a>
+      <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.hero.primary">Réserver une revue de workflow souverain</button>
+      <a href="#the-problem" class="btn-outline" data-i18n="sovv2.hero.secondary">Voir le problème qu'il résout</a>
     </div>
+  </div>
+</section>
+
+<!-- Smart → Sealed scramble -->
+<section class="sov-scramble">
+  <div class="section-inner sov-scramble-inner" id="scramble-section">
+    <div class="scramble-display" aria-label="Sealed Fellow">
+      <span class="scramble-word" id="scramble-word">Smart</span>&#8202;<span class="scramble-fellow">Fellow</span>
+    </div>
+    <p class="scramble-caption" data-i18n="sovv2.scramble.caption">Le même système. Un environnement scellé.</p>
   </div>
 </section>
 
 <!-- The problem -->
 <section class="section" id="the-problem">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="sovv2.problem.eyebrow">The problem</p>
-    <h2 class="section-title reveal d1" data-i18n-html="sovv2.problem.h2">Some work should never be <em>sent to the cloud.</em></h2>
-    <p class="lede reveal d2" data-i18n="sovv2.problem.lead">Your team may want AI assistance for confidential analysis, R&amp;amp;D files, client documents, legal material, and sensitive multilingual work. But the most valuable documents are often the ones that cannot be casually uploaded to public AI tools or third-party systems. For these workflows, the question is not which model is best. The question is whether the information stays inside a boundary your team can actually control.</p>
+    <p class="eyebrow reveal" data-i18n="sovv2.problem.eyebrow">Le problème</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.problem.h2">Certains travaux ne devraient jamais être envoyés <em>dans le cloud.</em></h2>
+    <p class="lede reveal d2" data-i18n="sovv2.problem.lead">Votre équipe peut vouloir une assistance IA pour des analyses confidentielles, des fichiers de R&amp;D, des documents clients et du contenu juridique. Mais les documents les plus précieux sont souvent ceux qu'on ne peut pas téléverser librement dans des outils IA publics. Pour ces workflows, la vraie question est de savoir si l'information reste dans une frontière que votre équipe contrôle réellement.</p>
 
     <div class="sov-qa-list reveal d3">
       <div class="sov-qa-item">
-        <div class="sov-qa-q"><span class="sov-qa-num">1</span><span data-i18n="sovv2.problem.q1">Where does the information go?</span></div>
-        <p class="sov-qa-a" data-i18n="sovv2.problem.a1">Approved documents stay inside the machine boundary. Work is processed locally without requiring an external model provider for the core workflow.</p>
+        <div class="sov-qa-q"><span class="sov-qa-num">1</span><span data-i18n="sovv2.problem.q1">Où vont les informations ?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a1">Les documents approuvés restent à l'intérieur de la machine. Le travail peut être traité en local sans dépendre d'un fournisseur de modèle externe pour le workflow principal.</p>
       </div>
       <div class="sov-qa-item">
-        <div class="sov-qa-q"><span class="sov-qa-num">2</span><span data-i18n="sovv2.problem.q2">Who can access it?</span></div>
-        <p class="sov-qa-a" data-i18n="sovv2.problem.a2">Access is limited to authorised users and whatever policy scope you configure for the deployment — whether that is by session, user, project, or secure room.</p>
+        <div class="sov-qa-q"><span class="sov-qa-num">2</span><span data-i18n="sovv2.problem.q2">Qui peut y accéder ?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a2">L'accès est limité aux utilisateurs autorisés et au périmètre de politique que vous définissez — par session, utilisateur, projet ou salle sécurisée.</p>
       </div>
       <div class="sov-qa-item">
-        <div class="sov-qa-q"><span class="sov-qa-num">3</span><span data-i18n="sovv2.problem.q3">What happens if the machine is lost, stolen, or misused?</span></div>
-        <p class="sov-qa-a" data-i18n="sovv2.problem.a3">The system can be configured with encrypted local storage, controlled access, and scoped or resettable memory so the device does not simply become a readable archive if control is lost.</p>
+        <div class="sov-qa-q"><span class="sov-qa-num">3</span><span data-i18n="sovv2.problem.q3">Que se passe-t-il si la machine est perdue ou volée ?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a3">Le système peut être configuré avec un stockage chiffré, des contrôles d'accès et une mémoire cloisonnée ou réinitialisable afin que l'appareil ne devienne pas une archive lisible.</p>
       </div>
       <div class="sov-qa-item">
-        <div class="sov-qa-q"><span class="sov-qa-num">4</span><span data-i18n="sovv2.problem.q4">Can the work be done without an internet connection?</span></div>
-        <p class="sov-qa-a" data-i18n="sovv2.problem.a4">Yes. Approved local document workflows can run offline, and connected or hybrid behaviour can remain optional rather than required.</p>
+        <div class="sov-qa-q"><span class="sov-qa-num">4</span><span data-i18n="sovv2.problem.q4">Le travail peut-il être effectué sans connexion internet ?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a4">Oui. Les workflows approuvés sur documents locaux peuvent fonctionner hors ligne, tandis qu'un comportement connecté ou hybride peut rester optionnel.</p>
       </div>
     </div>
   </div>
@@ -291,40 +347,40 @@
   <div class="section-inner">
     <div class="sov-boundary-grid">
       <div>
-        <p class="eyebrow reveal" data-i18n="sovv2.boundary.eyebrow">A dedicated AI machine inside your control</p>
-        <h2 class="section-title reveal d1" data-i18n-html="sovv2.boundary.h2">Its own compute. Local models. Encrypted storage. <em>No internet required.</em></h2>
-        <p class="lede reveal d2" data-i18n="sovv2.boundary.lead">Smart Fellow Sovereign is an offline AI workstation deployed for a specific team, project, or confidential workflow. It does not need internet access to process approved documents. It does not automatically connect to company systems. It only works with what your team explicitly gives it.</p>
+        <p class="eyebrow reveal" data-i18n="sovv2.boundary.eyebrow">Une machine IA dédiée dans votre périmètre de contrôle</p>
+        <h2 class="section-title reveal d1" data-i18n-html="sovv2.boundary.h2">Son propre calcul. Modèles locaux. Stockage chiffré. <em>Internet non requis.</em></h2>
+        <p class="lede reveal d2" data-i18n="sovv2.boundary.lead">Smart Fellow Sovereign est une station de travail IA hors ligne déployée pour une équipe, un projet ou un workflow confidentiel spécifique. Elle n'a pas besoin d'internet pour traiter des documents approuvés. Elle ne travaille qu'avec ce que votre équipe lui confie explicitement.</p>
         <ul class="spec-list reveal d3" style="margin-top:1.5rem">
-          <li data-i18n="sovv2.boundary.point1">Confidential material never becomes a vendor-side account history.</li>
-          <li data-i18n="sovv2.boundary.point2">Memory can be cleared by session, user, project, or full machine reset.</li>
-          <li data-i18n="sovv2.boundary.point3">Fully practical for drafting, reviewing, comparing, summarising, and multilingual analysis.</li>
+          <li data-i18n="sovv2.boundary.point1">Les documents confidentiels ne deviennent jamais un historique de compte chez un fournisseur.</li>
+          <li data-i18n="sovv2.boundary.point2">La mémoire peut être effacée par session, utilisateur, projet ou réinitialisation complète.</li>
+          <li data-i18n="sovv2.boundary.point3">Pleinement opérationnel pour la rédaction, la relecture, la comparaison, le résumé et l'analyse multilingue.</li>
         </ul>
       </div>
 
       <div class="sov-diagram reveal d2">
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row1.label">Internet requirement</span>
-          <span class="sov-tag is-none" data-i18n="sovv2.diagram.row1.value">None</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row1.label">Connexion internet</span>
+          <span class="sov-tag is-none" data-i18n="sovv2.diagram.row1.value">Aucune</span>
         </div>
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row2.label">Prompt destination</span>
-          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row2.value">Local machine</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row2.label">Destination des prompts</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row2.value">Machine locale</span>
         </div>
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row3.label">External APIs</span>
-          <span class="sov-tag is-none" data-i18n="sovv2.diagram.row3.value">Blocked</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row3.label">API externes</span>
+          <span class="sov-tag is-none" data-i18n="sovv2.diagram.row3.value">Bloquées</span>
         </div>
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row4.label">Document memory</span>
-          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row4.value">Local</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row4.label">Mémoire documentaire</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row4.value">Locale</span>
         </div>
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row5.label">Session memory</span>
-          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row5.value">Resettable</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row5.label">Mémoire de session</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row5.value">Réinitialisable</span>
         </div>
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row6.label">Retention policy</span>
-          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row6.value">Set by you</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row6.label">Politique de rétention</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row6.value">Définie par vous</span>
         </div>
       </div>
     </div>
@@ -334,34 +390,34 @@
 <!-- What it can do offline -->
 <section class="section">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="sovv2.cap.eyebrow">What it can do</p>
-    <h2 class="section-title reveal d1" data-i18n-html="sovv2.cap.h2">Confidential work does not have <em>to be manual.</em></h2>
-    <p class="lede reveal d2" data-i18n="sovv2.cap.lead">Offline mode turns approved local material into useful work product — without sending documents outside the controlled environment.</p>
+    <p class="eyebrow reveal" data-i18n="sovv2.cap.eyebrow">Ce qu'il peut faire</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.cap.h2">Le travail confidentiel ne doit pas forcément être <em>manuel.</em></h2>
+    <p class="lede reveal d2" data-i18n="sovv2.cap.lead">Le mode hors ligne transforme des contenus locaux approuvés en livrables utiles sans envoyer les documents en dehors de l'environnement contrôlé.</p>
 
     <div class="sov-cap-grid reveal d2">
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c1.title">Analyse documents</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c1.body">Summarise confidential files, reports, memos, research notes, and internal records.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c1.title">Analyser des documents</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c1.body">Résumer des fichiers confidentiels, rapports, mémos, notes de recherche et archives internes.</div>
       </div>
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c2.title">Review contracts and clauses</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c2.body">Extract key terms, compare versions, flag unusual language, and prepare structured summaries.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c2.title">Relire contrats et clauses</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c2.body">Extraire les points clés, comparer les versions, signaler un langage inhabituel et préparer des synthèses structurées.</div>
       </div>
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c3.title">Draft internal reports</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c3.body">Create first drafts of memos, briefs, technical notes, and executive summaries.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c3.title">Rédiger des rapports internes</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c3.body">Créer les premiers brouillons de mémos, briefs, notes techniques et synthèses exécutives.</div>
       </div>
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c4.title">Translate and adapt</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c4.body">Work across Korean, English, and French while preserving business meaning — locally.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c4.title">Traduire et adapter</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c4.body">Travailler entre le coréen, l'anglais et le français tout en conservant le sens métier — en local.</div>
       </div>
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c5.title">Search local archives</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c5.body">Answer questions from approved documents loaded onto the machine, without internet search.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c5.title">Chercher dans des archives locales</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c5.body">Répondre à des questions à partir de documents approuvés chargés sur la machine, sans recherche internet.</div>
       </div>
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c6.title">Prepare decision briefs</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c6.body">Convert confidential material into concise summaries for internal review and leadership decisions.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c6.title">Préparer des briefs de décision</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c6.body">Convertir des contenus confidentiels en synthèses concises pour revue interne et décisions de direction.</div>
       </div>
     </div>
   </div>
@@ -372,28 +428,28 @@
   <div class="section-inner">
     <div class="sov-security-grid">
       <div>
-        <p class="eyebrow reveal" data-i18n="sovv2.security.eyebrow">Designed for when things go wrong</p>
-        <h2 class="section-title reveal d1" data-i18n-html="sovv2.security.h2">If the machine is lost <em>or stolen.</em></h2>
-        <p class="lede reveal d2" data-i18n="sovv2.security.lead">Confidential systems should not only work when everything goes perfectly. They should be designed for accidents, misuse, and loss of control.</p>
-        <p class="section-copy reveal d3" style="margin-top: 1rem" data-i18n="sovv2.security.body">Smart Fellow Sovereign can be configured so that confidential data is encrypted locally, access requires authorised credentials, and memory can be scoped or wiped according to policy. If the device is lost or stolen, the goal is simple: the machine should not expose usable company information to an unauthorised person.</p>
+        <p class="eyebrow reveal" data-i18n="sovv2.security.eyebrow">Pensé pour quand les choses tournent mal</p>
+        <h2 class="section-title reveal d1" data-i18n-html="sovv2.security.h2">Si la machine est perdue <em>ou volée.</em></h2>
+        <p class="lede reveal d2" data-i18n="sovv2.security.lead">Les systèmes confidentiels ne doivent pas seulement bien fonctionner quand tout se passe parfaitement. Ils doivent être conçus pour les accidents, les usages abusifs et les pertes de contrôle.</p>
+        <p class="section-copy reveal d3" style="margin-top: 1rem" data-i18n="sovv2.security.body">Smart Fellow Sovereign peut être configuré pour que les données sensibles soient chiffrées localement, que l'accès exige des identifiants autorisés, et que la mémoire soit cloisonnée ou effacée selon la politique choisie. Si l'appareil est perdu ou volé, l'objectif est simple : la machine ne doit pas exposer d'informations exploitables à une personne non autorisée.</p>
       </div>
 
       <div class="sov-security-features reveal d2">
         <div class="sov-security-item">
-          <h4 data-i18n="sovv2.security.f1.title">Encrypted local storage</h4>
-          <p data-i18n="sovv2.security.f1.body">Documents and memory are stored in encrypted form on the machine.</p>
+          <h4 data-i18n="sovv2.security.f1.title">Stockage local chiffré</h4>
+          <p data-i18n="sovv2.security.f1.body">Les documents et la mémoire sont stockés sous forme chiffrée sur la machine.</p>
         </div>
         <div class="sov-security-item">
-          <h4 data-i18n="sovv2.security.f2.title">User access controls</h4>
-          <p data-i18n="sovv2.security.f2.body">Only authorised users can access the Fellow and approved documents.</p>
+          <h4 data-i18n="sovv2.security.f2.title">Contrôles d'accès utilisateur</h4>
+          <p data-i18n="sovv2.security.f2.body">Seuls les utilisateurs autorisés peuvent accéder au Fellow et aux documents approuvés.</p>
         </div>
         <div class="sov-security-item">
-          <h4 data-i18n="sovv2.security.f3.title">Project-scoped memory</h4>
-          <p data-i18n="sovv2.security.f3.body">Memory is kept separate by user, project, client matter, or workflow.</p>
+          <h4 data-i18n="sovv2.security.f3.title">Mémoire par projet</h4>
+          <p data-i18n="sovv2.security.f3.body">La mémoire est séparée par utilisateur, projet, dossier client ou workflow.</p>
         </div>
         <div class="sov-security-item">
-          <h4 data-i18n="sovv2.security.f4.title">Secure reset options</h4>
-          <p data-i18n="sovv2.security.f4.body">Session, project, user, or full machine memory can be reset when needed.</p>
+          <h4 data-i18n="sovv2.security.f4.title">Options de réinitialisation sécurisées</h4>
+          <p data-i18n="sovv2.security.f4.body">La mémoire de session, de projet, d'utilisateur ou de la machine peut être réinitialisée si nécessaire.</p>
         </div>
       </div>
     </div>
@@ -403,33 +459,33 @@
 <!-- Who uses it -->
 <section class="section">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="sovv2.use.eyebrow">Use cases</p>
-    <h2 class="section-title reveal d1" data-i18n-html="sovv2.use.h2">Built for teams handling information <em>that cannot leak.</em></h2>
+    <p class="eyebrow reveal" data-i18n="sovv2.use.eyebrow">Cas d'usage</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.use.h2">Conçu pour les équipes qui manipulent des informations <em>qui ne peuvent pas fuiter.</em></h2>
 
     <div class="grid-3" style="margin-top:2rem">
       <article class="card reveal">
-        <h3 data-i18n="sovv2.use.card1.title">R&amp;amp;D and trade secrets</h3>
-        <p data-i18n="sovv2.use.card1.body">Formulas, technical specifications, test data, manufacturing processes, SOPs, and supplier documents — reviewed locally, never uploaded.</p>
+        <h3 data-i18n="sovv2.use.card1.title">R&amp;D et secrets industriels</h3>
+        <p data-i18n="sovv2.use.card1.body">Formules, spécifications techniques, données de test, procédés de fabrication, SOP et documents fournisseurs — relus en local, jamais téléversés.</p>
       </article>
       <article class="card reveal d1">
-        <h3 data-i18n="sovv2.use.card2.title">Client confidential work</h3>
-        <p data-i18n="sovv2.use.card2.body">Consulting reports, legal documents, accounting files, agency strategy, and client interviews — inside a controlled boundary.</p>
+        <h3 data-i18n="sovv2.use.card2.title">Travail confidentiel client</h3>
+        <p data-i18n="sovv2.use.card2.body">Rapports de conseil, documents juridiques, fichiers comptables, stratégie d'agence et entretiens clients — dans un périmètre contrôlé.</p>
       </article>
       <article class="card reveal d2">
         <h3 data-i18n="sovv2.use.card3.title">Due diligence</h3>
-        <p data-i18n="sovv2.use.card3.body">Contracts, VDR documents, investment files, corporate records, and risk summaries processed without sending documents to external providers.</p>
+        <p data-i18n="sovv2.use.card3.body">Contrats, documents de data room, dossiers d'investissement, registres d'entreprise et synthèses de risque, traités sans envoyer de documents à des prestataires externes.</p>
       </article>
       <article class="card reveal">
-        <h3 data-i18n="sovv2.use.card4.title">Internal investigations</h3>
-        <p data-i18n="sovv2.use.card4.body">Interview notes, timelines, evidence summaries, and sensitive internal findings — in a tighter operating perimeter.</p>
+        <h3 data-i18n="sovv2.use.card4.title">Enquêtes internes</h3>
+        <p data-i18n="sovv2.use.card4.body">Notes d'entretien, chronologies, synthèses de preuves et conclusions internes sensibles — dans un périmètre opérationnel plus étroit.</p>
       </article>
       <article class="card reveal d1">
-        <h3 data-i18n="sovv2.use.card5.title">Board and leadership material</h3>
-        <p data-i18n="sovv2.use.card5.body">Strategy documents, restructuring plans, financial reports, and acquisition analysis — prepared and reviewed locally.</p>
+        <h3 data-i18n="sovv2.use.card5.title">Matériaux de direction et de conseil</h3>
+        <p data-i18n="sovv2.use.card5.body">Documents stratégiques, plans de restructuration, rapports financiers et analyses d'acquisition — préparés et relus en local.</p>
       </article>
       <article class="card reveal d2">
-        <h3 data-i18n="sovv2.use.card6.title">Cross-border confidential work</h3>
-        <p data-i18n="sovv2.use.card6.body">Korean, English, and French documents requiring translation, explanation, and business context — without cloud routing.</p>
+        <h3 data-i18n="sovv2.use.card6.title">Travail confidentiel transfrontalier</h3>
+        <p data-i18n="sovv2.use.card6.body">Documents en coréen, anglais et français nécessitant traduction, explication et contexte métier — sans routage cloud.</p>
       </article>
     </div>
   </div>
@@ -438,24 +494,24 @@
 <!-- Getting started -->
 <section class="section section--soft" id="how">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="sovv2.deploy.eyebrow">Getting started</p>
-    <h2 class="section-title reveal d1" data-i18n-html="sovv2.deploy.h2">Define the boundary first. <em>Then put the machine to work.</em></h2>
+    <p class="eyebrow reveal" data-i18n="sovv2.deploy.eyebrow">Démarrer</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.deploy.h2">Définissez d'abord la frontière. <em>Ensuite mettez la machine au travail.</em></h2>
 
     <div class="grid-3 deploy-grid">
       <article class="step-card reveal">
         <div class="display-number">01</div>
-        <h3 data-i18n="sovv2.deploy.step1.title">Define the workflow</h3>
-        <p data-i18n="sovv2.deploy.step1.body">Decide what work the machine is allowed to support — the materials, the users, and the retention rule. The boundary is set before anything goes live.</p>
+        <h3 data-i18n="sovv2.deploy.step1.title">Définir le workflow</h3>
+        <p data-i18n="sovv2.deploy.step1.body">Décidez quel travail la machine est autorisée à prendre en charge — les matériaux, les utilisateurs et la règle de rétention. La frontière est définie avant que quoi que ce soit ne soit mis en production.</p>
       </article>
       <article class="step-card reveal d1">
         <div class="display-number">02</div>
-        <h3 data-i18n="sovv2.deploy.step2.title">Configure the machine</h3>
-        <p data-i18n="sovv2.deploy.step2.body">Local models, approved document paths, user access, and memory policy — all configured before live matter work begins. We handle everything.</p>
+        <h3 data-i18n="sovv2.deploy.step2.title">Configurer la machine</h3>
+        <p data-i18n="sovv2.deploy.step2.body">Modèles locaux, chemins de documents approuvés, accès utilisateurs et politique de mémoire — tout est configuré avant le début du travail sur des dossiers réels. Nous gérons tout.</p>
       </article>
       <article class="step-card reveal d2">
         <div class="display-number">03</div>
-        <h3 data-i18n="sovv2.deploy.step3.title">Operate and reset by policy</h3>
-        <p data-i18n="sovv2.deploy.step3.body">Use it for real work. Memory is cleared, retained, or separated according to the workflow. Review and adjust as the engagement matures.</p>
+        <h3 data-i18n="sovv2.deploy.step3.title">Utiliser et réinitialiser selon la politique</h3>
+        <p data-i18n="sovv2.deploy.step3.body">Utilisation pour du travail réel. La mémoire est effacée, conservée ou séparée selon le workflow. Révision et ajustement à mesure que la mission évolue.</p>
       </article>
     </div>
   </div>
@@ -465,14 +521,14 @@
 <section class="section section--green">
   <div class="section-inner">
     <div class="page-cta-inner">
-      <p class="eyebrow-light reveal" data-i18n="sovv2.cta.eyebrow">Next step</p>
-      <h2 class="section-title reveal d1" data-i18n-html="sovv2.cta.h2">Bring AI into confidential work without <em>sending the work outside.</em></h2>
-      <p class="lede reveal d2" data-i18n="sovv2.cta.body">Tell us what your team wants to do with AI, what information needs to stay protected, and whether the workflow should be local, offline, or hybrid. A sovereign workflow review takes 30 minutes.</p>
+      <p class="eyebrow-light reveal" data-i18n="sovv2.cta.eyebrow">Prochaine étape</p>
+      <h2 class="section-title reveal d1" data-i18n-html="sovv2.cta.h2">Faites entrer l'IA dans le travail confidentiel sans <em>faire sortir le travail à l'extérieur.</em></h2>
+      <p class="lede reveal d2" data-i18n="sovv2.cta.body">Expliquez-nous ce que votre équipe veut faire avec l'IA, quelles informations doivent rester protégées, et si le workflow doit être local, hors ligne ou hybride. Une revue de workflow souverain prend 30 minutes.</p>
       <div class="page-cta-actions reveal d3">
-        <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.cta.primary">Book a sovereign review</button>
-        <a href="/fr/technology.html" class="btn-outline" data-i18n="sovv2.cta.secondary">Review the wider architecture</a>
+        <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.cta.primary">Réserver une revue souveraine</button>
+        <a href="/fr/technology.html" class="btn-outline" data-i18n="sovv2.cta.secondary">Découvrir l'architecture complète</a>
       </div>
-      <div class="page-cta-note reveal d3" data-i18n="sovv2.cta.note">The first conversation is about risk and boundary, not model marketing.</div>
+      <div class="page-cta-note reveal d3" data-i18n="sovv2.cta.note">La première conversation porte sur le risque et la frontière, pas sur le marketing des modèles.</div>
     </div>
   </div>
 </section>
@@ -542,6 +598,64 @@ function closeMobileMenu() {
 })();
 </script>
 
+<script>
+/* Smart → Sealed scramble animation */
+(function () {
+  var scrambleEl = document.getElementById('scramble-word');
+  var sectionEl  = document.getElementById('scramble-section');
+  if (!scrambleEl || !sectionEl) return;
+
+  var CHARS    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var TARGET   = 'Sealed';
+  var FRAME_MS = 40;
+  var TOTAL_MS = 1600;
+  var hasRun   = false;
+
+  function runScramble() {
+    if (hasRun) return;
+    hasRun = true;
+
+    var frame      = 0;
+    var totalFrames = Math.round(TOTAL_MS / FRAME_MS);
+
+    var timer = setInterval(function () {
+      frame++;
+      var progress = frame / totalFrames;
+      var settled  = Math.floor(progress * TARGET.length);
+      var txt = '';
+
+      for (var i = 0; i < TARGET.length; i++) {
+        if (i < settled) {
+          txt += TARGET[i];
+        } else {
+          txt += CHARS[Math.floor(Math.random() * CHARS.length)];
+        }
+      }
+      scrambleEl.textContent = txt;
+
+      if (frame >= totalFrames) {
+        clearInterval(timer);
+        scrambleEl.textContent = TARGET;
+        scrambleEl.classList.add('is-settled');
+      }
+    }, FRAME_MS);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var scrambleObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          setTimeout(runScramble, 250);
+          scrambleObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    scrambleObs.observe(sectionEl);
+  } else {
+    runScramble();
+  }
+})();
+</script>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

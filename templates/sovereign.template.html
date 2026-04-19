@@ -187,6 +187,48 @@
   margin-top: 2rem;
 }
 
+/* ── Scramble animation ── */
+.sov-scramble {
+  padding: 5rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.sov-scramble-inner {
+  text-align: center;
+}
+
+.scramble-display {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.scramble-word {
+  display: inline-block;
+  color: var(--accent);
+  min-width: 4.2ch;
+  transition: color 0.5s ease;
+}
+
+.scramble-word.is-settled {
+  color: var(--ink);
+}
+
+.scramble-caption {
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
 @media (max-width: 980px) {
   .sov-boundary-grid,
   .sov-security-grid {
@@ -195,6 +237,10 @@
 
   .sov-security-features {
     grid-template-columns: 1fr;
+  }
+
+  .scramble-display {
+    white-space: normal;
   }
 }
 </style>
@@ -239,6 +285,16 @@
       <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.hero.primary">Book a sovereign workflow review</button>
       <a href="#the-problem" class="btn-outline" data-i18n="sovv2.hero.secondary">See the problem it solves</a>
     </div>
+  </div>
+</section>
+
+<!-- Smart → Sealed scramble -->
+<section class="sov-scramble">
+  <div class="section-inner sov-scramble-inner" id="scramble-section">
+    <div class="scramble-display" aria-label="Sealed Fellow">
+      <span class="scramble-word" id="scramble-word">Smart</span>&#8202;<span class="scramble-fellow">Fellow</span>
+    </div>
+    <p class="scramble-caption" data-i18n="sovv2.scramble.caption">The same system. A sealed environment.</p>
   </div>
 </section>
 
@@ -524,5 +580,63 @@ function closeMobileMenu() {
 })();
 </script>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+/* Smart → Sealed scramble animation */
+(function () {
+  var scrambleEl = document.getElementById('scramble-word');
+  var sectionEl  = document.getElementById('scramble-section');
+  if (!scrambleEl || !sectionEl) return;
+
+  var CHARS    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var TARGET   = 'Sealed';
+  var FRAME_MS = 40;
+  var TOTAL_MS = 1600;
+  var hasRun   = false;
+
+  function runScramble() {
+    if (hasRun) return;
+    hasRun = true;
+
+    var frame      = 0;
+    var totalFrames = Math.round(TOTAL_MS / FRAME_MS);
+
+    var timer = setInterval(function () {
+      frame++;
+      var progress = frame / totalFrames;
+      var settled  = Math.floor(progress * TARGET.length);
+      var txt = '';
+
+      for (var i = 0; i < TARGET.length; i++) {
+        if (i < settled) {
+          txt += TARGET[i];
+        } else {
+          txt += CHARS[Math.floor(Math.random() * CHARS.length)];
+        }
+      }
+      scrambleEl.textContent = txt;
+
+      if (frame >= totalFrames) {
+        clearInterval(timer);
+        scrambleEl.textContent = TARGET;
+        scrambleEl.classList.add('is-settled');
+      }
+    }, FRAME_MS);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var scrambleObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          setTimeout(runScramble, 250);
+          scrambleObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    scrambleObs.observe(sectionEl);
+  } else {
+    runScramble();
+  }
+})();
+</script>
 </body>
 </html>

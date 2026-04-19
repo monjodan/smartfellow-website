@@ -203,6 +203,48 @@
   margin-top: 2rem;
 }
 
+/* ── Scramble animation ── */
+.sov-scramble {
+  padding: 5rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.sov-scramble-inner {
+  text-align: center;
+}
+
+.scramble-display {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.scramble-word {
+  display: inline-block;
+  color: var(--accent);
+  min-width: 4.2ch;
+  transition: color 0.5s ease;
+}
+
+.scramble-word.is-settled {
+  color: var(--ink);
+}
+
+.scramble-caption {
+  margin-top: 1.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
 @media (max-width: 980px) {
   .sov-boundary-grid,
   .sov-security-grid {
@@ -211,6 +253,10 @@
 
   .sov-security-features {
     grid-template-columns: 1fr;
+  }
+
+  .scramble-display {
+    white-space: normal;
   }
 }
 </style>
@@ -221,13 +267,13 @@
   <a href="/ko/" class="nav-logo">Smart Fellow</a>
   <ul class="nav-links">
     <li><a href="/ko/#how" data-i18n="nav.how">작동 방식</a></li>
-    <li><a href="/ko/technology.html" data-i18n="nav.technology">기술 소개</a></li>
+    <li><a href="/ko/technology.html" data-i18n="nav.technology">기술</a></li>
     <li><a href="/ko/#roles" data-i18n="nav.roles">채용 포지션</a></li>
     <li><a href="/ko/#contact" data-i18n="nav.contact">문의</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switcher" role="group" aria-label="언어 선택"><a href="/en/sovereign/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/sovereign/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/sovereign/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
-    <a href="/ko/#contact" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Fellow 만나기</a>
+    <a href="/ko/#contact" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">통화 예약</a>
   </div>
   <button class="nav-hamburger" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -237,50 +283,60 @@
 <div class="nav-mobile" id="nav-mobile">
   <ul>
     <li><a href="/ko/#how" onclick="closeMobileMenu()" data-i18n="nav.how">작동 방식</a></li>
-    <li><a href="/ko/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">기술 소개</a></li>
+    <li><a href="/ko/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">기술</a></li>
     <li><a href="/ko/#roles" onclick="closeMobileMenu()" data-i18n="nav.roles">채용 포지션</a></li>
     <li><a href="/ko/#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">문의</a></li>
   </ul>
-  <a href="/ko/#contact" class="nav-cta" onclick="closeMobileMenu(); Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Fellow 만나기</a>
+  <a href="/ko/#contact" class="nav-cta" onclick="closeMobileMenu(); Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">통화 예약</a>
   <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="언어 선택"><a href="/en/sovereign/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/sovereign/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/sovereign/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
 </div>
 
 <!-- Hero -->
 <section class="sov-hero">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="sovv2.hero.eyebrow">For high-sensitivity workflows</p>
-    <h1 class="hero-title reveal d1" data-i18n-html="sovv2.hero.h1">Offline AI for work that must <em>stay confidential.</em></h1>
-    <p class="lede reveal d2" data-i18n="sovv2.hero.body">Smart Fellow Sovereign is a dedicated AI machine for sensitive documents, internal analysis, R&amp;amp;D, client files, and multilingual work. It runs locally, can operate without internet access, and only works with the data your team explicitly provides.</p>
+    <p class="eyebrow reveal" data-i18n="sovv2.hero.eyebrow">고민감도 워크플로우용</p>
+    <h1 class="hero-title reveal d1" data-i18n-html="sovv2.hero.h1">반드시 <em>기밀로</em> 남아야 하는 업무를 위한 오프라인 AI</h1>
+    <p class="lede reveal d2" data-i18n="sovv2.hero.body">Smart Fellow Sovereign은 민감한 문서, 내부 분석, R&amp;amp;D, 고객 파일, 다국어 업무를 위한 전용 AI 머신입니다. 로컬에서 실행되며 인터넷 없이도 운영할 수 있고, 팀이 명시적으로 제공한 데이터로만 작동합니다.</p>
     <div class="hero-actions reveal d3">
-      <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.hero.primary">Book a sovereign workflow review</button>
-      <a href="#the-problem" class="btn-outline" data-i18n="sovv2.hero.secondary">See the problem it solves</a>
+      <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.hero.primary">소버린 워크플로우 리뷰 예약</button>
+      <a href="#the-problem" class="btn-outline" data-i18n="sovv2.hero.secondary">해결하는 문제 보기</a>
     </div>
+  </div>
+</section>
+
+<!-- Smart → Sealed scramble -->
+<section class="sov-scramble">
+  <div class="section-inner sov-scramble-inner" id="scramble-section">
+    <div class="scramble-display" aria-label="Sealed Fellow">
+      <span class="scramble-word" id="scramble-word">Smart</span>&#8202;<span class="scramble-fellow">Fellow</span>
+    </div>
+    <p class="scramble-caption" data-i18n="sovv2.scramble.caption">동일한 시스템. 차단된 환경.</p>
   </div>
 </section>
 
 <!-- The problem -->
 <section class="section" id="the-problem">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="sovv2.problem.eyebrow">The problem</p>
-    <h2 class="section-title reveal d1" data-i18n-html="sovv2.problem.h2">Some work should never be <em>sent to the cloud.</em></h2>
-    <p class="lede reveal d2" data-i18n="sovv2.problem.lead">Your team may want AI assistance for confidential analysis, R&amp;amp;D files, client documents, legal material, and sensitive multilingual work. But the most valuable documents are often the ones that cannot be casually uploaded to public AI tools or third-party systems. For these workflows, the question is not which model is best. The question is whether the information stays inside a boundary your team can actually control.</p>
+    <p class="eyebrow reveal" data-i18n="sovv2.problem.eyebrow">문제</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.problem.h2">어떤 업무는 절대 <em>클라우드로 보내면 안 됩니다.</em></h2>
+    <p class="lede reveal d2" data-i18n="sovv2.problem.lead">팀은 기밀 분석, R&amp;D 파일, 고객 문서, 법률 자료, 내부 보고서, 민감한 다국어 업무에 AI 지원을 원할 수 있습니다. 그러나 가장 가치 있는 문서일수록 공개 AI 도구나 제3자 시스템에 가볍게 업로드할 수 없는 경우가 많습니다. 이런 워크플로우에서 핵심 질문은 어떤 모델이 가장 좋은가만이 아닙니다. 정보가 실제로 팀이 통제할 수 있는 경계 안에 머무는가가 더 중요합니다.</p>
 
     <div class="sov-qa-list reveal d3">
       <div class="sov-qa-item">
-        <div class="sov-qa-q"><span class="sov-qa-num">1</span><span data-i18n="sovv2.problem.q1">Where does the information go?</span></div>
-        <p class="sov-qa-a" data-i18n="sovv2.problem.a1">Approved documents stay inside the machine boundary. Work is processed locally without requiring an external model provider for the core workflow.</p>
+        <div class="sov-qa-q"><span class="sov-qa-num">1</span><span data-i18n="sovv2.problem.q1">정보는 어디로 가는가?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a1">승인된 문서는 머신의 경계 안에 머뭅니다. 핵심 워크플로우는 외부 모델 제공자를 필요로 하지 않고 로컬에서 처리할 수 있습니다.</p>
       </div>
       <div class="sov-qa-item">
-        <div class="sov-qa-q"><span class="sov-qa-num">2</span><span data-i18n="sovv2.problem.q2">Who can access it?</span></div>
-        <p class="sov-qa-a" data-i18n="sovv2.problem.a2">Access is limited to authorised users and whatever policy scope you configure for the deployment — whether that is by session, user, project, or secure room.</p>
+        <div class="sov-qa-q"><span class="sov-qa-num">2</span><span data-i18n="sovv2.problem.q2">누가 접근할 수 있는가?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a2">접근 권한은 승인된 사용자와 배포 정책이 허용하는 범위로 제한됩니다. 세션, 사용자, 프로젝트, 보안 공간 단위로 범위를 정할 수 있습니다.</p>
       </div>
       <div class="sov-qa-item">
-        <div class="sov-qa-q"><span class="sov-qa-num">3</span><span data-i18n="sovv2.problem.q3">What happens if the machine is lost, stolen, or misused?</span></div>
-        <p class="sov-qa-a" data-i18n="sovv2.problem.a3">The system can be configured with encrypted local storage, controlled access, and scoped or resettable memory so the device does not simply become a readable archive if control is lost.</p>
+        <div class="sov-qa-q"><span class="sov-qa-num">3</span><span data-i18n="sovv2.problem.q3">머신을 분실, 도난, 오용하면 어떻게 되는가?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a3">시스템은 암호화된 로컬 저장소, 통제된 접근, 범위 지정 및 리셋 가능한 메모리로 구성할 수 있어 통제를 잃었다고 해서 기기가 그대로 읽을 수 있는 아카이브가 되지 않도록 설계됩니다.</p>
       </div>
       <div class="sov-qa-item">
-        <div class="sov-qa-q"><span class="sov-qa-num">4</span><span data-i18n="sovv2.problem.q4">Can the work be done without an internet connection?</span></div>
-        <p class="sov-qa-a" data-i18n="sovv2.problem.a4">Yes. Approved local document workflows can run offline, and connected or hybrid behaviour can remain optional rather than required.</p>
+        <div class="sov-qa-q"><span class="sov-qa-num">4</span><span data-i18n="sovv2.problem.q4">인터넷 연결 없이도 업무를 수행할 수 있는가?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a4">예. 승인된 로컬 문서 워크플로우는 오프라인으로 실행할 수 있으며, 연결형 또는 하이브리드 동작은 필수가 아니라 선택으로 남길 수 있습니다.</p>
       </div>
     </div>
   </div>
@@ -291,40 +347,40 @@
   <div class="section-inner">
     <div class="sov-boundary-grid">
       <div>
-        <p class="eyebrow reveal" data-i18n="sovv2.boundary.eyebrow">A dedicated AI machine inside your control</p>
-        <h2 class="section-title reveal d1" data-i18n-html="sovv2.boundary.h2">Its own compute. Local models. Encrypted storage. <em>No internet required.</em></h2>
-        <p class="lede reveal d2" data-i18n="sovv2.boundary.lead">Smart Fellow Sovereign is an offline AI workstation deployed for a specific team, project, or confidential workflow. It does not need internet access to process approved documents. It does not automatically connect to company systems. It only works with what your team explicitly gives it.</p>
+        <p class="eyebrow reveal" data-i18n="sovv2.boundary.eyebrow">통제권 안에 두는 전용 AI 머신</p>
+        <h2 class="section-title reveal d1" data-i18n-html="sovv2.boundary.h2">자체 연산 자원. 로컬 모델. 암호화된 저장소. <em>인터넷 불필요.</em></h2>
+        <p class="lede reveal d2" data-i18n="sovv2.boundary.lead">Smart Fellow Sovereign은 특정 팀, 프로젝트, 또는 기밀 워크플로우를 위해 배치되는 오프라인 AI 워크스테이션입니다. 승인된 문서를 처리하는 데 인터넷이 필요하지 않습니다. 회사 시스템에 자동으로 연결되지 않습니다. 팀이 명시적으로 제공한 것만 사용합니다.</p>
         <ul class="spec-list reveal d3" style="margin-top:1.5rem">
-          <li data-i18n="sovv2.boundary.point1">Confidential material never becomes a vendor-side account history.</li>
-          <li data-i18n="sovv2.boundary.point2">Memory can be cleared by session, user, project, or full machine reset.</li>
-          <li data-i18n="sovv2.boundary.point3">Fully practical for drafting, reviewing, comparing, summarising, and multilingual analysis.</li>
+          <li data-i18n="sovv2.boundary.point1">기밀 자료가 벤더 측 계정 기록이 되지 않습니다.</li>
+          <li data-i18n="sovv2.boundary.point2">세션, 사용자, 프로젝트 또는 전체 머신 리셋으로 메모리를 지울 수 있습니다.</li>
+          <li data-i18n="sovv2.boundary.point3">초안 작성, 검토, 비교, 요약, 다국어 분석에 완전히 실용적입니다.</li>
         </ul>
       </div>
 
       <div class="sov-diagram reveal d2">
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row1.label">Internet requirement</span>
-          <span class="sov-tag is-none" data-i18n="sovv2.diagram.row1.value">None</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row1.label">인터넷 필요 여부</span>
+          <span class="sov-tag is-none" data-i18n="sovv2.diagram.row1.value">없음</span>
         </div>
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row2.label">Prompt destination</span>
-          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row2.value">Local machine</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row2.label">프롬프트 목적지</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row2.value">로컬 머신</span>
         </div>
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row3.label">External APIs</span>
-          <span class="sov-tag is-none" data-i18n="sovv2.diagram.row3.value">Blocked</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row3.label">외부 API</span>
+          <span class="sov-tag is-none" data-i18n="sovv2.diagram.row3.value">차단</span>
         </div>
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row4.label">Document memory</span>
-          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row4.value">Local</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row4.label">문서 메모리</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row4.value">로컬</span>
         </div>
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row5.label">Session memory</span>
-          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row5.value">Resettable</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row5.label">세션 메모리</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row5.value">리셋 가능</span>
         </div>
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="sovv2.diagram.row6.label">Retention policy</span>
-          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row6.value">Set by you</span>
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row6.label">보존 정책</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row6.value">귀사가 설정</span>
         </div>
       </div>
     </div>
@@ -334,34 +390,34 @@
 <!-- What it can do offline -->
 <section class="section">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="sovv2.cap.eyebrow">What it can do</p>
-    <h2 class="section-title reveal d1" data-i18n-html="sovv2.cap.h2">Confidential work does not have <em>to be manual.</em></h2>
-    <p class="lede reveal d2" data-i18n="sovv2.cap.lead">Offline mode turns approved local material into useful work product — without sending documents outside the controlled environment.</p>
+    <p class="eyebrow reveal" data-i18n="sovv2.cap.eyebrow">할 수 있는 일</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.cap.h2">기밀 업무가 꼭 <em>수작업일 필요는 없습니다.</em></h2>
+    <p class="lede reveal d2" data-i18n="sovv2.cap.lead">오프라인 모드는 승인된 로컬 자료를 통제된 환경 밖으로 보내지 않고도 실제 업무 결과물로 바꿉니다.</p>
 
     <div class="sov-cap-grid reveal d2">
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c1.title">Analyse documents</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c1.body">Summarise confidential files, reports, memos, research notes, and internal records.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c1.title">문서 분석</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c1.body">기밀 파일, 보고서, 메모, 연구 노트, 내부 기록을 요약합니다.</div>
       </div>
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c2.title">Review contracts and clauses</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c2.body">Extract key terms, compare versions, flag unusual language, and prepare structured summaries.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c2.title">계약서와 조항 검토</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c2.body">핵심 조항 추출, 버전 비교, 특이 문구 표시, 구조화된 요약 준비를 수행합니다.</div>
       </div>
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c3.title">Draft internal reports</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c3.body">Create first drafts of memos, briefs, technical notes, and executive summaries.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c3.title">내부 보고서 초안 작성</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c3.body">메모, 브리프, 기술 노트, 경영 요약의 초안을 만듭니다.</div>
       </div>
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c4.title">Translate and adapt</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c4.body">Work across Korean, English, and French while preserving business meaning — locally.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c4.title">번역 및 현지화</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c4.body">한국어, 영어, 프랑스어를 넘나들며 비즈니스 의미를 유지합니다 — 로컬에서.</div>
       </div>
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c5.title">Search local archives</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c5.body">Answer questions from approved documents loaded onto the machine, without internet search.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c5.title">로컬 아카이브 검색</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c5.body">머신에 적재된 승인 문서를 기반으로 질문에 답합니다. 인터넷 검색 없이.</div>
       </div>
       <div class="sov-cap-item">
-        <div class="sov-cap-title" data-i18n="sovv2.cap.c6.title">Prepare decision briefs</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c6.body">Convert confidential material into concise summaries for internal review and leadership decisions.</div>
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c6.title">의사결정 브리프 준비</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c6.body">기밀 자료를 내부 검토 및 경영진 결정을 위한 간결한 요약으로 전환합니다.</div>
       </div>
     </div>
   </div>
@@ -372,28 +428,28 @@
   <div class="section-inner">
     <div class="sov-security-grid">
       <div>
-        <p class="eyebrow reveal" data-i18n="sovv2.security.eyebrow">Designed for when things go wrong</p>
-        <h2 class="section-title reveal d1" data-i18n-html="sovv2.security.h2">If the machine is lost <em>or stolen.</em></h2>
-        <p class="lede reveal d2" data-i18n="sovv2.security.lead">Confidential systems should not only work when everything goes perfectly. They should be designed for accidents, misuse, and loss of control.</p>
-        <p class="section-copy reveal d3" style="margin-top: 1rem" data-i18n="sovv2.security.body">Smart Fellow Sovereign can be configured so that confidential data is encrypted locally, access requires authorised credentials, and memory can be scoped or wiped according to policy. If the device is lost or stolen, the goal is simple: the machine should not expose usable company information to an unauthorised person.</p>
+        <p class="eyebrow reveal" data-i18n="sovv2.security.eyebrow">문제가 생기는 순간까지 염두에 두고 설계</p>
+        <h2 class="section-title reveal d1" data-i18n-html="sovv2.security.h2">머신을 분실 <em>또는 도난당했을 때.</em></h2>
+        <p class="lede reveal d2" data-i18n="sovv2.security.lead">기밀 시스템은 모든 것이 완벽할 때만 잘 작동해서는 안 됩니다. 사고, 오용, 통제 상실까지 고려해 설계되어야 합니다.</p>
+        <p class="section-copy reveal d3" style="margin-top: 1rem" data-i18n="sovv2.security.body">Smart Fellow Sovereign은 기밀 데이터가 로컬에서 암호화되고, 접근에 승인된 자격 증명이 필요하며, 정책에 따라 메모리를 범위 지정하거나 삭제하도록 구성할 수 있습니다. 기기를 분실하거나 도난당했을 때 목표는 단순합니다. 승인되지 않은 사람이 회사 정보를 사용 가능한 형태로 얻지 못하게 하는 것입니다.</p>
       </div>
 
       <div class="sov-security-features reveal d2">
         <div class="sov-security-item">
-          <h4 data-i18n="sovv2.security.f1.title">Encrypted local storage</h4>
-          <p data-i18n="sovv2.security.f1.body">Documents and memory are stored in encrypted form on the machine.</p>
+          <h4 data-i18n="sovv2.security.f1.title">암호화된 로컬 저장소</h4>
+          <p data-i18n="sovv2.security.f1.body">문서와 메모리를 머신에 암호화된 형태로 저장합니다.</p>
         </div>
         <div class="sov-security-item">
-          <h4 data-i18n="sovv2.security.f2.title">User access controls</h4>
-          <p data-i18n="sovv2.security.f2.body">Only authorised users can access the Fellow and approved documents.</p>
+          <h4 data-i18n="sovv2.security.f2.title">사용자 접근 제어</h4>
+          <p data-i18n="sovv2.security.f2.body">승인된 사용자만 Fellow와 승인된 문서에 접근할 수 있습니다.</p>
         </div>
         <div class="sov-security-item">
-          <h4 data-i18n="sovv2.security.f3.title">Project-scoped memory</h4>
-          <p data-i18n="sovv2.security.f3.body">Memory is kept separate by user, project, client matter, or workflow.</p>
+          <h4 data-i18n="sovv2.security.f3.title">프로젝트 범위 메모리</h4>
+          <p data-i18n="sovv2.security.f3.body">메모리를 사용자, 프로젝트, 고객 사안, 워크플로우별로 분리합니다.</p>
         </div>
         <div class="sov-security-item">
-          <h4 data-i18n="sovv2.security.f4.title">Secure reset options</h4>
-          <p data-i18n="sovv2.security.f4.body">Session, project, user, or full machine memory can be reset when needed.</p>
+          <h4 data-i18n="sovv2.security.f4.title">안전한 리셋 옵션</h4>
+          <p data-i18n="sovv2.security.f4.body">세션, 프로젝트, 사용자 또는 전체 머신 메모리를 필요할 때 초기화할 수 있습니다.</p>
         </div>
       </div>
     </div>
@@ -403,33 +459,33 @@
 <!-- Who uses it -->
 <section class="section">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="sovv2.use.eyebrow">Use cases</p>
-    <h2 class="section-title reveal d1" data-i18n-html="sovv2.use.h2">Built for teams handling information <em>that cannot leak.</em></h2>
+    <p class="eyebrow reveal" data-i18n="sovv2.use.eyebrow">활용 사례</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.use.h2">유출되면 안 되는 정보를 다루는 팀을 위해 <em>설계되었습니다.</em></h2>
 
     <div class="grid-3" style="margin-top:2rem">
       <article class="card reveal">
-        <h3 data-i18n="sovv2.use.card1.title">R&amp;amp;D and trade secrets</h3>
-        <p data-i18n="sovv2.use.card1.body">Formulas, technical specifications, test data, manufacturing processes, SOPs, and supplier documents — reviewed locally, never uploaded.</p>
+        <h3 data-i18n="sovv2.use.card1.title">R&amp;D와 영업비밀</h3>
+        <p data-i18n="sovv2.use.card1.body">배합식, 기술 사양, 테스트 데이터, 제조 공정, SOP, 공급업체 문서 — 로컬에서 검토, 업로드 없음.</p>
       </article>
       <article class="card reveal d1">
-        <h3 data-i18n="sovv2.use.card2.title">Client confidential work</h3>
-        <p data-i18n="sovv2.use.card2.body">Consulting reports, legal documents, accounting files, agency strategy, and client interviews — inside a controlled boundary.</p>
+        <h3 data-i18n="sovv2.use.card2.title">고객 기밀 업무</h3>
+        <p data-i18n="sovv2.use.card2.body">컨설팅 보고서, 법률 문서, 회계 파일, 에이전시 전략, 고객 인터뷰 — 통제된 경계 안에서.</p>
       </article>
       <article class="card reveal d2">
-        <h3 data-i18n="sovv2.use.card3.title">Due diligence</h3>
-        <p data-i18n="sovv2.use.card3.body">Contracts, VDR documents, investment files, corporate records, and risk summaries processed without sending documents to external providers.</p>
+        <h3 data-i18n="sovv2.use.card3.title">실사 업무</h3>
+        <p data-i18n="sovv2.use.card3.body">계약서, VDR 문서, 투자 파일, 기업 기록, 리스크 요약을 외부 제공자에게 보내지 않고 처리합니다.</p>
       </article>
       <article class="card reveal">
-        <h3 data-i18n="sovv2.use.card4.title">Internal investigations</h3>
-        <p data-i18n="sovv2.use.card4.body">Interview notes, timelines, evidence summaries, and sensitive internal findings — in a tighter operating perimeter.</p>
+        <h3 data-i18n="sovv2.use.card4.title">내부 조사</h3>
+        <p data-i18n="sovv2.use.card4.body">인터뷰 노트, 타임라인, 증거 요약, 민감한 내부 조사 결과 — 더 엄격한 운영 경계 안에서.</p>
       </article>
       <article class="card reveal d1">
-        <h3 data-i18n="sovv2.use.card5.title">Board and leadership material</h3>
-        <p data-i18n="sovv2.use.card5.body">Strategy documents, restructuring plans, financial reports, and acquisition analysis — prepared and reviewed locally.</p>
+        <h3 data-i18n="sovv2.use.card5.title">이사회 및 경영진 자료</h3>
+        <p data-i18n="sovv2.use.card5.body">전략 문서, 구조조정 계획, 재무 보고서, 인수 검토 자료 — 로컬에서 준비하고 검토합니다.</p>
       </article>
       <article class="card reveal d2">
-        <h3 data-i18n="sovv2.use.card6.title">Cross-border confidential work</h3>
-        <p data-i18n="sovv2.use.card6.body">Korean, English, and French documents requiring translation, explanation, and business context — without cloud routing.</p>
+        <h3 data-i18n="sovv2.use.card6.title">국경 간 기밀 업무</h3>
+        <p data-i18n="sovv2.use.card6.body">번역, 설명, 비즈니스 맥락이 필요한 한국어, 영어, 프랑스어 문서 — 클라우드 라우팅 없이.</p>
       </article>
     </div>
   </div>
@@ -438,24 +494,24 @@
 <!-- Getting started -->
 <section class="section section--soft" id="how">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="sovv2.deploy.eyebrow">Getting started</p>
-    <h2 class="section-title reveal d1" data-i18n-html="sovv2.deploy.h2">Define the boundary first. <em>Then put the machine to work.</em></h2>
+    <p class="eyebrow reveal" data-i18n="sovv2.deploy.eyebrow">시작하기</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.deploy.h2">먼저 경계를 정의하세요. <em>그리고 머신을 일하게 하세요.</em></h2>
 
     <div class="grid-3 deploy-grid">
       <article class="step-card reveal">
         <div class="display-number">01</div>
-        <h3 data-i18n="sovv2.deploy.step1.title">Define the workflow</h3>
-        <p data-i18n="sovv2.deploy.step1.body">Decide what work the machine is allowed to support — the materials, the users, and the retention rule. The boundary is set before anything goes live.</p>
+        <h3 data-i18n="sovv2.deploy.step1.title">워크플로우 정의</h3>
+        <p data-i18n="sovv2.deploy.step1.body">머신이 지원할 수 있는 업무 — 자료, 사용자, 보존 규칙을 결정합니다. 경계는 라이브 시작 전에 설정됩니다.</p>
       </article>
       <article class="step-card reveal d1">
         <div class="display-number">02</div>
-        <h3 data-i18n="sovv2.deploy.step2.title">Configure the machine</h3>
-        <p data-i18n="sovv2.deploy.step2.body">Local models, approved document paths, user access, and memory policy — all configured before live matter work begins. We handle everything.</p>
+        <h3 data-i18n="sovv2.deploy.step2.title">머신 구성</h3>
+        <p data-i18n="sovv2.deploy.step2.body">로컬 모델, 승인된 문서 경로, 사용자 접근, 메모리 정책 — 실제 업무 시작 전에 모두 설정됩니다. 저희가 모든 것을 처리합니다.</p>
       </article>
       <article class="step-card reveal d2">
         <div class="display-number">03</div>
-        <h3 data-i18n="sovv2.deploy.step3.title">Operate and reset by policy</h3>
-        <p data-i18n="sovv2.deploy.step3.body">Use it for real work. Memory is cleared, retained, or separated according to the workflow. Review and adjust as the engagement matures.</p>
+        <h3 data-i18n="sovv2.deploy.step3.title">정책에 따라 사용 및 리셋</h3>
+        <p data-i18n="sovv2.deploy.step3.body">실제 업무에 사용합니다. 메모리는 워크플로우에 따라 삭제, 유지, 분리됩니다. 업무가 성숙해짐에 따라 검토하고 조정합니다.</p>
       </article>
     </div>
   </div>
@@ -465,14 +521,14 @@
 <section class="section section--green">
   <div class="section-inner">
     <div class="page-cta-inner">
-      <p class="eyebrow-light reveal" data-i18n="sovv2.cta.eyebrow">Next step</p>
-      <h2 class="section-title reveal d1" data-i18n-html="sovv2.cta.h2">Bring AI into confidential work without <em>sending the work outside.</em></h2>
-      <p class="lede reveal d2" data-i18n="sovv2.cta.body">Tell us what your team wants to do with AI, what information needs to stay protected, and whether the workflow should be local, offline, or hybrid. A sovereign workflow review takes 30 minutes.</p>
+      <p class="eyebrow-light reveal" data-i18n="sovv2.cta.eyebrow">다음 단계</p>
+      <h2 class="section-title reveal d1" data-i18n-html="sovv2.cta.h2">기밀 업무를 밖으로 보내지 않고도 <em>AI를 도입하세요.</em></h2>
+      <p class="lede reveal d2" data-i18n="sovv2.cta.body">팀이 AI로 무엇을 하고 싶은지, 어떤 정보가 보호되어야 하는지, 워크플로우가 로컬인지 오프라인인지 하이브리드인지 알려주세요. 소버린 워크플로우 리뷰는 30분 걸립니다.</p>
       <div class="page-cta-actions reveal d3">
-        <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.cta.primary">Book a sovereign review</button>
-        <a href="/ko/technology.html" class="btn-outline" data-i18n="sovv2.cta.secondary">Review the wider architecture</a>
+        <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.cta.primary">소버린 리뷰 예약</button>
+        <a href="/ko/technology.html" class="btn-outline" data-i18n="sovv2.cta.secondary">전체 아키텍처 살펴보기</a>
       </div>
-      <div class="page-cta-note reveal d3" data-i18n="sovv2.cta.note">The first conversation is about risk and boundary, not model marketing.</div>
+      <div class="page-cta-note reveal d3" data-i18n="sovv2.cta.note">첫 대화는 모델 마케팅이 아니라 리스크와 경계에 관한 것입니다.</div>
     </div>
   </div>
 </section>
@@ -542,6 +598,64 @@ function closeMobileMenu() {
 })();
 </script>
 
+<script>
+/* Smart → Sealed scramble animation */
+(function () {
+  var scrambleEl = document.getElementById('scramble-word');
+  var sectionEl  = document.getElementById('scramble-section');
+  if (!scrambleEl || !sectionEl) return;
+
+  var CHARS    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var TARGET   = 'Sealed';
+  var FRAME_MS = 40;
+  var TOTAL_MS = 1600;
+  var hasRun   = false;
+
+  function runScramble() {
+    if (hasRun) return;
+    hasRun = true;
+
+    var frame      = 0;
+    var totalFrames = Math.round(TOTAL_MS / FRAME_MS);
+
+    var timer = setInterval(function () {
+      frame++;
+      var progress = frame / totalFrames;
+      var settled  = Math.floor(progress * TARGET.length);
+      var txt = '';
+
+      for (var i = 0; i < TARGET.length; i++) {
+        if (i < settled) {
+          txt += TARGET[i];
+        } else {
+          txt += CHARS[Math.floor(Math.random() * CHARS.length)];
+        }
+      }
+      scrambleEl.textContent = txt;
+
+      if (frame >= totalFrames) {
+        clearInterval(timer);
+        scrambleEl.textContent = TARGET;
+        scrambleEl.classList.add('is-settled');
+      }
+    }, FRAME_MS);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var scrambleObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          setTimeout(runScramble, 250);
+          scrambleObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    scrambleObs.observe(sectionEl);
+  } else {
+    runScramble();
+  }
+})();
+</script>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
