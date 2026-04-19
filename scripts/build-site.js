@@ -195,7 +195,8 @@ function buildSite() {
     siteData.localeOrder.forEach((locale) => {
       const outDir = path.join(rootDir, locale);
       if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
-      const output = transformTemplate(template, pageName, locale, locales[locale]);
+      const localeStrings = Object.assign({}, locales.en || {}, locales[locale] || {});
+      const output = transformTemplate(template, pageName, locale, localeStrings);
       writeFile(path.join(locale, siteData.pages[pageName].output), output);
     });
   });

@@ -21,1036 +21,196 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Smart Fellow Sovereign — 기밀 업무를 위한 오프라인 AI">
 <meta name="twitter:description" content="기밀 업무를 통제된 환경 밖으로 보내지 않고도 AI를 도입하세요.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231c2b38'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
 <style>
 .sov-hero {
-  padding: 8.8rem 2rem 5.5rem;
-  background: linear-gradient(165deg, #101c28 0%, #162434 46%, #1d3043 100%);
-  color: #fff;
-  position: relative;
+  padding: 5.5rem 0 4.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.sov-hero .lede {
+  margin-top: 1.25rem;
+}
+
+.sov-hero .hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Problem section — Q&A items */
+.sov-boundary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.sov-diagram {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
   overflow: hidden;
 }
-.sov-hero::before,
-.sov-hero::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-}
-.sov-hero::before {
-  width: 720px;
-  height: 720px;
-  background: radial-gradient(circle, rgba(72,187,120,0.14) 0%, rgba(72,187,120,0.02) 45%, transparent 72%);
-  top: -240px;
-  right: -200px;
-}
-.sov-hero::after {
-  width: 560px;
-  height: 560px;
-  background: radial-gradient(circle, rgba(99,179,237,0.12) 0%, rgba(99,179,237,0.03) 40%, transparent 70%);
-  bottom: -220px;
-  left: -180px;
-}
-.sov-hero-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(420px, 0.92fr);
-  gap: 3.25rem;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-}
-.sov-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.74);
-  padding: 0.45rem 0.95rem;
-  font-size: 0.82rem;
-  margin-bottom: 1.5rem;
-}
-.sov-badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 10px rgba(72,187,120,0.55);
-  animation: pulse 1.8s ease-in-out infinite;
-}
-.sov-hero-copy h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(2.8rem, 5vw, 5rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
-  max-width: 10.6ch;
-  margin-bottom: 1.25rem;
-}
-.sov-hero-copy h1 em { font-style: italic; color: rgba(255,255,255,0.46); }
-.sov-hero-copy p {
-  max-width: 46ch;
-  color: rgba(255,255,255,0.64);
-  font-size: 1.02rem;
-  font-weight: 300;
-  line-height: 1.8;
-}
-.sov-hero-actions {
+
+.sov-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1.85rem;
-}
-.sov-hero-actions .btn-outline {
-  color: rgba(255,255,255,0.82);
-  border-color: rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.02);
-}
-.sov-hero-actions .btn-outline:hover {
-  color: #fff;
-  border-color: rgba(255,255,255,0.34);
-  background: rgba(255,255,255,0.05);
-}
-.nav-logo-glitch {
-  position: relative;
-  display: inline-flex;
   align-items: center;
-  min-width: 12ch;
+  justify-content: space-between;
+  padding: 0.95rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
 }
-.nav-logo-text {
-  display: inline-block;
-  transition: color 0.2s ease, text-shadow 0.2s ease, opacity 0.2s ease;
-}
-.nav-logo-glitch.is-glitching .nav-logo-text {
-  color: var(--blue);
-  text-shadow: 0 0 10px rgba(99,179,237,0.32);
-}
-.nav-logo-glitch.is-sealed .nav-logo-text {
-  color: var(--ink);
-  text-shadow: none;
-}
-.sov-hero-note {
-  margin-top: 1.2rem;
-  color: rgba(255,255,255,0.35);
-  font-size: 0.85rem;
-}
-.sov-machine {
-  position: relative;
-  min-height: 470px;
-  display: flex;
+
+.sov-row:last-child { border-bottom: 0; }
+.sov-row-label { color: var(--ink-soft); }
+
+.sov-tag {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-.sov-machine-shell {
-  position: relative;
-  width: min(500px, 100%);
-  border-radius: 36px;
-  padding: 1.45rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.035));
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.06);
-  overflow: hidden;
-  display: grid;
-  gap: 1rem;
-}
-.sov-machine-shell::before {
-  content: '';
-  position: absolute;
-  inset: 1.1rem;
-  border-radius: 30px;
-  border: 1px dashed rgba(72,187,120,0.24);
-}
-.sov-machine-label {
-  position: relative;
-  z-index: 1;
-  justify-self: center;
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(72,187,120,0.68);
-  background: rgba(15,25,35,0.92);
-  padding: 0 0.65rem;
+  min-height: 24px;
+  padding: 0.12rem 0.6rem;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   white-space: nowrap;
 }
-.sov-pill-grid {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.8rem;
+
+.sov-tag.is-local {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid #c5ddd3;
 }
-.sov-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.62rem 0.82rem;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  color: rgba(255,255,255,0.8);
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: transform 0.55s ease, opacity 0.55s ease, box-shadow 0.55s ease, border-color 0.55s ease;
-  min-height: 46px;
-  text-align: center;
-  line-height: 1.3;
+
+.sov-tag.is-none {
+  background: var(--surface-muted);
+  color: var(--ink-faint);
+  border: 1px solid var(--line);
 }
-.sov-machine-shell.is-live .sov-pill {
-  opacity: 1;
-  transform: translateY(0);
-}
-.sov-machine-shell.is-live .sov-pill-grid .sov-pill:nth-child(1) { transition-delay: 0.08s; }
-.sov-machine-shell.is-live .sov-pill-grid .sov-pill:nth-child(2) { transition-delay: 0.16s; }
-.sov-machine-shell.is-live .sov-pill-grid .sov-pill:nth-child(3) { transition-delay: 0.24s; }
-.sov-machine-shell.is-live .sov-pill-grid .sov-pill:nth-child(4) { transition-delay: 0.32s; }
-.sov-core {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 288px);
-  margin: 0 auto;
-  border-radius: 34px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
-  padding: 1.2rem;
-  transition: transform 0.7s ease, box-shadow 0.7s ease, border-color 0.7s ease;
-  opacity: 0;
-  transform: translateY(12px);
-}
-.sov-machine-shell.is-live .sov-core {
-  opacity: 1;
-  transform: translateY(0) scale(1.01);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 0 0 1px rgba(72,187,120,0.08), 0 18px 42px rgba(6,16,24,0.22);
-  border-color: rgba(72,187,120,0.18);
-}
-.sov-core-screen {
-  border-radius: 24px;
-  background: linear-gradient(180deg, rgba(18,33,46,0.98), rgba(8,18,26,0.98));
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 1.05rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.sov-core-eyebrow {
-  font-size: 0.61rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-}
-.sov-core-title {
-  font-family: 'Fraunces', serif;
-  font-size: 1.5rem;
-  line-height: 1;
-  color: #fff;
-}
-.sov-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  border-radius: 999px;
-  background: rgba(72,187,120,0.12);
-  border: 1px solid rgba(72,187,120,0.28);
-  color: rgba(255,255,255,0.78);
-  padding: 0.38rem 0.65rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  width: fit-content;
-}
-.sov-core-meta {
-  display: grid;
-  gap: 0.55rem;
-  margin-top: 0.1rem;
-}
-.sov-core-meta-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-}
-.sov-core-meta-row span {
-  font-size: 0.73rem;
-  color: rgba(255,255,255,0.48);
-}
-.sov-core-bar {
-  flex: 1;
-  height: 5px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.08);
+
+/* Problem Q&A list */
+.sov-qa-list {
+  margin-top: 1.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
   overflow: hidden;
 }
-.sov-core-bar i {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, rgba(72,187,120,0.65), rgba(72,187,120,0.98));
-  width: 0;
-  transition: width 0.7s ease;
+
+.sov-qa-item {
+  padding: 1.4rem 1.6rem;
+  border-bottom: 1px solid var(--line);
 }
-.sov-machine-shell.is-live .sov-core-bar i {
-  width: var(--fill, 100%);
-}
-.sov-toggle-switch {
-  width: 30px;
-  height: 16px;
-  border-radius: 999px;
-  background: rgba(72,187,120,0.25);
-  position: relative;
-}
-.sov-toggle-switch::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 16px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #8be2aa;
-  box-shadow: 0 0 10px rgba(72,187,120,0.6);
-}
-.sov-cutoff {
-  position: relative;
-  z-index: 1;
-  padding: 0.85rem 1rem;
-  border-radius: 18px;
-  background: rgba(13,22,31,0.92);
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.18);
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-  transition-delay: 0.44s;
-}
-.sov-machine-shell.is-live .sov-cutoff {
-  opacity: 1;
-  transform: translateY(0);
-}
-.sov-cutoff-line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-  margin-bottom: 0.45rem;
-}
-.sov-cutoff-line span {
-  font-size: 0.72rem;
+
+.sov-qa-item:last-child { border-bottom: 0; }
+
+.sov-qa-q {
   font-weight: 600;
-  color: rgba(255,255,255,0.72);
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
 }
-.sov-cutoff-link {
-  position: relative;
-  width: 88px;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(255,255,255,0.35), rgba(255,255,255,0.08));
+
+.sov-qa-num {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--line-strong);
+  flex: 0 0 auto;
 }
-.sov-cutoff-link::after {
-  content: '';
-  position: absolute;
-  inset: -5px 45% -5px 45%;
-  background: var(--accent);
-  transform: rotate(30deg);
-  box-shadow: 0 0 12px rgba(196,103,58,0.45);
+
+.sov-qa-a {
+  padding-left: 1.75rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
 }
-.sov-cutoff-note {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.45;
-  text-align: center;
-}
-.section-wrap { background: var(--cream); }
-.section {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 6.65rem 2rem;
-}
-.section-ink {
-  background: linear-gradient(160deg, #12202d 0%, #18293a 100%);
-  color: #fff;
-}
-.section-sand { background: var(--sand); }
-.eyebrow-soft {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.95rem;
-}
-.section-ink .eyebrow-soft { color: rgba(255,255,255,0.34); }
-.section h2,
-.section-ink h2 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(2rem, 3.5vw, 3.3rem);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.15rem;
-}
-.section h2 { color: var(--ink); }
-.section-ink h2 { color: #fff; }
-.section h2 em { font-style: italic; color: var(--muted); }
-.section-ink h2 em { font-style: italic; color: rgba(255,255,255,0.42); }
-.lead {
-  max-width: 58ch;
-  font-size: 1.03rem;
-  font-weight: 300;
-  line-height: 1.85;
-  color: var(--muted);
-}
-.section-ink .lead { color: rgba(255,255,255,0.55); }
-.split {
+
+/* Capability grid */
+.sov-cap-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.sov-cap-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+}
+
+.sov-cap-title {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink);
+  margin-bottom: 0.35rem;
+}
+
+.sov-cap-body {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* If stolen — security features */
+.sov-security-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+  gap: 3rem;
   align-items: start;
 }
-.glass-card,
-.soft-card {
-  border-radius: var(--radius-lg);
-  padding: 1.6rem;
-}
-.glass-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-}
-.soft-card {
-  background: var(--warm-white);
-  border: 1px solid var(--sand-dark);
-}
-.question-list,
-.feature-grid,
-.security-grid,
-.memory-grid,
-.task-grid,
-.use-grid,
-.deploy-grid {
+
+.sov-security-features {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 2rem;
 }
-.question-panel {
-  padding: 1.35rem;
-  border-radius: 22px;
-  background: var(--warm-white);
-  border: 1px solid var(--sand-dark);
-  box-shadow: 0 10px 26px rgba(28,43,56,0.04);
+
+.sov-security-item {
+  background: var(--surface);
+  padding: 1.25rem 1.3rem;
 }
-.question-panel::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 1px;
-  margin-bottom: 1rem;
-  background: linear-gradient(90deg, rgba(72,187,120,0) 0%, rgba(72,187,120,0.45) 50%, rgba(72,187,120,0) 100%);
-}
-.question-list { margin-top: 0; }
-.question-entry + .question-entry { margin-top: 0.75rem; }
-.question-item {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 0.9rem;
-  background: linear-gradient(180deg, #f7f4ee 0%, #ffffff 100%);
-  border: 1px solid rgba(216,212,203,0.95);
-  border-radius: 14px;
-  padding: 1rem 1.1rem;
-  color: var(--ink);
-  font-size: 0.95rem;
-  font-weight: 500;
-  line-height: 1.45;
-  text-align: left;
-  cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-.question-item:hover,
-.question-item[aria-expanded="true"] {
-  border-color: rgba(99,179,237,0.4);
-  box-shadow: 0 8px 20px rgba(99,179,237,0.08);
-  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
-}
-.question-num {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Fraunces', serif;
-  font-size: 0.92rem;
-  color: var(--accent);
-  background: rgba(196,103,58,0.1);
-}
-.question-arrow {
-  color: var(--muted-light);
-  font-size: 1rem;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-.question-item[aria-expanded="true"] .question-arrow {
-  color: var(--ink);
-  transform: rotate(90deg);
-}
-.question-answer {
-  display: none;
-  margin-top: 0.45rem;
-  padding: 0.95rem 1rem 1rem 3.35rem;
-  border-radius: 0 0 14px 14px;
-  background: #fbfcfd;
-  border: 1px solid rgba(216,212,203,0.95);
-  border-top: none;
-  color: var(--muted);
+
+.sov-security-item h4 {
   font-size: 0.88rem;
-  line-height: 1.7;
-}
-.question-entry.is-open .question-answer {
-  display: block;
-}
-.question-close {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--sand);
-  font-size: 0.95rem;
-  color: var(--ink);
   font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.sov-security-item p {
+  font-size: 0.84rem;
+  color: var(--ink-soft);
   line-height: 1.55;
 }
-.feature-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 2.15rem;
-  gap: 1.15rem;
-}
-.feature-card,
-.security-card,
-.memory-card,
-.task-card,
-.use-card,
-.deploy-card {
-  border-radius: 18px;
-  padding: 1.45rem;
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 8px 24px rgba(28,43,56,0.035);
-}
-.feature-card,
-.memory-card,
-.task-card,
-.use-card,
-.deploy-card {
-  background: var(--warm-white);
-  border: 1px solid var(--sand-dark);
-}
-.security-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 2rem;
-}
-.security-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: none;
-}
-.card-icon {
-  width: 46px;
-  height: 46px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0.95rem;
-  font-size: 1.15rem;
-}
-.feature-card .card-icon,
-.memory-card .card-icon,
-.task-card .card-icon,
-.use-card .card-icon,
-.deploy-card .card-icon {
-  background: rgba(196,103,58,0.12);
-  color: var(--accent);
-}
-.security-card .card-icon {
-  background: rgba(72,187,120,0.1);
-  color: #8be2aa;
-}
-.feature-card h3,
-.security-card h3,
-.memory-card h3,
-.task-card h3,
-.use-card h3,
-.deploy-card h3 {
-  font-size: 1rem;
-  color: inherit;
-  margin-bottom: 0.55rem;
-}
-.feature-card p,
-.memory-card p,
-.task-card p,
-.use-card p,
-.deploy-card p {
-  font-size: 0.88rem;
-  line-height: 1.75;
-  color: var(--muted);
-  margin-top: auto;
-}
-.security-card p {
-  font-size: 0.88rem;
-  line-height: 1.75;
-  color: rgba(255,255,255,0.5);
-}
-.compare-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 2.25rem;
-  background: var(--warm-white);
-  border: 1px solid var(--sand-dark);
-  border-radius: 20px;
-  overflow: hidden;
-}
-.compare-table th,
-.compare-table td {
-  padding: 1rem 1.1rem;
-  text-align: left;
-  vertical-align: top;
-}
-.compare-table thead th {
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted-light);
-  background: var(--sand);
-}
-.compare-table tbody tr + tr td,
-.compare-table tbody tr + tr th {
-  border-top: 1px solid var(--sand);
-}
-.compare-table tbody th {
-  width: 26%;
-  color: var(--ink);
-  font-size: 0.84rem;
-  font-weight: 600;
-}
-.compare-table td {
-  width: 37%;
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.65;
-}
-.compare-table td:last-child {
-  color: var(--ink);
-  background: rgba(72,187,120,0.06);
-}
-.compare-table tr.is-active td:last-child,
-.compare-table tr.is-active th {
-  background: rgba(72,187,120,0.1);
-}
-.incident-goal {
-  margin-top: 1.6rem;
-  padding: 1rem 1.15rem;
-  border-radius: 14px;
-  background: rgba(72,187,120,0.08);
-  border: 1px solid rgba(72,187,120,0.18);
-  color: rgba(255,255,255,0.78);
-  font-size: 0.92rem;
-  line-height: 1.7;
-}
-.memory-layout {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 1.8rem;
-  margin-top: 2rem;
-}
-.memory-grid { grid-template-columns: repeat(2, 1fr); }
-.memory-quote {
-  margin-top: 1.2rem;
-  font-family: 'Fraunces', serif;
-  font-size: 1.4rem;
-  line-height: 1.35;
-  color: var(--ink);
-}
-.memory-quote em { color: var(--accent); font-style: italic; }
-.reset-panel {
-  background: linear-gradient(180deg, #1c2b38, #162230);
-  color: #fff;
-  border-radius: 24px;
-  padding: 1.5rem;
-  border: 1px solid rgba(255,255,255,0.08);
-  min-height: 100%;
-}
-.reset-panel h3 {
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.42);
-  margin-bottom: 1rem;
-}
-.reset-list {
-  display: grid;
-  gap: 0.85rem;
-}
-.reset-item {
-  padding: 0.9rem 1rem;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.reset-item strong {
-  display: block;
-  font-size: 0.92rem;
-  margin-bottom: 0.25rem;
-}
-.reset-item span {
-  font-size: 0.82rem;
-  line-height: 1.6;
-  color: rgba(255,255,255,0.52);
-}
-.memory-visual {
-  margin-top: 1rem;
-  background: var(--warm-white);
-  border: 1px solid var(--sand-dark);
-  border-radius: 24px;
-  padding: 1.5rem;
-}
-.memory-ring-wrap {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 1.4rem;
-}
-.memory-ring,
-.memory-node {
-  position: absolute;
-  border-radius: 50%;
-}
-.memory-ring {
-  inset: 0;
-  border: 1.5px dashed var(--sand-dark);
-}
-.memory-ring.r2 { inset: 24px; }
-.memory-ring.r3 { inset: 52px; }
-.memory-node {
-  width: 18px;
-  height: 18px;
-  background: var(--sand-dark);
-  transform: translate(-50%, -50%);
-  transition: transform 0.7s ease, background 0.7s ease, box-shadow 0.7s ease;
-}
-.memory-node.active {
-  background: var(--accent);
-  box-shadow: 0 0 14px rgba(196,103,58,0.35);
-  transform: translate(-50%, -50%) scale(1.18);
-}
-.memory-center {
-  position: absolute;
-  inset: 68px;
-  border-radius: 50%;
-  background: var(--ink);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-}
-.memory-chips {
-  display: grid;
-  gap: 0.55rem;
-}
-.memory-chip {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  border-radius: 12px;
-  background: var(--sand);
-  padding: 0.8rem 0.9rem;
-  font-size: 0.82rem;
-  color: var(--ink-light);
-  transition: background 0.55s ease, color 0.55s ease;
-}
-.memory-chip.is-on {
-  background: var(--ink);
-  color: rgba(255,255,255,0.86);
-}
-.memory-chip i {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--sand-dark);
-  display: block;
-}
-.memory-chip.is-on i { background: var(--green); }
-.offline-layout {
-  display: grid;
-  gap: 1.6rem;
-  margin-top: 2.1rem;
-}
-.offline-canvas {
-  position: relative;
-  min-height: 0;
-  border-radius: 28px;
-  background: var(--warm-white);
-  border: 1px solid var(--sand-dark);
-  padding: 1.35rem;
-  overflow: hidden;
-  box-shadow: 0 12px 32px rgba(28,43,56,0.045);
-}
-.offline-canvas-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.1rem;
-}
-.offline-canvas-head strong {
-  font-size: 0.94rem;
-  color: var(--ink);
-}
-.offline-canvas-head span {
-  font-size: 0.8rem;
-  color: var(--muted);
-  line-height: 1.5;
-  max-width: 44ch;
-}
-.offline-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.95rem;
-  align-items: center;
-  position: relative;
-}
-.offline-row::before {
-  content: '';
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  top: 50%;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(72,187,120,0.14), rgba(72,187,120,0.32), rgba(72,187,120,0.14));
-  z-index: 0;
-}
-.offline-step {
-  position: relative;
-  z-index: 1;
-  min-height: 184px;
-  border-radius: 20px;
-  background: var(--sand);
-  border: 1px solid var(--sand-dark);
-  padding: 1rem 1rem 1.05rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 0.85rem;
-  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, background 0.35s ease, opacity 0.35s ease;
-  opacity: 0.58;
-}
-.offline-step.active {
-  transform: translateY(-4px);
-  border-color: rgba(72,187,120,0.45);
-  background: rgba(72,187,120,0.1);
-  box-shadow: 0 10px 20px rgba(72,187,120,0.12);
-  opacity: 1;
-}
-.offline-step strong {
-  display: block;
-  color: var(--ink);
-  font-size: 0.92rem;
-  line-height: 1.4;
-}
-.offline-step span {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--muted);
-  line-height: 1.65;
-}
-.offline-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: var(--warm-white);
-  border: 1px solid var(--sand-dark);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.05rem;
-}
-.offline-packet {
-  display: none;
-}
-.task-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-.use-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 2rem;
-  gap: 1.15rem;
-}
-.use-card {
-  border-color: rgba(216,212,203,0.92);
-  box-shadow: 0 10px 28px rgba(28,43,56,0.045);
-}
+
 .deploy-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
   margin-top: 2rem;
 }
-.deploy-card {
-  position: relative;
-  padding-top: 3.1rem;
-}
-.deploy-num {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Fraunces', serif;
-  font-size: 1rem;
-  color: var(--accent);
-  background: rgba(196,103,58,0.12);
-}
-.not-box {
-  max-width: 820px;
-  margin: 0 auto;
-  text-align: center;
-  background: var(--warm-white);
-  border: 1px solid var(--sand-dark);
-  border-radius: 30px;
-  padding: 2.5rem 2rem;
-}
-.not-box p + p { margin-top: 1rem; }
-.cta-band {
-  text-align: center;
-  padding: 7.5rem 2rem 6.5rem;
-  background: linear-gradient(160deg, #13212f 0%, #1b2d3f 100%);
-}
-.cta-band h2 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(2.2rem, 4.5vw, 4.2rem);
-  line-height: 1.08;
-  letter-spacing: -0.025em;
-  color: #fff;
-  margin-bottom: 1rem;
-}
-.cta-band p {
-  max-width: 42ch;
-  margin: 0 auto;
-  color: rgba(255,255,255,0.52);
-  font-size: 1.05rem;
-  font-weight: 300;
-  line-height: 1.8;
-}
-.cta-band .cta-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-.cta-band .btn-outline {
-  color: rgba(255,255,255,0.88);
-  border-color: rgba(255,255,255,0.18);
-  background: rgba(255,255,255,0.04);
-}
-.cta-band .btn-outline:hover {
-  color: #fff;
-  border-color: rgba(255,255,255,0.34);
-}
-.btn-light {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--ink);
-  background: #fff;
-  padding: 0.9rem 2.1rem;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: opacity 0.2s, transform 0.2s;
-}
-.btn-light:hover { opacity: 0.9; transform: scale(1.02); }
-.footer-on-dark {
-  background: #0d1a24;
-  padding-top: 2.9rem;
-  padding-bottom: 3rem;
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
-}
-@media (max-width: 1080px) {
-  .feature-grid,
-  .security-grid,
-  .use-grid { grid-template-columns: repeat(2, 1fr); }
-  .deploy-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 920px) {
-  .sov-hero-inner,
-  .split,
-  .memory-layout { grid-template-columns: 1fr; }
-  .sov-hero { padding-top: 8.5rem; }
-  .sov-machine { min-height: 400px; }
-  .sov-machine-shell { width: min(460px, 100%); }
-  .feature-grid,
-  .security-grid,
-  .memory-grid,
-  .task-grid,
-  .use-grid,
-  .deploy-grid { grid-template-columns: 1fr; }
-  .offline-row {
+
+@media (max-width: 980px) {
+  .sov-boundary-grid,
+  .sov-security-grid {
     grid-template-columns: 1fr;
   }
-  .offline-row::before { display: none; }
-  .offline-step { min-height: auto; }
-  .compare-table,
-  .compare-table tbody,
-  .compare-table tr,
-  .compare-table td,
-  .compare-table th,
-  .compare-table thead { display: block; width: 100%; }
-  .compare-table thead { display: none; }
-  .compare-table tr {
-    border-top: 1px solid var(--sand);
-    padding: 0.75rem 0;
-  }
-  .compare-table tbody th {
-    padding-bottom: 0.35rem;
-  }
-  .compare-table td:last-child { border-radius: 12px; }
-}
-@media (max-width: 640px) {
-  .sov-hero-copy h1 { max-width: none; }
-  .sov-core { width: 100%; }
-  .sov-pill {
-    font-size: 0.69rem;
-    padding: 0.56rem 0.72rem;
-  }
-  .sov-pill-grid { grid-template-columns: 1fr; }
-  .question-answer {
-    padding-left: 1rem;
-  }
-  .offline-canvas-head {
-    flex-direction: column;
-    align-items: flex-start;
+
+  .sov-security-features {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -1058,9 +218,7 @@
 <body>
 
 <nav>
-  <a href="/ko/" class="nav-logo nav-logo-glitch" data-base="Smart Fellow" data-target="Sealed Fellow">
-    <span class="nav-logo-text">Smart Fellow</span>
-  </a>
+  <a href="/ko/" class="nav-logo">Smart Fellow</a>
   <ul class="nav-links">
     <li><a href="/ko/#how" data-i18n="nav.how">작동 방식</a></li>
     <li><a href="/ko/technology.html" data-i18n="nav.technology">기술 소개</a></li>
@@ -1069,7 +227,7 @@
   </ul>
   <div class="nav-right">
     <div class="lang-switcher" role="group" aria-label="언어 선택"><a href="/en/sovereign/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/sovereign/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/sovereign/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
-    <a href="/ko/#contact" class="nav-cta" data-i18n="nav.cta">Fellow 만나기</a>
+    <a href="/ko/#contact" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Fellow 만나기</a>
   </div>
   <button class="nav-hamburger" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -1083,329 +241,253 @@
     <li><a href="/ko/#roles" onclick="closeMobileMenu()" data-i18n="nav.roles">채용 포지션</a></li>
     <li><a href="/ko/#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">문의</a></li>
   </ul>
-  <a href="/ko/#contact" class="nav-cta" onclick="closeMobileMenu()" data-i18n="nav.cta">Fellow 만나기</a>
+  <a href="/ko/#contact" class="nav-cta" onclick="closeMobileMenu(); Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Fellow 만나기</a>
   <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="언어 선택"><a href="/en/sovereign/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/sovereign/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/sovereign/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
 </div>
 
+<!-- Hero -->
 <section class="sov-hero">
-  <div class="sov-hero-inner">
-    <div class="sov-hero-copy">
-      <div class="sov-badge reveal">
-        <span class="sov-badge-dot"></span>
-        <span data-i18n="sov.hero.badge">고민감도 워크플로우용</span>
-      </div>
-      <h1 class="reveal d1" data-i18n-html="sov.hero.h1">반드시 <em>기밀로</em> 남아야 하는 업무를 위한 오프라인 AI</h1>
-      <p class="reveal d2" data-i18n="sov.hero.sub">Smart Fellow Sovereign은 민감한 문서, 내부 분석, R&amp;D, 고객 파일, 다국어 업무를 위한 전용 AI 머신입니다. 로컬에서 실행되며 인터넷 없이도 운영할 수 있고, 팀이 명시적으로 제공한 데이터로만 작동합니다.</p>
-      <div class="sov-hero-actions reveal d3">
-        <button type="button" class="btn-light" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sov.hero.ctaPrimary">소버린 워크플로우 리뷰 예약</button>
-        <a href="#offline-mode" class="btn-outline" data-i18n="sov.hero.ctaSecondary">오프라인 모드 작동 방식 보기</a>
-      </div>
-      <div class="sov-hero-note reveal d3" data-i18n="sov.hero.note">로컬 AI. 암호화된 메모리. 인터넷 불필요. 설계된 통제.</div>
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="sovv2.hero.eyebrow">For high-sensitivity workflows</p>
+    <h1 class="hero-title reveal d1" data-i18n-html="sovv2.hero.h1">Offline AI for work that must <em>stay confidential.</em></h1>
+    <p class="lede reveal d2" data-i18n="sovv2.hero.body">Smart Fellow Sovereign is a dedicated AI machine for sensitive documents, internal analysis, R&amp;amp;D, client files, and multilingual work. It runs locally, can operate without internet access, and only works with the data your team explicitly provides.</p>
+    <div class="hero-actions reveal d3">
+      <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.hero.primary">Book a sovereign workflow review</button>
+      <a href="#the-problem" class="btn-outline" data-i18n="sovv2.hero.secondary">See the problem it solves</a>
     </div>
-    <div class="sov-machine reveal d2" aria-hidden="true">
-      <div class="sov-machine-shell">
-        <div class="sov-machine-label" data-i18n="sov.hero.panel.eyebrow">통제된 환경</div>
-        <div class="sov-pill-grid">
-          <div class="sov-pill" data-i18n="sov.hero.panel.files">승인된 파일</div>
-          <div class="sov-pill" data-i18n="sov.hero.panel.local">로컬 처리</div>
-          <div class="sov-pill" data-i18n="sov.hero.panel.memory">범위가 제한된 메모리</div>
-          <div class="sov-pill" data-i18n="sov.hero.panel.boundary">통제된 경계</div>
-        </div>
-        <div class="sov-core">
-          <div class="sov-core-screen">
-            <div class="sov-core-eyebrow" data-i18n="sov.hero.panel.title">Smart Fellow Sovereign</div>
-            <div class="sov-core-title">Sovereign</div>
-            <div class="sov-toggle">
-              <span class="sov-toggle-switch"></span>
-              <span data-i18n="sov.hero.panel.mode">오프라인 모드</span>
-            </div>
-            <div class="sov-core-meta">
-              <div class="sov-core-meta-row"><span data-i18n="sov.hero.panel.local">로컬 처리</span><div class="sov-core-bar"><i style="--fill:100%"></i></div></div>
-              <div class="sov-core-meta-row"><span data-i18n="sov.hero.panel.memory">범위가 제한된 메모리</span><div class="sov-core-bar"><i style="--fill:78%"></i></div></div>
-              <div class="sov-core-meta-row"><span data-i18n="sov.hero.panel.boundary">통제된 경계</span><div class="sov-core-bar"><i style="--fill:92%"></i></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="sov-cutoff">
-          <div class="sov-cutoff-line">
-            <span data-i18n="sov.hero.panel.machine">머신</span>
-            <div class="sov-cutoff-link"></div>
-            <span data-i18n="sov.hero.panel.internet">인터넷</span>
-          </div>
-          <div class="sov-cutoff-note" data-i18n="sov.hero.panel.cutoff">승인된 문서 워크플로우에는 외부 연결이 필요하지 않습니다.</div>
-        </div>
+  </div>
+</section>
+
+<!-- The problem -->
+<section class="section" id="the-problem">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="sovv2.problem.eyebrow">The problem</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.problem.h2">Some work should never be <em>sent to the cloud.</em></h2>
+    <p class="lede reveal d2" data-i18n="sovv2.problem.lead">Your team may want AI assistance for confidential analysis, R&amp;amp;D files, client documents, legal material, and sensitive multilingual work. But the most valuable documents are often the ones that cannot be casually uploaded to public AI tools or third-party systems. For these workflows, the question is not which model is best. The question is whether the information stays inside a boundary your team can actually control.</p>
+
+    <div class="sov-qa-list reveal d3">
+      <div class="sov-qa-item">
+        <div class="sov-qa-q"><span class="sov-qa-num">1</span><span data-i18n="sovv2.problem.q1">Where does the information go?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a1">Approved documents stay inside the machine boundary. Work is processed locally without requiring an external model provider for the core workflow.</p>
+      </div>
+      <div class="sov-qa-item">
+        <div class="sov-qa-q"><span class="sov-qa-num">2</span><span data-i18n="sovv2.problem.q2">Who can access it?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a2">Access is limited to authorised users and whatever policy scope you configure for the deployment — whether that is by session, user, project, or secure room.</p>
+      </div>
+      <div class="sov-qa-item">
+        <div class="sov-qa-q"><span class="sov-qa-num">3</span><span data-i18n="sovv2.problem.q3">What happens if the machine is lost, stolen, or misused?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a3">The system can be configured with encrypted local storage, controlled access, and scoped or resettable memory so the device does not simply become a readable archive if control is lost.</p>
+      </div>
+      <div class="sov-qa-item">
+        <div class="sov-qa-q"><span class="sov-qa-num">4</span><span data-i18n="sovv2.problem.q4">Can the work be done without an internet connection?</span></div>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a4">Yes. Approved local document workflows can run offline, and connected or hybrid behaviour can remain optional rather than required.</p>
       </div>
     </div>
   </div>
 </section>
 
-<div class="section-wrap">
-  <section class="section">
-    <div class="split">
-      <div class="reveal">
-        <div class="eyebrow-soft" data-i18n="sov.problem.eyebrow">문제</div>
-        <h2 data-i18n-html="sov.problem.h2">어떤 업무는 절대 <em>클라우드로 보내면 안 됩니다.</em></h2>
-        <p class="lead" style="margin-bottom:1rem" data-i18n="sov.problem.p1">팀은 기밀 분석, R&amp;D 파일, 고객 문서, 법률 자료, 내부 보고서, 민감한 다국어 업무에 AI 지원을 원할 수 있습니다. 그러나 가장 가치 있는 문서일수록 공개 AI 도구나 제3자 시스템에 가볍게 업로드할 수 없는 경우가 많습니다.</p>
-        <p class="lead" data-i18n="sov.problem.p2">이런 워크플로우에서 핵심 질문은 어떤 모델이 가장 좋은가만이 아닙니다. 정보가 실제로 팀이 통제할 수 있는 경계 안에 머무는가가 더 중요합니다.</p>
-      </div>
-      <div class="reveal d1">
-        <div class="question-panel">
-          <div class="question-list">
-            <div class="question-entry is-open">
-              <button class="question-item" type="button" aria-expanded="true">
-                <span class="question-num">1</span><span data-i18n="sov.problem.q1">정보는 어디로 가는가?</span><span class="question-arrow">→</span>
-              </button>
-              <div class="question-answer" data-i18n="sov.problem.a1">승인된 문서는 머신의 경계 안에 머뭅니다. 핵심 워크플로우는 외부 모델 제공자를 필요로 하지 않고 로컬에서 처리할 수 있습니다.</div>
-            </div>
-            <div class="question-entry">
-              <button class="question-item" type="button" aria-expanded="false">
-                <span class="question-num">2</span><span data-i18n="sov.problem.q2">누가 접근할 수 있는가?</span><span class="question-arrow">→</span>
-              </button>
-              <div class="question-answer" data-i18n="sov.problem.a2">접근 권한은 승인된 사용자와 배포 정책이 허용하는 범위로 제한됩니다. 세션, 사용자, 프로젝트, 보안 공간 단위로 범위를 정할 수 있습니다.</div>
-            </div>
-            <div class="question-entry">
-              <button class="question-item" type="button" aria-expanded="false">
-                <span class="question-num">3</span><span data-i18n="sov.problem.q3">머신을 분실, 도난, 오용하면 어떻게 되는가?</span><span class="question-arrow">→</span>
-              </button>
-              <div class="question-answer" data-i18n="sov.problem.a3">시스템은 암호화된 로컬 저장소, 통제된 접근, 범위 지정 및 리셋 가능한 메모리로 구성할 수 있어 통제를 잃었다고 해서 기기가 그대로 읽을 수 있는 아카이브가 되지 않도록 설계됩니다.</div>
-            </div>
-            <div class="question-entry">
-              <button class="question-item" type="button" aria-expanded="false">
-                <span class="question-num">4</span><span data-i18n="sov.problem.q4">인터넷 연결 없이도 업무를 수행할 수 있는가?</span><span class="question-arrow">→</span>
-              </button>
-              <div class="question-answer" data-i18n="sov.problem.a4">예. 승인된 로컬 문서 워크플로우는 오프라인으로 실행할 수 있으며, 연결형 또는 하이브리드 동작은 필수가 아니라 선택으로 남길 수 있습니다.</div>
-            </div>
-          </div>
-          <div class="question-close" data-i18n="sov.problem.close">Smart Fellow Sovereign은 바로 그런 환경을 위해 만들어졌습니다.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="rule"></div>
-
-  <section class="section">
-    <div class="reveal">
-      <div class="eyebrow-soft" data-i18n="sov.what.eyebrow">무엇인가</div>
-      <h2 data-i18n-html="sov.what.h2">통제권 안에 두는 <em>전용 AI 머신.</em></h2>
-      <p class="lead" style="margin-bottom:1rem" data-i18n="sov.what.p1">Smart Fellow Sovereign은 특정 팀, 프로젝트, 또는 기밀 워크플로우를 위해 배치되는 오프라인 AI 워크스테이션입니다.</p>
-      <p class="lead" data-i18n="sov.what.p2">자체 연산 자원, 로컬 AI 기능, 암호화된 저장소, 통제된 메모리를 갖추고 있습니다. 승인된 문서를 처리하는 데 인터넷이 필요하지 않습니다. 회사 시스템에 자동으로 연결되지 않습니다. 팀이 명시적으로 제공한 것만 사용합니다.</p>
-    </div>
-    <div class="feature-grid">
-      <div class="feature-card reveal"><div class="card-icon">🖥️</div><h3 data-i18n="sov.card.1.title">전용 머신</h3><p data-i18n="sov.card.1.desc">워크플로우에 맞춰 구성된 물리적 또는 통제된 로컬 워크스테이션입니다.</p></div>
-      <div class="feature-card reveal d1"><div class="card-icon">📴</div><h3 data-i18n="sov.card.2.title">인터넷 불필요</h3><p data-i18n="sov.card.2.desc">고도의 기밀 업무를 위해 오프라인으로 운영할 수 있습니다.</p></div>
-      <div class="feature-card reveal d2"><div class="card-icon">📂</div><h3 data-i18n="sov.card.3.title">승인된 파일만</h3><p data-i18n="sov.card.3.desc">팀이 제공한 문서, 폴더, 자료만 처리합니다.</p></div>
-      <div class="feature-card reveal"><div class="card-icon">🧠</div><h3 data-i18n="sov.card.4.title">로컬 메모리</h3><p data-i18n="sov.card.4.desc">컨텍스트와 메모리가 머신 안에 남고 사용자, 프로젝트, 사안별로 분리됩니다.</p></div>
-      <div class="feature-card reveal d1"><div class="card-icon">🔐</div><h3 data-i18n="sov.card.5.title">암호화된 저장소</h3><p data-i18n="sov.card.5.desc">민감한 자료를 로컬에 암호화와 접근 통제로 저장합니다.</p></div>
-      <div class="feature-card reveal d2"><div class="card-icon">♻️</div><h3 data-i18n="sov.card.6.title">리셋 가능한 메모리</h3><p data-i18n="sov.card.6.desc">세션, 사용자, 프로젝트 또는 전체 머신 기준으로 메모리를 지울 수 있습니다.</p></div>
-    </div>
-  </section>
-
-  <div class="rule"></div>
-
-  <section class="section section-sand">
-    <div class="reveal">
-      <div class="eyebrow-soft" data-i18n="sov.compare.eyebrow">왜 일반 AI 도구가 아닌가?</div>
-      <h2 data-i18n-html="sov.compare.h2">공개 AI 도구는 접근을 위해 설계됩니다. <em>이것은 격리를 위해 설계됩니다.</em></h2>
-      <p class="lead" style="margin-bottom:1rem" data-i18n="sov.compare.p1">대부분의 AI 제품은 연결성을 중심으로 설계됩니다. 클라우드 모델, 온라인 검색, 통합, 동기화, 원격 접근이 기본입니다. 많은 워크플로우에는 유용합니다.</p>
-      <p class="lead" data-i18n="sov.compare.p2">하지만 고도의 기밀 업무에서는 연결성 자체가 위험이 될 수 있습니다. Smart Fellow Sovereign은 그 반대 원리인 격리를 중심으로 설계됩니다.</p>
-    </div>
-    <table class="compare-table reveal d1">
-      <thead>
-        <tr>
-          <th></th>
-          <th data-i18n="sov.compare.head.normal">일반 AI 도구</th>
-          <th data-i18n="sov.compare.head.sovereign">Smart Fellow Sovereign</th>
-        </tr>
-      </thead>
-      <tbody id="compare-body">
-        <tr><th data-i18n="sov.compare.r1.label">처리 방식</th><td data-i18n="sov.compare.r1.normal">클라우드 처리</td><td data-i18n="sov.compare.r1.sovereign">로컬 처리</td></tr>
-        <tr><th data-i18n="sov.compare.r2.label">연결성</th><td data-i18n="sov.compare.r2.normal">인터넷 연결</td><td data-i18n="sov.compare.r2.sovereign">오프라인 가능</td></tr>
-        <tr><th data-i18n="sov.compare.r3.label">프롬프트</th><td data-i18n="sov.compare.r3.normal">외부 제공자가 프롬프트 수신</td><td data-i18n="sov.compare.r3.sovereign">외부 제공자 불필요</td></tr>
-        <tr><th data-i18n="sov.compare.r4.label">입력 범위</th><td data-i18n="sov.compare.r4.normal">광범위한 통합</td><td data-i18n="sov.compare.r4.sovereign">승인된 입력만</td></tr>
-        <tr><th data-i18n="sov.compare.r5.label">기록</th><td data-i18n="sov.compare.r5.normal">벤더 계정에 지속 기록</td><td data-i18n="sov.compare.r5.sovereign">로컬 범위 메모리</td></tr>
-        <tr><th data-i18n="sov.compare.r6.label">경계</th><td data-i18n="sov.compare.r6.normal">데이터 경계를 검증하기 어려움</td><td data-i18n="sov.compare.r6.sovereign">물리적·운영적 경계</td></tr>
-        <tr><th data-i18n="sov.compare.r7.label">우선순위</th><td data-i18n="sov.compare.r7.normal">편의 중심</td><td data-i18n="sov.compare.r7.sovereign">기밀 업무 중심</td></tr>
-      </tbody>
-    </table>
-  </section>
-</div>
-
-<section class="section section-ink">
-  <div class="reveal">
-    <div class="eyebrow-soft" data-i18n="sov.incident.eyebrow">머신이 도난당했을 때</div>
-    <h2 data-i18n-html="sov.incident.h2">문제가 생기는 순간까지 <em>염두에 두고 설계했습니다.</em></h2>
-    <p class="lead" style="margin-bottom:1rem" data-i18n="sov.incident.p1">기밀 시스템은 모든 것이 완벽할 때만 잘 작동해서는 안 됩니다. 사고, 오용, 통제 상실까지 고려해 설계되어야 합니다.</p>
-    <p class="lead" data-i18n="sov.incident.p2">Smart Fellow Sovereign은 기밀 데이터가 로컬에서 암호화되고, 접근에 승인된 자격 증명이 필요하며, 정책에 따라 메모리를 범위 지정하거나 삭제하도록 구성할 수 있습니다.</p>
-    <div class="incident-goal" data-i18n="sov.incident.goal">기기를 분실하거나 도난당했을 때 목표는 단순합니다. 승인되지 않은 사람이 회사 정보를 사용 가능한 형태로 얻지 못하게 하는 것입니다.</div>
-  </div>
-  <div class="security-grid">
-    <div class="security-card reveal"><div class="card-icon">🔐</div><h3 data-i18n="sov.security.1.title">암호화된 로컬 저장소</h3><p data-i18n="sov.security.1.desc">문서와 메모리를 암호화된 형태로 저장합니다.</p></div>
-    <div class="security-card reveal d1"><div class="card-icon">👤</div><h3 data-i18n="sov.security.2.title">사용자 접근 제어</h3><p data-i18n="sov.security.2.desc">승인된 사용자만 Fellow에 접근할 수 있습니다.</p></div>
-    <div class="security-card reveal d2"><div class="card-icon">🗃️</div><h3 data-i18n="sov.security.3.title">프로젝트 범위 메모리</h3><p data-i18n="sov.security.3.desc">메모리를 사용자, 프로젝트, 고객 사안, 워크플로우별로 분리할 수 있습니다.</p></div>
-    <div class="security-card reveal"><div class="card-icon">♻️</div><h3 data-i18n="sov.security.4.title">안전한 리셋 옵션</h3><p data-i18n="sov.security.4.desc">세션, 프로젝트, 사용자, 머신 메모리를 필요할 때 초기화할 수 있습니다.</p></div>
-    <div class="security-card reveal d1"><div class="card-icon">☁️</div><h3 data-i18n="sov.security.5.title">기본값은 클라우드 동기화 없음</h3><p data-i18n="sov.security.5.desc">오프라인 배포에서는 기밀 자료를 클라우드 계정과 동기화하지 않습니다.</p></div>
-    <div class="security-card reveal d2"><div class="card-icon">📴</div><h3 data-i18n="sov.security.6.title">인터넷 연결 불필요</h3><p data-i18n="sov.security.6.desc">실시간 외부 연결 없이도 운영할 수 있습니다.</p></div>
-  </div>
-</section>
-
-<div class="section-wrap">
-  <section class="section">
-    <div class="reveal">
-      <div class="eyebrow-soft" data-i18n="sov.memory.eyebrow">통제되는 메모리</div>
-      <h2 data-i18n-html="sov.memory.h2">메모리는 유용합니다. <em>그래서 통제되어야 합니다.</em></h2>
-      <p class="lead" data-i18n="sov.memory.p1">AI 메모리는 Fellow가 용어, 문체, 문서, 이전 결정, 워크플로우를 이해하게 해주기 때문에 강력합니다. 하지만 메모리 역시 민감합니다.</p>
-      <div class="memory-quote" data-i18n-html="sov.memory.quote">허용된 것만 <em>기억하고</em>, 허용된 기간 동안만 기억합니다.</div>
-    </div>
-    <div class="memory-layout">
+<!-- What changes vs standard — text + diagram -->
+<section class="section section--soft" id="what-changes">
+  <div class="section-inner">
+    <div class="sov-boundary-grid">
       <div>
-        <div class="memory-grid">
-          <div class="memory-card reveal"><div class="card-icon">⚡</div><h3 data-i18n="sov.memory.t1.title">세션 메모리</h3><p data-i18n="sov.memory.t1.desc">하나의 작업을 위한 임시 컨텍스트입니다.</p></div>
-          <div class="memory-card reveal d1"><div class="card-icon">👤</div><h3 data-i18n="sov.memory.t2.title">사용자 메모리</h3><p data-i18n="sov.memory.t2.desc">한 명의 승인된 사용자를 위한 개인 선호와 작업 패턴입니다.</p></div>
-          <div class="memory-card reveal"><div class="card-icon">📁</div><h3 data-i18n="sov.memory.t3.title">프로젝트 메모리</h3><p data-i18n="sov.memory.t3.desc">프로젝트, 고객 사안, 실사 과정, 연구 워크플로우 하나를 위한 컨텍스트입니다.</p></div>
-          <div class="memory-card reveal d1"><div class="card-icon">🏢</div><h3 data-i18n="sov.memory.t4.title">회사 메모리</h3><p data-i18n="sov.memory.t4.desc">용어집, 템플릿, 정책처럼 승인된 공유 지식입니다.</p></div>
+        <p class="eyebrow reveal" data-i18n="sovv2.boundary.eyebrow">A dedicated AI machine inside your control</p>
+        <h2 class="section-title reveal d1" data-i18n-html="sovv2.boundary.h2">Its own compute. Local models. Encrypted storage. <em>No internet required.</em></h2>
+        <p class="lede reveal d2" data-i18n="sovv2.boundary.lead">Smart Fellow Sovereign is an offline AI workstation deployed for a specific team, project, or confidential workflow. It does not need internet access to process approved documents. It does not automatically connect to company systems. It only works with what your team explicitly gives it.</p>
+        <ul class="spec-list reveal d3" style="margin-top:1.5rem">
+          <li data-i18n="sovv2.boundary.point1">Confidential material never becomes a vendor-side account history.</li>
+          <li data-i18n="sovv2.boundary.point2">Memory can be cleared by session, user, project, or full machine reset.</li>
+          <li data-i18n="sovv2.boundary.point3">Fully practical for drafting, reviewing, comparing, summarising, and multilingual analysis.</li>
+        </ul>
+      </div>
+
+      <div class="sov-diagram reveal d2">
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row1.label">Internet requirement</span>
+          <span class="sov-tag is-none" data-i18n="sovv2.diagram.row1.value">None</span>
         </div>
-        <div class="memory-visual reveal d2" aria-hidden="true">
-          <div class="memory-ring-wrap">
-            <div class="memory-ring"></div>
-            <div class="memory-ring r2"></div>
-            <div class="memory-ring r3"></div>
-            <div class="memory-node active" style="top:18%;left:50%"></div>
-            <div class="memory-node" style="top:50%;left:82%"></div>
-            <div class="memory-node" style="top:78%;left:50%"></div>
-            <div class="memory-node" style="top:50%;left:18%"></div>
-            <div class="memory-center">🧠</div>
-          </div>
-          <div class="memory-chips">
-            <div class="memory-chip is-on"><i></i><span data-i18n="sov.memory.t1.title">세션 메모리</span></div>
-            <div class="memory-chip"><i></i><span data-i18n="sov.memory.t2.title">사용자 메모리</span></div>
-            <div class="memory-chip"><i></i><span data-i18n="sov.memory.t3.title">프로젝트 메모리</span></div>
-            <div class="memory-chip"><i></i><span data-i18n="sov.memory.t4.title">회사 메모리</span></div>
-          </div>
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row2.label">Prompt destination</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row2.value">Local machine</span>
+        </div>
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row3.label">External APIs</span>
+          <span class="sov-tag is-none" data-i18n="sovv2.diagram.row3.value">Blocked</span>
+        </div>
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row4.label">Document memory</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row4.value">Local</span>
+        </div>
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row5.label">Session memory</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row5.value">Resettable</span>
+        </div>
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="sovv2.diagram.row6.label">Retention policy</span>
+          <span class="sov-tag is-local" data-i18n="sovv2.diagram.row6.value">Set by you</span>
         </div>
       </div>
-        <div class="reset-panel reveal d1">
-        <h3 data-i18n="sov.memory.resetTitle">리셋 옵션</h3>
-        <div class="reset-list">
-          <div class="reset-item"><strong data-i18n="sov.memory.r1.title">세션 지우기</strong><span data-i18n="sov.memory.r1.desc">일회성 분석용.</span></div>
-          <div class="reset-item"><strong data-i18n="sov.memory.r2.title">프로젝트 지우기</strong><span data-i18n="sov.memory.r2.desc">사안이 종료될 때.</span></div>
-          <div class="reset-item"><strong data-i18n="sov.memory.r3.title">사용자 메모리 지우기</strong><span data-i18n="sov.memory.r3.desc">팀원이 떠나거나 역할이 바뀔 때.</span></div>
-          <div class="reset-item"><strong data-i18n="sov.memory.r4.title">전체 머신 리셋</strong><span data-i18n="sov.memory.r4.desc">배포가 종료되거나 머신이 재할당될 때.</span></div>
-        </div>
-      </div>
     </div>
-  </section>
-
-  <div class="rule"></div>
-
-  <section class="section" id="offline-mode">
-    <div class="reveal">
-      <div class="eyebrow-soft" data-i18n="sov.offline.eyebrow">오프라인으로 할 수 있는 일</div>
-      <h2 data-i18n-html="sov.offline.h2">기밀 업무가 꼭 <em>수작업일 필요는 없습니다.</em></h2>
-      <p class="lead" data-i18n="sov.offline.p1">오프라인 모드는 승인된 로컬 자료를 통제된 환경 밖으로 보내지 않고도 실제 업무 결과물로 바꾸도록 설계되었습니다.</p>
-    </div>
-    <div class="offline-layout">
-      <div class="offline-canvas reveal d1" aria-hidden="true" id="offline-canvas">
-        <div class="offline-canvas-head">
-          <strong data-i18n="sov.hero.panel.files">승인된 파일</strong>
-          <span data-i18n="sov.offline.p1">오프라인 모드는 승인된 로컬 자료를 통제된 환경 밖으로 보내지 않고도 실제 업무 결과물로 바꾸도록 설계되었습니다.</span>
-        </div>
-        <div class="offline-row" id="offline-row">
-          <div class="offline-step active">
-            <div class="offline-icon">📂</div>
-            <div><strong data-i18n="sov.offline.step1.title">승인된 파일 불러오기</strong><span data-i18n="sov.offline.step1.desc">선택된 폴더, 문서, 자료만 워크플로우에 들어옵니다.</span></div>
-          </div>
-          <div class="offline-step">
-            <div class="offline-icon">🧠</div>
-            <div><strong data-i18n="sov.offline.step2.title">로컬에서 추론</strong><span data-i18n="sov.offline.step2.desc">모델이 머신 안에서 읽고, 비교하고, 추출하고, 초안을 만듭니다.</span></div>
-          </div>
-          <div class="offline-step">
-            <div class="offline-icon">🗂️</div>
-            <div><strong data-i18n="sov.offline.step3.title">범위가 지정된 메모리 저장</strong><span data-i18n="sov.offline.step3.desc">유용한 컨텍스트가 로컬에 남고 보존 정책을 따릅니다.</span></div>
-          </div>
-          <div class="offline-step">
-            <div class="offline-icon">✅</div>
-            <div><strong data-i18n="sov.offline.step4.title">결과 반환</strong><span data-i18n="sov.offline.step4.desc">팀은 요약, 초안, 답변, 번역 결과를 받습니다.</span></div>
-          </div>
-        </div>
-        <div class="offline-packet"></div>
-      </div>
-      <div class="task-grid">
-        <div class="task-card reveal"><div class="card-icon">📄</div><h3 data-i18n="sov.task.1.title">문서 분석</h3><p data-i18n="sov.task.1.desc">기밀 파일, 보고서, 메모, 연구 노트, 내부 기록을 요약합니다.</p></div>
-        <div class="task-card reveal d1"><div class="card-icon">📑</div><h3 data-i18n="sov.task.2.title">계약서와 조항 검토</h3><p data-i18n="sov.task.2.desc">핵심 조항 추출, 버전 비교, 특이 문구 표시, 구조화된 요약 준비를 수행합니다.</p></div>
-        <div class="task-card reveal"><div class="card-icon">📝</div><h3 data-i18n="sov.task.3.title">내부 보고서 초안 작성</h3><p data-i18n="sov.task.3.desc">메모, 브리프, 기술 노트, 경영 요약의 초안을 만듭니다.</p></div>
-        <div class="task-card reveal d1"><div class="card-icon">🌐</div><h3 data-i18n="sov.task.4.title">번역 및 현지화</h3><p data-i18n="sov.task.4.desc">한국어, 영어, 프랑스어 등 여러 언어를 넘나들며 비즈니스 의미를 유지합니다.</p></div>
-        <div class="task-card reveal"><div class="card-icon">🔎</div><h3 data-i18n="sov.task.5.title">로컬 아카이브 검색</h3><p data-i18n="sov.task.5.desc">머신에 적재된 승인 문서를 기반으로 질문에 답합니다.</p></div>
-        <div class="task-card reveal d1"><div class="card-icon">🧩</div><h3 data-i18n="sov.task.6.title">흩어진 정보 구조화</h3><p data-i18n="sov.task.6.desc">회의록, 파일, 표, 문서 세트를 정리된 결과물로 바꿉니다.</p></div>
-        <div class="task-card reveal"><div class="card-icon">📋</div><h3 data-i18n="sov.task.7.title">의사결정 브리프 준비</h3><p data-i18n="sov.task.7.desc">기밀 자료를 내부 검토용 간결한 요약으로 전환합니다.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="rule"></div>
-
-  <section class="section section-sand">
-    <div class="reveal">
-      <div class="eyebrow-soft" data-i18n="sov.use.eyebrow">활용 사례</div>
-      <h2 data-i18n-html="sov.use.h2">유출되면 안 되는 정보를 다루는 팀을 위해 <em>설계되었습니다.</em></h2>
-    </div>
-    <div class="use-grid">
-      <div class="use-card reveal"><div class="card-icon">🧪</div><h3 data-i18n="sov.use.1.title">R&amp;D와 영업비밀</h3><p data-i18n="sov.use.1.desc">배합식, 기술 사양, 테스트 데이터, 제조 공정, SOP, 공급업체 문서.</p></div>
-      <div class="use-card reveal d1"><div class="card-icon">🤝</div><h3 data-i18n="sov.use.2.title">고객 기밀 업무</h3><p data-i18n="sov.use.2.desc">컨설팅 보고서, 법률 문서, 회계 파일, 에이전시 전략, 고객 인터뷰.</p></div>
-      <div class="use-card reveal d2"><div class="card-icon">📚</div><h3 data-i18n="sov.use.3.title">실사 업무</h3><p data-i18n="sov.use.3.desc">계약서, VDR 문서, 투자 파일, 기업 기록, 리스크 요약.</p></div>
-      <div class="use-card reveal"><div class="card-icon">🕵️</div><h3 data-i18n="sov.use.4.title">내부 조사</h3><p data-i18n="sov.use.4.desc">인터뷰 노트, 타임라인, 증거 요약, 민감한 내부 조사 결과.</p></div>
-      <div class="use-card reveal d1"><div class="card-icon">📈</div><h3 data-i18n="sov.use.5.title">이사회 및 경영진 자료</h3><p data-i18n="sov.use.5.desc">전략 문서, 구조조정 계획, 재무 보고서, 인수 검토 자료.</p></div>
-      <div class="use-card reveal d2"><div class="card-icon">🌍</div><h3 data-i18n="sov.use.6.title">국경 간 기밀 업무</h3><p data-i18n="sov.use.6.desc">번역, 설명, 비즈니스 맥락이 필요한 한국어, 영어, 프랑스어 문서.</p></div>
-    </div>
-  </section>
-
-  <div class="rule"></div>
-
-  <section class="section">
-    <div class="reveal">
-      <div class="eyebrow-soft" data-i18n="sov.deploy.eyebrow">배포</div>
-      <h2 data-i18n-html="sov.deploy.h2">하나의 워크플로우, 하나의 팀, <em>혹은 하나의 보안 공간에 설치합니다.</em></h2>
-      <p class="lead" data-i18n="sov.deploy.p1">Smart Fellow Sovereign은 특정 기밀 워크플로우를 위한 전용 머신으로 배치될 수 있습니다. 사무실, R&amp;D 시설, 보안실, 통제된 내부 환경 어디든 둘 수 있습니다.</p>
-    </div>
-    <div class="deploy-grid">
-      <div class="deploy-card reveal"><div class="deploy-num">1</div><h3 data-i18n="sov.deploy.1.title">기밀 워크플로우 정의</h3><p data-i18n="sov.deploy.1.desc">머신이 어떤 업무를 지원할 수 있는지 결정합니다.</p></div>
-      <div class="deploy-card reveal d1"><div class="deploy-num">2</div><h3 data-i18n="sov.deploy.2.title">머신 구성</h3><p data-i18n="sov.deploy.2.desc">로컬 모델, 저장소, 사용자, 메모리 정책, 승인 문서 소스를 설정합니다.</p></div>
-      <div class="deploy-card reveal d2"><div class="deploy-num">3</div><h3 data-i18n="sov.deploy.3.title">승인된 컨텍스트 적재</h3><p data-i18n="sov.deploy.3.desc">문서, 템플릿, 용어, 지침, 프로젝트 파일을 추가합니다.</p></div>
-      <div class="deploy-card reveal"><div class="deploy-num">4</div><h3 data-i18n="sov.deploy.4.title">오프라인 사용</h3><p data-i18n="sov.deploy.4.desc">팀은 기밀 자료를 외부 AI 제공자에게 보내지 않고 Fellow를 사용합니다.</p></div>
-      <div class="deploy-card reveal d1"><div class="deploy-num">5</div><h3 data-i18n="sov.deploy.5.title">정책에 따라 리셋 또는 유지</h3><p data-i18n="sov.deploy.5.desc">메모리는 워크플로우 정책에 따라 삭제, 유지, 분리됩니다.</p></div>
-    </div>
-  </section>
-
-  <div class="rule"></div>
-
-  <section class="section">
-    <div class="not-box reveal">
-      <div class="eyebrow-soft" data-i18n="sov.not.eyebrow">이것이 아닌 것</div>
-      <h2 data-i18n-html="sov.not.h2">모든 워크플로우에 <em>필요한 것은 아닙니다.</em></h2>
-      <p class="lead" style="margin:0 auto" data-i18n="sov.not.p1">Smart Fellow Sovereign은 높은 민감도를 가진 업무를 위한 것입니다. 팀이 실시간 시장 모니터링, 외부 리서치, 연결된 도구, 인터넷 기반 워크플로우를 필요로 한다면 하이브리드 Smart Fellow 배포가 더 적합할 수 있습니다.</p>
-      <p class="lead" style="margin:1rem auto 0" data-i18n="sov.not.p2">오프라인 모드는 실시간 연결성보다 기밀성, 격리, 로컬 통제가 더 중요한 상황을 위한 것입니다.</p>
-    </div>
-  </section>
-</div>
-
-<section class="cta-band">
-  <h2 class="reveal" data-i18n-html="sov.cta.h2">기밀 업무를 밖으로 보내지 않고도 <em>AI를 도입하세요.</em></h2>
-  <p class="reveal" data-i18n="sov.cta.p">팀이 AI로 무엇을 하고 싶은지, 어떤 정보가 보호되어야 하는지, 워크플로우가 로컬인지 오프라인인지 하이브리드인지 알려주세요.</p>
-  <div class="cta-actions reveal d1">
-    <button type="button" class="btn-light" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sov.cta.primary">소버린 워크플로우 리뷰 예약</button>
-    <a href="/ko/technology.html" class="btn-outline" data-i18n="sov.cta.secondary">기술 보기</a>
   </div>
 </section>
 
-<footer class="footer-on-dark">
-  <div class="footer-logo">Smart Fellow</div>
-  <ul class="footer-links">
-    <li><a href="/ko/" data-i18n="footer.home">홈</a></li>
-    <li><a href="/ko/technology.html" data-i18n="footer.tech">기술 소개</a></li>
-    <li><a href="/ko/#roles" data-i18n="footer.roles">채용 포지션</a></li>
-    <li><a href="/ko/#contact" data-i18n="footer.contact">문의</a></li>
-  </ul>
-  <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · 서울, 한국</span>
+<!-- What it can do offline -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="sovv2.cap.eyebrow">What it can do</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.cap.h2">Confidential work does not have <em>to be manual.</em></h2>
+    <p class="lede reveal d2" data-i18n="sovv2.cap.lead">Offline mode turns approved local material into useful work product — without sending documents outside the controlled environment.</p>
+
+    <div class="sov-cap-grid reveal d2">
+      <div class="sov-cap-item">
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c1.title">Analyse documents</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c1.body">Summarise confidential files, reports, memos, research notes, and internal records.</div>
+      </div>
+      <div class="sov-cap-item">
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c2.title">Review contracts and clauses</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c2.body">Extract key terms, compare versions, flag unusual language, and prepare structured summaries.</div>
+      </div>
+      <div class="sov-cap-item">
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c3.title">Draft internal reports</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c3.body">Create first drafts of memos, briefs, technical notes, and executive summaries.</div>
+      </div>
+      <div class="sov-cap-item">
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c4.title">Translate and adapt</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c4.body">Work across Korean, English, and French while preserving business meaning — locally.</div>
+      </div>
+      <div class="sov-cap-item">
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c5.title">Search local archives</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c5.body">Answer questions from approved documents loaded onto the machine, without internet search.</div>
+      </div>
+      <div class="sov-cap-item">
+        <div class="sov-cap-title" data-i18n="sovv2.cap.c6.title">Prepare decision briefs</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c6.body">Convert confidential material into concise summaries for internal review and leadership decisions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- If stolen / security -->
+<section class="section section--soft">
+  <div class="section-inner">
+    <div class="sov-security-grid">
+      <div>
+        <p class="eyebrow reveal" data-i18n="sovv2.security.eyebrow">Designed for when things go wrong</p>
+        <h2 class="section-title reveal d1" data-i18n-html="sovv2.security.h2">If the machine is lost <em>or stolen.</em></h2>
+        <p class="lede reveal d2" data-i18n="sovv2.security.lead">Confidential systems should not only work when everything goes perfectly. They should be designed for accidents, misuse, and loss of control.</p>
+        <p class="section-copy reveal d3" style="margin-top: 1rem" data-i18n="sovv2.security.body">Smart Fellow Sovereign can be configured so that confidential data is encrypted locally, access requires authorised credentials, and memory can be scoped or wiped according to policy. If the device is lost or stolen, the goal is simple: the machine should not expose usable company information to an unauthorised person.</p>
+      </div>
+
+      <div class="sov-security-features reveal d2">
+        <div class="sov-security-item">
+          <h4 data-i18n="sovv2.security.f1.title">Encrypted local storage</h4>
+          <p data-i18n="sovv2.security.f1.body">Documents and memory are stored in encrypted form on the machine.</p>
+        </div>
+        <div class="sov-security-item">
+          <h4 data-i18n="sovv2.security.f2.title">User access controls</h4>
+          <p data-i18n="sovv2.security.f2.body">Only authorised users can access the Fellow and approved documents.</p>
+        </div>
+        <div class="sov-security-item">
+          <h4 data-i18n="sovv2.security.f3.title">Project-scoped memory</h4>
+          <p data-i18n="sovv2.security.f3.body">Memory is kept separate by user, project, client matter, or workflow.</p>
+        </div>
+        <div class="sov-security-item">
+          <h4 data-i18n="sovv2.security.f4.title">Secure reset options</h4>
+          <p data-i18n="sovv2.security.f4.body">Session, project, user, or full machine memory can be reset when needed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who uses it -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="sovv2.use.eyebrow">Use cases</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.use.h2">Built for teams handling information <em>that cannot leak.</em></h2>
+
+    <div class="grid-3" style="margin-top:2rem">
+      <article class="card reveal">
+        <h3 data-i18n="sovv2.use.card1.title">R&amp;amp;D and trade secrets</h3>
+        <p data-i18n="sovv2.use.card1.body">Formulas, technical specifications, test data, manufacturing processes, SOPs, and supplier documents — reviewed locally, never uploaded.</p>
+      </article>
+      <article class="card reveal d1">
+        <h3 data-i18n="sovv2.use.card2.title">Client confidential work</h3>
+        <p data-i18n="sovv2.use.card2.body">Consulting reports, legal documents, accounting files, agency strategy, and client interviews — inside a controlled boundary.</p>
+      </article>
+      <article class="card reveal d2">
+        <h3 data-i18n="sovv2.use.card3.title">Due diligence</h3>
+        <p data-i18n="sovv2.use.card3.body">Contracts, VDR documents, investment files, corporate records, and risk summaries processed without sending documents to external providers.</p>
+      </article>
+      <article class="card reveal">
+        <h3 data-i18n="sovv2.use.card4.title">Internal investigations</h3>
+        <p data-i18n="sovv2.use.card4.body">Interview notes, timelines, evidence summaries, and sensitive internal findings — in a tighter operating perimeter.</p>
+      </article>
+      <article class="card reveal d1">
+        <h3 data-i18n="sovv2.use.card5.title">Board and leadership material</h3>
+        <p data-i18n="sovv2.use.card5.body">Strategy documents, restructuring plans, financial reports, and acquisition analysis — prepared and reviewed locally.</p>
+      </article>
+      <article class="card reveal d2">
+        <h3 data-i18n="sovv2.use.card6.title">Cross-border confidential work</h3>
+        <p data-i18n="sovv2.use.card6.body">Korean, English, and French documents requiring translation, explanation, and business context — without cloud routing.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Getting started -->
+<section class="section section--soft" id="how">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="sovv2.deploy.eyebrow">Getting started</p>
+    <h2 class="section-title reveal d1" data-i18n-html="sovv2.deploy.h2">Define the boundary first. <em>Then put the machine to work.</em></h2>
+
+    <div class="grid-3 deploy-grid">
+      <article class="step-card reveal">
+        <div class="display-number">01</div>
+        <h3 data-i18n="sovv2.deploy.step1.title">Define the workflow</h3>
+        <p data-i18n="sovv2.deploy.step1.body">Decide what work the machine is allowed to support — the materials, the users, and the retention rule. The boundary is set before anything goes live.</p>
+      </article>
+      <article class="step-card reveal d1">
+        <div class="display-number">02</div>
+        <h3 data-i18n="sovv2.deploy.step2.title">Configure the machine</h3>
+        <p data-i18n="sovv2.deploy.step2.body">Local models, approved document paths, user access, and memory policy — all configured before live matter work begins. We handle everything.</p>
+      </article>
+      <article class="step-card reveal d2">
+        <div class="display-number">03</div>
+        <h3 data-i18n="sovv2.deploy.step3.title">Operate and reset by policy</h3>
+        <p data-i18n="sovv2.deploy.step3.body">Use it for real work. Memory is cleared, retained, or separated according to the workflow. Review and adjust as the engagement matures.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--green">
+  <div class="section-inner">
+    <div class="page-cta-inner">
+      <p class="eyebrow-light reveal" data-i18n="sovv2.cta.eyebrow">Next step</p>
+      <h2 class="section-title reveal d1" data-i18n-html="sovv2.cta.h2">Bring AI into confidential work without <em>sending the work outside.</em></h2>
+      <p class="lede reveal d2" data-i18n="sovv2.cta.body">Tell us what your team wants to do with AI, what information needs to stay protected, and whether the workflow should be local, offline, or hybrid. A sovereign workflow review takes 30 minutes.</p>
+      <div class="page-cta-actions reveal d3">
+        <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.cta.primary">Book a sovereign review</button>
+        <a href="/ko/technology.html" class="btn-outline" data-i18n="sovv2.cta.secondary">Review the wider architecture</a>
+      </div>
+      <div class="page-cta-note reveal d3" data-i18n="sovv2.cta.note">The first conversation is about risk and boundary, not model marketing.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smart Fellow</div>
+    <ul class="footer-links">
+      <li><a href="/ko/#how" data-i18n="footer.how">작동 방식</a></li>
+      <li><a href="/ko/technology.html" data-i18n="footer.tech">기술 소개</a></li>
+      <li><a href="/ko/#roles" data-i18n="footer.roles">채용 포지션</a></li>
+      <li><a href="/ko/#contact" data-i18n="footer.contact">문의</a></li>
+    </ul>
+    <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · 서울, 한국</span>
+  </div>
 </footer>
 
 <script>window.SF_CONFIG={"locale":"ko"};</script>
@@ -1419,17 +501,20 @@ const obs = new IntersectionObserver((entries) => {
       obs.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.12 });
+
 document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
 
 const navToggle = document.getElementById('nav-toggle');
 const navMobile = document.getElementById('nav-mobile');
+
 navToggle.addEventListener('click', () => {
   const open = navMobile.classList.toggle('open');
   navToggle.classList.toggle('open', open);
-  navToggle.setAttribute('aria-expanded', open);
+  navToggle.setAttribute('aria-expanded', String(open));
   document.body.style.overflow = open ? 'hidden' : '';
 });
+
 function closeMobileMenu() {
   navMobile.classList.remove('open');
   navToggle.classList.remove('open');
@@ -1442,107 +527,21 @@ function closeMobileMenu() {
   let lastY = 0;
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
-    if (navMobile.classList.contains('open')) { lastY = y; return; }
-    if (Math.abs(y - lastY) < 6) return;
-    if (y <= 0 || y < lastY) navEl.classList.remove('nav-hidden');
-    else navEl.classList.add('nav-hidden');
+    if (navMobile.classList.contains('open')) {
+      lastY = y;
+      return;
+    }
+    if (Math.abs(y - lastY) < 8) return;
+    if (y <= 0 || y < lastY) {
+      navEl.classList.remove('nav-hidden');
+    } else {
+      navEl.classList.add('nav-hidden');
+    }
     lastY = y;
   }, { passive: true });
 })();
-
-const memoryNodes = Array.from(document.querySelectorAll('.memory-node'));
-const memoryChips = Array.from(document.querySelectorAll('.memory-chip'));
-const offlineSteps = Array.from(document.querySelectorAll('.offline-step'));
-const questionEntries = Array.from(document.querySelectorAll('.question-entry'));
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const heroShell = document.querySelector('.sov-machine-shell');
-const logoGlitch = document.querySelector('.nav-logo-glitch');
-
-function runLogoGlitch() {
-  if (!logoGlitch) return;
-  const textEl = logoGlitch.querySelector('.nav-logo-text');
-  const base = logoGlitch.dataset.base || 'Smart Fellow';
-  const target = logoGlitch.dataset.target || 'Sealed Fellow';
-  if (!textEl || reducedMotion) {
-    if (textEl) textEl.textContent = target;
-    logoGlitch.classList.add('is-sealed');
-    return;
-  }
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-  let frame = 0;
-  const total = target.length + 10;
-  window.setTimeout(() => {
-    logoGlitch.classList.add('is-glitching');
-    const timer = window.setInterval(() => {
-      const fixed = Math.max(0, frame - 4);
-      textEl.textContent = target
-        .split('')
-        .map((char, idx) => {
-          if (idx < fixed) return target[idx];
-          if (char === ' ') return ' ';
-          return chars[Math.floor(Math.random() * chars.length)];
-        })
-        .join('');
-      frame += 1;
-      if (frame > total) {
-        window.clearInterval(timer);
-        textEl.textContent = target;
-        logoGlitch.classList.remove('is-glitching');
-        logoGlitch.classList.add('is-sealed');
-      }
-    }, 48);
-  }, 2400);
-}
-
-function runStepSequence(items, activeClass, delay) {
-  items.forEach((item) => item.classList.remove(activeClass));
-  if (!items.length) return;
-  if (reducedMotion) {
-    items.forEach((item) => item.classList.add(activeClass));
-    return;
-  }
-  items.forEach((item, idx) => {
-    window.setTimeout(() => {
-      items.forEach((entry, innerIdx) => entry.classList.toggle(activeClass, innerIdx <= idx));
-    }, idx * delay);
-  });
-}
-const precisionObs = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (!entry.isIntersecting) return;
-    if (entry.target === heroShell) {
-      if (reducedMotion) heroShell.classList.add('is-live');
-      else window.setTimeout(() => heroShell.classList.add('is-live'), 220);
-    }
-    if (entry.target.classList.contains('memory-visual')) {
-      runStepSequence(memoryNodes, 'active', 420);
-      runStepSequence(memoryChips, 'is-on', 420);
-    }
-    if (entry.target.id === 'offline-canvas') {
-      runStepSequence(offlineSteps, 'active', 260);
-    }
-    precisionObs.unobserve(entry.target);
-  });
-}, { threshold: 0.45 });
-if (heroShell) precisionObs.observe(heroShell);
-const memoryVisual = document.querySelector('.memory-visual');
-if (memoryVisual) precisionObs.observe(memoryVisual);
-const offlineCanvas = document.getElementById('offline-canvas');
-if (offlineCanvas) precisionObs.observe(offlineCanvas);
-questionEntries.forEach((entry) => {
-  const button = entry.querySelector('.question-item');
-  if (!button) return;
-  button.addEventListener('click', () => {
-    const willOpen = !entry.classList.contains('is-open');
-    questionEntries.forEach((other) => {
-      other.classList.toggle('is-open', other === entry ? willOpen : false);
-      const otherButton = other.querySelector('.question-item');
-      if (otherButton) otherButton.setAttribute('aria-expanded', other === entry && willOpen ? 'true' : 'false');
-    });
-  });
-});
-runLogoGlitch();
 </script>
+
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

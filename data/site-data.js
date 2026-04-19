@@ -26,10 +26,10 @@ module.exports = {
       output: 'index.html',
       meta: {
         en: {
-          title: 'Smart Fellow — Hire an AI Team Member',
-          description: 'Smart Fellow is an AI colleague you hire like a new team member. Already trained, works in Slack, Telegram, KakaoTalk. Browse roles, pick one, they start this week.',
-          ogTitle: 'Smart Fellow — Your Next Great Hire Is Already Trained',
-          ogDescription: 'An AI colleague trained for your business. Works in Slack, Telegram and KakaoTalk. Browse roles, pick a plan, they start this week.'
+          title: 'Smart Fellow — Managed AI for Sensitive Work',
+          description: 'Managed local-first AI for firms that need a serious operating model: Slack-native workflows, business context kept in your environment, and cloud use only when you approve it.',
+          ogTitle: 'Smart Fellow — Managed AI for Sensitive Work',
+          ogDescription: 'A serious AI colleague for firms that need control over context, deployment, and data boundaries.'
         },
         fr: {
           title: 'Smart Fellow — Recrutez un coéquipier IA',
@@ -51,10 +51,10 @@ module.exports = {
       output: 'technology.html',
       meta: {
         en: {
-          title: 'The Technology — Smart Fellow',
-          description: 'How Smart Fellow works: the skills, memory, and character that make your AI colleague genuinely useful — explained without jargon.',
-          ogTitle: 'The Technology Behind Smart Fellow',
-          ogDescription: 'Explore the skills, memory, character, and hardware architecture behind your Smart Fellow.'
+          title: 'The Architecture — Smart Fellow',
+          description: 'A clearer explanation of how Smart Fellow works: local-first deployment, retained business memory, optional cloud use, and an operating model serious teams can defend internally.',
+          ogTitle: 'The Architecture Behind Smart Fellow',
+          ogDescription: 'See how Smart Fellow combines managed deployment, local context, and controlled workflow design.'
         },
         fr: {
           title: 'La technologie — Smart Fellow',
@@ -76,10 +76,10 @@ module.exports = {
       output: 'sovereign/index.html',
       meta: {
         en: {
-          title: 'Smart Fellow Sovereign — Offline AI for Confidential Work',
-          description: 'A dedicated offline AI machine for confidential documents, internal analysis, R&D, and multilingual work. Local processing, encrypted memory, approved inputs only.',
-          ogTitle: 'Smart Fellow Sovereign — Offline AI for Confidential Work',
-          ogDescription: 'Bring AI into sensitive workflows without sending confidential work outside your controlled environment.'
+          title: 'Smart Fellow Sovereign — Offline AI for Controlled Work',
+          description: 'An offline-capable AI deployment for legal, diligence, R&D, and other high-sensitivity workflows that require approved inputs, scoped memory, and a clear containment model.',
+          ogTitle: 'Smart Fellow Sovereign — Offline AI for Controlled Work',
+          ogDescription: 'Use AI in high-sensitivity workflows without treating the cloud as the default place where the work has to go.'
         },
         fr: {
           title: 'Smart Fellow Sovereign — IA hors ligne pour le travail confidentiel',
