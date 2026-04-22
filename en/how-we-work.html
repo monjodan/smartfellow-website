@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How we work — Smart Fellow</title>
+<meta name="description" content="Our four-phase engagement: a free AI Readiness Review, a fixed-scope design and quote, an on-site build, and an ongoing monthly maintenance partnership.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smartfellow.ai/en/how-we-work.html">
+<link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/how-we-work.html">
+<link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/how-we-work.html">
+<link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/how-we-work.html">
+<link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/how-we-work.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How Smart Fellow engagements work">
+<meta property="og:description" content="Assess, design, build, maintain. One clear process from the first conversation to the ongoing relationship.">
+<meta property="og:url" content="https://smartfellow.ai/en/how-we-work.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How Smart Fellow engagements work">
+<meta name="twitter:description" content="Assess, design, build, maintain. One clear process from the first conversation to the ongoing relationship.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.how-hero {
+  padding: 5.5rem 0 4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.how-hero .lede { margin-top: 1.25rem; }
+
+.how-overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: 2.5rem;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.how-overview-item {
+  background: var(--surface);
+  padding: 1.25rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.how-overview-num {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.how-overview-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.how-overview-meta {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 0.25rem;
+}
+
+/* Phase sections */
+.phase-section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.phase-section:nth-of-type(even) { background: var(--surface-muted); }
+
+.phase-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.phase-body .eyebrow { margin-bottom: 0.4rem; }
+
+.phase-body .section-title {
+  margin-bottom: 1rem;
+}
+
+.phase-body .section-copy {
+  color: var(--ink-soft);
+  line-height: 1.75;
+  font-size: 1.02rem;
+  max-width: 40rem;
+}
+
+.phase-body .section-copy + .section-copy {
+  margin-top: 1rem;
+}
+
+.phase-sidecar {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.phase-sidecar-head {
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.phase-sidecar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.85rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.phase-sidecar-row:last-child { border-bottom: 0; }
+
+.phase-sidecar-label { color: var(--ink-soft); }
+.phase-sidecar-value {
+  color: var(--ink);
+  font-weight: 500;
+  text-align: right;
+}
+
+.phase-sidecar-value.is-accent { color: var(--accent); }
+
+.phase-deliverables {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.phase-deliverables strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+/* Pricing note */
+.pricing-note {
+  margin-top: 3rem;
+  padding: 2rem 2.25rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-radius: var(--radius);
+}
+
+.pricing-note .eyebrow-light {
+  color: rgba(247, 245, 239, 0.7);
+  margin-bottom: 0.75rem;
+}
+
+.pricing-note p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.55;
+  color: rgba(247, 245, 239, 0.95);
+}
+
+@media (max-width: 980px) {
+  .how-overview { grid-template-columns: repeat(2, 1fr); }
+  .phase-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .how-overview { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/en/" class="nav-logo">Smart Fellow</a>
+  <ul class="nav-links">
+    <li><a href="/how-we-work.html" class="active" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/#blueprints" data-i18n="nav.blueprints">What we build</a></li>
+    <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/en/technology.html" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/assessment/" data-i18n="nav.assessment">Free review</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher" role="group" aria-label="Choose language"><a href="/en/how-we-work.html" class="lang-option is-current" data-locale="en" lang="en" aria-current="page">English</a><a href="/fr/how-we-work.html" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/how-we-work.html" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+    <a href="/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">Book a free review</a>
+  </div>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <ul>
+    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">What we build</a></li>
+    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/en/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Free review</a></li>
+  </ul>
+  <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Book a free review</a>
+  <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choose language"><a href="/en/how-we-work.html" class="lang-option is-current" data-locale="en" lang="en" aria-current="page">English</a><a href="/fr/how-we-work.html" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/how-we-work.html" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+</div>
+
+<section class="how-hero">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="how.hero.eyebrow">Our engagement model</p>
+    <h1 class="hero-title reveal d1" data-i18n-html="how.hero.h1">One clear process from the first conversation <em>to the ongoing relationship.</em></h1>
+    <p class="lede reveal d2" data-i18n="how.hero.body">We do not sell access to a platform. We are the team that plans, builds, and maintains your private AI system. Here is what that looks like in practice.</p>
+
+    <div class="how-overview reveal d3">
+      <div class="how-overview-item">
+        <span class="how-overview-num">01</span>
+        <span class="how-overview-title" data-i18n="how.overview.p1.title">Assess</span>
+        <span class="how-overview-meta" data-i18n="how.overview.p1.meta">Free · 48-hour turnaround</span>
+      </div>
+      <div class="how-overview-item">
+        <span class="how-overview-num">02</span>
+        <span class="how-overview-title" data-i18n="how.overview.p2.title">Design &amp; quote</span>
+        <span class="how-overview-meta" data-i18n="how.overview.p2.meta">Fixed scope · Fixed price</span>
+      </div>
+      <div class="how-overview-item">
+        <span class="how-overview-num">03</span>
+        <span class="how-overview-title" data-i18n="how.overview.p3.title">Build &amp; integrate</span>
+        <span class="how-overview-meta" data-i18n="how.overview.p3.meta">4–12 weeks typical</span>
+      </div>
+      <div class="how-overview-item">
+        <span class="how-overview-num">04</span>
+        <span class="how-overview-title" data-i18n="how.overview.p4.title">Maintain &amp; evolve</span>
+        <span class="how-overview-meta" data-i18n="how.overview.p4.meta">Monthly partnership</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Phase 1: Assess -->
+<section class="phase-section">
+  <div class="section-inner">
+    <div class="phase-grid">
+      <div class="phase-body">
+        <p class="eyebrow reveal" data-i18n="how.p1.eyebrow">Phase 01 · Assess</p>
+        <h2 class="section-title reveal d1" data-i18n-html="how.p1.h2">A written plan for your private AI team. <em>No cost. No commitment.</em></h2>
+        <p class="section-copy reveal d2" data-i18n="how.p1.body1">The AI Readiness Review is a short, structured engagement: a workshop with your team, a walkthrough of the systems and documents an AI team would touch, and conversations with two or three of the people who would actually use it. We leave you with a written report and, if it's worth building, a scoped quote.</p>
+        <p class="section-copy reveal d3" data-i18n="how.p1.body2">The point is not to sell you something. The point is to tell you honestly whether a private AI team would help, where it would help, and what it would take. Some readiness reviews end with a recommendation to do nothing. That is a fine outcome.</p>
+      </div>
+      <div>
+        <div class="phase-sidecar reveal d2">
+          <div class="phase-sidecar-head" data-i18n="how.p1.side.head">At a glance</div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p1.side.r1.label">Cost</span>
+            <span class="phase-sidecar-value is-accent" data-i18n="how.p1.side.r1.value">Free</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p1.side.r2.label">Duration</span>
+            <span class="phase-sidecar-value" data-i18n="how.p1.side.r2.value">48 hours from workshop to report</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p1.side.r3.label">Your time</span>
+            <span class="phase-sidecar-value" data-i18n="how.p1.side.r3.value">A 90-minute workshop, a few interviews</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p1.side.r4.label">Deliverable</span>
+            <span class="phase-sidecar-value" data-i18n="how.p1.side.r4.value">Written report + quote</span>
+          </div>
+        </div>
+        <div class="phase-deliverables reveal d3">
+          <strong data-i18n="how.p1.deliv.head">What you get</strong>
+          <span data-i18n="how.p1.deliv.body">A document identifying your highest-leverage workflows, the right on-prem architecture for your sensitivity requirements, risks to be aware of, and — if we recommend moving forward — a fixed-scope quote for the build and the monthly maintenance.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Phase 2: Design & Quote -->
+<section class="phase-section">
+  <div class="section-inner">
+    <div class="phase-grid">
+      <div class="phase-body">
+        <p class="eyebrow reveal" data-i18n="how.p2.eyebrow">Phase 02 · Design &amp; quote</p>
+        <h2 class="section-title reveal d1" data-i18n-html="how.p2.h2">A fixed-scope proposal <em>before anything is built.</em></h2>
+        <p class="section-copy reveal d2" data-i18n="how.p2.body1">If you decide to move forward, we translate the readiness review into a concrete build proposal. Architecture choices, hardware specification, the integrations we will wire up, the documents we will fine-tune on, the workflows we will implement, the timeline, and a fixed price.</p>
+        <p class="section-copy reveal d3" data-i18n="how.p2.body2">No hourly billing, no open-ended statements of work. You know what you are agreeing to before anything starts. If the scope changes later, we price the change and you decide whether to proceed.</p>
+      </div>
+      <div>
+        <div class="phase-sidecar reveal d2">
+          <div class="phase-sidecar-head" data-i18n="how.p2.side.head">At a glance</div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p2.side.r1.label">Pricing model</span>
+            <span class="phase-sidecar-value is-accent" data-i18n="how.p2.side.r1.value">Fixed quote</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p2.side.r2.label">Scope</span>
+            <span class="phase-sidecar-value" data-i18n="how.p2.side.r2.value">Tailored to your workflows</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p2.side.r3.label">What you sign</span>
+            <span class="phase-sidecar-value" data-i18n="how.p2.side.r3.value">One clear engagement letter</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p2.side.r4.label">Turnaround</span>
+            <span class="phase-sidecar-value" data-i18n="how.p2.side.r4.value">Within two weeks of the review</span>
+          </div>
+        </div>
+        <div class="phase-deliverables reveal d3">
+          <strong data-i18n="how.p2.deliv.head">What you get</strong>
+          <span data-i18n="how.p2.deliv.body">A concrete design: reference architecture, hardware specification, integration plan, fine-tuning plan, timeline, acceptance criteria, and a single fixed price for the build. No hidden modules, no later surprises.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Phase 3: Build -->
+<section class="phase-section">
+  <div class="section-inner">
+    <div class="phase-grid">
+      <div class="phase-body">
+        <p class="eyebrow reveal" data-i18n="how.p3.eyebrow">Phase 03 · Build &amp; integrate</p>
+        <h2 class="section-title reveal d1" data-i18n-html="how.p3.h2">Hardware on-site. Models fine-tuned on your data. <em>Integrated into the tools your team already uses.</em></h2>
+        <p class="section-copy reveal d2" data-i18n="how.p3.body1">We procure and configure the hardware, fine-tune local models on your documents and workflows, and integrate the system into the channels your team already works in — Slack, KakaoTalk, Teams, email, or your internal systems. Everything is installed on-site and verified in your environment.</p>
+        <p class="section-copy reveal d3" data-i18n="how.p3.body2">You own the hardware. You own the model weights. You own the data. When the build is done, you have a private AI system that continues to belong to you even if our relationship ends.</p>
+      </div>
+      <div>
+        <div class="phase-sidecar reveal d2">
+          <div class="phase-sidecar-head" data-i18n="how.p3.side.head">At a glance</div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p3.side.r1.label">Typical duration</span>
+            <span class="phase-sidecar-value is-accent" data-i18n="how.p3.side.r1.value">4–12 weeks</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p3.side.r2.label">Deployment</span>
+            <span class="phase-sidecar-value" data-i18n="how.p3.side.r2.value">On-site, on your hardware</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p3.side.r3.label">Ownership</span>
+            <span class="phase-sidecar-value" data-i18n="how.p3.side.r3.value">Hardware, weights, and data — yours</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p3.side.r4.label">Integrations</span>
+            <span class="phase-sidecar-value" data-i18n="how.p3.side.r4.value">Slack, KakaoTalk, Teams, email, internal systems</span>
+          </div>
+        </div>
+        <div class="phase-deliverables reveal d3">
+          <strong data-i18n="how.p3.deliv.head">What you get</strong>
+          <span data-i18n="how.p3.deliv.body">A working private AI system on hardware in your office, integrated into the tools your team already uses, with documented acceptance tests, an admin handover, and trained users.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Phase 4: Maintain -->
+<section class="phase-section">
+  <div class="section-inner">
+    <div class="phase-grid">
+      <div class="phase-body">
+        <p class="eyebrow reveal" data-i18n="how.p4.eyebrow">Phase 04 · Maintain &amp; evolve</p>
+        <h2 class="section-title reveal d1" data-i18n-html="how.p4.h2">A monthly partnership. <em>So the system stays sharp.</em></h2>
+        <p class="section-copy reveal d2" data-i18n="how.p4.body1">Once the system is live, we stay on. Monitoring, model updates, security patches, and tuning as your workflows evolve. When you want the system to learn a new skill or work with a new process, we train it — no new engagement, no new statement of work.</p>
+        <p class="section-copy reveal d3" data-i18n="how.p4.body2">The maintenance fee is flat and predictable — designed to feel like an ongoing partnership, not a recurring invoice. You can end the relationship at any time; the system still belongs to you.</p>
+      </div>
+      <div>
+        <div class="phase-sidecar reveal d2">
+          <div class="phase-sidecar-head" data-i18n="how.p4.side.head">At a glance</div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p4.side.r1.label">Billing</span>
+            <span class="phase-sidecar-value is-accent" data-i18n="how.p4.side.r1.value">Flat monthly</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p4.side.r2.label">Includes</span>
+            <span class="phase-sidecar-value" data-i18n="how.p4.side.r2.value">Monitoring, updates, patches, tuning</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p4.side.r3.label">New skills</span>
+            <span class="phase-sidecar-value" data-i18n="how.p4.side.r3.value">Added within the partnership</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p4.side.r4.label">Termination</span>
+            <span class="phase-sidecar-value" data-i18n="how.p4.side.r4.value">Any time; the system stays yours</span>
+          </div>
+        </div>
+        <div class="phase-deliverables reveal d3">
+          <strong data-i18n="how.p4.deliv.head">What you get</strong>
+          <span data-i18n="how.p4.deliv.body">A system that stays current, a team on call when something changes, and the freedom to end the partnership without losing what was built. Your private AI team keeps working, regardless.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-note reveal">
+      <p class="eyebrow-light" data-i18n="how.pricing.eyebrow">A note on price</p>
+      <p data-i18n="how.pricing.body">Build cost and monthly maintenance are both quoted after the free AI Readiness Review, because both depend on scope. We do not publish a menu because there isn't one — but we do commit to fixed prices, no usage fees, and no surprise invoices. If your budget is a concern, tell us during the review and we will design to it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--green">
+  <div class="section-inner">
+    <div class="page-cta-inner">
+      <p class="eyebrow-light reveal" data-i18n="how.cta.eyebrow">Start with the free review</p>
+      <h2 class="section-title reveal d1" data-i18n-html="how.cta.h2">Begin with a conversation. <em>Decide from a written plan.</em></h2>
+      <p class="lede reveal d2" data-i18n="how.cta.body">The AI Readiness Review is free. You get the written plan within 48 hours of the workshop — even if you decide not to build anything.</p>
+      <div class="page-cta-actions reveal d3">
+        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="how.cta.primary">Book a free AI readiness review</a>
+        <a href="/en/" class="btn-outline" data-i18n="how.cta.secondary">Back to the home page</a>
+      </div>
+      <div class="page-cta-note reveal d3" data-i18n="how.cta.note">Korean · English · French · No commitment required</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smart Fellow</div>
+    <ul class="footer-links">
+      <li><a href="/how-we-work.html" data-i18n="footer.how">How we work</a></li>
+      <li><a href="/#blueprints" data-i18n="footer.blueprints">What we build</a></li>
+      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/en/technology.html" data-i18n="footer.tech">Technology</a></li>
+      <li><a href="/assessment/" data-i18n="footer.contact">Free review</a></li>
+    </ul>
+    <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>
+  </div>
+</footer>
+
+<script>window.SF_CONFIG={"locale":"en"};</script>
+
+<script src="/i18n.js"></script>
+<script src="/assessment-modal.js" defer></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
+
+navToggle.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+function closeMobileMenu() {
+  navMobile.classList.remove('open');
+  navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+(function () {
+  const navEl = document.querySelector('nav');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (navMobile.classList.contains('open')) {
+      lastY = y;
+      return;
+    }
+    if (Math.abs(y - lastY) < 8) return;
+    if (y <= 0 || y < lastY) {
+      navEl.classList.remove('nav-hidden');
+    } else {
+      navEl.classList.add('nav-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

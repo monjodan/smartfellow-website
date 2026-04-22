@@ -26,22 +26,47 @@ module.exports = {
       output: 'index.html',
       meta: {
         en: {
-          title: 'Smart Fellow — Managed AI for Sensitive Work',
-          description: 'Managed local-first AI for firms that need a serious operating model: Slack-native workflows, business context kept in your environment, and cloud use only when you approve it.',
-          ogTitle: 'Smart Fellow — Managed AI for Sensitive Work',
-          ogDescription: 'A serious AI colleague for firms that need control over context, deployment, and data boundaries.'
+          title: 'Smart Fellow — A private AI team, built for your company',
+          description: 'We build private AI systems for companies that care about their data. Free assessment, fixed-scope build on hardware you own, and ongoing maintenance. PIPA-compliant by design.',
+          ogTitle: 'Smart Fellow — A private AI team, built for your company',
+          ogDescription: 'We assess your workflows for free, build a private AI team on hardware you own, and maintain it. Tailored, not templated. Private, not published.'
         },
         fr: {
-          title: 'Smart Fellow — Recrutez un coéquipier IA',
-          description: 'Smart Fellow est un collègue IA que vous recrutez comme un nouveau membre d\'équipe. Déjà formé, il travaille dans Slack, Telegram et KakaoTalk. Parcourez les rôles, choisissez-en un, il commence cette semaine.',
-          ogTitle: 'Smart Fellow — Votre prochaine grande recrue est déjà formée',
-          ogDescription: 'Un collègue IA formé pour votre entreprise. Il travaille dans Slack, Telegram et KakaoTalk. Parcourez les rôles, choisissez une formule, il commence cette semaine.'
+          title: 'Smart Fellow — Une équipe IA privée, construite pour votre entreprise',
+          description: 'Nous construisons des systèmes IA privés pour les entreprises qui tiennent à leurs données. Évaluation gratuite, développement à prix fixe sur du matériel que vous possédez, maintenance continue. Conforme RGPD par construction.',
+          ogTitle: 'Smart Fellow — Une équipe IA privée, construite pour votre entreprise',
+          ogDescription: 'Nous évaluons gratuitement vos flux de travail, construisons une équipe IA privée sur du matériel que vous possédez, et en assurons la maintenance. Sur mesure, pas par défaut. Privé, pas publié.'
         },
         ko: {
-          title: 'Smart Fellow — AI 팀원을 채용하세요',
-          description: 'Smart Fellow는 신규 입사자처럼 채용하는 AI 동료입니다. 이미 훈련되어 있고 Slack, Telegram, KakaoTalk에서 바로 일합니다. 포지션을 고르고 이번 주에 시작하세요.',
-          ogTitle: 'Smart Fellow — 다음 채용, 이미 훈련이 끝났습니다',
-          ogDescription: '귀사에 맞춰 훈련된 AI 동료. Slack, Telegram, KakaoTalk에서 바로 일합니다. 포지션을 보고 플랜을 고르면 이번 주에 시작합니다.'
+          title: 'Smart Fellow — 귀사를 위한 전용 AI 팀',
+          description: '데이터 보호를 중요하게 생각하는 기업을 위해 전용 AI 시스템을 구축합니다. 무료 진단, 고정 견적 기반 구축, 귀사가 소유하는 하드웨어 위에서 운영, 지속적인 유지관리. PIPA를 기본으로 준수합니다.',
+          ogTitle: 'Smart Fellow — 귀사를 위한 전용 AI 팀',
+          ogDescription: '워크플로우를 무료로 진단하고, 귀사가 소유한 하드웨어 위에 전용 AI 팀을 구축하고, 유지관리까지 책임집니다. 맞춤 설계, 사내 운영, 데이터 주권 보장.'
+        }
+      }
+    },
+    'how-we-work': {
+      path: '/how-we-work.html',
+      template: 'how-we-work.template.html',
+      output: 'how-we-work.html',
+      meta: {
+        en: {
+          title: 'How we work — Smart Fellow',
+          description: 'Our four-phase engagement: a free AI Readiness Review, a fixed-scope design and quote, an on-site build, and an ongoing monthly maintenance partnership.',
+          ogTitle: 'How Smart Fellow engagements work',
+          ogDescription: 'Assess, design, build, maintain. One clear process from the first conversation to the ongoing relationship.'
+        },
+        fr: {
+          title: 'Comment nous travaillons — Smart Fellow',
+          description: "Notre engagement en quatre phases : un diagnostic IA gratuit, un devis à périmètre fixe, un déploiement sur site, et un partenariat mensuel de maintenance.",
+          ogTitle: 'Comment Smart Fellow travaille',
+          ogDescription: 'Évaluer, concevoir, construire, maintenir. Un processus clair, de la première conversation à la relation continue.'
+        },
+        ko: {
+          title: '우리의 진행 방식 — Smart Fellow',
+          description: '네 단계로 구성된 협업: 무료 AI 도입 진단, 고정 범위 설계 및 견적, 현장 구축, 월간 유지관리 파트너십.',
+          ogTitle: 'Smart Fellow 협업 방식',
+          ogDescription: '진단, 설계, 구축, 유지. 첫 대화부터 지속적 관계까지 하나의 명확한 프로세스입니다.'
         }
       }
     },
@@ -51,22 +76,22 @@ module.exports = {
       output: 'technology.html',
       meta: {
         en: {
-          title: 'The Architecture — Smart Fellow',
-          description: 'A clearer explanation of how Smart Fellow works: local-first deployment, retained business memory, optional cloud use, and an operating model serious teams can defend internally.',
-          ogTitle: 'The Architecture Behind Smart Fellow',
-          ogDescription: 'See how Smart Fellow combines managed deployment, local context, and controlled workflow design.'
+          title: 'The architecture — Smart Fellow',
+          description: 'How the private AI systems we build work: fine-tuned local models, on-prem hardware, document memory that stays inside your office, and cloud use only when you approve it.',
+          ogTitle: 'The architecture behind Smart Fellow',
+          ogDescription: 'Fine-tuned local models, on-prem hardware, retained business memory, optional cloud use — an operating model serious teams can defend internally.'
         },
         fr: {
-          title: 'La technologie — Smart Fellow',
-          description: 'Comment Smart Fellow fonctionne : les compétences, la mémoire et la personnalité qui rendent votre collègue IA vraiment utile, expliquées sans jargon.',
-          ogTitle: 'La technologie derrière Smart Fellow',
-          ogDescription: 'Explorez les compétences, la mémoire, la personnalité et l\'architecture matérielle qui donnent vie à votre Smart Fellow.'
+          title: 'L’architecture — Smart Fellow',
+          description: 'Comment fonctionnent les systèmes IA privés que nous construisons : modèles locaux affinés, matériel sur site, mémoire documentaire qui ne sort pas du bureau, et cloud uniquement si vous l’approuvez.',
+          ogTitle: 'L’architecture derrière Smart Fellow',
+          ogDescription: 'Modèles locaux affinés, matériel sur site, mémoire métier conservée, cloud optionnel — un modèle d’exploitation défendable en interne.'
         },
         ko: {
-          title: '기술 소개 — Smart Fellow',
-          description: 'Smart Fellow가 어떻게 작동하는지, AI 동료를 실제로 유용하게 만드는 기술, 기억, 캐릭터를 쉽게 설명합니다.',
-          ogTitle: 'Smart Fellow를 움직이는 기술',
-          ogDescription: 'Smart Fellow를 구성하는 기술, 기억, 캐릭터, 그리고 하드웨어 아키텍처를 살펴보세요.'
+          title: '아키텍처 — Smart Fellow',
+          description: '우리가 구축하는 전용 AI 시스템의 작동 방식: 미세 조정된 로컬 모델, 사내 하드웨어, 사무실을 벗어나지 않는 문서 메모리, 승인 기반의 선택적 클라우드 사용.',
+          ogTitle: 'Smart Fellow를 움직이는 아키텍처',
+          ogDescription: '미세 조정된 로컬 모델, 사내 하드웨어, 사내 보존 메모리, 선택적 클라우드 사용 — 내부적으로 납득시킬 수 있는 운영 모델.'
         }
       }
     },
@@ -76,22 +101,47 @@ module.exports = {
       output: 'sovereign/index.html',
       meta: {
         en: {
-          title: 'Smart Fellow Sovereign — Offline AI for Controlled Work',
-          description: 'An offline-capable AI deployment for legal, diligence, R&D, and other high-sensitivity workflows that require approved inputs, scoped memory, and a clear containment model.',
-          ogTitle: 'Smart Fellow Sovereign — Offline AI for Controlled Work',
-          ogDescription: 'Use AI in high-sensitivity workflows without treating the cloud as the default place where the work has to go.'
+          title: 'Sovereign — offline AI for high-sensitivity work — Smart Fellow',
+          description: 'A dedicated, air-gapped AI workstation for confidential workflows. Runs locally, without internet, on hardware you own. Designed for trade secrets, regulated work, and material that must never leave the building.',
+          ogTitle: 'Sovereign — offline AI for high-sensitivity work',
+          ogDescription: 'A dedicated AI machine for confidential documents. Local models, encrypted storage, no internet required. For work that must stay confidential.'
         },
         fr: {
-          title: 'Smart Fellow Sovereign — IA hors ligne pour le travail confidentiel',
-          description: 'Une machine IA dédiée et hors ligne pour les documents confidentiels, l’analyse interne, la R&D et le travail multilingue. Traitement local, mémoire chiffrée, entrées approuvées uniquement.',
-          ogTitle: 'Smart Fellow Sovereign — IA hors ligne pour le travail confidentiel',
-          ogDescription: 'Faites entrer l’IA dans les workflows sensibles sans faire sortir le travail confidentiel de votre environnement contrôlé.'
+          title: 'Sovereign — IA hors ligne pour les travaux très sensibles — Smart Fellow',
+          description: "Une station IA dédiée et air-gapped pour les flux confidentiels. Fonctionne en local, sans internet, sur du matériel que vous possédez. Pour les secrets industriels, les dossiers réglementés et les documents qui ne doivent jamais quitter le bureau.",
+          ogTitle: 'Sovereign — IA hors ligne pour les travaux très sensibles',
+          ogDescription: 'Une machine IA dédiée pour les documents confidentiels. Modèles locaux, stockage chiffré, aucun internet requis. Pour le travail qui doit rester confidentiel.'
         },
         ko: {
-          title: 'Smart Fellow Sovereign — 기밀 업무를 위한 오프라인 AI',
-          description: '기밀 문서, 내부 분석, R&D, 다국어 업무를 위한 전용 오프라인 AI 머신. 로컬 처리, 암호화된 메모리, 승인된 입력만 사용합니다.',
-          ogTitle: 'Smart Fellow Sovereign — 기밀 업무를 위한 오프라인 AI',
-          ogDescription: '기밀 업무를 통제된 환경 밖으로 보내지 않고도 AI를 도입하세요.'
+          title: 'Sovereign — 고민감 업무를 위한 오프라인 AI — Smart Fellow',
+          description: '기밀 워크플로우를 위한 전용 에어갭 AI 워크스테이션. 인터넷 없이 로컬에서, 귀사가 소유한 하드웨어 위에서 작동합니다. 영업 비밀, 규제 대상 업무, 외부로 나가면 안 되는 자료를 위해 설계되었습니다.',
+          ogTitle: 'Sovereign — 고민감 업무를 위한 오프라인 AI',
+          ogDescription: '기밀 문서를 위한 전용 AI 머신. 로컬 모델, 암호화 저장, 인터넷 불필요. 반드시 기밀로 남아야 하는 업무를 위해.'
+        }
+      }
+    },
+    assessment: {
+      path: '/assessment/',
+      template: 'assessment.template.html',
+      output: 'assessment/index.html',
+      meta: {
+        en: {
+          title: 'Free AI readiness review — Smart Fellow',
+          description: 'A free, structured review of how a private AI team could help your company. Workshop, interviews, written report delivered within 48 hours, and a fixed quote if it is worth building.',
+          ogTitle: 'Free AI readiness review — Smart Fellow',
+          ogDescription: 'Tell us about your workflows. If there is a fit, we run a short structured review and deliver a written plan within 48 hours — whether or not you build anything.'
+        },
+        fr: {
+          title: 'Diagnostic IA gratuit — Smart Fellow',
+          description: 'Un diagnostic gratuit et structuré pour voir comment une équipe IA privée pourrait aider votre entreprise. Atelier, entretiens, rapport écrit livré sous 48 heures, et devis à prix fixe si le projet a du sens.',
+          ogTitle: 'Diagnostic IA gratuit — Smart Fellow',
+          ogDescription: "Parlez-nous de vos flux de travail. Si la piste tient, nous menons un diagnostic structuré et livrons un plan écrit sous 48 heures — que vous décidiez ou non de construire."
+        },
+        ko: {
+          title: '무료 AI 도입 진단 — Smart Fellow',
+          description: '전용 AI 팀이 귀사에 어떻게 도움이 될 수 있는지 구조적으로 점검해 드리는 무료 진단입니다. 워크숍, 인터뷰, 48시간 이내 서면 보고서, 그리고 필요시 고정 견적.',
+          ogTitle: '무료 AI 도입 진단 — Smart Fellow',
+          ogDescription: '워크플로우를 알려주세요. 적합하다고 판단되면 짧은 구조적 진단을 진행하고, 48시간 이내에 서면 계획서를 드립니다.'
         }
       }
     }

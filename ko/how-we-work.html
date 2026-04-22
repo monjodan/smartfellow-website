@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우리의 진행 방식 — Smart Fellow</title>
+<meta name="description" content="네 단계로 구성된 협업: 무료 AI 도입 진단, 고정 범위 설계 및 견적, 현장 구축, 월간 유지관리 파트너십.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smartfellow.ai/ko/how-we-work.html">
+<link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/how-we-work.html">
+<link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/how-we-work.html">
+<link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/how-we-work.html">
+<link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/how-we-work.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Smart Fellow 협업 방식">
+<meta property="og:description" content="진단, 설계, 구축, 유지. 첫 대화부터 지속적 관계까지 하나의 명확한 프로세스입니다.">
+<meta property="og:url" content="https://smartfellow.ai/ko/how-we-work.html">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Smart Fellow 협업 방식">
+<meta name="twitter:description" content="진단, 설계, 구축, 유지. 첫 대화부터 지속적 관계까지 하나의 명확한 프로세스입니다.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.how-hero {
+  padding: 5.5rem 0 4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.how-hero .lede { margin-top: 1.25rem; }
+
+.how-overview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: 2.5rem;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.how-overview-item {
+  background: var(--surface);
+  padding: 1.25rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.how-overview-num {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.how-overview-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.how-overview-meta {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 0.25rem;
+}
+
+/* Phase sections */
+.phase-section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.phase-section:nth-of-type(even) { background: var(--surface-muted); }
+
+.phase-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.phase-body .eyebrow { margin-bottom: 0.4rem; }
+
+.phase-body .section-title {
+  margin-bottom: 1rem;
+}
+
+.phase-body .section-copy {
+  color: var(--ink-soft);
+  line-height: 1.75;
+  font-size: 1.02rem;
+  max-width: 40rem;
+}
+
+.phase-body .section-copy + .section-copy {
+  margin-top: 1rem;
+}
+
+.phase-sidecar {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.phase-sidecar-head {
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.phase-sidecar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.85rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.phase-sidecar-row:last-child { border-bottom: 0; }
+
+.phase-sidecar-label { color: var(--ink-soft); }
+.phase-sidecar-value {
+  color: var(--ink);
+  font-weight: 500;
+  text-align: right;
+}
+
+.phase-sidecar-value.is-accent { color: var(--accent); }
+
+.phase-deliverables {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.phase-deliverables strong {
+  display: block;
+  color: var(--ink);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+/* Pricing note */
+.pricing-note {
+  margin-top: 3rem;
+  padding: 2rem 2.25rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-radius: var(--radius);
+}
+
+.pricing-note .eyebrow-light {
+  color: rgba(247, 245, 239, 0.7);
+  margin-bottom: 0.75rem;
+}
+
+.pricing-note p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.55;
+  color: rgba(247, 245, 239, 0.95);
+}
+
+@media (max-width: 980px) {
+  .how-overview { grid-template-columns: repeat(2, 1fr); }
+  .phase-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .how-overview { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/ko/" class="nav-logo">Smart Fellow</a>
+  <ul class="nav-links">
+    <li><a href="/how-we-work.html" class="active" data-i18n="nav.how">진행 방식</a></li>
+    <li><a href="/#blueprints" data-i18n="nav.blueprints">만드는 것</a></li>
+    <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/ko/technology.html" data-i18n="nav.technology">기술</a></li>
+    <li><a href="/assessment/" data-i18n="nav.assessment">무료 진단</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher" role="group" aria-label="언어 선택"><a href="/en/how-we-work.html" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/how-we-work.html" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/how-we-work.html" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
+    <a href="/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">무료 진단 예약</a>
+  </div>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <ul>
+    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">진행 방식</a></li>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">만드는 것</a></li>
+    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/ko/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">기술</a></li>
+    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">무료 진단</a></li>
+  </ul>
+  <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">무료 진단 예약</a>
+  <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="언어 선택"><a href="/en/how-we-work.html" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/how-we-work.html" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/how-we-work.html" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
+</div>
+
+<section class="how-hero">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="how.hero.eyebrow">협업 모델</p>
+    <h1 class="hero-title reveal d1" data-i18n-html="how.hero.h1">첫 대화부터 지속적 관계까지, <em>하나의 분명한 프로세스.</em></h1>
+    <p class="lede reveal d2" data-i18n="how.hero.body">저희는 플랫폼 접근권을 판매하지 않습니다. 귀사의 전용 AI 시스템을 계획하고 구축하며 유지관리까지 맡는 팀입니다. 실제 진행은 이렇게 이루어집니다.</p>
+
+    <div class="how-overview reveal d3">
+      <div class="how-overview-item">
+        <span class="how-overview-num">01</span>
+        <span class="how-overview-title" data-i18n="how.overview.p1.title">진단</span>
+        <span class="how-overview-meta" data-i18n="how.overview.p1.meta">무료 · 48시간 내 전달</span>
+      </div>
+      <div class="how-overview-item">
+        <span class="how-overview-num">02</span>
+        <span class="how-overview-title" data-i18n="how.overview.p2.title">설계 &amp; 견적</span>
+        <span class="how-overview-meta" data-i18n="how.overview.p2.meta">고정 범위 · 고정 가격</span>
+      </div>
+      <div class="how-overview-item">
+        <span class="how-overview-num">03</span>
+        <span class="how-overview-title" data-i18n="how.overview.p3.title">구축 &amp; 연동</span>
+        <span class="how-overview-meta" data-i18n="how.overview.p3.meta">통상 4–12주</span>
+      </div>
+      <div class="how-overview-item">
+        <span class="how-overview-num">04</span>
+        <span class="how-overview-title" data-i18n="how.overview.p4.title">유지 &amp; 발전</span>
+        <span class="how-overview-meta" data-i18n="how.overview.p4.meta">월간 파트너십</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Phase 1: Assess -->
+<section class="phase-section">
+  <div class="section-inner">
+    <div class="phase-grid">
+      <div class="phase-body">
+        <p class="eyebrow reveal" data-i18n="how.p1.eyebrow">1단계 · 진단</p>
+        <h2 class="section-title reveal d1" data-i18n-html="how.p1.h2">귀사의 전용 AI 팀을 위한 서면 계획서. <em>비용도, 약정도 없습니다.</em></h2>
+        <p class="section-copy reveal d2" data-i18n="how.p1.body1">AI 도입 진단은 짧고 체계적인 작업입니다. 팀과의 워크숍, AI 팀이 다루게 될 시스템과 문서 검토, 실제 사용자 2–3명과의 인터뷰. 끝나고 나면 서면 보고서를 드리고, 구축할 만한 가치가 있다면 범위가 지정된 견적서도 함께 드립니다.</p>
+        <p class="section-copy reveal d3" data-i18n="how.p1.body2">무언가를 팔기 위한 과정이 아닙니다. 전용 AI 팀이 도움이 될지, 어디서 도움이 될지, 무엇이 필요한지를 솔직하게 말씀드리는 것이 목적입니다. 지금 아무것도 하지 않기를 권하는 결론으로 끝나는 진단도 있습니다. 그것도 좋은 결과입니다.</p>
+      </div>
+      <div>
+        <div class="phase-sidecar reveal d2">
+          <div class="phase-sidecar-head" data-i18n="how.p1.side.head">한눈에 보기</div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p1.side.r1.label">비용</span>
+            <span class="phase-sidecar-value is-accent" data-i18n="how.p1.side.r1.value">무료</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p1.side.r2.label">기간</span>
+            <span class="phase-sidecar-value" data-i18n="how.p1.side.r2.value">워크숍부터 보고서까지 48시간</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p1.side.r3.label">귀사의 시간</span>
+            <span class="phase-sidecar-value" data-i18n="how.p1.side.r3.value">90분 워크숍과 몇 번의 인터뷰</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p1.side.r4.label">산출물</span>
+            <span class="phase-sidecar-value" data-i18n="how.p1.side.r4.value">서면 보고서 + 견적서</span>
+          </div>
+        </div>
+        <div class="phase-deliverables reveal d3">
+          <strong data-i18n="how.p1.deliv.head">무엇을 받게 되는가</strong>
+          <span data-i18n="how.p1.deliv.body">가장 가치가 큰 워크플로우, 민감도 요구에 맞는 온프레미스 아키텍처, 고려할 리스크, 그리고 진행을 권하는 경우에는 구축 및 월간 유지관리에 대한 고정 범위 견적서를 담은 문서를 드립니다.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Phase 2: Design & Quote -->
+<section class="phase-section">
+  <div class="section-inner">
+    <div class="phase-grid">
+      <div class="phase-body">
+        <p class="eyebrow reveal" data-i18n="how.p2.eyebrow">2단계 · 설계 &amp; 견적</p>
+        <h2 class="section-title reveal d1" data-i18n-html="how.p2.h2">구축을 시작하기 전에 <em>고정 범위 제안서</em>.</h2>
+        <p class="section-copy reveal d2" data-i18n="how.p2.body1">진행을 결정하시면 진단 결과를 구체적인 구축 제안서로 옮겨 드립니다. 아키텍처 선택, 하드웨어 사양, 연동할 시스템, 미세 조정에 사용할 문서, 구현할 워크플로우, 일정, 고정 가격까지.</p>
+        <p class="section-copy reveal d3" data-i18n="how.p2.body2">시간당 청구도, 결말이 열린 용역 계약도 없습니다. 시작 전에 무엇에 동의하는지 확인하십시오. 나중에 범위가 바뀌면 변경 건을 별도로 견적하고, 진행 여부는 귀사가 결정합니다.</p>
+      </div>
+      <div>
+        <div class="phase-sidecar reveal d2">
+          <div class="phase-sidecar-head" data-i18n="how.p2.side.head">한눈에 보기</div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p2.side.r1.label">가격 모델</span>
+            <span class="phase-sidecar-value is-accent" data-i18n="how.p2.side.r1.value">고정 견적</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p2.side.r2.label">범위</span>
+            <span class="phase-sidecar-value" data-i18n="how.p2.side.r2.value">귀사 워크플로우에 맞춤</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p2.side.r3.label">체결 문서</span>
+            <span class="phase-sidecar-value" data-i18n="how.p2.side.r3.value">명확한 용역 계약서 한 장</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p2.side.r4.label">제안 도달 시점</span>
+            <span class="phase-sidecar-value" data-i18n="how.p2.side.r4.value">진단 후 2주 이내</span>
+          </div>
+        </div>
+        <div class="phase-deliverables reveal d3">
+          <strong data-i18n="how.p2.deliv.head">무엇을 받게 되는가</strong>
+          <span data-i18n="how.p2.deliv.body">구체적인 설계서 — 레퍼런스 아키텍처, 하드웨어 사양, 연동 계획, 미세 조정 계획, 일정, 수용 기준, 그리고 구축에 대한 단일 고정 가격. 숨은 모듈도, 나중 드러나는 추가 비용도 없습니다.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Phase 3: Build -->
+<section class="phase-section">
+  <div class="section-inner">
+    <div class="phase-grid">
+      <div class="phase-body">
+        <p class="eyebrow reveal" data-i18n="how.p3.eyebrow">3단계 · 구축 &amp; 연동</p>
+        <h2 class="section-title reveal d1" data-i18n-html="how.p3.h2">현장에 하드웨어, 귀사 데이터로 미세 조정한 모델, <em>팀이 이미 쓰는 도구와의 연동.</em></h2>
+        <p class="section-copy reveal d2" data-i18n="how.p3.body1">하드웨어를 조달하고 구성한 뒤, 귀사의 문서와 워크플로우로 로컬 모델을 미세 조정하며, 팀이 이미 사용하는 채널 — Slack, KakaoTalk, Teams, 이메일, 또는 내부 시스템 — 과 연동합니다. 모든 과정은 현장에서 설치되고 귀사 환경에서 검증됩니다.</p>
+        <p class="section-copy reveal d3" data-i18n="how.p3.body2">하드웨어도, 모델 가중치도, 데이터도 귀사 소유입니다. 구축이 끝나면 저희와의 관계가 끝나더라도 귀사의 전용 AI 시스템은 계속 귀사의 것으로 남습니다.</p>
+      </div>
+      <div>
+        <div class="phase-sidecar reveal d2">
+          <div class="phase-sidecar-head" data-i18n="how.p3.side.head">한눈에 보기</div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p3.side.r1.label">일반 기간</span>
+            <span class="phase-sidecar-value is-accent" data-i18n="how.p3.side.r1.value">4–12주</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p3.side.r2.label">배포</span>
+            <span class="phase-sidecar-value" data-i18n="how.p3.side.r2.value">현장, 귀사 하드웨어 위</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p3.side.r3.label">소유권</span>
+            <span class="phase-sidecar-value" data-i18n="how.p3.side.r3.value">하드웨어·가중치·데이터 모두 귀사</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p3.side.r4.label">연동 대상</span>
+            <span class="phase-sidecar-value" data-i18n="how.p3.side.r4.value">Slack, KakaoTalk, Teams, 이메일, 내부 시스템</span>
+          </div>
+        </div>
+        <div class="phase-deliverables reveal d3">
+          <strong data-i18n="how.p3.deliv.head">무엇을 받게 되는가</strong>
+          <span data-i18n="how.p3.deliv.body">팀이 이미 쓰는 도구와 연동되어 사무실 하드웨어 위에서 작동하는 전용 AI 시스템, 문서화된 수용 테스트, 관리자 인수인계, 교육받은 사용자까지.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Phase 4: Maintain -->
+<section class="phase-section">
+  <div class="section-inner">
+    <div class="phase-grid">
+      <div class="phase-body">
+        <p class="eyebrow reveal" data-i18n="how.p4.eyebrow">4단계 · 유지 &amp; 발전</p>
+        <h2 class="section-title reveal d1" data-i18n-html="how.p4.h2">월간 파트너십. <em>시스템을 꾸준히 예리하게 유지합니다.</em></h2>
+        <p class="section-copy reveal d2" data-i18n="how.p4.body1">시스템이 가동된 뒤에도 저희가 남아 있습니다. 모니터링, 모델 업데이트, 보안 패치, 워크플로우 변화에 따른 조정. 새로운 기능을 배우게 하거나 새 프로세스에 맞춰 일하게 하고 싶을 때, 별도의 용역 계약 없이 바로 학습시킵니다.</p>
+        <p class="section-copy reveal d3" data-i18n="how.p4.body2">유지관리 비용은 정액제로, 예측 가능합니다. 반복되는 청구서가 아니라 이어지는 파트너십에 가깝도록 설계했습니다. 관계는 언제든 종료할 수 있으며, 그 이후에도 시스템은 귀사의 것입니다.</p>
+      </div>
+      <div>
+        <div class="phase-sidecar reveal d2">
+          <div class="phase-sidecar-head" data-i18n="how.p4.side.head">한눈에 보기</div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p4.side.r1.label">청구</span>
+            <span class="phase-sidecar-value is-accent" data-i18n="how.p4.side.r1.value">정액 월 단위</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p4.side.r2.label">포함 사항</span>
+            <span class="phase-sidecar-value" data-i18n="how.p4.side.r2.value">모니터링, 업데이트, 패치, 조정</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p4.side.r3.label">신규 기능</span>
+            <span class="phase-sidecar-value" data-i18n="how.p4.side.r3.value">파트너십 내에서 추가</span>
+          </div>
+          <div class="phase-sidecar-row">
+            <span class="phase-sidecar-label" data-i18n="how.p4.side.r4.label">해지</span>
+            <span class="phase-sidecar-value" data-i18n="how.p4.side.r4.value">언제든 가능, 시스템은 귀사 소유로 유지</span>
+          </div>
+        </div>
+        <div class="phase-deliverables reveal d3">
+          <strong data-i18n="how.p4.deliv.head">무엇을 받게 되는가</strong>
+          <span data-i18n="how.p4.deliv.body">최신 상태를 유지하는 시스템, 변화가 생길 때 호출할 수 있는 팀, 그리고 파트너십을 종료해도 구축한 것을 잃지 않을 자유. 귀사의 전용 AI 팀은 관계와 무관하게 계속 작동합니다.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-note reveal">
+      <p class="eyebrow-light" data-i18n="how.pricing.eyebrow">가격에 대하여</p>
+      <p data-i18n="how.pricing.body">구축 비용과 월간 유지관리 비용은 모두 범위에 따라 달라지기 때문에, 무료 AI 도입 진단 이후에 견적을 드립니다. 메뉴판은 공개하지 않지만, 고정 가격, 사용량 과금 없음, 예상 밖의 청구 없음은 약속드립니다. 예산이 관건이라면 진단 중에 말씀해 주십시오. 그에 맞춰 설계해 드립니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--green">
+  <div class="section-inner">
+    <div class="page-cta-inner">
+      <p class="eyebrow-light reveal" data-i18n="how.cta.eyebrow">무료 진단부터 시작하세요</p>
+      <h2 class="section-title reveal d1" data-i18n-html="how.cta.h2">대화에서 시작해 <em>서면 계획서를 보고 결정하세요.</em></h2>
+      <p class="lede reveal d2" data-i18n="how.cta.body">AI 도입 진단은 무료입니다. 워크숍 이후 48시간 이내에 서면 계획서를 드립니다. 구축 여부와 무관하게 계획서는 남습니다.</p>
+      <div class="page-cta-actions reveal d3">
+        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="how.cta.primary">무료 AI 도입 진단 예약</a>
+        <a href="/ko/" class="btn-outline" data-i18n="how.cta.secondary">홈으로 돌아가기</a>
+      </div>
+      <div class="page-cta-note reveal d3" data-i18n="how.cta.note">한국어 · 영어 · 프랑스어 · 약정 없음</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smart Fellow</div>
+    <ul class="footer-links">
+      <li><a href="/how-we-work.html" data-i18n="footer.how">진행 방식</a></li>
+      <li><a href="/#blueprints" data-i18n="footer.blueprints">만드는 것</a></li>
+      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/ko/technology.html" data-i18n="footer.tech">기술</a></li>
+      <li><a href="/assessment/" data-i18n="footer.contact">무료 진단</a></li>
+    </ul>
+    <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · 서울, 대한민국</span>
+  </div>
+</footer>
+
+<script>window.SF_CONFIG={"locale":"ko"};</script>
+
+<script src="/i18n.js"></script>
+<script src="/assessment-modal.js" defer></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
+
+navToggle.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+function closeMobileMenu() {
+  navMobile.classList.remove('open');
+  navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+(function () {
+  const navEl = document.querySelector('nav');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (navMobile.classList.contains('open')) {
+      lastY = y;
+      return;
+    }
+    if (Math.abs(y - lastY) < 8) return;
+    if (y <= 0 || y < lastY) {
+      navEl.classList.remove('nav-hidden');
+    } else {
+      navEl.classList.add('nav-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

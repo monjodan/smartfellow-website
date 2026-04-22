@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Fellow — AI 팀원을 채용하세요</title>
-<meta name="description" content="Smart Fellow는 신규 입사자처럼 채용하는 AI 동료입니다. 이미 훈련되어 있고 Slack, Telegram, KakaoTalk에서 바로 일합니다. 포지션을 고르고 이번 주에 시작하세요.">
+<title>Smart Fellow — 귀사를 위한 전용 AI 팀</title>
+<meta name="description" content="데이터 보호를 중요하게 생각하는 기업을 위해 전용 AI 시스템을 구축합니다. 무료 진단, 고정 견적 기반 구축, 귀사가 소유하는 하드웨어 위에서 운영, 지속적인 유지관리. PIPA를 기본으로 준수합니다.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://smartfellow.ai/ko/">
 <link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/">
 <link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Smart Fellow — 다음 채용, 이미 훈련이 끝났습니다">
-<meta property="og:description" content="귀사에 맞춰 훈련된 AI 동료. Slack, Telegram, KakaoTalk에서 바로 일합니다. 포지션을 보고 플랜을 고르면 이번 주에 시작합니다.">
+<meta property="og:title" content="Smart Fellow — 귀사를 위한 전용 AI 팀">
+<meta property="og:description" content="워크플로우를 무료로 진단하고, 귀사가 소유한 하드웨어 위에 전용 AI 팀을 구축하고, 유지관리까지 책임집니다. 맞춤 설계, 사내 운영, 데이터 주권 보장.">
 <meta property="og:url" content="https://smartfellow.ai/ko/">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Smart Fellow — 다음 채용, 이미 훈련이 끝났습니다">
-<meta name="twitter:description" content="귀사에 맞춰 훈련된 AI 동료. Slack, Telegram, KakaoTalk에서 바로 일합니다. 포지션을 보고 플랜을 고르면 이번 주에 시작합니다.">
+<meta name="twitter:title" content="Smart Fellow — 귀사를 위한 전용 AI 팀">
+<meta name="twitter:description" content="워크플로우를 무료로 진단하고, 귀사가 소유한 하드웨어 위에 전용 AI 팀을 구축하고, 유지관리까지 책임집니다. 맞춤 설계, 사내 운영, 데이터 주권 보장.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
@@ -30,20 +30,15 @@
   border-bottom: 1px solid var(--line);
 }
 
-.home-sov-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-  gap: 2rem;
-  align-items: start;
-}
-
 .home-hero-copy {
-  max-width: 56rem;
+  max-width: 60rem;
 }
 
 .home-hero .lede,
 .home-position .lede,
-.home-sov-copy .lede {
+.home-sov-copy .lede,
+.home-blueprints .lede,
+.home-how .lede {
   margin-top: 1rem;
 }
 
@@ -54,137 +49,8 @@
   margin-top: 1.75rem;
 }
 
-.diagram-label,
-.roles-note,
-.faq-label {
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-
-.home-position .grid-3 {
-  margin-top: 2rem;
-}
-
-.home-position .grid-3 {
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.home-position .grid-3 .card {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: var(--surface);
-  padding: 1.6rem;
-}
-
-.home-sov-grid {
-  margin-top: 2rem;
-}
-
-.home-sov-copy .spec-list {
-  margin-top: 1.6rem;
-}
-
-.home-diagram {
-  padding: 0;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: none;
-  overflow: hidden;
-}
-
-.sov-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.95rem 1.2rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.sov-row:last-child {
-  border-bottom: 0;
-}
-
-.sov-row-label {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-}
-
-.sov-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 25px;
-  padding: 0.15rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-
-.sov-tag.is-local {
-  background: var(--accent-soft);
-  color: var(--accent);
-  border: 1px solid #c9ddd4;
-}
-
-.sov-tag.is-muted {
-  background: var(--surface-muted);
-  color: var(--ink-faint);
-  border: 1px solid var(--line);
-}
-
-
-.home-how .grid-3 {
-  margin-top: 2rem;
-  gap: 2.5rem;
-}
-
-.home-how .step-card {
-  min-height: 100%;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-.home-how .step-card h3 {
-  margin-bottom: 0.55rem;
-}
-
-.home-how .step-card p {
-  max-width: 28ch;
-}
-
-.home-how .display-number {
-  color: var(--line-strong);
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  margin-bottom: 0.9rem;
-}
-
-
-.home-cta-copy {
-  max-width: 48rem;
-  margin: 0 auto;
-}
-
-.home-cta-copy .section-title,
-.home-cta-copy .lede {
-  max-width: none;
-}
-
-.home-band {
-  border-bottom: 1px solid var(--line);
-}
+/* Band */
+.home-band { border-bottom: 1px solid var(--line); }
 
 .home-band-inner {
   display: flex;
@@ -216,6 +82,212 @@
   font-weight: 500;
 }
 
+/* Pillars grid — reuse three-card look */
+.home-position .grid-3 {
+  margin-top: 2rem;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.home-position .grid-3 .card {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--surface);
+  padding: 1.6rem;
+}
+
+/* Sovereignty section */
+.home-sov-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.home-sov-copy .spec-list {
+  margin-top: 1.6rem;
+}
+
+.home-diagram {
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.sov-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.sov-row:last-child { border-bottom: 0; }
+
+.sov-row-label {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.sov-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 25px;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.sov-tag.is-local {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid #c9ddd4;
+}
+
+.sov-tag.is-muted {
+  background: var(--surface-muted);
+  color: var(--ink-faint);
+  border: 1px solid var(--line);
+}
+
+/* Blueprints */
+.home-blueprints .blueprint-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.blueprint-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.5rem 1.6rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: background 0.18s ease;
+}
+
+.blueprint-card:hover { background: var(--paper-strong); }
+
+.blueprint-card .blueprint-tag {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.blueprint-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.blueprint-card p {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.blueprint-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+.blueprint-chip {
+  font-size: 11px;
+  padding: 0.2rem 0.55rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  border: 1px solid #c9ddd4;
+  letter-spacing: 0.02em;
+}
+
+.home-blueprints-note {
+  margin-top: 1.75rem;
+  font-size: 0.88rem;
+  color: var(--ink-faint);
+  max-width: 52rem;
+}
+
+/* How we work — 4 phases */
+.home-how .phase-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.phase-card {
+  background: var(--surface);
+  padding: 1.75rem 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.phase-card .phase-number {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.phase-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.phase-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.phase-card .phase-meta {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.home-how-cta {
+  margin-top: 1.75rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Quote */
 .home-position-quote {
   margin-top: 2.5rem;
   padding: 2rem 2.5rem;
@@ -247,8 +319,18 @@
     grid-template-columns: 1fr;
   }
 
-  .home-how .step-card p {
-    max-width: none;
+  .home-blueprints .blueprint-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-how .phase-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-how .phase-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -258,14 +340,15 @@
 <nav>
   <a href="/ko/" class="nav-logo">Smart Fellow</a>
   <ul class="nav-links">
-    <li><a href="/ko/#how" data-i18n="nav.how">작동 방식</a></li>
+    <li><a href="/how-we-work.html" data-i18n="nav.how">진행 방식</a></li>
+    <li><a href="/#blueprints" data-i18n="nav.blueprints">만드는 것</a></li>
+    <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
     <li><a href="/ko/technology.html" data-i18n="nav.technology">기술</a></li>
-    <li><a href="/ko/#roles" data-i18n="nav.roles">채용 포지션</a></li>
-    <li><a href="/ko/#contact" data-i18n="nav.contact">문의</a></li>
+    <li><a href="/assessment/" data-i18n="nav.assessment">무료 진단</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switcher" role="group" aria-label="언어 선택"><a href="/en/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
-    <a href="/ko/#contact" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">통화 예약</a>
+    <a href="/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">무료 진단 예약</a>
   </div>
   <button class="nav-hamburger" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -274,24 +357,25 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
-    <li><a href="/ko/#how" onclick="closeMobileMenu()" data-i18n="nav.how">작동 방식</a></li>
+    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">진행 방식</a></li>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">만드는 것</a></li>
+    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
     <li><a href="/ko/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">기술</a></li>
-    <li><a href="/ko/#roles" onclick="closeMobileMenu()" data-i18n="nav.roles">채용 포지션</a></li>
-    <li><a href="/ko/#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">문의</a></li>
+    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">무료 진단</a></li>
   </ul>
-  <a href="/ko/#contact" class="nav-cta" onclick="closeMobileMenu(); Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">통화 예약</a>
+  <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">무료 진단 예약</a>
   <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="언어 선택"><a href="/en/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
 </div>
 
 <section class="home-hero">
   <div class="page-shell">
     <div class="home-hero-copy">
-      <p class="eyebrow reveal" data-i18n="home.hero.eyebrow">관리형 AI · 서울 · 한국</p>
-      <h1 class="hero-title reveal d1" data-i18n-html="home.hero.h1">데이터가 머무는 곳에서 작동하는 <em>AI 동료를 채용하세요.</em></h1>
-      <p class="lede reveal d2" data-i18n="home.hero.sub">Smart Fellow는 Slack에서 일하고, 비즈니스를 배우며, 모든 문서를 사무실 내 하드웨어에 보관합니다. 월급 하나. 대시보드 없음. 클라우드 의존성 없음.</p>
+      <p class="eyebrow reveal" data-i18n="home.hero.eyebrow">전용 AI · 서울 · 대한민국</p>
+      <h1 class="hero-title reveal d1" data-i18n-html="home.hero.h1">귀사를 위한 <em>전용 AI 팀을 구축합니다.</em></h1>
+      <p class="lede reveal d2" data-i18n="home.hero.sub">귀사가 소유한 하드웨어 위에서 돌아가는 전용 AI 시스템을, 귀사의 데이터와 워크플로우에 맞춰 구축합니다. 통제권은 귀사가 가지고, 구축은 저희가 맡으며, 유지관리까지 이어서 책임집니다.</p>
       <div class="hero-actions reveal d3">
-        <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="home.hero.ctaPrimary">무료 통화 예약</button>
-        <a href="#how" class="btn-outline" data-i18n="home.hero.ctaSecondary">작동 방식</a>
+        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="home.hero.ctaPrimary">무료 AI 도입 진단 예약</a>
+        <a href="/how-we-work.html" class="btn-outline" data-i18n="home.hero.ctaSecondary">진행 방식 보기</a>
       </div>
     </div>
   </div>
@@ -299,36 +383,36 @@
 
 <div class="home-band">
   <div class="home-band-inner">
-    <span class="home-band-item" data-i18n-html="home.band.item1"><b>PIPA</b> 준수</span>
-    <span class="home-band-item" data-i18n-html="home.band.item2"><b>로컬 하드웨어</b></span>
-    <span class="home-band-item" data-i18n-html="home.band.item3"><b>1주차</b> 첫 실제 업무</span>
+    <span class="home-band-item" data-i18n-html="home.band.item1"><b>PIPA</b> 기본 준수</span>
+    <span class="home-band-item" data-i18n-html="home.band.item2"><b>온프레미스</b>, 귀사 소유</span>
+    <span class="home-band-item" data-i18n-html="home.band.item3"><b>귀사 데이터로</b> 미세 조정</span>
     <span class="home-band-item" data-i18n-html="home.band.item4"><b>한국어 · 영어 · 프랑스어</b></span>
   </div>
 </div>
 
 <section class="section home-position">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="home.position.eyebrow">아이디어</p>
-    <h2 class="section-title reveal d1" data-i18n-html="home.position.h2">소프트웨어 구매가 아니라, <em>사람을 고용한다고 생각하세요.</em></h2>
-    <p class="lede reveal d2" data-i18n="home.position.lead">귀사의 Fellow는 온보딩하고, 업무 방식을 배우며, 매주 더 날카로워집니다. 설정 없음. 교육 세션 없음.</p>
+    <p class="eyebrow reveal" data-i18n="home.position.eyebrow">우리의 접근</p>
+    <h2 class="section-title reveal d1" data-i18n-html="home.position.h2">맞춤 제작, 템플릿이 아닙니다. <em>전용, 공개가 아닙니다.</em></h2>
+    <p class="lede reveal d2" data-i18n="home.position.lead">대부분의 AI 도구는 외부에서 귀사의 비즈니스를 겨냥한 범용 제품입니다. 저희는 반대로 움직입니다. 팀이 실제로 어떻게 일하는지 안으로 들어가 파악하고, 그에 맞는 전용 AI 시스템을 구축합니다. 운영도 소유도 귀사의 것입니다.</p>
 
     <div class="grid-3">
       <article class="card reveal">
-        <h3 data-i18n="home.position.card1.title">이미 사용하는 곳에서 작동</h3>
-        <p data-i18n="home.position.card1.body">Slack, Teams, KakaoTalk, 이메일. 팀이 동료에게 하듯 Fellow에게 메시지를 보내면 됩니다. 설치할 것 없음.</p>
+        <h3 data-i18n="home.position.card1.title">귀사의 데이터로 구축</h3>
+        <p data-i18n="home.position.card1.body">귀사의 문서, 워크플로우, 용어에 맞춰 미세 조정됩니다. 귀사의 비즈니스만 알고 있기에 귀사의 비즈니스를 잘 이해합니다.</p>
       </article>
       <article class="card reveal d1">
-        <h3 data-i18n="home.position.card2.title">배우고 기억합니다</h3>
-        <p data-i18n="home.position.card2.body">귀사의 고객, 톤, 형식. 2주 후에는 필요한 것을 예측하기 시작합니다. 1개월 후에는 장기 직원처럼 느껴집니다.</p>
+        <h3 data-i18n="home.position.card2.title">선택한 곳에서 실행</h3>
+        <p data-i18n="home.position.card2.body">기본적으로 귀사 사무실 내부의 하드웨어에서 실행됩니다. PIPA를 설계 단계에서 준수합니다. 클라우드 모델은 특정 업무에 대해 귀사가 직접 허용하기 전까지는 꺼져 있습니다.</p>
       </article>
       <article class="card reveal d2">
-        <h3 data-i18n="home.position.card3.title">기본적으로 이중 언어</h3>
-        <p data-i18n="home.position.card3.body">한국어와 영어가 기본. 로컬 파트너에게는 격식체, 유럽 본사에는 편안하게. 지시 없이도 적응합니다.</p>
+        <h3 data-i18n="home.position.card3.title">처음부터 끝까지 한 팀</h3>
+        <p data-i18n="home.position.card3.body">진단, 설계, 구축, 유지까지 저희가 담당합니다. 배울 플랫폼도, IT 부담도 없습니다. 한 팀이 시스템 전체를 책임집니다.</p>
       </article>
     </div>
 
     <div class="home-position-quote reveal">
-      <blockquote data-i18n="home.quote.text">"여러분이 만난 최고의 동료 — 절대 잊지 않고, 절대 지치지 않으며, 항상 나타나는 사람."</blockquote>
+      <blockquote data-i18n="home.quote.text">"귀사의 비즈니스를 이해하는 전용 AI 팀 — 귀사의 비즈니스만 알고 있기 때문입니다."</blockquote>
       <cite data-i18n="home.quote.attr">Smart Fellow의 약속</cite>
     </div>
   </div>
@@ -338,24 +422,25 @@
   <div class="section-inner">
     <div class="home-sov-grid">
       <div class="home-sov-copy">
-        <p class="eyebrow reveal" data-i18n="home.sov.eyebrow">데이터 주권</p>
-        <h2 class="section-title reveal d1" data-i18n-html="home.sov.h2">데이터가 <em>귀사 건물 안에 머뭅니다.</em></h2>
-        <p class="lede reveal d2" data-i18n="home.sov.lead">클라우드 AI 도구는 귀사의 문서를 타인의 서버에서 처리합니다. Smart Fellow는 귀사 사무실의 전용 하드웨어에서 실행됩니다. 귀사가 결정하지 않으면 아무것도 나가지 않습니다.</p>
+        <p class="eyebrow reveal" data-i18n="home.sov.eyebrow">데이터는 있어야 할 곳에</p>
+        <h2 class="section-title reveal d1" data-i18n-html="home.sov.h2">귀사의 데이터는 <em>건물 안에 머뭅니다.</em></h2>
+        <p class="lede reveal d2" data-i18n="home.sov.lead">클라우드 AI 도구는 남의 서버에서 귀사의 문서를 처리합니다. 저희가 구축하는 AI 시스템은 귀사 사무실 안의 전용 하드웨어에서 실행됩니다. 귀사가 명시적으로 허용한 업무에 한해서만, 그리고 그 경우에만 외부와 연결됩니다.</p>
         <ul class="spec-list reveal d3">
-          <li data-i18n="home.sov.point1">PIPA 구조적 준수.</li>
-          <li data-i18n="home.sov.point2">기밀 문서를 위한 NDA 안전.</li>
-          <li data-i18n="home.sov.point3">클라우드 API 선택적 — 언제든지 귀사의 결정.</li>
+          <li data-i18n="home.sov.point1">약속이 아니라 설계로 보장하는 PIPA 준수.</li>
+          <li data-i18n="home.sov.point2">기밀 문서, 고객 자료, 민감한 운영 맥락에 안전합니다.</li>
+          <li data-i18n="home.sov.point3">클라우드 모델은 선택 사항 — 업무 단위로, 언제든 귀사가 결정합니다.</li>
+          <li data-i18n="home.sov.point4">가장 민감한 워크플로우를 위해 에어갭 운영도 가능합니다.</li>
         </ul>
       </div>
 
       <div class="home-diagram reveal d2">
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="home.sov.diagram.row1.label">사무실 하드웨어</span>
-          <span class="sov-tag is-local" data-i18n="home.sov.diagram.row1.value">여기서 실행</span>
+          <span class="sov-row-label" data-i18n="home.sov.diagram.row1.label">사무실 내 하드웨어</span>
+          <span class="sov-tag is-local" data-i18n="home.sov.diagram.row1.value">귀사 소유</span>
         </div>
         <div class="sov-row">
           <span class="sov-row-label" data-i18n="home.sov.diagram.row2.label">로컬 AI 모델</span>
-          <span class="sov-tag is-local" data-i18n="home.sov.diagram.row2.value">로컬</span>
+          <span class="sov-tag is-local" data-i18n="home.sov.diagram.row2.value">귀사 데이터로 미세 조정</span>
         </div>
         <div class="sov-row">
           <span class="sov-row-label" data-i18n="home.sov.diagram.row3.label">문서 메모리</span>
@@ -367,83 +452,105 @@
         </div>
         <div class="sov-row">
           <span class="sov-row-label" data-i18n="home.sov.diagram.row5.label">외부 서버</span>
-          <span class="sov-tag is-muted" data-i18n="home.sov.diagram.row5.value">없음</span>
+          <span class="sov-tag is-muted" data-i18n="home.sov.diagram.row5.value">기본적으로 사용 안 함</span>
         </div>
         <div class="sov-row">
           <span class="sov-row-label" data-i18n="home.sov.diagram.row6.label">클라우드 모델 API</span>
-          <span class="sov-tag is-muted" data-i18n="home.sov.diagram.row6.value">기본값 비활성</span>
+          <span class="sov-tag is-muted" data-i18n="home.sov.diagram.row6.value">승인된 경우에만</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--soft" id="roles">
+<section class="section section--soft home-blueprints" id="blueprints">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="home.roles.eyebrow">채용 가능 포지션</p>
-    <h2 class="section-title reveal d1" data-i18n-html="home.roles.h2">팀에 필요한 포지션을 선택하세요. <em>이번 주에 시작할 수 있습니다.</em></h2>
-    <p class="lede reveal d2" data-i18n="home.roles.lead">모든 Fellow는 해당 도메인에 대한 교육을 마치고 일할 준비가 된 상태로 도착합니다. 온보딩 중에 귀사 비즈니스에 맞춰 커스터마이즈됩니다.</p>
+    <p class="eyebrow reveal" data-i18n="home.blueprints.eyebrow">무엇을 구축하는가</p>
+    <h2 class="section-title reveal d1" data-i18n-html="home.blueprints.h2">모든 시스템은 맞춤 제작입니다. <em>다만 자주 나타나는 형태가 있습니다.</em></h2>
+    <p class="lede reveal d2" data-i18n="home.blueprints.lead">모든 프로젝트는 제품 카탈로그가 아니라 귀사의 워크플로우에서 출발합니다. 아래는 자주 보이는 패턴입니다 — 전용 AI 팀이 귀사 내부에서 어떤 모습일지 그려보는 출발점으로 삼으십시오.</p>
 
-    <div class="role-grid reveal d2">
-      <a href="#contact" class="role-item is-featured">
-        <div class="role-item-badge" data-i18n="home.roles.badge">인기 채용</div>
-        <div class="role-item-name" data-i18n="home.roles.card1.title">기밀 문서 분석가</div>
-        <div class="role-item-desc" data-i18n="home.roles.card1.body">계약서, 실사, 이사회 자료, 내부 보고서. 구조화된 요약과 레드플래그 — 모두 로컬.</div>
-        <div class="role-item-foot">
-          <div class="role-item-price" data-i18n-html="home.roles.card1.price">₩2.8M <span>/ 월</span></div>
-          <span class="role-hire-link" data-i18n="home.roles.cta">채용 →</span>
+    <div class="blueprint-grid reveal d2">
+      <article class="blueprint-card">
+        <span class="blueprint-tag" data-i18n="home.blueprints.card1.tag">법무 · 컴플라이언스</span>
+        <h3 data-i18n="home.blueprints.card1.title">법무·컴플라이언스 조직을 위한 전용 AI 팀</h3>
+        <p data-i18n="home.blueprints.card1.body">계약서를 귀사의 기준에 따라 검토하고, 실사 자료를 요약하며, 사내 스타일로 메모를 작성하고 리스크를 표시합니다 — 모두 사무실을 벗어나지 않는 하드웨어 위에서.</p>
+        <div class="blueprint-meta">
+          <span class="blueprint-chip" data-i18n="home.blueprints.card1.chip1">계약서 검토</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card1.chip2">실사 지원</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card1.chip3">내부 메모 작성</span>
         </div>
-      </a>
-      <a href="#contact" class="role-item">
-        <div class="role-item-name" data-i18n="home.roles.card2.title">R&amp;D 지식 분석가</div>
-        <div class="role-item-desc" data-i18n="home.roles.card2.body">기술 사양, 테스트 결과, SOP, 공급업체 문서. 아무것도 외부로 보내지 않고 브리핑.</div>
-        <div class="role-item-foot">
-          <div class="role-item-price" data-i18n-html="home.roles.card2.price">₩2.8M <span>/ 월</span></div>
-          <span class="role-hire-link" data-i18n="home.roles.cta">채용 →</span>
+      </article>
+      <article class="blueprint-card">
+        <span class="blueprint-tag" data-i18n="home.blueprints.card2.tag">R&amp;D · 제조</span>
+        <h3 data-i18n="home.blueprints.card2.title">R&amp;D와 기술 지식을 위한 전용 AI 팀</h3>
+        <p data-i18n="home.blueprints.card2.body">기술 사양, 테스트 결과, SOP, 공급업체 문서를 읽어들입니다. 수년간 축적된 내부 연구 자료에 대해 외부 모델에 한 글자도 보내지 않고 답합니다.</p>
+        <div class="blueprint-meta">
+          <span class="blueprint-chip" data-i18n="home.blueprints.card2.chip1">기술 Q&amp;A</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card2.chip2">사양 검색</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card2.chip3">보고서 초안</span>
         </div>
-      </a>
-      <a href="#contact" class="role-item">
-        <div class="role-item-name" data-i18n="home.roles.card3.title">민감 데이터 운영</div>
-        <div class="role-item-desc" data-i18n="home.roles.card3.body">고객 기록, CRM 내보내기, 운영 데이터. 정제되고, 구조화되고, 로컬. 서드파티 내보내기 불필요.</div>
-        <div class="role-item-foot">
-          <div class="role-item-price" data-i18n-html="home.roles.card3.price">₩2.8M <span>/ 월</span></div>
-          <span class="role-hire-link" data-i18n="home.roles.cta">채용 →</span>
+      </article>
+      <article class="blueprint-card">
+        <span class="blueprint-tag" data-i18n="home.blueprints.card3.tag">운영 · 고객 데이터</span>
+        <h3 data-i18n="home.blueprints.card3.title">민감한 운영 업무를 위한 전용 AI 팀</h3>
+        <p data-i18n="home.blueprints.card3.body">고객 기록, CRM 추출본, 운영 데이터를 다룹니다. 개인정보를 외부 서비스로 보내지 않고 정리·구조화·요약합니다.</p>
+        <div class="blueprint-meta">
+          <span class="blueprint-chip" data-i18n="home.blueprints.card3.chip1">데이터 정리</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card3.chip2">CRM 정돈</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card3.chip3">리포팅</span>
         </div>
-      </a>
-      <a href="#contact" class="role-item">
-        <div class="role-item-name" data-i18n="home.roles.card4.title">맞춤형 Fellow</div>
-        <div class="role-item-desc" data-i18n="home.roles.card4.body">아직 존재하지 않는 포지션. 귀사의 업종, 프로세스, 용어에 맞춰 처음부터 Fellow를 훈련합니다.</div>
-        <div class="role-item-foot">
-          <div class="role-item-price is-custom" data-i18n="home.roles.card4.price">맞춤 견적</div>
-          <span class="role-hire-link">Talk to us →</span>
+      </article>
+      <article class="blueprint-card">
+        <span class="blueprint-tag" data-i18n="home.blueprints.card4.tag">국경 간 · 기밀 업무</span>
+        <h3 data-i18n="home.blueprints.card4.title">기밀 다국어 업무를 위한 전용 AI 팀</h3>
+        <p data-i18n="home.blueprints.card4.body">한국어·영어·프랑스어 문서를 번역, 요약, 분석하며 모든 작업을 전용 하드웨어 위에서 처리합니다. 본사·감독기관·현지 고객 사이에서 일하는 팀을 위해 설계되었습니다.</p>
+        <div class="blueprint-meta">
+          <span class="blueprint-chip" data-i18n="home.blueprints.card4.chip1">번역</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card4.chip2">문서 분석</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card4.chip3">에어갭 옵션</span>
         </div>
-      </a>
+      </article>
     </div>
+
+    <p class="home-blueprints-note reveal d3" data-i18n="home.blueprints.note">이들은 고정 상품이 아닙니다. 저희가 이미 다뤄본 익숙한 형태일 뿐입니다. 귀사의 시스템은 무료 AI 도입 진단에서 처음부터 새로 설계됩니다.</p>
   </div>
 </section>
 
 <section class="section home-how" id="how">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="home.how.eyebrow">시작하기</p>
-    <h2 class="section-title reveal d1" data-i18n-html="home.how.h2">첫 통화부터 <em>Fellow의 첫 업무까지.</em></h2>
-    <p class="lede reveal d2" data-i18n="home.how.lead">기술적 복잡성 없음. IT 부서 불필요. 저희가 모든 것을 처리합니다.</p>
+    <p class="eyebrow reveal" data-i18n="home.how.eyebrow">진행 방식</p>
+    <h2 class="section-title reveal d1" data-i18n-html="home.how.h2">네 단계. <em>하나의 분명한 관계.</em></h2>
+    <p class="lede reveal d2" data-i18n="home.how.lead">IT 부서도, 복잡한 구매 절차도, 사내 AI 전문 인력도 필요하지 않습니다. 첫 대화부터 지속적인 유지관리까지 전체 과정을 저희가 책임집니다.</p>
 
-    <div class="grid-3">
-      <article class="step-card reveal">
-        <div class="display-number">01</div>
-        <h3 data-i18n="home.how.step1.title">설정 및 첫 워크플로우</h3>
-        <p data-i18n="home.how.step1.body">하드웨어를 납품하고 구성합니다. 역할, 접근 권한, 커뮤니케이션 선호도를 정의합니다. Fellow는 1주차에 첫 실제 업무를 처리합니다.</p>
+    <div class="phase-grid reveal d2">
+      <article class="phase-card">
+        <span class="phase-number">01</span>
+        <h3 data-i18n="home.how.phase1.title">진단</h3>
+        <p data-i18n="home.how.phase1.body">귀사의 전용 AI 팀을 위한 서면 계획서입니다. 워크플로우, 시스템, 데이터 민감도를 함께 살펴보고, 보고서와 견적서를 드립니다.</p>
+        <span class="phase-meta" data-i18n="home.how.phase1.meta">무료 · 48시간 내 전달</span>
       </article>
-      <article class="step-card reveal d1">
-        <div class="display-number">02</div>
-        <h3 data-i18n="home.how.step2.title">보정</h3>
-        <p data-i18n="home.how.step2.body">초기 결과물을 바탕으로 톤, 형식, 우선순위를 세밀하게 조정합니다. 2주차 말에는 Fellow가 팀의 업무 방식을 이해하게 됩니다.</p>
+      <article class="phase-card">
+        <span class="phase-number">02</span>
+        <h3 data-i18n="home.how.phase2.title">설계 &amp; 견적</h3>
+        <p data-i18n="home.how.phase2.body">고정 범위 제안서 — 아키텍처, 연동, 미세 조정 계획, 일정, 가격. 구축을 시작하기 전에 무엇을 받게 되는지 먼저 확인하십시오.</p>
+        <span class="phase-meta" data-i18n="home.how.phase2.meta">고정 견적 · 예상 밖의 비용 없음</span>
       </article>
-      <article class="step-card reveal d2">
-        <div class="display-number">03</div>
-        <h3 data-i18n="home.how.step3.title">시간이 갈수록 더 날카로워집니다</h3>
-        <p data-i18n="home.how.step3.body">기억이 깊어집니다. 새로운 업무가 추가됩니다. 워크플로우가 빨라집니다. Fellow가 함께할수록 더욱 가치 있어집니다.</p>
+      <article class="phase-card">
+        <span class="phase-number">03</span>
+        <h3 data-i18n="home.how.phase3.title">구축 &amp; 연동</h3>
+        <p data-i18n="home.how.phase3.body">현장에 하드웨어를 설치하고, 귀사의 데이터로 모델을 미세 조정하며, Slack·KakaoTalk·Teams·이메일·내부 시스템과 연동합니다.</p>
+        <span class="phase-meta" data-i18n="home.how.phase3.meta">일반적으로 4–12주</span>
       </article>
+      <article class="phase-card">
+        <span class="phase-number">04</span>
+        <h3 data-i18n="home.how.phase4.title">유지 &amp; 발전</h3>
+        <p data-i18n="home.how.phase4.body">월간 파트너십 — 모니터링, 모델 업데이트, 요청 시 새 기능 학습, 보안 패치. 예측 가능하고 담담하게 이어집니다.</p>
+        <span class="phase-meta" data-i18n="home.how.phase4.meta">지속 · 정액 월 단위</span>
+      </article>
+    </div>
+
+    <div class="home-how-cta reveal d3">
+      <a href="/how-we-work.html" class="btn-outline" data-i18n="home.how.cta">전체 프로세스 보기</a>
     </div>
   </div>
 </section>
@@ -451,12 +558,12 @@
 <section class="section section--green" id="contact">
   <div class="section-inner">
     <div class="page-cta-inner">
-      <p class="eyebrow-light reveal" data-i18n="home.cta.eyebrow">다음 단계</p>
-      <h2 class="section-title reveal d1" data-i18n-html="home.cta.h2">지금 <em>Fellow를</em> 만날 준비가 되셨나요?</h2>
-      <p class="lede reveal d2" data-i18n="home.cta.body">30분 무료 통화를 예약하세요. 팀의 필요 사항을 살펴보고 귀사 워크플로우에서 Fellow가 어떤 모습일지 정확히 보여드리겠습니다.</p>
+      <p class="eyebrow-light reveal" data-i18n="home.cta.eyebrow">무료 진단부터 시작하세요</p>
+      <h2 class="section-title reveal d1" data-i18n-html="home.cta.h2">서면 계획서부터 시작하세요. <em>약정은 없습니다.</em></h2>
+      <p class="lede reveal d2" data-i18n="home.cta.body">AI 도입 진단은 무료입니다. 짧은 워크숍, 워크플로우 검토, 전용 AI 팀이 실제로 도움이 될 지점을 짚어낸 서면 보고서 — 그리고 구축할 만한 가치가 있다면 고정 견적까지.</p>
       <div class="page-cta-actions reveal d3">
-        <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="home.cta.primary">무료 통화 예약</button>
-        <a href="/ko/technology.html" class="btn-outline" data-i18n="home.cta.secondary">기술 살펴보기</a>
+        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="home.cta.primary">무료 AI 도입 진단 예약</a>
+        <a href="/ko/technology.html" class="btn-outline" data-i18n="home.cta.secondary">아키텍처 살펴보기</a>
       </div>
       <div class="page-cta-note reveal d3" data-i18n="home.cta.note">한국어 · 영어 · 프랑스어 · 약정 없음</div>
     </div>
@@ -467,18 +574,20 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
-      <li><a href="#how" data-i18n="footer.how">작동 방식</a></li>
-      <li><a href="/ko/technology.html" data-i18n="footer.tech">기술 소개</a></li>
-      <li><a href="#roles" data-i18n="footer.roles">채용 포지션</a></li>
-      <li><a href="#contact" data-i18n="footer.contact">문의</a></li>
+      <li><a href="/how-we-work.html" data-i18n="footer.how">진행 방식</a></li>
+      <li><a href="/#blueprints" data-i18n="footer.blueprints">만드는 것</a></li>
+      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/ko/technology.html" data-i18n="footer.tech">기술</a></li>
+      <li><a href="/assessment/" data-i18n="footer.contact">무료 진단</a></li>
     </ul>
-    <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · 서울, 한국</span>
+    <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · 서울, 대한민국</span>
   </div>
 </footer>
 
 <script>window.SF_CONFIG={"locale":"ko"};</script>
 
 <script src="/i18n.js"></script>
+<script src="/assessment-modal.js" defer></script>
 <script>
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

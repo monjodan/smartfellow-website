@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Fellow — Managed AI for Sensitive Work</title>
-<meta name="description" content="Managed local-first AI for firms that need a serious operating model: Slack-native workflows, business context kept in your environment, and cloud use only when you approve it.">
+<title>Smart Fellow — A private AI team, built for your company</title>
+<meta name="description" content="We build private AI systems for companies that care about their data. Free assessment, fixed-scope build on hardware you own, and ongoing maintenance. PIPA-compliant by design.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://smartfellow.ai/en/">
 <link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/">
 <link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Smart Fellow — Managed AI for Sensitive Work">
-<meta property="og:description" content="A serious AI colleague for firms that need control over context, deployment, and data boundaries.">
+<meta property="og:title" content="Smart Fellow — A private AI team, built for your company">
+<meta property="og:description" content="We assess your workflows for free, build a private AI team on hardware you own, and maintain it. Tailored, not templated. Private, not published.">
 <meta property="og:url" content="https://smartfellow.ai/en/">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Smart Fellow — Managed AI for Sensitive Work">
-<meta name="twitter:description" content="A serious AI colleague for firms that need control over context, deployment, and data boundaries.">
+<meta name="twitter:title" content="Smart Fellow — A private AI team, built for your company">
+<meta name="twitter:description" content="We assess your workflows for free, build a private AI team on hardware you own, and maintain it. Tailored, not templated. Private, not published.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
@@ -30,20 +30,15 @@
   border-bottom: 1px solid var(--line);
 }
 
-.home-sov-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-  gap: 2rem;
-  align-items: start;
-}
-
 .home-hero-copy {
-  max-width: 56rem;
+  max-width: 60rem;
 }
 
 .home-hero .lede,
 .home-position .lede,
-.home-sov-copy .lede {
+.home-sov-copy .lede,
+.home-blueprints .lede,
+.home-how .lede {
   margin-top: 1rem;
 }
 
@@ -54,137 +49,8 @@
   margin-top: 1.75rem;
 }
 
-.diagram-label,
-.roles-note,
-.faq-label {
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-
-.home-position .grid-3 {
-  margin-top: 2rem;
-}
-
-.home-position .grid-3 {
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.home-position .grid-3 .card {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: var(--surface);
-  padding: 1.6rem;
-}
-
-.home-sov-grid {
-  margin-top: 2rem;
-}
-
-.home-sov-copy .spec-list {
-  margin-top: 1.6rem;
-}
-
-.home-diagram {
-  padding: 0;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: none;
-  overflow: hidden;
-}
-
-.sov-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.95rem 1.2rem;
-  border-bottom: 1px solid var(--line);
-}
-
-.sov-row:last-child {
-  border-bottom: 0;
-}
-
-.sov-row-label {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-}
-
-.sov-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 25px;
-  padding: 0.15rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-
-.sov-tag.is-local {
-  background: var(--accent-soft);
-  color: var(--accent);
-  border: 1px solid #c9ddd4;
-}
-
-.sov-tag.is-muted {
-  background: var(--surface-muted);
-  color: var(--ink-faint);
-  border: 1px solid var(--line);
-}
-
-
-.home-how .grid-3 {
-  margin-top: 2rem;
-  gap: 2.5rem;
-}
-
-.home-how .step-card {
-  min-height: 100%;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-}
-
-.home-how .step-card h3 {
-  margin-bottom: 0.55rem;
-}
-
-.home-how .step-card p {
-  max-width: 28ch;
-}
-
-.home-how .display-number {
-  color: var(--line-strong);
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  margin-bottom: 0.9rem;
-}
-
-
-.home-cta-copy {
-  max-width: 48rem;
-  margin: 0 auto;
-}
-
-.home-cta-copy .section-title,
-.home-cta-copy .lede {
-  max-width: none;
-}
-
-.home-band {
-  border-bottom: 1px solid var(--line);
-}
+/* Band */
+.home-band { border-bottom: 1px solid var(--line); }
 
 .home-band-inner {
   display: flex;
@@ -216,6 +82,212 @@
   font-weight: 500;
 }
 
+/* Pillars grid — reuse three-card look */
+.home-position .grid-3 {
+  margin-top: 2rem;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.home-position .grid-3 .card {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--surface);
+  padding: 1.6rem;
+}
+
+/* Sovereignty section */
+.home-sov-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.home-sov-copy .spec-list {
+  margin-top: 1.6rem;
+}
+
+.home-diagram {
+  padding: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.sov-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.sov-row:last-child { border-bottom: 0; }
+
+.sov-row-label {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.sov-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 25px;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.sov-tag.is-local {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid #c9ddd4;
+}
+
+.sov-tag.is-muted {
+  background: var(--surface-muted);
+  color: var(--ink-faint);
+  border: 1px solid var(--line);
+}
+
+/* Blueprints */
+.home-blueprints .blueprint-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.blueprint-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.5rem 1.6rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: background 0.18s ease;
+}
+
+.blueprint-card:hover { background: var(--paper-strong); }
+
+.blueprint-card .blueprint-tag {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.blueprint-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.blueprint-card p {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.blueprint-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+.blueprint-chip {
+  font-size: 11px;
+  padding: 0.2rem 0.55rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  border: 1px solid #c9ddd4;
+  letter-spacing: 0.02em;
+}
+
+.home-blueprints-note {
+  margin-top: 1.75rem;
+  font-size: 0.88rem;
+  color: var(--ink-faint);
+  max-width: 52rem;
+}
+
+/* How we work — 4 phases */
+.home-how .phase-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.phase-card {
+  background: var(--surface);
+  padding: 1.75rem 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.phase-card .phase-number {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.phase-card h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.phase-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.phase-card .phase-meta {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.home-how-cta {
+  margin-top: 1.75rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Quote */
 .home-position-quote {
   margin-top: 2.5rem;
   padding: 2rem 2.5rem;
@@ -247,8 +319,18 @@
     grid-template-columns: 1fr;
   }
 
-  .home-how .step-card p {
-    max-width: none;
+  .home-blueprints .blueprint-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-how .phase-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-how .phase-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -258,14 +340,15 @@
 <nav>
   <a href="/en/" class="nav-logo">Smart Fellow</a>
   <ul class="nav-links">
-    <li><a href="/en/#how" data-i18n="nav.how">How it works</a></li>
+    <li><a href="/how-we-work.html" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/#blueprints" data-i18n="nav.blueprints">What we build</a></li>
+    <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
     <li><a href="/en/technology.html" data-i18n="nav.technology">Technology</a></li>
-    <li><a href="/en/#roles" data-i18n="nav.roles">Roles</a></li>
-    <li><a href="/en/#contact" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="/assessment/" data-i18n="nav.assessment">Free review</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switcher" role="group" aria-label="Choose language"><a href="/en/" class="lang-option is-current" data-locale="en" lang="en" aria-current="page">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
-    <a href="/en/#contact" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Book a call</a>
+    <a href="/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">Book a free review</a>
   </div>
   <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -274,24 +357,25 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
-    <li><a href="/en/#how" onclick="closeMobileMenu()" data-i18n="nav.how">How it works</a></li>
+    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">What we build</a></li>
+    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
     <li><a href="/en/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">Technology</a></li>
-    <li><a href="/en/#roles" onclick="closeMobileMenu()" data-i18n="nav.roles">Roles</a></li>
-    <li><a href="/en/#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Free review</a></li>
   </ul>
-  <a href="/en/#contact" class="nav-cta" onclick="closeMobileMenu(); Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Book a call</a>
+  <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Book a free review</a>
   <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choose language"><a href="/en/" class="lang-option is-current" data-locale="en" lang="en" aria-current="page">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
 </div>
 
 <section class="home-hero">
   <div class="page-shell">
     <div class="home-hero-copy">
-      <p class="eyebrow reveal" data-i18n="home.hero.eyebrow">Managed AI · Seoul · Korea</p>
-      <h1 class="hero-title reveal d1" data-i18n-html="home.hero.h1">An AI colleague that runs <em>where your data lives.</em></h1>
-      <p class="lede reveal d2" data-i18n="home.hero.sub">Smart Fellow works in Slack, learns your business, and keeps every document on hardware inside your office. One salary. No dashboard. No cloud dependency.</p>
+      <p class="eyebrow reveal" data-i18n="home.hero.eyebrow">Private AI · Seoul · Korea</p>
+      <h1 class="hero-title reveal d1" data-i18n-html="home.hero.h1">A private AI team, <em>built for your company.</em></h1>
+      <p class="lede reveal d2" data-i18n="home.hero.sub">We build private AI systems that run on hardware you own, trained on your data and your workflows. You keep control. We do the building. We stay on to maintain it.</p>
       <div class="hero-actions reveal d3">
-        <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="home.hero.ctaPrimary">Book a free call</button>
-        <a href="#how" class="btn-outline" data-i18n="home.hero.ctaSecondary">How it works</a>
+        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="home.hero.ctaPrimary">Book a free AI readiness review</a>
+        <a href="/how-we-work.html" class="btn-outline" data-i18n="home.hero.ctaSecondary">How we work</a>
       </div>
     </div>
   </div>
@@ -299,9 +383,9 @@
 
 <div class="home-band">
   <div class="home-band-inner">
-    <span class="home-band-item" data-i18n-html="home.band.item1"><b>PIPA</b> compliant</span>
-    <span class="home-band-item" data-i18n-html="home.band.item2"><b>Local hardware</b></span>
-    <span class="home-band-item" data-i18n-html="home.band.item3"><b>Week one</b> first real tasks</span>
+    <span class="home-band-item" data-i18n-html="home.band.item1"><b>PIPA</b> compliant by design</span>
+    <span class="home-band-item" data-i18n-html="home.band.item2"><b>On-premise</b>, owned by you</span>
+    <span class="home-band-item" data-i18n-html="home.band.item3"><b>Fine-tuned</b> on your data</span>
     <span class="home-band-item" data-i18n-html="home.band.item4"><b>Korean · English · French</b></span>
   </div>
 </div>
@@ -309,26 +393,26 @@
 <section class="section home-position">
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="home.position.eyebrow">The idea</p>
-    <h2 class="section-title reveal d1" data-i18n-html="home.position.h2">Think of it as hiring someone. <em>Not buying software.</em></h2>
-    <p class="lede reveal d2" data-i18n="home.position.lead">Your Fellow onboards, learns your way of working, and gets sharper every week. No configuration. No training sessions.</p>
+    <h2 class="section-title reveal d1" data-i18n-html="home.position.h2">Tailored, not templated. <em>Private, not published.</em></h2>
+    <p class="lede reveal d2" data-i18n="home.position.lead">Most AI tools are general products pointed at your business from the outside. We do the opposite. We come in, study how your team actually works, and build a private AI system that fits it — yours to run, yours to own.</p>
 
     <div class="grid-3">
       <article class="card reveal">
-        <h3 data-i18n="home.position.card1.title">Works where you work</h3>
-        <p data-i18n="home.position.card1.body">Slack, Teams, KakaoTalk, email. Your team messages the Fellow exactly as they would a colleague. Nothing to install.</p>
+        <h3 data-i18n="home.position.card1.title">Built on your data</h3>
+        <p data-i18n="home.position.card1.body">Fine-tuned on your documents, your workflows, your terminology. It knows your business because your business is all it knows.</p>
       </article>
       <article class="card reveal d1">
-        <h3 data-i18n="home.position.card2.title">Learns and remembers</h3>
-        <p data-i18n="home.position.card2.body">Your clients, your tone, your formats. After two weeks it starts anticipating what you need. After a month it feels like a long-term hire.</p>
+        <h3 data-i18n="home.position.card2.title">Runs where you choose</h3>
+        <p data-i18n="home.position.card2.body">On hardware inside your office by default. PIPA-compliant by construction. Cloud models stay off unless you decide to allow them for a specific task.</p>
       </article>
       <article class="card reveal d2">
-        <h3 data-i18n="home.position.card3.title">Bilingual by default</h3>
-        <p data-i18n="home.position.card3.body">Korean and English natively. Formal with local partners, relaxed with your European headquarters. Adapts without being told.</p>
+        <h3 data-i18n="home.position.card3.title">One partner, start to finish</h3>
+        <p data-i18n="home.position.card3.body">We assess, we design, we build, we maintain. No platform to learn. No IT burden. One team taking responsibility for the whole system.</p>
       </article>
     </div>
 
     <div class="home-position-quote reveal">
-      <blockquote data-i18n="home.quote.text">"The best colleague you have ever had — one who never forgets, never burns out, and always shows up."</blockquote>
+      <blockquote data-i18n="home.quote.text">"A private AI team that knows your business — because your business is all it knows."</blockquote>
       <cite data-i18n="home.quote.attr">The Smart Fellow promise</cite>
     </div>
   </div>
@@ -338,24 +422,25 @@
   <div class="section-inner">
     <div class="home-sov-grid">
       <div class="home-sov-copy">
-        <p class="eyebrow reveal" data-i18n="home.sov.eyebrow">Data sovereignty</p>
+        <p class="eyebrow reveal" data-i18n="home.sov.eyebrow">Data stays where it belongs</p>
         <h2 class="section-title reveal d1" data-i18n-html="home.sov.h2">Your data stays <em>inside your building.</em></h2>
-        <p class="lede reveal d2" data-i18n="home.sov.lead">Cloud AI tools process your documents on someone else's servers. Smart Fellow runs on dedicated hardware in your office. Nothing leaves unless you decide it does.</p>
+        <p class="lede reveal d2" data-i18n="home.sov.lead">Cloud AI tools process your documents on someone else's servers. The AI systems we build run on dedicated hardware inside your office. Nothing leaves unless you explicitly decide it should — and then only for the tasks you approve.</p>
         <ul class="spec-list reveal d3">
-          <li data-i18n="home.sov.point1">PIPA compliant by construction.</li>
-          <li data-i18n="home.sov.point2">NDA-safe for confidential documents.</li>
-          <li data-i18n="home.sov.point3">Cloud API optional — your decision, any time.</li>
+          <li data-i18n="home.sov.point1">PIPA-compliant by construction, not by promise.</li>
+          <li data-i18n="home.sov.point2">Safe for confidential documents, client files, and sensitive operating context.</li>
+          <li data-i18n="home.sov.point3">Cloud models optional — your decision, on a per-task basis, any time.</li>
+          <li data-i18n="home.sov.point4">Air-gapped operation available for the most sensitive workflows.</li>
         </ul>
       </div>
 
       <div class="home-diagram reveal d2">
         <div class="sov-row">
-          <span class="sov-row-label" data-i18n="home.sov.diagram.row1.label">Your office hardware</span>
-          <span class="sov-tag is-local" data-i18n="home.sov.diagram.row1.value">Running here</span>
+          <span class="sov-row-label" data-i18n="home.sov.diagram.row1.label">Hardware in your office</span>
+          <span class="sov-tag is-local" data-i18n="home.sov.diagram.row1.value">You own it</span>
         </div>
         <div class="sov-row">
           <span class="sov-row-label" data-i18n="home.sov.diagram.row2.label">Local AI model</span>
-          <span class="sov-tag is-local" data-i18n="home.sov.diagram.row2.value">Local</span>
+          <span class="sov-tag is-local" data-i18n="home.sov.diagram.row2.value">Fine-tuned on your data</span>
         </div>
         <div class="sov-row">
           <span class="sov-row-label" data-i18n="home.sov.diagram.row3.label">Document memory</span>
@@ -367,83 +452,105 @@
         </div>
         <div class="sov-row">
           <span class="sov-row-label" data-i18n="home.sov.diagram.row5.label">External servers</span>
-          <span class="sov-tag is-muted" data-i18n="home.sov.diagram.row5.value">Never</span>
+          <span class="sov-tag is-muted" data-i18n="home.sov.diagram.row5.value">Never by default</span>
         </div>
         <div class="sov-row">
           <span class="sov-row-label" data-i18n="home.sov.diagram.row6.label">Cloud model APIs</span>
-          <span class="sov-tag is-muted" data-i18n="home.sov.diagram.row6.value">Off by default</span>
+          <span class="sov-tag is-muted" data-i18n="home.sov.diagram.row6.value">Only if approved</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--soft" id="roles">
+<section class="section section--soft home-blueprints" id="blueprints">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="home.roles.eyebrow">Available roles</p>
-    <h2 class="section-title reveal d1" data-i18n-html="home.roles.h2">Pick the role your team needs. <em>They start this week.</em></h2>
-    <p class="lede reveal d2" data-i18n="home.roles.lead">Every Fellow arrives trained on their domain and ready to work. Customised to your business during onboarding.</p>
+    <p class="eyebrow reveal" data-i18n="home.blueprints.eyebrow">What we build</p>
+    <h2 class="section-title reveal d1" data-i18n-html="home.blueprints.h2">Every system is tailored. <em>These are a few shapes it usually takes.</em></h2>
+    <p class="lede reveal d2" data-i18n="home.blueprints.lead">Each engagement starts from your workflows, not from a product catalogue. The examples below are patterns we see often — starting points to picture what a private AI team could look like inside your company.</p>
 
-    <div class="role-grid reveal d2">
-      <a href="#contact" class="role-item is-featured">
-        <div class="role-item-badge" data-i18n="home.roles.badge">Most hired</div>
-        <div class="role-item-name" data-i18n="home.roles.card1.title">Confidential Document Analyst</div>
-        <div class="role-item-desc" data-i18n="home.roles.card1.body">Contracts, due diligence, board materials, internal reports. Structured summaries and risk flags — all local.</div>
-        <div class="role-item-foot">
-          <div class="role-item-price" data-i18n-html="home.roles.card1.price">₩2.8M <span>/ month</span></div>
-          <span class="role-hire-link" data-i18n="home.roles.cta">Hire →</span>
+    <div class="blueprint-grid reveal d2">
+      <article class="blueprint-card">
+        <span class="blueprint-tag" data-i18n="home.blueprints.card1.tag">Legal &amp; compliance</span>
+        <h3 data-i18n="home.blueprints.card1.title">A private AI team for a legal or compliance practice</h3>
+        <p data-i18n="home.blueprints.card1.body">Reviews contracts against your playbook, summarises due diligence documents, drafts internal memos in your house style, and surfaces risk flags — all on hardware that never leaves the office.</p>
+        <div class="blueprint-meta">
+          <span class="blueprint-chip" data-i18n="home.blueprints.card1.chip1">Contract review</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card1.chip2">Due diligence</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card1.chip3">Internal memos</span>
         </div>
-      </a>
-      <a href="#contact" class="role-item">
-        <div class="role-item-name" data-i18n="home.roles.card2.title">R&amp;D Knowledge Analyst</div>
-        <div class="role-item-desc" data-i18n="home.roles.card2.body">Technical specs, test results, SOPs, supplier documents. Briefings without sending anything outside.</div>
-        <div class="role-item-foot">
-          <div class="role-item-price" data-i18n-html="home.roles.card2.price">₩2.8M <span>/ month</span></div>
-          <span class="role-hire-link" data-i18n="home.roles.cta">Hire →</span>
+      </article>
+      <article class="blueprint-card">
+        <span class="blueprint-tag" data-i18n="home.blueprints.card2.tag">R&amp;D &amp; manufacturing</span>
+        <h3 data-i18n="home.blueprints.card2.title">A private AI team for R&amp;D and technical knowledge</h3>
+        <p data-i18n="home.blueprints.card2.body">Reads technical specs, test results, SOPs, and supplier documents. Answers questions across years of internal research without any of it touching an external model.</p>
+        <div class="blueprint-meta">
+          <span class="blueprint-chip" data-i18n="home.blueprints.card2.chip1">Technical Q&amp;A</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card2.chip2">Spec search</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card2.chip3">Report drafting</span>
         </div>
-      </a>
-      <a href="#contact" class="role-item">
-        <div class="role-item-name" data-i18n="home.roles.card3.title">Sensitive Data Ops</div>
-        <div class="role-item-desc" data-i18n="home.roles.card3.body">Customer records, CRM exports, operational data. Clean, structured, local. No third-party exports needed.</div>
-        <div class="role-item-foot">
-          <div class="role-item-price" data-i18n-html="home.roles.card3.price">₩2.8M <span>/ month</span></div>
-          <span class="role-hire-link" data-i18n="home.roles.cta">Hire →</span>
+      </article>
+      <article class="blueprint-card">
+        <span class="blueprint-tag" data-i18n="home.blueprints.card3.tag">Operations &amp; customer data</span>
+        <h3 data-i18n="home.blueprints.card3.title">A private AI team for sensitive operations</h3>
+        <p data-i18n="home.blueprints.card3.body">Works across customer records, CRM exports, and operational data. Cleans, structures, summarises — without routing personal data through third-party services.</p>
+        <div class="blueprint-meta">
+          <span class="blueprint-chip" data-i18n="home.blueprints.card3.chip1">Data ops</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card3.chip2">CRM cleanup</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card3.chip3">Reporting</span>
         </div>
-      </a>
-      <a href="#contact" class="role-item">
-        <div class="role-item-name" data-i18n="home.roles.card4.title">Tailored Fellow</div>
-        <div class="role-item-desc" data-i18n="home.roles.card4.body">A role that doesn't exist yet. We train a Fellow for your industry, processes, and terminology from the ground up.</div>
-        <div class="role-item-foot">
-          <div class="role-item-price is-custom" data-i18n="home.roles.card4.price">Custom pricing</div>
-          <span class="role-hire-link">Talk to us →</span>
+      </article>
+      <article class="blueprint-card">
+        <span class="blueprint-tag" data-i18n="home.blueprints.card4.tag">Cross-border &amp; confidential</span>
+        <h3 data-i18n="home.blueprints.card4.title">A private AI team for confidential multilingual work</h3>
+        <p data-i18n="home.blueprints.card4.body">Translates, adapts, and analyses documents across Korean, English, and French while keeping everything on dedicated hardware. Purpose-built for teams working between headquarters, regulators, and local clients.</p>
+        <div class="blueprint-meta">
+          <span class="blueprint-chip" data-i18n="home.blueprints.card4.chip1">Translation</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card4.chip2">Document analysis</span>
+          <span class="blueprint-chip" data-i18n="home.blueprints.card4.chip3">Air-gapped option</span>
         </div>
-      </a>
+      </article>
     </div>
+
+    <p class="home-blueprints-note reveal d3" data-i18n="home.blueprints.note">None of these are fixed products. They are recognisable shapes we have already designed for. Your system is scoped from scratch during the free AI Readiness Review.</p>
   </div>
 </section>
 
 <section class="section home-how" id="how">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="home.how.eyebrow">Getting started</p>
-    <h2 class="section-title reveal d1" data-i18n-html="home.how.h2">From your first call to <em>your Fellow's first task.</em></h2>
-    <p class="lede reveal d2" data-i18n="home.how.lead">No technical complexity. No IT department. We handle everything.</p>
+    <p class="eyebrow reveal" data-i18n="home.how.eyebrow">How we work</p>
+    <h2 class="section-title reveal d1" data-i18n-html="home.how.h2">Four phases. <em>One clear relationship.</em></h2>
+    <p class="lede reveal d2" data-i18n="home.how.lead">You do not need an IT department, a procurement process, or internal AI expertise. We run the whole engagement, from the first conversation through ongoing maintenance.</p>
 
-    <div class="grid-3">
-      <article class="step-card reveal">
-        <div class="display-number">01</div>
-        <h3 data-i18n="home.how.step1.title">Setup and first workflows</h3>
-        <p data-i18n="home.how.step1.body">We deliver and configure the hardware. Define the role, access, and communication preferences. Your Fellow handles its first real tasks in week one.</p>
+    <div class="phase-grid reveal d2">
+      <article class="phase-card">
+        <span class="phase-number">01</span>
+        <h3 data-i18n="home.how.phase1.title">Assess</h3>
+        <p data-i18n="home.how.phase1.body">A written plan for your private AI team. We study your workflows, your systems, and your data sensitivity. You walk away with a report and a quote.</p>
+        <span class="phase-meta" data-i18n="home.how.phase1.meta">Free · 48-hour turnaround</span>
       </article>
-      <article class="step-card reveal d1">
-        <div class="display-number">02</div>
-        <h3 data-i18n="home.how.step2.title">Calibration</h3>
-        <p data-i18n="home.how.step2.body">Tone, format, and priorities refined based on early output. By the end of week two, your Fellow understands how your team works.</p>
+      <article class="phase-card">
+        <span class="phase-number">02</span>
+        <h3 data-i18n="home.how.phase2.title">Design &amp; quote</h3>
+        <p data-i18n="home.how.phase2.body">A fixed-scope proposal: architecture, integrations, fine-tuning plan, timeline, and price. You know what you are getting before anything is built.</p>
+        <span class="phase-meta" data-i18n="home.how.phase2.meta">Fixed quote · No surprises</span>
       </article>
-      <article class="step-card reveal d2">
-        <div class="display-number">03</div>
-        <h3 data-i18n="home.how.step3.title">Gets sharper over time</h3>
-        <p data-i18n="home.how.step3.body">Memory deepens. New tasks get added. Workflows get faster. The longer your Fellow stays, the more valuable it becomes.</p>
+      <article class="phase-card">
+        <span class="phase-number">03</span>
+        <h3 data-i18n="home.how.phase3.title">Build &amp; integrate</h3>
+        <p data-i18n="home.how.phase3.body">Hardware deployed on-site, models fine-tuned on your data, integrations wired into Slack, KakaoTalk, Teams, email, and your internal systems.</p>
+        <span class="phase-meta" data-i18n="home.how.phase3.meta">Typically 4–12 weeks</span>
       </article>
+      <article class="phase-card">
+        <span class="phase-number">04</span>
+        <h3 data-i18n="home.how.phase4.title">Maintain &amp; evolve</h3>
+        <p data-i18n="home.how.phase4.body">A monthly partnership: monitoring, model updates, new skills trained on request, security patches. Predictable, not surprising.</p>
+        <span class="phase-meta" data-i18n="home.how.phase4.meta">Ongoing · Flat monthly</span>
+      </article>
+    </div>
+
+    <div class="home-how-cta reveal d3">
+      <a href="/how-we-work.html" class="btn-outline" data-i18n="home.how.cta">Read the full process</a>
     </div>
   </div>
 </section>
@@ -451,11 +558,11 @@
 <section class="section section--green" id="contact">
   <div class="section-inner">
     <div class="page-cta-inner">
-      <p class="eyebrow-light reveal" data-i18n="home.cta.eyebrow">Next step</p>
-      <h2 class="section-title reveal d1" data-i18n-html="home.cta.h2">Ready to meet <em>your Fellow?</em></h2>
-      <p class="lede reveal d2" data-i18n="home.cta.body">Book a free 30-minute call. We will walk through your needs and show you exactly what a Fellow would look like in your workflow.</p>
+      <p class="eyebrow-light reveal" data-i18n="home.cta.eyebrow">Start with the free review</p>
+      <h2 class="section-title reveal d1" data-i18n-html="home.cta.h2">Start with a written plan. <em>No commitment.</em></h2>
+      <p class="lede reveal d2" data-i18n="home.cta.body">The AI Readiness Review is free. A short workshop, a look at your workflows, a written report identifying where a private AI team would actually help — and a fixed quote if it's worth building.</p>
       <div class="page-cta-actions reveal d3">
-        <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="home.cta.primary">Book a free call</button>
+        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="home.cta.primary">Book a free AI readiness review</a>
         <a href="/en/technology.html" class="btn-outline" data-i18n="home.cta.secondary">Review the architecture</a>
       </div>
       <div class="page-cta-note reveal d3" data-i18n="home.cta.note">Korean · English · French · No commitment required</div>
@@ -467,10 +574,11 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
-      <li><a href="#how" data-i18n="footer.how">How it works</a></li>
-      <li><a href="/en/technology.html" data-i18n="footer.tech">The technology</a></li>
-      <li><a href="#roles" data-i18n="footer.roles">Roles</a></li>
-      <li><a href="#contact" data-i18n="footer.contact">Contact</a></li>
+      <li><a href="/how-we-work.html" data-i18n="footer.how">How we work</a></li>
+      <li><a href="/#blueprints" data-i18n="footer.blueprints">What we build</a></li>
+      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/en/technology.html" data-i18n="footer.tech">Technology</a></li>
+      <li><a href="/assessment/" data-i18n="footer.contact">Free review</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>
   </div>
@@ -479,6 +587,7 @@
 <script>window.SF_CONFIG={"locale":"en"};</script>
 
 <script src="/i18n.js"></script>
+<script src="/assessment-modal.js" defer></script>
 <script>
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

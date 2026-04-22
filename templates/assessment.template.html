@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page.title">Free AI readiness review — Smart Fellow</title>
+<meta name="description" content="A free, structured review of how a private AI team could help your company. Workshop, interviews, written report, and a fixed quote if it's worth building.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="stylesheet" href="shared.css">
+<style>
+.assess-hero {
+  padding: 5rem 0 4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.assess-hero .lede { margin-top: 1.25rem; }
+
+.assess-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: 2.5rem;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.assess-summary-item {
+  background: var(--surface);
+  padding: 1.1rem 1.3rem;
+}
+
+.assess-summary-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.3rem;
+}
+
+.assess-summary-value {
+  display: block;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+/* Includes grid */
+.assess-includes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.assess-include {
+  padding: 1.3rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.assess-include h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.45rem;
+}
+
+.assess-include p {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* Form */
+.assess-form-shell {
+  margin-top: 2rem;
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  max-width: 720px;
+}
+
+.assess-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.assess-form-grid .field-full { grid-column: 1 / -1; }
+
+.assess-field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.assess-field .hint {
+  display: block;
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-top: 0.3rem;
+}
+
+.assess-field input[type="text"],
+.assess-field input[type="email"],
+.assess-field select,
+.assess-field textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-family: inherit;
+}
+
+.assess-field input:focus,
+.assess-field select:focus,
+.assess-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+.assess-field textarea {
+  min-height: 110px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.assess-checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.assess-checkboxes label {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-bottom: 0;
+}
+
+.assess-checkboxes input[type="checkbox"] {
+  accent-color: var(--accent);
+}
+
+.assess-submit {
+  margin-top: 1.75rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.assess-submit .btn-dark {
+  cursor: pointer;
+  border: 0;
+  font-family: inherit;
+}
+
+.assess-submit-note {
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.assess-form-shell[data-state="sending"] .assess-form-grid,
+.assess-form-shell[data-state="sending"] .assess-submit { opacity: 0.55; pointer-events: none; }
+
+.assess-form-status {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: calc(var(--radius) * 0.75);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: none;
+}
+.assess-form-shell[data-state="error"] .assess-form-status--error { display: block; background: rgba(201, 62, 62, 0.08); color: #8a2e2e; }
+.assess-form-status--error a { color: inherit; text-decoration: underline; }
+
+.assess-success {
+  display: none;
+  margin-top: 2rem;
+  padding: 2.5rem clamp(1.75rem, 3.5vw, 3rem);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.assess-success.is-visible { display: block; }
+.assess-success h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  margin: 0 0 0.9rem;
+  color: var(--ink);
+}
+.assess-success h3 em { font-style: italic; color: var(--accent); }
+.assess-success p {
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 0 1.5rem;
+}
+.assess-success .assess-success-actions {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.assess-success-note {
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Callout */
+.assess-callout {
+  margin-top: 2rem;
+  padding: 1.75rem 2rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-radius: var(--radius);
+}
+
+.assess-callout .eyebrow-light {
+  color: rgba(247, 245, 239, 0.7);
+  margin-bottom: 0.75rem;
+}
+
+.assess-callout p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.55;
+  color: rgba(247, 245, 239, 0.95);
+}
+
+@media (max-width: 980px) {
+  .assess-summary { grid-template-columns: repeat(2, 1fr); }
+  .assess-includes { grid-template-columns: 1fr; }
+  .assess-form-grid { grid-template-columns: 1fr; }
+  .assess-checkboxes { grid-template-columns: 1fr; }
+  .assess-form-shell { padding: 1.75rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Smart Fellow</a>
+  <ul class="nav-links">
+    <li><a href="/how-we-work.html" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/#blueprints" data-i18n="nav.blueprints">What we build</a></li>
+    <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/technology.html" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/assessment/" class="active" data-i18n="nav.assessment">Free review</a></li>
+  </ul>
+  <div class="nav-right">
+    <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">한국어</button>
+    <a href="#form" class="nav-cta" data-i18n="nav.cta">Book a free review</a>
+  </div>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <ul>
+    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">What we build</a></li>
+    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Free review</a></li>
+  </ul>
+  <a href="#form" class="nav-cta" onclick="closeMobileMenu()" data-i18n="nav.cta">Book a free review</a>
+  <button id="lang-toggle-mobile" class="lang-toggle-mobile">한국어</button>
+</div>
+
+<section class="assess-hero">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="assess.hero.eyebrow">Free AI readiness review</p>
+    <h1 class="hero-title reveal d1" data-i18n-html="assess.hero.h1">A written plan for a private AI team. <em>No cost. No commitment.</em></h1>
+    <p class="lede reveal d2" data-i18n="assess.hero.body">Tell us a little about your company and your workflows. If there's a fit, we run a short structured review together and leave you with a written report — whether or not you end up building anything.</p>
+
+    <div class="assess-summary reveal d3">
+      <div class="assess-summary-item">
+        <span class="assess-summary-label" data-i18n="assess.summary.l1.label">Cost</span>
+        <span class="assess-summary-value" data-i18n="assess.summary.l1.value">Free</span>
+      </div>
+      <div class="assess-summary-item">
+        <span class="assess-summary-label" data-i18n="assess.summary.l2.label">Duration</span>
+        <span class="assess-summary-value" data-i18n="assess.summary.l2.value">1–2 weeks</span>
+      </div>
+      <div class="assess-summary-item">
+        <span class="assess-summary-label" data-i18n="assess.summary.l3.label">Your time</span>
+        <span class="assess-summary-value" data-i18n="assess.summary.l3.value">Workshop + interviews</span>
+      </div>
+      <div class="assess-summary-item">
+        <span class="assess-summary-label" data-i18n="assess.summary.l4.label">Deliverable</span>
+        <span class="assess-summary-value" data-i18n="assess.summary.l4.value">Written report + quote</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What's included -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="assess.includes.eyebrow">What the review includes</p>
+    <h2 class="section-title reveal d1" data-i18n-html="assess.includes.h2">A serious piece of work, not a sales meeting.</h2>
+    <p class="lede reveal d2" data-i18n="assess.includes.lead">We take the same time and care we would on a paid engagement. The result is a written plan you can use internally — even if you decide the right answer is to wait.</p>
+
+    <div class="assess-includes reveal d2">
+      <div class="assess-include">
+        <h3 data-i18n="assess.include.i1.title">Workshop with your team</h3>
+        <p data-i18n="assess.include.i1.body">A structured 90-minute conversation with the people who would actually use the system. We listen more than we talk.</p>
+      </div>
+      <div class="assess-include">
+        <h3 data-i18n="assess.include.i2.title">Systems and data walkthrough</h3>
+        <p data-i18n="assess.include.i2.body">A quick look at your current tools, document types, and sensitivity requirements. We flag what should stay local and what could be outside.</p>
+      </div>
+      <div class="assess-include">
+        <h3 data-i18n="assess.include.i3.title">Two or three user interviews</h3>
+        <p data-i18n="assess.include.i3.body">Short calls with two or three of the people who do the work today. We find where AI would actually save time, and where it would just get in the way.</p>
+      </div>
+      <div class="assess-include">
+        <h3 data-i18n="assess.include.i4.title">Written report and fixed quote</h3>
+        <p data-i18n="assess.include.i4.body">A document identifying highest-leverage workflows, the right on-prem architecture for your sensitivity needs, and — if we recommend building — a fixed quote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Form -->
+<section class="section section--soft" id="form">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="assess.form.eyebrow">Start the conversation</p>
+    <h2 class="section-title reveal d1" data-i18n-html="assess.form.h2">Tell us a little about your company. <em>We reply within two business days.</em></h2>
+    <p class="lede reveal d2" data-i18n="assess.form.lead">The more concrete you are about what you'd like AI to help with and what data is involved, the more useful our first conversation will be.</p>
+
+    <form id="assess-form" class="assess-form-shell reveal d2" action="https://formspree.io/f/xkokqppr" method="POST" data-calendly="https://calendly.com/jordan-studiomonjo/30min">
+      <input type="hidden" name="_subject" value="AI Readiness Review — new request">
+
+      <div class="assess-form-grid">
+        <div class="assess-field">
+          <label for="name" data-i18n="assess.form.f.name">Your name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="assess-field">
+          <label for="role" data-i18n="assess.form.f.role">Your role</label>
+          <input type="text" id="role" name="role" required>
+        </div>
+        <div class="assess-field">
+          <label for="email" data-i18n="assess.form.f.email">Work email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="assess-field">
+          <label for="company" data-i18n="assess.form.f.company">Company</label>
+          <input type="text" id="company" name="company" required>
+        </div>
+        <div class="assess-field">
+          <label for="industry" data-i18n="assess.form.f.industry">Industry</label>
+          <input type="text" id="industry" name="industry" required>
+        </div>
+        <div class="assess-field">
+          <label for="country" data-i18n="assess.form.f.country">Country</label>
+          <input type="text" id="country" name="country" required>
+        </div>
+        <div class="assess-field">
+          <label for="team_size" data-i18n="assess.form.f.teamSize">Team size</label>
+          <select id="team_size" name="team_size" required>
+            <option value="" data-i18n="assess.form.o.teamSize.prompt">Select a range</option>
+            <option value="1-10" data-i18n="assess.form.o.teamSize.v1">1–10 people</option>
+            <option value="11-50" data-i18n="assess.form.o.teamSize.v2">11–50 people</option>
+            <option value="51-200" data-i18n="assess.form.o.teamSize.v3">51–200 people</option>
+            <option value="201-500" data-i18n="assess.form.o.teamSize.v4">201–500 people</option>
+            <option value="500+" data-i18n="assess.form.o.teamSize.v5">500+ people</option>
+          </select>
+        </div>
+        <div class="assess-field">
+          <label for="timeline" data-i18n="assess.form.f.timeline">Timeline</label>
+          <select id="timeline" name="timeline" required>
+            <option value="" data-i18n="assess.form.o.timeline.prompt">Select a range</option>
+            <option value="exploring" data-i18n="assess.form.o.timeline.v1">Just exploring</option>
+            <option value="3-6-months" data-i18n="assess.form.o.timeline.v2">Within 3–6 months</option>
+            <option value="soon" data-i18n="assess.form.o.timeline.v3">Soon — actively planning</option>
+            <option value="urgent" data-i18n="assess.form.o.timeline.v4">Urgent — starting now</option>
+          </select>
+        </div>
+        <div class="assess-field field-full">
+          <label data-i18n="assess.form.f.workflows">Which workflows would you like AI to help with?</label>
+          <div class="assess-checkboxes">
+            <label><input type="checkbox" name="workflows" value="document_analysis"> <span data-i18n="assess.form.w.w1">Document analysis &amp; summaries</span></label>
+            <label><input type="checkbox" name="workflows" value="contract_review"> <span data-i18n="assess.form.w.w2">Contract &amp; legal review</span></label>
+            <label><input type="checkbox" name="workflows" value="rnd_knowledge"> <span data-i18n="assess.form.w.w3">R&amp;D &amp; technical knowledge</span></label>
+            <label><input type="checkbox" name="workflows" value="customer_data"> <span data-i18n="assess.form.w.w4">Customer data &amp; CRM operations</span></label>
+            <label><input type="checkbox" name="workflows" value="translation"> <span data-i18n="assess.form.w.w5">Translation &amp; multilingual work</span></label>
+            <label><input type="checkbox" name="workflows" value="internal_qa"> <span data-i18n="assess.form.w.w6">Internal Q&amp;A across company documents</span></label>
+            <label><input type="checkbox" name="workflows" value="drafting"> <span data-i18n="assess.form.w.w7">Drafting reports, emails, memos</span></label>
+            <label><input type="checkbox" name="workflows" value="other"> <span data-i18n="assess.form.w.w8">Something else (describe below)</span></label>
+          </div>
+        </div>
+        <div class="assess-field field-full">
+          <label for="sensitivity" data-i18n="assess.form.f.sensitivity">How sensitive is the data involved?</label>
+          <select id="sensitivity" name="sensitivity" required>
+            <option value="" data-i18n="assess.form.o.sensitivity.prompt">Select a level</option>
+            <option value="routine" data-i18n="assess.form.o.sensitivity.v1">Routine business material</option>
+            <option value="confidential" data-i18n="assess.form.o.sensitivity.v2">Confidential — client or internal material</option>
+            <option value="regulated" data-i18n="assess.form.o.sensitivity.v3">Regulated — legal, financial, medical, or personal data</option>
+            <option value="critical" data-i18n="assess.form.o.sensitivity.v4">Highly sensitive — trade secrets, M&amp;A, investigations</option>
+          </select>
+        </div>
+        <div class="assess-field field-full">
+          <label for="current_ai" data-i18n="assess.form.f.currentAi">Current AI usage</label>
+          <select id="current_ai" name="current_ai" required>
+            <option value="" data-i18n="assess.form.o.currentAi.prompt">Select a description</option>
+            <option value="none" data-i18n="assess.form.o.currentAi.v1">None yet</option>
+            <option value="cloud" data-i18n="assess.form.o.currentAi.v2">Cloud tools (ChatGPT, Claude, Gemini, etc.)</option>
+            <option value="local" data-i18n="assess.form.o.currentAi.v3">Local or self-hosted models</option>
+            <option value="mixed" data-i18n="assess.form.o.currentAi.v4">Mixed — cloud and local</option>
+          </select>
+        </div>
+        <div class="assess-field field-full">
+          <label for="context" data-i18n="assess.form.f.context">What should we know about your situation?</label>
+          <textarea id="context" name="context" placeholder="Workflows, pain points, constraints, specific questions…" data-i18n-placeholder="assess.form.f.contextPlaceholder"></textarea>
+          <span class="hint" data-i18n="assess.form.f.contextHint">The more concrete, the more useful our reply.</span>
+        </div>
+      </div>
+
+      <div class="assess-submit">
+        <button type="submit" class="btn-dark" id="assess-submit-btn" data-i18n="assess.form.submit" data-i18n-sending="assess.form.sending">Send request</button>
+        <span class="assess-submit-note" data-i18n="assess.form.submitNote">We reply within two business days.</span>
+      </div>
+
+      <p class="assess-form-status assess-form-status--error" id="assess-form-error" role="alert" data-i18n-html="assess.form.error.body">Something went wrong sending your form. If this keeps happening, <a href="https://calendly.com/jordan-studiomonjo/30min" target="_blank" rel="noopener">book a time directly</a> and we'll gather the rest over email.</p>
+    </form>
+
+    <div class="assess-success reveal" id="assess-success" aria-live="polite">
+      <h3 data-i18n-html="assess.form.success.title">Request received. <em>Now pick a time.</em></h3>
+      <p data-i18n="assess.form.success.body">Your details are on their way to us. Pick a 30-minute slot that works for you — your name and email are already filled in, and we'll have the qualifier in hand when we meet.</p>
+      <div class="assess-success-actions">
+        <a href="https://calendly.com/jordan-studiomonjo/30min" target="_blank" rel="noopener" class="btn-dark" id="assess-success-cta" data-i18n="assess.form.success.cta">Pick a time on the calendar</a>
+        <span class="assess-success-note" data-i18n="assess.form.success.note">Opens Calendly — takes under a minute</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who it's for -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="assess.fit.eyebrow">Who this is for</p>
+    <h2 class="section-title reveal d1" data-i18n-html="assess.fit.h2">If any of these sound familiar, the review will be useful.</h2>
+
+    <div class="grid-3" style="margin-top: 2rem">
+      <article class="card reveal">
+        <h3 data-i18n="assess.fit.card1.title">Your data is too sensitive for cloud AI</h3>
+        <p data-i18n="assess.fit.card1.body">Regulated industries, confidential client material, trade secrets, or personal data that cannot leave your environment by policy.</p>
+      </article>
+      <article class="card reveal d1">
+        <h3 data-i18n="assess.fit.card2.title">You have real documents and real workflows</h3>
+        <p data-i18n="assess.fit.card2.body">Years of internal documentation and well-defined processes that an AI system could learn, rather than a blank slate.</p>
+      </article>
+      <article class="card reveal d2">
+        <h3 data-i18n="assess.fit.card3.title">You want to own the system, not rent one</h3>
+        <p data-i18n="assess.fit.card3.body">You prefer a one-time build with predictable maintenance over a recurring subscription to someone else's platform.</p>
+      </article>
+    </div>
+
+    <div class="assess-callout reveal">
+      <p class="eyebrow-light" data-i18n="assess.fit.note.eyebrow">A note on honesty</p>
+      <p data-i18n="assess.fit.note.body">If after the review we believe a cloud tool would genuinely serve you better, or that the timing is wrong, we will say so. The review is free precisely so neither side has to pretend otherwise.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smart Fellow</div>
+    <ul class="footer-links">
+      <li><a href="/how-we-work.html" data-i18n="footer.how">How we work</a></li>
+      <li><a href="/#blueprints" data-i18n="footer.blueprints">What we build</a></li>
+      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/technology.html" data-i18n="footer.tech">Technology</a></li>
+      <li><a href="/assessment/" data-i18n="footer.contact">Free review</a></li>
+    </ul>
+    <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
+
+navToggle.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+function closeMobileMenu() {
+  navMobile.classList.remove('open');
+  navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+(function () {
+  const navEl = document.querySelector('nav');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (navMobile.classList.contains('open')) {
+      lastY = y;
+      return;
+    }
+    if (Math.abs(y - lastY) < 8) return;
+    if (y <= 0 || y < lastY) {
+      navEl.classList.remove('nav-hidden');
+    } else {
+      navEl.classList.add('nav-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+
+(function () {
+  const form = document.getElementById('assess-form');
+  if (!form) return;
+
+  const successEl = document.getElementById('assess-success');
+  const successCta = document.getElementById('assess-success-cta');
+  const errorEl = document.getElementById('assess-form-error');
+  const submitBtn = document.getElementById('assess-submit-btn');
+  const calendlyBase = form.getAttribute('data-calendly') || '';
+
+  let originalLabel = '';
+  function setButtonLabel(state) {
+    if (!submitBtn) return;
+    if (!originalLabel) originalLabel = submitBtn.textContent;
+    if (state === 'sending') {
+      submitBtn.textContent = submitBtn.getAttribute('data-label-sending') || 'Sending…';
+    } else {
+      submitBtn.textContent = originalLabel;
+    }
+  }
+
+  function buildCalendlyUrl(data) {
+    if (!calendlyBase) return '';
+    const name = (data.get('name') || '').toString().trim();
+    const email = (data.get('email') || '').toString().trim();
+    const company = (data.get('company') || '').toString().trim();
+    const role = (data.get('role') || '').toString().trim();
+    const timeline = (data.get('timeline') || '').toString().trim();
+    const industry = (data.get('industry') || '').toString().trim();
+    const params = new URLSearchParams();
+    if (name) params.set('name', name);
+    if (email) params.set('email', email);
+    const summaryParts = [company, role, industry, timeline].filter(Boolean);
+    if (summaryParts.length) params.set('a1', summaryParts.join(' · '));
+    const query = params.toString();
+    return query ? calendlyBase + (calendlyBase.indexOf('?') === -1 ? '?' : '&') + query : calendlyBase;
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    form.setAttribute('data-state', 'sending');
+    setButtonLabel('sending');
+
+    const data = new FormData(form);
+    const calendlyUrl = buildCalendlyUrl(data);
+    if (calendlyUrl && successCta) successCta.setAttribute('href', calendlyUrl);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (!response.ok) throw new Error('Submission failed with status ' + response.status);
+      form.setAttribute('data-state', 'success');
+      form.style.display = 'none';
+      if (successEl) {
+        successEl.classList.add('is-visible');
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }).catch(function () {
+      form.setAttribute('data-state', 'error');
+      setButtonLabel('default');
+      if (errorEl) errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+})();
+</script>
+</body>
+</html>

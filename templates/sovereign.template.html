@@ -187,46 +187,16 @@
   margin-top: 2rem;
 }
 
-/* ── Scramble animation ── */
-.sov-scramble {
-  padding: 5rem 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: var(--surface);
-}
-
-.sov-scramble-inner {
-  text-align: center;
-}
-
-.scramble-display {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(3rem, 9vw, 7.5rem);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  white-space: nowrap;
-}
-
-.scramble-word {
+/* ── Nav-logo scramble (Smart → Sealed) ── */
+.nav-logo .scramble-word {
   display: inline-block;
+  min-width: 4.3ch;
   color: var(--accent);
-  min-width: 4.2ch;
-  transition: color 0.5s ease;
+  transition: color 0.6s ease;
 }
 
-.scramble-word.is-settled {
-  color: var(--ink);
-}
-
-.scramble-caption {
-  margin-top: 1.5rem;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
+.nav-logo .scramble-word.is-settled {
+  color: inherit;
 }
 
 @media (max-width: 980px) {
@@ -238,26 +208,23 @@
   .sov-security-features {
     grid-template-columns: 1fr;
   }
-
-  .scramble-display {
-    white-space: normal;
-  }
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">Smart Fellow</a>
+  <a href="/" class="nav-logo"><span class="scramble-word" id="scramble-word">Smart</span>&nbsp;Fellow</a>
   <ul class="nav-links">
-    <li><a href="/#how" data-i18n="nav.how">How it works</a></li>
-    <li><a href="/technology.html" data-i18n="nav.technology">The technology</a></li>
-    <li><a href="/#roles" data-i18n="nav.roles">Roles</a></li>
-    <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="/how-we-work.html" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/#blueprints" data-i18n="nav.blueprints">What we build</a></li>
+    <li><a href="/sovereign/" class="is-active" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/technology.html" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/assessment/" data-i18n="nav.assessment">Free review</a></li>
   </ul>
   <div class="nav-right">
     <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">한국어</button>
-    <a href="/#contact" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Book a call</a>
+    <a href="/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">Book a free review</a>
   </div>
   <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -266,12 +233,13 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
-    <li><a href="/#how" onclick="closeMobileMenu()" data-i18n="nav.how">How it works</a></li>
-    <li><a href="/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">The technology</a></li>
-    <li><a href="/#roles" onclick="closeMobileMenu()" data-i18n="nav.roles">Roles</a></li>
-    <li><a href="/#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">What we build</a></li>
+    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Free review</a></li>
   </ul>
-  <a href="/#contact" class="nav-cta" onclick="closeMobileMenu(); Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Book a call</a>
+  <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Book a free review</a>
   <button id="lang-toggle-mobile" class="lang-toggle-mobile">한국어</button>
 </div>
 
@@ -282,19 +250,9 @@
     <h1 class="hero-title reveal d1" data-i18n-html="sovv2.hero.h1">Offline AI for work that must <em>stay confidential.</em></h1>
     <p class="lede reveal d2" data-i18n="sovv2.hero.body">Smart Fellow Sovereign is a dedicated AI machine for sensitive documents, internal analysis, R&amp;D, client files, and multilingual work. It runs locally, can operate without internet access, and only works with the data your team explicitly provides.</p>
     <div class="hero-actions reveal d3">
-      <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.hero.primary">Book a sovereign workflow review</button>
+      <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="sovv2.hero.primary">Book a free AI readiness review</a>
       <a href="#the-problem" class="btn-outline" data-i18n="sovv2.hero.secondary">See the problem it solves</a>
     </div>
-  </div>
-</section>
-
-<!-- Smart → Sealed scramble -->
-<section class="sov-scramble">
-  <div class="section-inner sov-scramble-inner" id="scramble-section">
-    <div class="scramble-display" aria-label="Sealed Fellow">
-      <span class="scramble-word" id="scramble-word">Smart</span>&#8202;<span class="scramble-fellow">Fellow</span>
-    </div>
-    <p class="scramble-caption" data-i18n="sovv2.scramble.caption">The same system. A sealed environment.</p>
   </div>
 </section>
 
@@ -509,7 +467,7 @@
       <h2 class="section-title reveal d1" data-i18n-html="sovv2.cta.h2">Bring AI into confidential work without <em>sending the work outside.</em></h2>
       <p class="lede reveal d2" data-i18n="sovv2.cta.body">Tell us what your team wants to do with AI, what information needs to stay protected, and whether the workflow should be local, offline, or hybrid. A sovereign workflow review takes 30 minutes.</p>
       <div class="page-cta-actions reveal d3">
-        <button type="button" class="btn-dark" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="sovv2.cta.primary">Book a sovereign review</button>
+        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="sovv2.cta.primary">Book a free AI readiness review</a>
         <a href="/technology.html" class="btn-outline" data-i18n="sovv2.cta.secondary">Review the wider architecture</a>
       </div>
       <div class="page-cta-note reveal d3" data-i18n="sovv2.cta.note">The first conversation is about risk and boundary, not model marketing.</div>
@@ -521,16 +479,18 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
-      <li><a href="/#how" data-i18n="footer.how">How it works</a></li>
-      <li><a href="/technology.html" data-i18n="footer.tech">The technology</a></li>
-      <li><a href="/#roles" data-i18n="footer.roles">Roles</a></li>
-      <li><a href="/#contact" data-i18n="footer.contact">Contact</a></li>
+      <li><a href="/how-we-work.html" data-i18n="footer.how">How we work</a></li>
+      <li><a href="/#blueprints" data-i18n="footer.blueprints">What we build</a></li>
+      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/technology.html" data-i18n="footer.tech">Technology</a></li>
+      <li><a href="/assessment/" data-i18n="footer.contact">Free review</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>
   </div>
 </footer>
 
 <script src="i18n.js"></script>
+<script src="/assessment-modal.js" defer></script>
 <script>
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -581,16 +541,16 @@ function closeMobileMenu() {
 </script>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script>
-/* Smart → Sealed scramble animation */
+/* Smart → Sealed scramble animation on nav logo */
 (function () {
   var scrambleEl = document.getElementById('scramble-word');
-  var sectionEl  = document.getElementById('scramble-section');
-  if (!scrambleEl || !sectionEl) return;
+  if (!scrambleEl) return;
 
   var CHARS    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var TARGET   = 'Sealed';
-  var FRAME_MS = 40;
-  var TOTAL_MS = 1600;
+  var FRAME_MS = 45;
+  var TOTAL_MS = 1400;
+  var START_DELAY = 900;
   var hasRun   = false;
 
   function runScramble() {
@@ -623,18 +583,12 @@ function closeMobileMenu() {
     }, FRAME_MS);
   }
 
-  if ('IntersectionObserver' in window) {
-    var scrambleObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          setTimeout(runScramble, 250);
-          scrambleObs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.6 });
-    scrambleObs.observe(sectionEl);
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    scrambleEl.textContent = TARGET;
+    scrambleEl.classList.add('is-settled');
   } else {
-    runScramble();
+    setTimeout(runScramble, START_DELAY);
   }
 })();
 </script>

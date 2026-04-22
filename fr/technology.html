@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La technologie — Smart Fellow</title>
-<meta name="description" content="Comment Smart Fellow fonctionne : les compétences, la mémoire et la personnalité qui rendent votre collègue IA vraiment utile, expliquées sans jargon.">
+<title>L’architecture — Smart Fellow</title>
+<meta name="description" content="Comment fonctionnent les systèmes IA privés que nous construisons : modèles locaux affinés, matériel sur site, mémoire documentaire qui ne sort pas du bureau, et cloud uniquement si vous l’approuvez.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://smartfellow.ai/fr/technology.html">
 <link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/technology.html">
@@ -12,15 +12,15 @@
 <link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/technology.html">
 <link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/technology.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="La technologie derrière Smart Fellow">
-<meta property="og:description" content="Explorez les compétences, la mémoire, la personnalité et l'architecture matérielle qui donnent vie à votre Smart Fellow.">
+<meta property="og:title" content="L’architecture derrière Smart Fellow">
+<meta property="og:description" content="Modèles locaux affinés, matériel sur site, mémoire métier conservée, cloud optionnel — un modèle d’exploitation défendable en interne.">
 <meta property="og:url" content="https://smartfellow.ai/fr/technology.html">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="La technologie derrière Smart Fellow">
-<meta name="twitter:description" content="Explorez les compétences, la mémoire, la personnalité et l'architecture matérielle qui donnent vie à votre Smart Fellow.">
+<meta name="twitter:title" content="L’architecture derrière Smart Fellow">
+<meta name="twitter:description" content="Modèles locaux affinés, matériel sur site, mémoire métier conservée, cloud optionnel — un modèle d’exploitation défendable en interne.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
@@ -213,14 +213,15 @@
 <nav>
   <a href="/fr/" class="nav-logo">Smart Fellow</a>
   <ul class="nav-links">
-    <li><a href="/fr/#how" data-i18n="nav.how">Comment ça marche</a></li>
+    <li><a href="/how-we-work.html" data-i18n="nav.how">Comment nous travaillons</a></li>
+    <li><a href="/#blueprints" data-i18n="nav.blueprints">Ce que nous construisons</a></li>
+    <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
     <li><a href="/fr/technology.html" class="active" data-i18n="nav.technology">Technologie</a></li>
-    <li><a href="/fr/#roles" data-i18n="nav.roles">Rôles</a></li>
-    <li><a href="/fr/#contact" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="/assessment/" data-i18n="nav.assessment">Diagnostic gratuit</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switcher" role="group" aria-label="Choisir la langue"><a href="/en/technology.html" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/technology.html" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/technology.html" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
-    <a href="/fr/#contact" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Réserver un appel</a>
+    <a href="/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">Réserver un diagnostic</a>
   </div>
   <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -229,12 +230,13 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
-    <li><a href="/fr/#how" onclick="closeMobileMenu()" data-i18n="nav.how">Comment ça marche</a></li>
+    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">Comment nous travaillons</a></li>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">Ce que nous construisons</a></li>
+    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
     <li><a href="/fr/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">Technologie</a></li>
-    <li><a href="/fr/#roles" onclick="closeMobileMenu()" data-i18n="nav.roles">Rôles</a></li>
-    <li><a href="/fr/#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Diagnostic gratuit</a></li>
   </ul>
-  <a href="/fr/#contact" class="nav-cta" onclick="closeMobileMenu(); Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Réserver un appel</a>
+  <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Réserver un diagnostic</a>
   <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choisir la langue"><a href="/en/technology.html" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/technology.html" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/technology.html" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
 </div>
 
@@ -242,13 +244,13 @@
 <section class="tech-hero">
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="techv2.hero.eyebrow">Sous le capot</p>
-    <h1 class="hero-title reveal d1" data-i18n-html="techv2.hero.h1">Le système IA local géré derrière <em>votre Fellow.</em></h1>
-    <p class="lede reveal d2" data-i18n="techv2.hero.body">Smart Fellow n'est ni un compte de chatbot cloud, ni une plateforme que votre équipe doit déployer elle-même. C'est un collègue IA géré qui tourne sur des modèles locaux, sur du matériel dédié à votre entreprise, avec des extensions cloud optionnelles quand elles apportent un vrai gain.</p>
+    <h1 class="hero-title reveal d1" data-i18n-html="techv2.hero.h1">Le système IA local géré derrière <em>votre équipe IA privée.</em></h1>
+    <p class="lede reveal d2" data-i18n="techv2.hero.body">Les systèmes IA privés que nous construisons ne sont pas des comptes cloud, ni des plateformes que votre équipe doit déployer elle-même. Ce sont des systèmes IA gérés qui tournent sur des modèles locaux sur du matériel dédié à votre entreprise, affinés sur vos documents, avec des compléments cloud en option quand ils aident vraiment.</p>
     <div class="tech-hero-meta reveal d3">
       <div class="tech-hero-meta-item"><b data-i18n="techv2.hero.summary1.label">Architecture de base</b> &nbsp;<span data-i18n="techv2.hero.summary1.value">Local par défaut</span></div>
-      <div class="tech-hero-meta-item"><b data-i18n="techv2.hero.summary2.label">Interfaces</b> &nbsp;<span data-i18n="techv2.hero.summary2.value">Slack, Teams, KakaoTalk, e-mail</span></div>
+      <div class="tech-hero-meta-item"><b data-i18n="techv2.hero.summary2.label">Interfaces</b> &nbsp;<span data-i18n="techv2.hero.summary2.value">Slack, Teams, KakaoTalk, email</span></div>
       <div class="tech-hero-meta-item"><b data-i18n="techv2.hero.summary3.label">Mémoire</b> &nbsp;<span data-i18n="techv2.hero.summary3.value">Sur votre matériel</span></div>
-      <div class="tech-hero-meta-item"><b data-i18n="techv2.hero.summary4.label">Utilisation du cloud</b> &nbsp;<span data-i18n="techv2.hero.summary4.value">Optionnel et explicite</span></div>
+      <div class="tech-hero-meta-item"><b data-i18n="techv2.hero.summary4.label">Usage du cloud</b> &nbsp;<span data-i18n="techv2.hero.summary4.value">Optionnel et explicite</span></div>
     </div>
   </div>
 </section>
@@ -257,13 +259,13 @@
 <section class="section">
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="techv2.skills.eyebrow">Couche un</p>
-    <h2 class="section-title reveal d1" data-i18n-html="techv2.skills.h2">Compétences — <em>ce qu'il sait déjà faire.</em></h2>
-    <p class="lede reveal d2" data-i18n="techv2.skills.lead">Chaque Smart Fellow arrive dès le premier jour avec une bibliothèque de capacités pré-entraînées — des choses qu'il peut faire immédiatement, sans aucune configuration de la part de votre équipe.</p>
+    <h2 class="section-title reveal d1" data-i18n-html="techv2.skills.h2">Compétences — <em>ce qu'il sait déjà.</em></h2>
+    <p class="lede reveal d2" data-i18n="techv2.skills.lead">Chaque système que nous construisons arrive le premier jour avec une bibliothèque de capacités pré-entraînées — des choses qu'il peut faire immédiatement, sans configuration par votre équipe.</p>
 
     <div class="tech-skills-grid reveal d2">
       <div class="tech-skill-item" data-i18n="techv2.skills.s1">Rédaction de documents</div>
-      <div class="tech-skill-item" data-i18n="techv2.skills.s2">Rédaction d'e-mails</div>
-      <div class="tech-skill-item" data-i18n="techv2.skills.s3">Synthèses de réunion</div>
+      <div class="tech-skill-item" data-i18n="techv2.skills.s2">Rédaction d'emails</div>
+      <div class="tech-skill-item" data-i18n="techv2.skills.s3">Comptes rendus de réunion</div>
       <div class="tech-skill-item" data-i18n="techv2.skills.s4">Recherche client</div>
       <div class="tech-skill-item" data-i18n="techv2.skills.s5">Revue de contrats</div>
       <div class="tech-skill-item" data-i18n="techv2.skills.s6">Extraction de données</div>
@@ -271,7 +273,7 @@
       <div class="tech-skill-item" data-i18n="techv2.skills.s8">Rédaction de rapports</div>
     </div>
 
-    <p class="tech-skill-note reveal d3" data-i18n="techv2.skills.note">Les compétences peuvent être approfondies ou étendues. Lorsqu'un client a besoin que son Fellow comprenne un domaine spécifique — spécifications de fabrication, langage contractuel juridique, terminologie médicale, reporting financier — nous l'entraînons directement sur cette matière. Il arrive en connaissant déjà le poste. Et avec le temps, il devient meilleur dans le vôtre.</p>
+    <p class="tech-skill-note reveal d3" data-i18n="techv2.skills.note">Les compétences peuvent être approfondies ou étendues. Quand un client a besoin que le système comprenne un domaine spécifique — spécifications industrielles, langage juridique, terminologie médicale, reporting financier — nous l'entraînons directement sur ce matériel. Il arrive en connaissant le métier. Il s'améliore sur votre métier au fil du temps.</p>
   </div>
 </section>
 
@@ -279,25 +281,25 @@
 <section class="section section--soft">
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="techv2.memory.eyebrow">Couche deux</p>
-    <h2 class="section-title reveal d1" data-i18n-html="techv2.memory.h2">Mémoire — <em>ce qu'il apprend sur vous.</em></h2>
-    <p class="lede reveal d2" data-i18n="techv2.memory.lead">Un Smart Fellow dispose de trois types de mémoire qui travaillent ensemble. Plus votre Fellow reste, plus sa compréhension de votre activité devient riche.</p>
+    <h2 class="section-title reveal d1" data-i18n-html="techv2.memory.h2">Mémoire — <em>ce qu'il apprend de vous.</em></h2>
+    <p class="lede reveal d2" data-i18n="techv2.memory.lead">Une équipe IA privée a trois types de mémoire qui fonctionnent ensemble. Plus elle reste longtemps, plus sa compréhension de votre activité est riche.</p>
 
     <div class="grid-3" style="margin-top:2rem">
       <article class="card reveal">
         <h3 data-i18n="techv2.memory.card1.title">Court terme</h3>
-        <p data-i18n="techv2.memory.card1.body">La conversation en cours — tout ce qui est dit dans cette session. Le contexte pour le moment présent.</p>
+        <p data-i18n="techv2.memory.card1.body">La conversation en cours — tout ce qui a été dit dans cette session. Le contexte de l'instant.</p>
       </article>
       <article class="card reveal d1">
         <h3 data-i18n="techv2.memory.card2.title">Long terme</h3>
-        <p data-i18n="techv2.memory.card2.body">Noms des clients, préférences, ton, processus, qui mettre en copie et dans quel cas. Le stockage persistant de tout ce qu'il a appris sur votre entreprise au fil du temps.</p>
+        <p data-i18n="techv2.memory.card2.body">Noms de clients, préférences, ton, processus, qui mettre en copie sur quoi. Le stock persistant de tout ce qui a été appris sur votre entreprise.</p>
       </article>
       <article class="card reveal d2">
         <h3 data-i18n="techv2.memory.card3.title">Épisodique</h3>
-        <p data-i18n="techv2.memory.card3.body">Des événements précis — utilisés pour éclairer les décisions futures et calibrer le travail en cours.</p>
+        <p data-i18n="techv2.memory.card3.body">Événements précis — « mardi dernier, le CEO a demandé des rapports plus courts » — utilisés pour informer les décisions futures et caler le travail en cours.</p>
       </article>
     </div>
 
-    <div class="tech-memory-note reveal d3" data-i18n="techv2.memory.note">Les trois mémoires vivent sur votre matériel dédié. Elles ne sont jamais téléversées, jamais synchronisées vers un cloud, jamais partagées avec un fournisseur. Plus votre Fellow reste, plus il devient précis.</div>
+    <div class="tech-memory-note reveal d3" data-i18n="techv2.memory.note">Les trois mémoires vivent sur votre matériel dédié. Elles ne sont jamais envoyées, jamais synchronisées dans un cloud, jamais partagées avec un fournisseur. Plus le système reste longtemps, plus il devient précis.</div>
   </div>
 </section>
 
@@ -307,25 +309,25 @@
     <div class="tech-layer-grid">
       <div>
         <p class="eyebrow reveal" data-i18n="techv2.character.eyebrow">Couche trois</p>
-        <h2 class="section-title reveal d1" data-i18n-html="techv2.character.h2">Personnalité — <em>la manière dont il se présente.</em></h2>
-        <p class="lede reveal d2" data-i18n="techv2.character.lead">La troisième couche est ce qui fait que votre Fellow ressemble à un collègue plutôt qu'à un moteur de recherche. Des valeurs, un ton et un style de travail cohérents — configurés pour correspondre à la culture de votre entreprise pendant l'onboarding.</p>
-        <p class="section-copy reveal d3" style="margin-top:1rem" data-i18n="techv2.character.body">Professionnel et précis, ou chaleureux et conversationnel ? Proactif ou réactif ? Bilingue avec un coréen formel par défaut, ou totalement décontracté ? Ces traits sont définis délibérément et restent cohérents dans chaque interaction, chaque jour. Ils peuvent être ajustés à tout moment.</p>
+        <h2 class="section-title reveal d1" data-i18n-html="techv2.character.h2">Caractère — <em>la manière dont il se présente.</em></h2>
+        <p class="lede reveal d2" data-i18n="techv2.character.lead">La troisième couche est ce qui fait que le système ressemble à un collègue plutôt qu'à un moteur de recherche. Des valeurs, un ton et un style de travail cohérents — configurés pour correspondre à votre culture pendant l'onboarding.</p>
+        <p class="section-copy reveal d3" style="margin-top:1rem" data-i18n="techv2.character.body">Professionnel et précis, ou chaleureux et conversationnel ? Proactif ou réactif ? Bilingue avec un coréen formel par défaut, ou totalement décontracté ? Ces traits sont fixés délibérément et restent cohérents à chaque interaction, chaque jour. Ils peuvent être ajustés à tout moment.</p>
       </div>
 
       <div>
         <div class="tech-character-profile reveal d2">
-          <div class="char-profile-head" data-i18n="techv2.character.profile.head">Profil de personnalité — votre Fellow</div>
+          <div class="char-profile-head" data-i18n="techv2.character.profile.head">Profil de caractère — votre système</div>
           <div class="char-row">
             <span class="char-row-label" data-i18n="techv2.character.profile.r1.label">Proactivité</span>
             <span class="char-row-value is-accent" data-i18n="techv2.character.profile.r1.value">Élevée</span>
           </div>
           <div class="char-row">
-            <span class="char-row-label" data-i18n="techv2.character.profile.r2.label">Niveau de formalité</span>
-            <span class="char-row-value" data-i18n="techv2.character.profile.r2.value">Équilibré</span>
+            <span class="char-row-label" data-i18n="techv2.character.profile.r2.label">Formalité</span>
+            <span class="char-row-value" data-i18n="techv2.character.profile.r2.value">Équilibrée</span>
           </div>
           <div class="char-row">
             <span class="char-row-label" data-i18n="techv2.character.profile.r3.label">Niveau de détail</span>
-            <span class="char-row-value" data-i18n="techv2.character.profile.r3.value">Approfondi</span>
+            <span class="char-row-value" data-i18n="techv2.character.profile.r3.value">Détaillé</span>
           </div>
           <div class="char-row">
             <span class="char-row-label" data-i18n="techv2.character.profile.r4.label">Ton</span>
@@ -347,9 +349,9 @@
     <div class="tech-ownership-grid">
       <div>
         <p class="eyebrow reveal" data-i18n="techv2.ownership.eyebrow">Votre matériel. Vos données.</p>
-        <h2 class="section-title reveal d1" data-i18n-html="techv2.ownership.h2">Le problème avec la plupart des services IA, ce n'est pas le cloud — c'est que <em>le fournisseur contrôle les données.</em></h2>
-        <p class="lede reveal d2" data-i18n="techv2.ownership.lead">Smart Fellow démarre comme un système local géré sur un Mac Studio dédié, réservé exclusivement à votre entreprise. Le modèle s'y exécute. Vos données y restent. Vous n'avez pas besoin de connexion internet sauf si vous en voulez une — certains clients fonctionnent entièrement en air gap. D'autres ajoutent des fournisseurs d'IA externes pour certaines tâches seulement.</p>
-        <p class="section-copy reveal d3" style="margin-top: 1rem" data-i18n="techv2.ownership.body">L'architecture de mémoire unifiée d'Apple signifie que le modèle et les données sur lesquelles il raisonne partagent le même pool mémoire — pas de goulot d'étranglement, une inférence plus rapide. Dans tous les cas, le modèle de propriété des données reste le même : les vôtres, pas les nôtres.</p>
+        <h2 class="section-title reveal d1" data-i18n-html="techv2.ownership.h2">Le problème avec la plupart des services IA n'est pas le cloud — c'est que <em>le fournisseur contrôle les données.</em></h2>
+        <p class="lede reveal d2" data-i18n="techv2.ownership.lead">Une construction Smart Fellow démarre comme un système local géré sur du matériel réservé à votre entreprise seule. Le modèle y tourne. Vos données y restent. Vous n'avez pas besoin d'Internet sauf si vous le voulez — certains clients fonctionnent totalement air-gapped. D'autres ajoutent des fournisseurs IA externes pour des tâches choisies.</p>
+        <p class="section-copy reveal d3" style="margin-top: 1rem" data-i18n="techv2.ownership.body">L'architecture de mémoire unifiée d'Apple signifie que le modèle et les données qu'il traite partagent le même pool mémoire — pas de goulot d'étranglement, inférence plus rapide, et une fenêtre de contexte plus grande que la plupart des configurations cloud à ce prix. Dans tous les cas, le modèle de propriété des données reste le même : les vôtres, pas les nôtres, pas celles d'un fournisseur.</p>
       </div>
 
       <div class="table-shell reveal d2">
@@ -357,8 +359,8 @@
           <thead>
             <tr>
               <th></th>
-              <th data-i18n="techv2.ownership.table.head1">Smart Fellow</th>
-              <th data-i18n="techv2.ownership.table.head2">IA cloud classique</th>
+              <th data-i18n="techv2.ownership.table.head1">Construction Smart Fellow</th>
+              <th data-i18n="techv2.ownership.table.head2">IA cloud typique</th>
             </tr>
           </thead>
           <tbody>
@@ -369,28 +371,28 @@
             </tr>
             <tr>
               <th data-i18n="techv2.ownership.table.row2.label">Matériel</th>
-              <td data-i18n="techv2.ownership.table.row2.left">Vous le possédez</td>
+              <td data-i18n="techv2.ownership.table.row2.left">Vous en êtes propriétaire</td>
               <td data-i18n="techv2.ownership.table.row2.right">Le fournisseur possède les serveurs</td>
             </tr>
             <tr>
-              <th data-i18n="techv2.ownership.table.row3.label">Conditions des données</th>
-              <td data-i18n="techv2.ownership.table.row3.left">Vous fixez les conditions</td>
-              <td data-i18n="techv2.ownership.table.row3.right">Le fournisseur fixe les conditions</td>
+              <th data-i18n="techv2.ownership.table.row3.label">Conditions sur les données</th>
+              <td data-i18n="techv2.ownership.table.row3.left">Vous les fixez</td>
+              <td data-i18n="techv2.ownership.table.row3.right">Le fournisseur les fixe</td>
             </tr>
             <tr>
-              <th data-i18n="techv2.ownership.table.row4.label">Rétention</th>
+              <th data-i18n="techv2.ownership.table.row4.label">Conservation</th>
               <td data-i18n="techv2.ownership.table.row4.left">Vous décidez</td>
-              <td data-i18n="techv2.ownership.table.row4.right">Rétention impossible à auditer</td>
+              <td data-i18n="techv2.ownership.table.row4.right">Conservation non auditable</td>
             </tr>
             <tr>
-              <th data-i18n="techv2.ownership.table.row5.label">Fonctionnement en air gap</th>
-              <td data-i18n="techv2.ownership.table.row5.left">Disponible</td>
+              <th data-i18n="techv2.ownership.table.row5.label">Fonctionnement air-gapped</th>
+              <td data-i18n="techv2.ownership.table.row5.left">Possible</td>
               <td data-i18n="techv2.ownership.table.row5.right">Impossible</td>
             </tr>
             <tr>
-              <th data-i18n="techv2.ownership.table.row6.label">Conformité PIPA</th>
+              <th data-i18n="techv2.ownership.table.row6.label">Conformité RGPD</th>
               <td data-i18n="techv2.ownership.table.row6.left">Par conception</td>
-              <td data-i18n="techv2.ownership.table.row6.right">Conformité par espoir</td>
+              <td data-i18n="techv2.ownership.table.row6.right">Conformité espérée</td>
             </tr>
           </tbody>
         </table>
@@ -402,26 +404,26 @@
 <!-- What's genuinely different -->
 <section class="section">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="techv2.diff.eyebrow">Ce qui change vraiment</p>
-    <h2 class="section-title reveal d1" data-i18n-html="techv2.diff.h2">Pas un chatbot plus intelligent. <em>Une autre catégorie.</em></h2>
-    <p class="lede reveal d2" data-i18n="techv2.diff.lead">La plupart des AI employees sont des services cloud. La plupart des outils IA souverains sont des plateformes que votre équipe doit déployer elle-même. Smart Fellow se place au milieu : un collègue IA géré pour votre entreprise, qui tourne en local sur du matériel que vous contrôlez.</p>
+    <p class="eyebrow reveal" data-i18n="techv2.diff.eyebrow">Ce qui est vraiment différent</p>
+    <h2 class="section-title reveal d1" data-i18n-html="techv2.diff.h2">Pas un chatbot plus malin. <em>Une catégorie différente.</em></h2>
+    <p class="lede reveal d2" data-i18n="techv2.diff.lead">La plupart des produits IA sont des services cloud. La plupart des outils IA souverains sont des plateformes que votre équipe doit déployer elle-même. Smart Fellow se situe au milieu : une équipe IA privée construite pour votre entreprise, qui tourne en local sur du matériel que vous contrôlez.</p>
 
     <div class="grid-4 difference-grid">
       <article class="card reveal">
         <h3 data-i18n="techv2.diff.card1.title">Des compétences conçues pour votre domaine</h3>
-        <p data-i18n="techv2.diff.card1.body">Votre Fellow arrive avec des compétences pré-entraînées qui s'approfondissent au fil du temps à mesure que nous l'entraînons sur votre secteur, vos processus et votre terminologie.</p>
+        <p data-i18n="techv2.diff.card1.body">Votre système arrive avec des compétences pré-entraînées qui s'approfondissent au fil du temps à mesure que nous l'entraînons sur votre secteur, vos processus et votre terminologie.</p>
       </article>
       <article class="card reveal d1">
         <h3 data-i18n="techv2.diff.card2.title">Vous possédez les données — pas un fournisseur</h3>
-        <p data-i18n="techv2.diff.card2.body">Propriété locale sans transformer votre équipe en équipe d'ops IA. Fonctionnement en air gap nécessaire ? Possible. IA externe sélective ? Vous contrôlez exactement ce qui est envoyé.</p>
+        <p data-i18n="techv2.diff.card2.body">Propriété locale sans transformer votre équipe en équipe ops IA. Besoin d'air-gapped ? Possible. IA externe sélective ? Vous contrôlez ce qui est envoyé.</p>
       </article>
       <article class="card reveal d2">
-        <h3 data-i18n="techv2.diff.card3.title">Intégré, pas greffé</h3>
-        <p data-i18n="techv2.diff.card3.body">Votre Fellow vit nativement dans Slack, KakaoTalk ou Teams. Aucune nouvelle interface à apprendre. Aucun changement de contexte. Aucun onglet à ouvrir.</p>
+        <h3 data-i18n="techv2.diff.card3.title">Intégré, pas rapporté</h3>
+        <p data-i18n="techv2.diff.card3.body">Votre système vit nativement dans Slack, KakaoTalk ou Teams. Aucune nouvelle interface à apprendre. Pas de changement de contexte. Pas d'onglet à ouvrir.</p>
       </article>
       <article class="card reveal d3">
-        <h3 data-i18n="techv2.diff.card4.title">Un salaire prévisible</h3>
-        <p data-i18n="techv2.diff.card4.body">Aucun frais par message. Aucun coût en tokens qui grimpe avec l'usage. Un salaire mensuel fixe par Fellow — vous n'êtes jamais pénalisé parce que vous en tirez de la valeur.</p>
+        <h3 data-i18n="techv2.diff.card4.title">Une relation prévisible</h3>
+        <p data-i18n="techv2.diff.card4.body">Pas de frais au message. Pas de coût de tokens qui monte avec l'usage. Un prix de construction fixe et une maintenance mensuelle forfaitaire — jamais pénalisé pour en tirer de la valeur.</p>
       </article>
     </div>
   </div>
@@ -430,26 +432,26 @@
 <!-- Honest answers / FAQ -->
 <section class="section section--soft">
   <div class="section-inner">
-    <p class="eyebrow reveal" data-i18n="techv2.faq.eyebrow">La réponse honnête</p>
-    <h2 class="section-title reveal d1" data-i18n-html="techv2.faq.h2">Pourquoi ne pas simplement <em>utiliser ChatGPT ?</em></h2>
-    <p class="lede reveal d2" data-i18n="techv2.faq.lead">C'est la bonne question. Les outils d'IA modernes sont vraiment performants. Voici où se situe réellement la différence.</p>
+    <p class="eyebrow reveal" data-i18n="techv2.faq.eyebrow">Réponses honnêtes</p>
+    <h2 class="section-title reveal d1" data-i18n-html="techv2.faq.h2">Pourquoi ne pas juste <em>utiliser ChatGPT ?</em></h2>
+    <p class="lede reveal d2" data-i18n="techv2.faq.lead">C'est la bonne question. Les outils IA modernes sont vraiment bons. Voici où se situe réellement la différence.</p>
 
     <div class="tech-faq reveal d2">
       <div class="faq-item">
-        <p class="faq-q" data-i18n="techv2.faq.q1">ChatGPT est excellent et peu cher. Pourquoi recruter un Fellow ?</p>
-        <p class="faq-a" data-i18n="techv2.faq.a1">ChatGPT est très bon pour les tâches générales et les questions ponctuelles. Mais cela reste un outil cloud généraliste. Smart Fellow est un collègue IA local géré, formé sur votre domaine, intégré aux outils que votre équipe utilise déjà, et capable de garder votre contexte métier dans votre propre environnement. Quand des modèles cloud sont utiles, vous pouvez les ajouter de façon sélective au lieu d'en faire la base par défaut.</p>
+        <p class="faq-q" data-i18n="techv2.faq.q1">ChatGPT est excellent et pas cher. Pourquoi commander une équipe IA privée ?</p>
+        <p class="faq-a" data-i18n="techv2.faq.a1">ChatGPT est très bon pour des tâches générales et des questions ponctuelles. Mais c'est toujours un outil cloud généraliste. Une équipe IA privée est entraînée sur votre domaine, intégrée aux outils que votre équipe utilise déjà, et capable de garder votre contexte métier dans votre propre environnement. Quand les modèles cloud aident, vous pouvez les ajouter de manière sélective plutôt que d'en faire le réglage par défaut.</p>
       </div>
       <div class="faq-item">
-        <p class="faq-q" data-i18n="techv2.faq.q2">Je ne peux pas simplement prendre un forfait équipe et partager l'accès ?</p>
-        <p class="faq-a" data-i18n="techv2.faq.a2">Vous le pouvez — et certaines équipes le font. Mais un accès partagé à un modèle généraliste implique toujours de passer par une interface séparée et d'utiliser un outil qui n'est pas connecté à votre CRM, votre calendrier ou vos systèmes internes. Votre Fellow est déjà intégré, déjà contextualisé et déjà au travail dans les applications que votre équipe utilise tous les jours.</p>
+        <p class="faq-q" data-i18n="techv2.faq.q2">Ne puis-je pas juste prendre un plan équipe et partager l'accès ?</p>
+        <p class="faq-a" data-i18n="techv2.faq.a2">Vous le pouvez — et certaines équipes le font. Mais un accès partagé à un modèle généraliste signifie toujours basculer vers une interface à part et utiliser un outil qui n'est pas connecté à votre CRM, votre calendrier ou vos systèmes internes. Une équipe IA privée est déjà intégrée, déjà contextuelle, et travaille déjà dans les apps que votre équipe utilise chaque jour.</p>
       </div>
       <div class="faq-item">
-        <p class="faq-q" data-i18n="techv2.faq.q3">Ce n'est pas simplement une posture anti-cloud ?</p>
-        <p class="faq-a" data-i18n="techv2.faq.a3">Pas du tout. Le cloud peut être utile. Nous pensons simplement qu'il ne doit pas être la base par défaut pour un contexte métier sensible. Smart Fellow part d'un contrôle local : votre système, vos données, votre périmètre. Certains clients restent entièrement en air gap. D'autres connectent des fournisseurs d'IA externes pour certaines tâches. Dans tous les cas, le cloud est une extension que vous choisissez, pas une fondation qui vous est imposée.</p>
+        <p class="faq-q" data-i18n="techv2.faq.q3">Est-ce juste une posture anti-cloud ?</p>
+        <p class="faq-a" data-i18n="techv2.faq.a3">Pas du tout. Le cloud peut être utile. Nous pensons simplement qu'il ne devrait pas être le réglage par défaut pour le contexte métier sensible. Une équipe IA privée démarre du contrôle local : votre système, vos données, votre périmètre. Certains clients restent totalement air-gapped. D'autres se connectent sélectivement à des fournisseurs IA externes pour des tâches spécifiques. Dans tous les cas, le cloud est une extension que vous choisissez, pas la fondation qu'on vous impose.</p>
       </div>
       <div class="faq-item">
-        <p class="faq-q" data-i18n="techv2.faq.q4">Un modèle local est-il aussi performant que GPT-4 ?</p>
-        <p class="faq-a" data-i18n="techv2.faq.a4">Pour la connaissance générale à grande échelle, les meilleurs modèles cloud sont difficiles à battre. Pour les tâches propres à votre entreprise — rédiger avec votre ton, connaître vos clients, suivre vos processus — un modèle affiné sur votre activité donne de meilleurs résultats qu'un modèle qui ne sait rien de vous. Et Smart Fellow peut se connecter en option à des modèles externes quand c'est nécessaire, donc vous n'avez pas à choisir.</p>
+        <p class="faq-q" data-i18n="techv2.faq.q4">Un modèle local est-il aussi capable que GPT-4 ?</p>
+        <p class="faq-a" data-i18n="techv2.faq.a4">Sur le savoir général, les meilleurs modèles cloud sont difficiles à battre. Sur vos tâches spécifiques — rédiger avec votre ton, connaître vos clients, suivre vos processus — un modèle affiné sur votre activité fait mieux qu'un modèle qui ne sait rien de vous. Et une équipe IA privée peut se connecter à des modèles externes en option quand c'est utile, pour que vous n'ayez pas à choisir.</p>
       </div>
     </div>
   </div>
@@ -459,11 +461,11 @@
 <section class="section section--green">
   <div class="section-inner">
     <div class="page-cta-inner">
-      <p class="eyebrow-light reveal" data-i18n="techv2.cta.eyebrow">Prochaine étape</p>
-      <h2 class="section-title reveal d1" data-i18n-html="techv2.cta.h2">Vous en avez assez vu pour <em>vouloir en parler ?</em></h2>
-      <p class="lede reveal d2" data-i18n="techv2.cta.body">Réservez un appel gratuit de 30 minutes. Nous passerons en revue les besoins spécifiques de votre équipe et vous montrerons exactement à quoi ressemblerait un Smart Fellow dans votre workflow.</p>
+      <p class="eyebrow-light reveal" data-i18n="techv2.cta.eyebrow">Commencez par le diagnostic gratuit</p>
+      <h2 class="section-title reveal d1" data-i18n-html="techv2.cta.h2">Vu assez pour vouloir <em>un plan écrit ?</em></h2>
+      <p class="lede reveal d2" data-i18n="techv2.cta.body">Réservez un diagnostic IA gratuit. Nous passons en revue vos flux de travail, vos exigences de sensibilité et vos besoins d'intégration, et nous vous laissons un rapport écrit et un devis fixe.</p>
       <div class="page-cta-actions reveal d3">
-        <a href="/fr/#contact" class="btn-dark" data-i18n="techv2.cta.primary">Réserver un appel gratuit →</a>
+        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="techv2.cta.primary">Réserver un diagnostic IA gratuit</a>
         <a href="/fr/" class="btn-outline" data-i18n="techv2.cta.secondary">Retour au site principal</a>
       </div>
       <div class="page-cta-note reveal d3" data-i18n="techv2.cta.note">Coréen · Anglais · Français · Sans engagement</div>
@@ -475,10 +477,11 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
-      <li><a href="/fr/#how" data-i18n="footer.how">Comment ça marche</a></li>
-      <li><a href="/fr/technology.html" data-i18n="footer.tech">La technologie</a></li>
-      <li><a href="/fr/#roles" data-i18n="footer.roles">Rôles</a></li>
-      <li><a href="/fr/#contact" data-i18n="footer.contact">Contact</a></li>
+      <li><a href="/how-we-work.html" data-i18n="footer.how">Comment nous travaillons</a></li>
+      <li><a href="/#blueprints" data-i18n="footer.blueprints">Ce que nous construisons</a></li>
+      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/fr/technology.html" data-i18n="footer.tech">Technologie</a></li>
+      <li><a href="/assessment/" data-i18n="footer.contact">Diagnostic gratuit</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Séoul, Corée</span>
   </div>
@@ -488,6 +491,7 @@
 <script>window.SF_CONFIG={"locale":"fr"};</script>
 <script src="/data/fr-locale.js"></script>
 <script src="/i18n.js"></script>
+<script src="/assessment-modal.js" defer></script>
 <script>
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

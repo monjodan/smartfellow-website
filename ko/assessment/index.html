@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>무료 AI 도입 진단 — Smart Fellow</title>
+<meta name="description" content="전용 AI 팀이 귀사에 어떻게 도움이 될 수 있는지 구조적으로 점검해 드리는 무료 진단입니다. 워크숍, 인터뷰, 48시간 이내 서면 보고서, 그리고 필요시 고정 견적.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smartfellow.ai/ko/assessment/">
+<link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/assessment/">
+<link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/assessment/">
+<link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/assessment/">
+<link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/assessment/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="무료 AI 도입 진단 — Smart Fellow">
+<meta property="og:description" content="워크플로우를 알려주세요. 적합하다고 판단되면 짧은 구조적 진단을 진행하고, 48시간 이내에 서면 계획서를 드립니다.">
+<meta property="og:url" content="https://smartfellow.ai/ko/assessment/">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="무료 AI 도입 진단 — Smart Fellow">
+<meta name="twitter:description" content="워크플로우를 알려주세요. 적합하다고 판단되면 짧은 구조적 진단을 진행하고, 48시간 이내에 서면 계획서를 드립니다.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.assess-hero {
+  padding: 5rem 0 4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.assess-hero .lede { margin-top: 1.25rem; }
+
+.assess-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: 2.5rem;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.assess-summary-item {
+  background: var(--surface);
+  padding: 1.1rem 1.3rem;
+}
+
+.assess-summary-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.3rem;
+}
+
+.assess-summary-value {
+  display: block;
+  font-weight: 500;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+/* Includes grid */
+.assess-includes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.assess-include {
+  padding: 1.3rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.assess-include h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.45rem;
+}
+
+.assess-include p {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* Form */
+.assess-form-shell {
+  margin-top: 2rem;
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  max-width: 720px;
+}
+
+.assess-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.assess-form-grid .field-full { grid-column: 1 / -1; }
+
+.assess-field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+.assess-field .hint {
+  display: block;
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-top: 0.3rem;
+}
+
+.assess-field input[type="text"],
+.assess-field input[type="email"],
+.assess-field select,
+.assess-field textarea {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-family: inherit;
+}
+
+.assess-field input:focus,
+.assess-field select:focus,
+.assess-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--surface);
+}
+
+.assess-field textarea {
+  min-height: 110px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.assess-checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.assess-checkboxes label {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-bottom: 0;
+}
+
+.assess-checkboxes input[type="checkbox"] {
+  accent-color: var(--accent);
+}
+
+.assess-submit {
+  margin-top: 1.75rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.assess-submit .btn-dark {
+  cursor: pointer;
+  border: 0;
+  font-family: inherit;
+}
+
+.assess-submit-note {
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+}
+
+.assess-form-shell[data-state="sending"] .assess-form-grid,
+.assess-form-shell[data-state="sending"] .assess-submit { opacity: 0.55; pointer-events: none; }
+
+.assess-form-status {
+  margin-top: 1.25rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: calc(var(--radius) * 0.75);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: none;
+}
+.assess-form-shell[data-state="error"] .assess-form-status--error { display: block; background: rgba(201, 62, 62, 0.08); color: #8a2e2e; }
+.assess-form-status--error a { color: inherit; text-decoration: underline; }
+
+.assess-success {
+  display: none;
+  margin-top: 2rem;
+  padding: 2.5rem clamp(1.75rem, 3.5vw, 3rem);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.assess-success.is-visible { display: block; }
+.assess-success h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  margin: 0 0 0.9rem;
+  color: var(--ink);
+}
+.assess-success h3 em { font-style: italic; color: var(--accent); }
+.assess-success p {
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 0 1.5rem;
+}
+.assess-success .assess-success-actions {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.assess-success-note {
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Callout */
+.assess-callout {
+  margin-top: 2rem;
+  padding: 1.75rem 2rem;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-radius: var(--radius);
+}
+
+.assess-callout .eyebrow-light {
+  color: rgba(247, 245, 239, 0.7);
+  margin-bottom: 0.75rem;
+}
+
+.assess-callout p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.55;
+  color: rgba(247, 245, 239, 0.95);
+}
+
+@media (max-width: 980px) {
+  .assess-summary { grid-template-columns: repeat(2, 1fr); }
+  .assess-includes { grid-template-columns: 1fr; }
+  .assess-form-grid { grid-template-columns: 1fr; }
+  .assess-checkboxes { grid-template-columns: 1fr; }
+  .assess-form-shell { padding: 1.75rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/ko/" class="nav-logo">Smart Fellow</a>
+  <ul class="nav-links">
+    <li><a href="/how-we-work.html" data-i18n="nav.how">진행 방식</a></li>
+    <li><a href="/#blueprints" data-i18n="nav.blueprints">만드는 것</a></li>
+    <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/ko/technology.html" data-i18n="nav.technology">기술</a></li>
+    <li><a href="/assessment/" class="active" data-i18n="nav.assessment">무료 진단</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher" role="group" aria-label="언어 선택"><a href="/en/assessment/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/assessment/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/assessment/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
+    <a href="#form" class="nav-cta" data-i18n="nav.cta">무료 진단 예약</a>
+  </div>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <ul>
+    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">진행 방식</a></li>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">만드는 것</a></li>
+    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/ko/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">기술</a></li>
+    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">무료 진단</a></li>
+  </ul>
+  <a href="#form" class="nav-cta" onclick="closeMobileMenu()" data-i18n="nav.cta">무료 진단 예약</a>
+  <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="언어 선택"><a href="/en/assessment/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/assessment/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/assessment/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
+</div>
+
+<section class="assess-hero">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="assess.hero.eyebrow">무료 AI 도입 진단</p>
+    <h1 class="hero-title reveal d1" data-i18n-html="assess.hero.h1">전용 AI 팀을 위한 서면 계획서. <em>비용도, 약정도 없습니다.</em></h1>
+    <p class="lede reveal d2" data-i18n="assess.hero.body">귀사와 워크플로우에 대해 간단히 알려주십시오. 적합하다고 판단되면 함께 짧고 체계적인 진단을 진행하고, 구축 여부와 무관하게 서면 보고서를 드립니다.</p>
+
+    <div class="assess-summary reveal d3">
+      <div class="assess-summary-item">
+        <span class="assess-summary-label" data-i18n="assess.summary.l1.label">비용</span>
+        <span class="assess-summary-value" data-i18n="assess.summary.l1.value">무료</span>
+      </div>
+      <div class="assess-summary-item">
+        <span class="assess-summary-label" data-i18n="assess.summary.l2.label">기간</span>
+        <span class="assess-summary-value" data-i18n="assess.summary.l2.value">48시간 내 서면 계획서</span>
+      </div>
+      <div class="assess-summary-item">
+        <span class="assess-summary-label" data-i18n="assess.summary.l3.label">귀사의 시간</span>
+        <span class="assess-summary-value" data-i18n="assess.summary.l3.value">워크숍 + 인터뷰</span>
+      </div>
+      <div class="assess-summary-item">
+        <span class="assess-summary-label" data-i18n="assess.summary.l4.label">산출물</span>
+        <span class="assess-summary-value" data-i18n="assess.summary.l4.value">서면 보고서 + 견적서</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What's included -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="assess.includes.eyebrow">진단에 포함되는 것</p>
+    <h2 class="section-title reveal d1" data-i18n-html="assess.includes.h2">영업 미팅이 아니라, 진지한 작업입니다.</h2>
+    <p class="lede reveal d2" data-i18n="assess.includes.lead">유료 프로젝트와 같은 시간과 정성을 들입니다. 구축하지 않기로 결정하더라도 사내에서 바로 활용할 수 있는 서면 계획서가 남습니다.</p>
+
+    <div class="assess-includes reveal d2">
+      <div class="assess-include">
+        <h3 data-i18n="assess.include.i1.title">팀과의 워크숍</h3>
+        <p data-i18n="assess.include.i1.body">실제로 시스템을 사용하게 될 분들과의 체계적인 90분 대화. 저희는 말하는 시간보다 듣는 시간이 깁니다.</p>
+      </div>
+      <div class="assess-include">
+        <h3 data-i18n="assess.include.i2.title">시스템과 데이터 검토</h3>
+        <p data-i18n="assess.include.i2.body">현재 사용 중인 도구, 문서 종류, 민감도 요구를 간단히 살펴봅니다. 로컬에 머물러야 할 것과 외부에 나가도 될 것을 짚어드립니다.</p>
+      </div>
+      <div class="assess-include">
+        <h3 data-i18n="assess.include.i3.title">2–3명의 사용자 인터뷰</h3>
+        <p data-i18n="assess.include.i3.body">실제 업무를 하고 있는 분들과의 짧은 통화. AI가 정말 시간을 줄여줄 지점과, 오히려 방해가 될 지점을 찾습니다.</p>
+      </div>
+      <div class="assess-include">
+        <h3 data-i18n="assess.include.i4.title">서면 보고서와 고정 견적</h3>
+        <p data-i18n="assess.include.i4.body">가장 가치가 큰 워크플로우, 민감도에 맞는 온프레미스 아키텍처, 그리고 구축을 권하는 경우에는 고정 견적까지 담은 문서를 드립니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Form -->
+<section class="section section--soft" id="form">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="assess.form.eyebrow">대화를 시작해 보세요</p>
+    <h2 class="section-title reveal d1" data-i18n-html="assess.form.h2">귀사에 대해 알려주십시오. <em>영업일 이틀 안에 답신드립니다.</em></h2>
+    <p class="lede reveal d2" data-i18n="assess.form.lead">AI가 어떤 업무를 도와주기를 원하는지, 어떤 데이터가 관련되는지를 구체적으로 알려주실수록 첫 대화가 더 유용해집니다.</p>
+
+    <form id="assess-form" class="assess-form-shell reveal d2" action="https://formspree.io/f/xkokqppr" method="POST" data-calendly="https://calendly.com/jordan-studiomonjo/30min">
+      <input type="hidden" name="_subject" value="AI Readiness Review — new request">
+
+      <div class="assess-form-grid">
+        <div class="assess-field">
+          <label for="name" data-i18n="assess.form.f.name">성함</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="assess-field">
+          <label for="role" data-i18n="assess.form.f.role">직책</label>
+          <input type="text" id="role" name="role" required>
+        </div>
+        <div class="assess-field">
+          <label for="email" data-i18n="assess.form.f.email">업무 이메일</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="assess-field">
+          <label for="company" data-i18n="assess.form.f.company">회사명</label>
+          <input type="text" id="company" name="company" required>
+        </div>
+        <div class="assess-field">
+          <label for="industry" data-i18n="assess.form.f.industry">업종</label>
+          <input type="text" id="industry" name="industry" required>
+        </div>
+        <div class="assess-field">
+          <label for="country" data-i18n="assess.form.f.country">국가</label>
+          <input type="text" id="country" name="country" required>
+        </div>
+        <div class="assess-field">
+          <label for="team_size" data-i18n="assess.form.f.teamSize">조직 규모</label>
+          <select id="team_size" name="team_size" required>
+            <option value="" data-i18n="assess.form.o.teamSize.prompt">규모를 선택해 주세요</option>
+            <option value="1-10" data-i18n="assess.form.o.teamSize.v1">1–10명</option>
+            <option value="11-50" data-i18n="assess.form.o.teamSize.v2">11–50명</option>
+            <option value="51-200" data-i18n="assess.form.o.teamSize.v3">51–200명</option>
+            <option value="201-500" data-i18n="assess.form.o.teamSize.v4">201–500명</option>
+            <option value="500+" data-i18n="assess.form.o.teamSize.v5">500명 이상</option>
+          </select>
+        </div>
+        <div class="assess-field">
+          <label for="timeline" data-i18n="assess.form.f.timeline">도입 시기</label>
+          <select id="timeline" name="timeline" required>
+            <option value="" data-i18n="assess.form.o.timeline.prompt">시기를 선택해 주세요</option>
+            <option value="exploring" data-i18n="assess.form.o.timeline.v1">아직 탐색 단계</option>
+            <option value="3-6-months" data-i18n="assess.form.o.timeline.v2">3–6개월 이내</option>
+            <option value="soon" data-i18n="assess.form.o.timeline.v3">빠른 시일 내 — 본격 검토 중</option>
+            <option value="urgent" data-i18n="assess.form.o.timeline.v4">시급 — 즉시 착수</option>
+          </select>
+        </div>
+        <div class="assess-field field-full">
+          <label data-i18n="assess.form.f.workflows">AI가 도와주기를 바라는 업무는 무엇입니까?</label>
+          <div class="assess-checkboxes">
+            <label><input type="checkbox" name="workflows" value="document_analysis"> <span data-i18n="assess.form.w.w1">문서 분석 및 요약</span></label>
+            <label><input type="checkbox" name="workflows" value="contract_review"> <span data-i18n="assess.form.w.w2">계약·법률 검토</span></label>
+            <label><input type="checkbox" name="workflows" value="rnd_knowledge"> <span data-i18n="assess.form.w.w3">R&amp;D 및 기술 지식</span></label>
+            <label><input type="checkbox" name="workflows" value="customer_data"> <span data-i18n="assess.form.w.w4">고객 데이터 및 CRM 운영</span></label>
+            <label><input type="checkbox" name="workflows" value="translation"> <span data-i18n="assess.form.w.w5">번역 및 다국어 업무</span></label>
+            <label><input type="checkbox" name="workflows" value="internal_qa"> <span data-i18n="assess.form.w.w6">사내 문서 전반에 대한 Q&amp;A</span></label>
+            <label><input type="checkbox" name="workflows" value="drafting"> <span data-i18n="assess.form.w.w7">보고서·이메일·메모 작성</span></label>
+            <label><input type="checkbox" name="workflows" value="other"> <span data-i18n="assess.form.w.w8">그 외 (아래에 설명)</span></label>
+          </div>
+        </div>
+        <div class="assess-field field-full">
+          <label for="sensitivity" data-i18n="assess.form.f.sensitivity">관련 데이터의 민감도는 어느 수준입니까?</label>
+          <select id="sensitivity" name="sensitivity" required>
+            <option value="" data-i18n="assess.form.o.sensitivity.prompt">민감도를 선택해 주세요</option>
+            <option value="routine" data-i18n="assess.form.o.sensitivity.v1">일반 업무 자료</option>
+            <option value="confidential" data-i18n="assess.form.o.sensitivity.v2">기밀 — 고객 또는 내부 자료</option>
+            <option value="regulated" data-i18n="assess.form.o.sensitivity.v3">규제 대상 — 법률·금융·의료·개인정보</option>
+            <option value="critical" data-i18n="assess.form.o.sensitivity.v4">고도 민감 — 영업비밀, M&amp;A, 내부 조사</option>
+          </select>
+        </div>
+        <div class="assess-field field-full">
+          <label for="current_ai" data-i18n="assess.form.f.currentAi">현재 AI 활용 현황</label>
+          <select id="current_ai" name="current_ai" required>
+            <option value="" data-i18n="assess.form.o.currentAi.prompt">가장 가까운 상황을 선택해 주세요</option>
+            <option value="none" data-i18n="assess.form.o.currentAi.v1">아직 사용하지 않음</option>
+            <option value="cloud" data-i18n="assess.form.o.currentAi.v2">클라우드 도구 (ChatGPT, Claude, Gemini 등)</option>
+            <option value="local" data-i18n="assess.form.o.currentAi.v3">로컬 또는 자체 호스팅 모델</option>
+            <option value="mixed" data-i18n="assess.form.o.currentAi.v4">혼합 — 클라우드와 로컬</option>
+          </select>
+        </div>
+        <div class="assess-field field-full">
+          <label for="context" data-i18n="assess.form.f.context">어떤 상황인지 알려주실 수 있나요?</label>
+          <textarea id="context" name="context" placeholder="Workflows, pain points, constraints, specific questions…" data-i18n-placeholder="assess.form.f.contextPlaceholder"></textarea>
+          <span class="hint" data-i18n="assess.form.f.contextHint">구체적일수록 저희의 답신이 더 유용해집니다.</span>
+        </div>
+      </div>
+
+      <div class="assess-submit">
+        <button type="submit" class="btn-dark" id="assess-submit-btn" data-i18n="assess.form.submit" data-i18n-sending="assess.form.sending">신청 보내기</button>
+        <span class="assess-submit-note" data-i18n="assess.form.submitNote">영업일 이틀 이내에 답신드립니다.</span>
+      </div>
+
+      <p class="assess-form-status assess-form-status--error" id="assess-form-error" role="alert" data-i18n-html="assess.form.error.body">폼 전송 중 문제가 발생했습니다. 계속 반복된다면 <a href="https://calendly.com/jordan-studiomonjo/30min" target="_blank" rel="noopener">직접 시간을 예약해 주세요</a>. 나머지 내용은 이메일로 파악하겠습니다.</p>
+    </form>
+
+    <div class="assess-success reveal" id="assess-success" aria-live="polite">
+      <h3 data-i18n-html="assess.form.success.title">요청이 접수되었습니다. <em>이제 시간을 선택해 주세요.</em></h3>
+      <p data-i18n="assess.form.success.body">입력해 주신 정보는 저희에게 전달되었습니다. 편한 30분 슬롯을 선택해 주세요. 이름과 이메일은 이미 채워져 있으며, 진단 문항은 미팅 전에 저희가 미리 확인합니다.</p>
+      <div class="assess-success-actions">
+        <a href="https://calendly.com/jordan-studiomonjo/30min" target="_blank" rel="noopener" class="btn-dark" id="assess-success-cta" data-i18n="assess.form.success.cta">캘린더에서 시간 선택하기</a>
+        <span class="assess-success-note" data-i18n="assess.form.success.note">Calendly 열기 · 1분 이내</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who it's for -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="assess.fit.eyebrow">어떤 회사에 적합한가</p>
+    <h2 class="section-title reveal d1" data-i18n-html="assess.fit.h2">아래 중 하나라도 익숙하게 들린다면 진단이 도움이 될 것입니다.</h2>
+
+    <div class="grid-3" style="margin-top: 2rem">
+      <article class="card reveal">
+        <h3 data-i18n="assess.fit.card1.title">데이터가 클라우드 AI에 맡기기엔 너무 민감합니다</h3>
+        <p data-i18n="assess.fit.card1.body">규제 산업, 기밀 고객 자료, 영업비밀, 또는 정책상 환경 밖으로 나가면 안 되는 개인정보가 있는 경우입니다.</p>
+      </article>
+      <article class="card reveal d1">
+        <h3 data-i18n="assess.fit.card2.title">실제 문서와 실제 워크플로우가 있습니다</h3>
+        <p data-i18n="assess.fit.card2.body">백지 상태가 아니라, AI 시스템이 배울 수 있는 수년간의 내부 문서와 잘 정의된 프로세스가 이미 있는 경우입니다.</p>
+      </article>
+      <article class="card reveal d2">
+        <h3 data-i18n="assess.fit.card3.title">임대가 아니라 소유하기를 원합니다</h3>
+        <p data-i18n="assess.fit.card3.body">남의 플랫폼에 대한 구독보다, 예측 가능한 유지비를 내는 일회성 구축을 선호하는 경우입니다.</p>
+      </article>
+    </div>
+
+    <div class="assess-callout reveal">
+      <p class="eyebrow-light" data-i18n="assess.fit.note.eyebrow">솔직함에 대하여</p>
+      <p data-i18n="assess.fit.note.body">진단 후 클라우드 도구가 더 적합하거나 지금은 시기가 아니라고 판단되면 그렇게 말씀드립니다. 어느 쪽도 그런 척할 필요가 없도록 진단을 무료로 운영합니다.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smart Fellow</div>
+    <ul class="footer-links">
+      <li><a href="/how-we-work.html" data-i18n="footer.how">진행 방식</a></li>
+      <li><a href="/#blueprints" data-i18n="footer.blueprints">만드는 것</a></li>
+      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/ko/technology.html" data-i18n="footer.tech">기술</a></li>
+      <li><a href="/assessment/" data-i18n="footer.contact">무료 진단</a></li>
+    </ul>
+    <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · 서울, 대한민국</span>
+  </div>
+</footer>
+
+<script>window.SF_CONFIG={"locale":"ko"};</script>
+
+<script src="/i18n.js"></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
+
+navToggle.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+function closeMobileMenu() {
+  navMobile.classList.remove('open');
+  navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+(function () {
+  const navEl = document.querySelector('nav');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (navMobile.classList.contains('open')) {
+      lastY = y;
+      return;
+    }
+    if (Math.abs(y - lastY) < 8) return;
+    if (y <= 0 || y < lastY) {
+      navEl.classList.remove('nav-hidden');
+    } else {
+      navEl.classList.add('nav-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+
+(function () {
+  const form = document.getElementById('assess-form');
+  if (!form) return;
+
+  const successEl = document.getElementById('assess-success');
+  const successCta = document.getElementById('assess-success-cta');
+  const errorEl = document.getElementById('assess-form-error');
+  const submitBtn = document.getElementById('assess-submit-btn');
+  const calendlyBase = form.getAttribute('data-calendly') || '';
+
+  let originalLabel = '';
+  function setButtonLabel(state) {
+    if (!submitBtn) return;
+    if (!originalLabel) originalLabel = submitBtn.textContent;
+    if (state === 'sending') {
+      submitBtn.textContent = submitBtn.getAttribute('data-label-sending') || 'Sending…';
+    } else {
+      submitBtn.textContent = originalLabel;
+    }
+  }
+
+  function buildCalendlyUrl(data) {
+    if (!calendlyBase) return '';
+    const name = (data.get('name') || '').toString().trim();
+    const email = (data.get('email') || '').toString().trim();
+    const company = (data.get('company') || '').toString().trim();
+    const role = (data.get('role') || '').toString().trim();
+    const timeline = (data.get('timeline') || '').toString().trim();
+    const industry = (data.get('industry') || '').toString().trim();
+    const params = new URLSearchParams();
+    if (name) params.set('name', name);
+    if (email) params.set('email', email);
+    const summaryParts = [company, role, industry, timeline].filter(Boolean);
+    if (summaryParts.length) params.set('a1', summaryParts.join(' · '));
+    const query = params.toString();
+    return query ? calendlyBase + (calendlyBase.indexOf('?') === -1 ? '?' : '&') + query : calendlyBase;
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    form.setAttribute('data-state', 'sending');
+    setButtonLabel('sending');
+
+    const data = new FormData(form);
+    const calendlyUrl = buildCalendlyUrl(data);
+    if (calendlyUrl && successCta) successCta.setAttribute('href', calendlyUrl);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function (response) {
+      if (!response.ok) throw new Error('Submission failed with status ' + response.status);
+      form.setAttribute('data-state', 'success');
+      form.style.display = 'none';
+      if (successEl) {
+        successEl.classList.add('is-visible');
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }).catch(function () {
+      form.setAttribute('data-state', 'error');
+      setButtonLabel('default');
+      if (errorEl) errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+})();
+</script>
+</body>
+</html>

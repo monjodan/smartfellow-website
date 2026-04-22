@@ -197,14 +197,15 @@
 <nav>
   <a href="/" class="nav-logo">Smart Fellow</a>
   <ul class="nav-links">
-    <li><a href="/#how" data-i18n="nav.how">How it works</a></li>
-    <li><a href="/technology.html" class="active" data-i18n="nav.technology">The technology</a></li>
-    <li><a href="/#roles" data-i18n="nav.roles">Roles</a></li>
-    <li><a href="/#contact" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="/how-we-work.html" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/#blueprints" data-i18n="nav.blueprints">What we build</a></li>
+    <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/technology.html" class="active" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/assessment/" data-i18n="nav.assessment">Free review</a></li>
   </ul>
   <div class="nav-right">
     <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">한국어</button>
-    <a href="/#contact" class="nav-cta" onclick="Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Book a call</a>
+    <a href="/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">Book a free review</a>
   </div>
   <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -213,12 +214,13 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
-    <li><a href="/#how" onclick="closeMobileMenu()" data-i18n="nav.how">How it works</a></li>
-    <li><a href="/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">The technology</a></li>
-    <li><a href="/#roles" onclick="closeMobileMenu()" data-i18n="nav.roles">Roles</a></li>
-    <li><a href="/#contact" onclick="closeMobileMenu()" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">What we build</a></li>
+    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Free review</a></li>
   </ul>
-  <a href="/#contact" class="nav-cta" onclick="closeMobileMenu(); Calendly.initPopupWidget({url:'https://calendly.com/jordan-studiomonjo/30min'});return false;" data-i18n="nav.cta">Book a call</a>
+  <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Book a free review</a>
   <button id="lang-toggle-mobile" class="lang-toggle-mobile">한국어</button>
 </div>
 
@@ -443,11 +445,11 @@
 <section class="section section--green">
   <div class="section-inner">
     <div class="page-cta-inner">
-      <p class="eyebrow-light reveal" data-i18n="techv2.cta.eyebrow">Next step</p>
-      <h2 class="section-title reveal d1" data-i18n-html="techv2.cta.h2">Seen enough to want <em>a conversation?</em></h2>
-      <p class="lede reveal d2" data-i18n="techv2.cta.body">Book a free 30-minute call. We will walk through your team's specific needs and show you exactly what a Smart Fellow would look like in your workflow.</p>
+      <p class="eyebrow-light reveal" data-i18n="techv2.cta.eyebrow">Start with the free review</p>
+      <h2 class="section-title reveal d1" data-i18n-html="techv2.cta.h2">Seen enough to want <em>a written plan?</em></h2>
+      <p class="lede reveal d2" data-i18n="techv2.cta.body">Book a free AI Readiness Review. We walk through your workflows, sensitivity requirements, and integration needs, and leave you with a written report and a fixed quote.</p>
       <div class="page-cta-actions reveal d3">
-        <a href="/#contact" class="btn-dark" data-i18n="techv2.cta.primary">Book a free call</a>
+        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="techv2.cta.primary">Book a free AI readiness review</a>
         <a href="/" class="btn-outline" data-i18n="techv2.cta.secondary">Back to main site</a>
       </div>
       <div class="page-cta-note reveal d3" data-i18n="techv2.cta.note">Korean · English · French · No commitment required</div>
@@ -459,10 +461,11 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
-      <li><a href="/#how" data-i18n="footer.how">How it works</a></li>
-      <li><a href="/technology.html" data-i18n="footer.tech">The technology</a></li>
-      <li><a href="/#roles" data-i18n="footer.roles">Roles</a></li>
-      <li><a href="/#contact" data-i18n="footer.contact">Contact</a></li>
+      <li><a href="/how-we-work.html" data-i18n="footer.how">How we work</a></li>
+      <li><a href="/#blueprints" data-i18n="footer.blueprints">What we build</a></li>
+      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/technology.html" data-i18n="footer.tech">Technology</a></li>
+      <li><a href="/assessment/" data-i18n="footer.contact">Free review</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>
   </div>
@@ -470,6 +473,7 @@
 
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script src="i18n.js"></script>
+<script src="/assessment-modal.js" defer></script>
 <script>
 const obs = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
