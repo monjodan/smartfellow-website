@@ -346,7 +346,6 @@
 <nav>
   <a href="/en/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" />Smart Fellow</a>
   <ul class="nav-links">
-    <li><a href="/en/#blueprints" data-i18n="nav.what">What we do</a></li>
     <li class="nav-dropdown">
       <a href="/en/use-cases/" class="nav-dropdown-trigger" data-i18n="nav.cases">Use cases</a>
       <div class="nav-dropdown-menu" role="menu" aria-label="Use cases">
@@ -358,8 +357,8 @@
       </div>
     </li>
     <li><a href="/en/how-we-work/" data-i18n="nav.how">How we work</a></li>
-    <li><a href="/en/technology/" data-i18n="nav.architecture">Architecture</a></li>
-    <li><a href="/en/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/en/technology/" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/en/sovereign/" data-i18n="nav.sovereign">Offline AI</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switcher" role="group" aria-label="Choose language"><a href="/en/" class="lang-option is-current" data-locale="en" lang="en" aria-current="page">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
@@ -372,11 +371,10 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
-    <li><a href="/en/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.what">What we do</a></li>
     <li><a href="/en/use-cases/" onclick="closeMobileMenu()" data-i18n="nav.cases">Use cases</a></li>
     <li><a href="/en/how-we-work/" onclick="closeMobileMenu()" data-i18n="nav.how">How we work</a></li>
-    <li><a href="/en/technology/" onclick="closeMobileMenu()" data-i18n="nav.architecture">Architecture</a></li>
-    <li><a href="/en/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/en/technology/" onclick="closeMobileMenu()" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/en/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Offline AI</a></li>
   </ul>
   <a href="/en/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Book a free review</a>
   <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choose language"><a href="/en/" class="lang-option is-current" data-locale="en" lang="en" aria-current="page">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
@@ -387,7 +385,7 @@
     <div class="home-hero-copy">
       <p class="eyebrow reveal" data-i18n="home.hero.eyebrow">Private AI · Seoul · Korea</p>
       <h1 class="hero-title reveal d1" data-i18n-html="home.hero.h1">A private AI team, <em>built for your company.</em></h1>
-      <p class="lede reveal d2" data-i18n="home.hero.sub">We build private AI systems that run on hardware you own, trained on your data and your workflows. You keep control. We do the building. We stay on to maintain it.</p>
+      <p class="lede reveal d2" data-i18n="home.hero.sub">Private AI on hardware you own. Trained on your data. We build it, we maintain it, you stay in control.</p>
       <div class="hero-actions reveal d3">
         <a href="/en/assessment/" class="btn-dark" data-open-assessment data-i18n="home.hero.ctaPrimary">Book a free AI readiness review</a>
         <a href="/en/how-we-work/" class="btn-outline" data-i18n="home.hero.ctaSecondary">How we work</a>
@@ -409,7 +407,7 @@
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="home.position.eyebrow">The idea</p>
     <h2 class="section-title reveal d1" data-i18n-html="home.position.h2">Tailored, not templated. <em>Private, not published.</em></h2>
-    <p class="lede reveal d2" data-i18n="home.position.lead">Most AI tools are general products pointed at your business from the outside. We do the opposite. We come in, study how your team actually works, and build a private AI system that fits it: yours to run, yours to own.</p>
+    <p class="lede reveal d2" data-i18n="home.position.lead">Most AI tools are generic products aimed at your business from the outside. We come in, study how your team actually works, and build a system that fits. Yours to run, yours to own.</p>
 
     <div class="grid-3">
       <article class="card reveal">
@@ -439,7 +437,7 @@
       <div class="home-sov-copy">
         <p class="eyebrow reveal" data-i18n="home.sov.eyebrow">Data stays where it belongs</p>
         <h2 class="section-title reveal d1" data-i18n-html="home.sov.h2">Your data stays <em>inside your building.</em></h2>
-        <p class="lede reveal d2" data-i18n="home.sov.lead">Cloud AI tools process your documents on someone else's servers. The AI systems we build run on dedicated hardware inside your office. Nothing leaves unless you explicitly decide it should, and then only for the tasks you approve.</p>
+        <p class="lede reveal d2" data-i18n="home.sov.lead">Cloud AI runs your documents on someone else's servers. Our systems run on dedicated hardware inside your office. Nothing leaves without your approval.</p>
         <ul class="spec-list reveal d3">
           <li data-i18n="home.sov.point1">PIPA-compliant by construction, not by promise.</li>
           <li data-i18n="home.sov.point2">Safe for confidential documents, client files, and sensitive operating context.</li>
@@ -482,7 +480,7 @@
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="home.blueprints.eyebrow">What we build</p>
     <h2 class="section-title reveal d1" data-i18n-html="home.blueprints.h2">Every system is tailored. <em>These are a few shapes it usually takes.</em></h2>
-    <p class="lede reveal d2" data-i18n="home.blueprints.lead">Each engagement starts from your workflows, not from a product catalogue. The examples below are patterns we see often. Starting points to picture what a private AI team could look like inside your company.</p>
+    <p class="lede reveal d2" data-i18n="home.blueprints.lead">Every build starts from your workflows, not a product catalogue. The shapes below are patterns we see often.</p>
 
     <div class="blueprint-grid reveal d2">
       <article class="blueprint-card">
@@ -589,11 +587,10 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
-      <li><a href="/en/#blueprints" data-i18n="footer.what">What we do</a></li>
       <li><a href="/en/use-cases/" data-i18n="footer.cases">Use cases</a></li>
       <li><a href="/en/how-we-work/" data-i18n="footer.how">How we work</a></li>
-      <li><a href="/en/technology/" data-i18n="footer.architecture">Architecture</a></li>
-      <li><a href="/en/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/en/technology/" data-i18n="footer.technology">Technology</a></li>
+      <li><a href="/en/sovereign/" data-i18n="footer.sovereign">Offline AI</a></li>
       <li><a href="/en/assessment/" data-i18n="footer.contact">Free review</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>

@@ -346,7 +346,6 @@
 <nav>
   <a href="/ko/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" />Smart Fellow</a>
   <ul class="nav-links">
-    <li><a href="/ko/#blueprints" data-i18n="nav.what">무엇을 만드나</a></li>
     <li class="nav-dropdown">
       <a href="/ko/use-cases/" class="nav-dropdown-trigger" data-i18n="nav.cases">도입 사례</a>
       <div class="nav-dropdown-menu" role="menu" aria-label="Use cases">
@@ -358,8 +357,8 @@
       </div>
     </li>
     <li><a href="/ko/how-we-work/" data-i18n="nav.how">진행 방식</a></li>
-    <li><a href="/ko/technology/" data-i18n="nav.architecture">아키텍처</a></li>
-    <li><a href="/ko/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/ko/technology/" data-i18n="nav.technology">기술</a></li>
+    <li><a href="/ko/sovereign/" data-i18n="nav.sovereign">오프라인 AI</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switcher" role="group" aria-label="언어 선택"><a href="/en/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
@@ -372,11 +371,10 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
-    <li><a href="/ko/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.what">무엇을 만드나</a></li>
     <li><a href="/ko/use-cases/" onclick="closeMobileMenu()" data-i18n="nav.cases">도입 사례</a></li>
     <li><a href="/ko/how-we-work/" onclick="closeMobileMenu()" data-i18n="nav.how">진행 방식</a></li>
-    <li><a href="/ko/technology/" onclick="closeMobileMenu()" data-i18n="nav.architecture">아키텍처</a></li>
-    <li><a href="/ko/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/ko/technology/" onclick="closeMobileMenu()" data-i18n="nav.technology">기술</a></li>
+    <li><a href="/ko/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">오프라인 AI</a></li>
   </ul>
   <a href="/ko/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">무료 진단 예약</a>
   <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="언어 선택"><a href="/en/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
@@ -387,7 +385,7 @@
     <div class="home-hero-copy">
       <p class="eyebrow reveal" data-i18n="home.hero.eyebrow">전용 AI · 서울 · 대한민국</p>
       <h1 class="hero-title reveal d1" data-i18n-html="home.hero.h1">귀사를 위한 <em>전용 AI 팀을 구축합니다.</em></h1>
-      <p class="lede reveal d2" data-i18n="home.hero.sub">귀사가 소유한 하드웨어 위에서 돌아가는 전용 AI 시스템을, 귀사의 데이터와 워크플로우에 맞춰 구축합니다. 통제권은 귀사가 가지고, 구축은 저희가 맡으며, 유지관리까지 이어서 책임집니다.</p>
+      <p class="lede reveal d2" data-i18n="home.hero.sub">귀사가 소유한 하드웨어 위 전용 AI. 귀사의 데이터로 학습합니다. 저희가 만들고, 저희가 유지관리하며, 통제권은 귀사가 갖습니다.</p>
       <div class="hero-actions reveal d3">
         <a href="/ko/assessment/" class="btn-dark" data-open-assessment data-i18n="home.hero.ctaPrimary">무료 AI 도입 진단 예약</a>
         <a href="/ko/how-we-work/" class="btn-outline" data-i18n="home.hero.ctaSecondary">진행 방식 보기</a>
@@ -409,7 +407,7 @@
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="home.position.eyebrow">우리의 접근</p>
     <h2 class="section-title reveal d1" data-i18n-html="home.position.h2">맞춤 제작, 템플릿이 아닙니다. <em>전용, 공개가 아닙니다.</em></h2>
-    <p class="lede reveal d2" data-i18n="home.position.lead">대부분의 AI 도구는 외부에서 귀사의 비즈니스를 겨냥한 범용 제품입니다. 저희는 반대로 움직입니다. 팀이 실제로 어떻게 일하는지 안으로 들어가 파악하고, 그에 맞는 전용 AI 시스템을 구축합니다. 운영도 소유도 귀사의 것입니다.</p>
+    <p class="lede reveal d2" data-i18n="home.position.lead">대부분의 AI 도구는 외부에서 비즈니스를 겨냥한 범용 제품입니다. 저희는 안으로 들어가 팀이 실제로 어떻게 일하는지 파악하고, 그에 맞는 시스템을 만듭니다. 운영도 소유도 귀사의 것입니다.</p>
 
     <div class="grid-3">
       <article class="card reveal">
@@ -439,7 +437,7 @@
       <div class="home-sov-copy">
         <p class="eyebrow reveal" data-i18n="home.sov.eyebrow">데이터는 있어야 할 곳에</p>
         <h2 class="section-title reveal d1" data-i18n-html="home.sov.h2">귀사의 데이터는 <em>건물 안에 머뭅니다.</em></h2>
-        <p class="lede reveal d2" data-i18n="home.sov.lead">클라우드 AI 도구는 남의 서버에서 귀사의 문서를 처리합니다. 저희가 구축하는 AI 시스템은 귀사 사무실 안의 전용 하드웨어에서 실행됩니다. 귀사가 명시적으로 허용한 업무에 한해서만, 그리고 그 경우에만 외부와 연결됩니다.</p>
+        <p class="lede reveal d2" data-i18n="home.sov.lead">클라우드 AI는 남의 서버에서 귀사의 문서를 처리합니다. 저희 시스템은 귀사 사무실 안의 전용 하드웨어에서 실행됩니다. 귀사 승인 없이는 어떤 데이터도 밖으로 나가지 않습니다.</p>
         <ul class="spec-list reveal d3">
           <li data-i18n="home.sov.point1">약속이 아니라 설계로 보장하는 PIPA 준수.</li>
           <li data-i18n="home.sov.point2">기밀 문서, 고객 자료, 민감한 운영 맥락에 안전합니다.</li>
@@ -482,7 +480,7 @@
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="home.blueprints.eyebrow">무엇을 구축하는가</p>
     <h2 class="section-title reveal d1" data-i18n-html="home.blueprints.h2">모든 시스템은 맞춤 제작입니다. <em>다만 자주 나타나는 형태가 있습니다.</em></h2>
-    <p class="lede reveal d2" data-i18n="home.blueprints.lead">모든 프로젝트는 제품 카탈로그가 아니라 귀사의 워크플로우에서 출발합니다. 아래는 자주 보이는 패턴입니다. 전용 AI 팀이 귀사 내부에서 어떤 모습일지 그려보는 출발점으로 삼으십시오.</p>
+    <p class="lede reveal d2" data-i18n="home.blueprints.lead">모든 구축은 제품 카탈로그가 아니라 귀사의 워크플로우에서 출발합니다. 아래는 자주 보이는 패턴입니다.</p>
 
     <div class="blueprint-grid reveal d2">
       <article class="blueprint-card">
@@ -589,11 +587,10 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
-      <li><a href="/ko/#blueprints" data-i18n="footer.what">무엇을 만드나</a></li>
       <li><a href="/ko/use-cases/" data-i18n="footer.cases">도입 사례</a></li>
       <li><a href="/ko/how-we-work/" data-i18n="footer.how">진행 방식</a></li>
-      <li><a href="/ko/technology/" data-i18n="footer.architecture">아키텍처</a></li>
-      <li><a href="/ko/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/ko/technology/" data-i18n="footer.technology">기술</a></li>
+      <li><a href="/ko/sovereign/" data-i18n="footer.sovereign">오프라인 AI</a></li>
       <li><a href="/ko/assessment/" data-i18n="footer.contact">무료 진단</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · 서울, 대한민국</span>

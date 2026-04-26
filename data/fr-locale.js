@@ -9,11 +9,10 @@
   return {
     'page.title': 'Smart Fellow. Une équipe IA privée, construite pour votre entreprise',
 
-    'nav.what':         'Ce que nous faisons',
     'nav.cases':        "Cas d'usage",
     'nav.how':          'Comment nous travaillons',
-    'nav.architecture': 'Architecture',
-    'nav.sovereign':    'Sovereign',
+    'nav.technology':   'Technologie',
+    'nav.sovereign':    'IA hors ligne',
     'nav.assessment':   'Diagnostic gratuit',
     'nav.contact':      'Contact',
     'nav.cta':          'Réserver un diagnostic',
@@ -24,18 +23,17 @@
     'nav.cases.studioMonjo.desc':   'Une équipe IA pour un studio à Séoul',
     'nav.cases.more':               "D'autres cas à venir",
 
-    'footer.what':       'Ce que nous faisons',
     'footer.cases':      "Cas d'usage",
     'footer.how':        'Comment nous travaillons',
-    'footer.architecture': 'Architecture',
-    'footer.sovereign':  'Sovereign',
+    'footer.technology': 'Technologie',
+    'footer.sovereign':  'IA hors ligne',
     'footer.contact':    'Diagnostic gratuit',
     'footer.copy':       '© 2026 Smart Fellow · Séoul, Corée',
 
     /* ── HOME ── */
     'home.hero.eyebrow': "IA privée · Séoul · Corée",
     'home.hero.h1': "Une équipe IA privée, <em>construite pour votre entreprise.</em>",
-    'home.hero.sub': "Nous construisons des systèmes IA privés qui tournent sur du matériel que vous possédez, entraînés sur vos données et vos flux de travail. Vous gardez le contrôle. Nous nous chargeons de la construction. Nous restons pour la maintenance.",
+    'home.hero.sub': "Une IA privée sur du matériel que vous possédez. Entraînée sur vos données. Nous la construisons, nous la maintenons, vous gardez le contrôle.",
     'home.hero.ctaPrimary': "Réserver un diagnostic IA gratuit",
     'home.hero.ctaSecondary': "Comment nous travaillons",
 
@@ -46,7 +44,7 @@
 
     'home.position.eyebrow': "L'idée",
     'home.position.h2': "Sur mesure, pas par défaut. <em>Privé, pas publié.</em>",
-    'home.position.lead': "La plupart des outils IA sont des produits génériques pointés vers votre entreprise depuis l'extérieur. Nous faisons l'inverse. Nous entrons, étudions comment votre équipe travaille réellement, et construisons un système IA privé qui s'y adapte: le vôtre, à exploiter, à posséder.",
+    'home.position.lead': "La plupart des outils IA sont des produits génériques pointés vers votre entreprise depuis l'extérieur. Nous entrons, étudions comment votre équipe travaille réellement, et construisons un système qui s'y adapte. Le vôtre, à exploiter, à posséder.",
     'home.position.card1.title': "Construit sur vos données",
     'home.position.card1.body': "Affiné sur vos documents, vos flux de travail, votre terminologie. Il connaît votre activité parce que votre activité est tout ce qu'il connaît.",
     'home.position.card2.title': "Fonctionne où vous le décidez",
@@ -59,7 +57,7 @@
 
     'home.sov.eyebrow': "Les données restent chez elles",
     'home.sov.h2': "Vos données restent <em>dans votre bâtiment.</em>",
-    'home.sov.lead': "Les outils IA cloud traitent vos documents sur les serveurs de quelqu'un d'autre. Les systèmes IA que nous construisons tournent sur du matériel dédié, dans vos bureaux. Rien ne sort sauf si vous en décidez explicitement, et uniquement pour les tâches que vous approuvez.",
+    'home.sov.lead': "Les outils IA cloud traitent vos documents sur les serveurs de quelqu'un d'autre. Nos systèmes tournent sur du matériel dédié, dans vos bureaux. Rien ne sort sans votre approbation.",
     'home.sov.point1': "Conforme RGPD par construction, pas par promesse.",
     'home.sov.point2': "Adapté aux documents confidentiels, aux dossiers clients et aux contextes opérationnels sensibles.",
     'home.sov.point3': "Modèles cloud optionnels: votre décision, tâche par tâche, à tout moment.",
@@ -79,7 +77,7 @@
 
     'home.blueprints.eyebrow': "Ce que nous construisons",
     'home.blueprints.h2': "Chaque système est sur mesure. <em>Mais certaines formes reviennent souvent.</em>",
-    'home.blueprints.lead': "Chaque mission démarre de vos flux de travail, pas d'un catalogue produit. Les exemples ci-dessous sont des schémas que nous voyons régulièrement. Des points de départ pour imaginer ce à quoi pourrait ressembler une équipe IA privée dans votre entreprise.",
+    'home.blueprints.lead': "Chaque build démarre de vos flux de travail, pas d'un catalogue produit. Les exemples ci-dessous sont des schémas que nous voyons régulièrement.",
     'home.blueprints.note': "Aucun de ces exemples n'est un produit figé. Ce sont des formes familières que nous avons déjà conçues. Votre système est défini à partir de zéro pendant le diagnostic IA gratuit.",
 
     'home.blueprints.card1.tag': "Juridique & conformité",
@@ -136,8 +134,8 @@
 
     /* ── HOW WE WORK ── */
     'how.hero.eyebrow': "Notre modèle de collaboration",
-    'how.hero.h1': "Un processus clair de la première conversation <em>à la relation continue.</em>",
-    'how.hero.body': "Nous ne vendons pas l'accès à une plateforme. Nous sommes l'équipe qui planifie, construit et maintient votre système IA privé. Voici à quoi cela ressemble en pratique.",
+    'how.hero.h1': "Quatre phases. <em>Une équipe.</em>",
+    'how.hero.body': "Nous ne vendons pas un accès à une plateforme. Nous planifions, construisons et maintenons votre système IA privé. Voici comment cela se passe.",
 
     'how.overview.p1.title': "Évaluer",
     'how.overview.p1.meta': "Gratuit · Livré sous 48 h",
@@ -317,7 +315,7 @@
     /* ── SOVEREIGN ── */
     'sovv2.hero.eyebrow': "Pour les workflows très sensibles",
     'sovv2.hero.h1': "Une IA hors ligne pour le travail qui doit rester <em>confidentiel.</em>",
-    'sovv2.hero.body': "Smart Fellow Sovereign est une machine IA dédiée pour les documents sensibles, l'analyse interne, la R&amp;D, les dossiers clients et le travail multilingue. Elle fonctionne en local, peut opérer sans accès internet et ne travaille qu'avec les données que votre équipe lui fournit explicitement.",
+    'sovv2.hero.body': "Sovereign est une machine IA dédiée pour le travail sensible. Elle fonctionne en local, peut opérer hors ligne, et ne voit que les données que votre équipe lui fournit explicitement.",
     'sovv2.hero.primary': "Réserver un diagnostic IA gratuit",
     'sovv2.hero.secondary': "Voir le problème qu'il résout",
 
@@ -417,7 +415,7 @@
     /* ── TECHNOLOGY ── */
     'techv2.hero.eyebrow': "Sous le capot",
     'techv2.hero.h1': "Le système IA local géré derrière <em>votre équipe IA privée.</em>",
-    'techv2.hero.body': "Les systèmes IA privés que nous construisons ne sont pas des comptes cloud, ni des plateformes que votre équipe doit déployer elle-même. Ce sont des systèmes IA gérés qui tournent sur des modèles locaux sur du matériel dédié à votre entreprise, affinés sur vos documents, avec des compléments cloud en option quand ils aident vraiment.",
+    'techv2.hero.body': "Pas un chatbot cloud. Pas une plateforme que vous déployez vous-même. Un système IA géré qui tourne sur des modèles locaux, sur du matériel dédié à votre entreprise, affiné sur vos documents. Le cloud est en option.",
     'techv2.hero.summary1.label': "Architecture de base",
     'techv2.hero.summary1.value': "Local par défaut",
     'techv2.hero.summary2.label': "Interfaces",

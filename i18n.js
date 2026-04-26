@@ -11,11 +11,10 @@
       'page.title': 'Smart Fellow. A private AI team, built for your company',
 
       /* NAV */
-      'nav.what':         'What we do',
       'nav.cases':        'Use cases',
       'nav.how':          'How we work',
-      'nav.architecture': 'Architecture',
-      'nav.sovereign':    'Sovereign',
+      'nav.technology':   'Technology',
+      'nav.sovereign':    'Offline AI',
       'nav.assessment':   'Free review',
       'nav.contact':      'Contact',
       'nav.cta':          'Book a free review',
@@ -27,18 +26,17 @@
       'nav.cases.more':               'More cases coming soon',
 
       /* FOOTER */
-      'footer.what':       'What we do',
       'footer.cases':      'Use cases',
       'footer.how':        'How we work',
-      'footer.architecture': 'Architecture',
-      'footer.sovereign':  'Sovereign',
+      'footer.technology': 'Technology',
+      'footer.sovereign':  'Offline AI',
       'footer.contact':    'Free review',
       'footer.copy':       '© 2026 Smart Fellow · Seoul, Korea',
 
       /* ── HOME ── */
       'home.hero.eyebrow': 'Private AI · Seoul · Korea',
       'home.hero.h1': 'A private AI team, <em>built for your company.</em>',
-      'home.hero.sub': 'We build private AI systems that run on hardware you own, trained on your data and your workflows. You keep control. We do the building. We stay on to maintain it.',
+      'home.hero.sub': 'Private AI on hardware you own. Trained on your data. We build it, we maintain it, you stay in control.',
       'home.hero.ctaPrimary': 'Book a free AI readiness review',
       'home.hero.ctaSecondary': 'How we work',
 
@@ -49,7 +47,7 @@
 
       'home.position.eyebrow': 'The idea',
       'home.position.h2': 'Tailored, not templated. <em>Private, not published.</em>',
-      'home.position.lead': 'Most AI tools are general products pointed at your business from the outside. We do the opposite. We come in, study how your team actually works, and build a private AI system that fits it: yours to run, yours to own.',
+      'home.position.lead': 'Most AI tools are generic products aimed at your business from the outside. We come in, study how your team actually works, and build a system that fits. Yours to run, yours to own.',
       'home.position.card1.title': 'Built on your data',
       'home.position.card1.body': 'Fine-tuned on your documents, your workflows, your terminology. It knows your business because your business is all it knows.',
       'home.position.card2.title': 'Runs where you choose',
@@ -62,7 +60,7 @@
 
       'home.sov.eyebrow': 'Data stays where it belongs',
       'home.sov.h2': 'Your data stays <em>inside your building.</em>',
-      'home.sov.lead': 'Cloud AI tools process your documents on someone else\'s servers. The AI systems we build run on dedicated hardware inside your office. Nothing leaves unless you explicitly decide it should, and then only for the tasks you approve.',
+      'home.sov.lead': "Cloud AI runs your documents on someone else's servers. Our systems run on dedicated hardware inside your office. Nothing leaves without your approval.",
       'home.sov.point1': 'PIPA-compliant by construction, not by promise.',
       'home.sov.point2': 'Safe for confidential documents, client files, and sensitive operating context.',
       'home.sov.point3': 'Cloud models optional: your decision, on a per-task basis, any time.',
@@ -82,7 +80,7 @@
 
       'home.blueprints.eyebrow': 'What we build',
       'home.blueprints.h2': 'Every system is tailored. <em>These are a few shapes it usually takes.</em>',
-      'home.blueprints.lead': 'Each engagement starts from your workflows, not from a product catalogue. The examples below are patterns we see often. Starting points to picture what a private AI team could look like inside your company.',
+      'home.blueprints.lead': 'Every build starts from your workflows, not a product catalogue. The shapes below are patterns we see often.',
       'home.blueprints.note': 'None of these are fixed products. They are recognisable shapes we have already designed for. Your system is scoped from scratch during the free AI Readiness Review.',
 
       'home.blueprints.card1.tag': 'Legal & compliance',
@@ -139,8 +137,8 @@
 
       /* ── HOW WE WORK (dedicated page) ── */
       'how.hero.eyebrow': 'Our engagement model',
-      'how.hero.h1': 'One clear process from the first conversation <em>to the ongoing relationship.</em>',
-      'how.hero.body': 'We do not sell access to a platform. We are the team that plans, builds, and maintains your private AI system. Here is what that looks like in practice.',
+      'how.hero.h1': 'Four phases. <em>One team.</em>',
+      'how.hero.body': "We don't sell platform access. We plan, build, and maintain your private AI system. Here's how that works.",
 
       'how.overview.p1.title': 'Assess',
       'how.overview.p1.meta': 'Free · 48-hour turnaround',
@@ -320,7 +318,7 @@
       /* ── SOVEREIGN ── */
       'sovv2.hero.eyebrow': 'For high-sensitivity workflows',
       'sovv2.hero.h1': 'Offline AI for work that must <em>stay confidential.</em>',
-      'sovv2.hero.body': 'Smart Fellow Sovereign is a dedicated AI machine for sensitive documents, internal analysis, R&amp;D, client files, and multilingual work. It runs locally, can operate without internet access, and only works with the data your team explicitly provides.',
+      'sovv2.hero.body': 'Sovereign is a dedicated AI machine for sensitive work. It runs locally, can operate offline, and only sees data your team explicitly provides.',
       'sovv2.hero.primary': 'Book a free AI readiness review',
       'sovv2.hero.secondary': 'See the problem it solves',
 
@@ -420,7 +418,7 @@
       /* ── TECHNOLOGY (kept) ── */
       'techv2.hero.eyebrow': 'Under the hood',
       'techv2.hero.h1': 'The managed local AI system behind <em>your private AI team.</em>',
-      'techv2.hero.body': 'The private AI systems we build are not cloud chatbot accounts, and not platforms your team has to deploy itself. They are managed AI systems running on local models in hardware dedicated to your business, fine-tuned on your documents, with optional cloud enhancements when they genuinely help.',
+      'techv2.hero.body': 'Not a cloud chatbot. Not a platform you deploy yourself. A managed AI system running on local models, on hardware dedicated to your business, fine-tuned on your documents. Cloud is optional.',
       'techv2.hero.summary1.label': 'Base architecture',
       'techv2.hero.summary1.value': 'Local by default',
       'techv2.hero.summary2.label': 'Interfaces',
@@ -715,11 +713,10 @@
       'page.title': 'Smart Fellow. 귀사를 위한 전용 AI 팀',
 
       /* NAV */
-      'nav.what':         '무엇을 만드나',
       'nav.cases':        '도입 사례',
       'nav.how':          '진행 방식',
-      'nav.architecture': '아키텍처',
-      'nav.sovereign':    'Sovereign',
+      'nav.technology':   '기술',
+      'nav.sovereign':    '오프라인 AI',
       'nav.assessment':   '무료 진단',
       'nav.contact':      '문의',
       'nav.cta':          '무료 진단 예약',
@@ -731,18 +728,17 @@
       'nav.cases.more':               '추가 사례 준비 중',
 
       /* FOOTER */
-      'footer.what':       '무엇을 만드나',
       'footer.cases':      '도입 사례',
       'footer.how':        '진행 방식',
-      'footer.architecture': '아키텍처',
-      'footer.sovereign':  'Sovereign',
+      'footer.technology': '기술',
+      'footer.sovereign':  '오프라인 AI',
       'footer.contact':    '무료 진단',
       'footer.copy':       '© 2026 Smart Fellow · 서울, 대한민국',
 
       /* ── HOME ── */
       'home.hero.eyebrow': '전용 AI · 서울 · 대한민국',
       'home.hero.h1': '귀사를 위한 <em>전용 AI 팀을 구축합니다.</em>',
-      'home.hero.sub': '귀사가 소유한 하드웨어 위에서 돌아가는 전용 AI 시스템을, 귀사의 데이터와 워크플로우에 맞춰 구축합니다. 통제권은 귀사가 가지고, 구축은 저희가 맡으며, 유지관리까지 이어서 책임집니다.',
+      'home.hero.sub': '귀사가 소유한 하드웨어 위 전용 AI. 귀사의 데이터로 학습합니다. 저희가 만들고, 저희가 유지관리하며, 통제권은 귀사가 갖습니다.',
       'home.hero.ctaPrimary': '무료 AI 도입 진단 예약',
       'home.hero.ctaSecondary': '진행 방식 보기',
 
@@ -753,7 +749,7 @@
 
       'home.position.eyebrow': '우리의 접근',
       'home.position.h2': '맞춤 제작, 템플릿이 아닙니다. <em>전용, 공개가 아닙니다.</em>',
-      'home.position.lead': '대부분의 AI 도구는 외부에서 귀사의 비즈니스를 겨냥한 범용 제품입니다. 저희는 반대로 움직입니다. 팀이 실제로 어떻게 일하는지 안으로 들어가 파악하고, 그에 맞는 전용 AI 시스템을 구축합니다. 운영도 소유도 귀사의 것입니다.',
+      'home.position.lead': '대부분의 AI 도구는 외부에서 비즈니스를 겨냥한 범용 제품입니다. 저희는 안으로 들어가 팀이 실제로 어떻게 일하는지 파악하고, 그에 맞는 시스템을 만듭니다. 운영도 소유도 귀사의 것입니다.',
       'home.position.card1.title': '귀사의 데이터로 구축',
       'home.position.card1.body': '귀사의 문서, 워크플로우, 용어에 맞춰 미세 조정됩니다. 귀사의 비즈니스만 알고 있기에 귀사의 비즈니스를 잘 이해합니다.',
       'home.position.card2.title': '선택한 곳에서 실행',
@@ -766,7 +762,7 @@
 
       'home.sov.eyebrow': '데이터는 있어야 할 곳에',
       'home.sov.h2': '귀사의 데이터는 <em>건물 안에 머뭅니다.</em>',
-      'home.sov.lead': '클라우드 AI 도구는 남의 서버에서 귀사의 문서를 처리합니다. 저희가 구축하는 AI 시스템은 귀사 사무실 안의 전용 하드웨어에서 실행됩니다. 귀사가 명시적으로 허용한 업무에 한해서만, 그리고 그 경우에만 외부와 연결됩니다.',
+      'home.sov.lead': '클라우드 AI는 남의 서버에서 귀사의 문서를 처리합니다. 저희 시스템은 귀사 사무실 안의 전용 하드웨어에서 실행됩니다. 귀사 승인 없이는 어떤 데이터도 밖으로 나가지 않습니다.',
       'home.sov.point1': '약속이 아니라 설계로 보장하는 PIPA 준수.',
       'home.sov.point2': '기밀 문서, 고객 자료, 민감한 운영 맥락에 안전합니다.',
       'home.sov.point3': '클라우드 모델은 선택 사항. 업무 단위로, 언제든 귀사가 결정합니다.',
@@ -786,7 +782,7 @@
 
       'home.blueprints.eyebrow': '무엇을 구축하는가',
       'home.blueprints.h2': '모든 시스템은 맞춤 제작입니다. <em>다만 자주 나타나는 형태가 있습니다.</em>',
-      'home.blueprints.lead': '모든 프로젝트는 제품 카탈로그가 아니라 귀사의 워크플로우에서 출발합니다. 아래는 자주 보이는 패턴입니다. 전용 AI 팀이 귀사 내부에서 어떤 모습일지 그려보는 출발점으로 삼으십시오.',
+      'home.blueprints.lead': '모든 구축은 제품 카탈로그가 아니라 귀사의 워크플로우에서 출발합니다. 아래는 자주 보이는 패턴입니다.',
       'home.blueprints.note': '이들은 고정 상품이 아닙니다. 저희가 이미 다뤄본 익숙한 형태일 뿐입니다. 귀사의 시스템은 무료 AI 도입 진단에서 처음부터 새로 설계됩니다.',
 
       'home.blueprints.card1.tag': '법무 · 컴플라이언스',
@@ -843,8 +839,8 @@
 
       /* ── HOW WE WORK ── */
       'how.hero.eyebrow': '협업 모델',
-      'how.hero.h1': '첫 대화부터 지속적 관계까지, <em>하나의 분명한 프로세스.</em>',
-      'how.hero.body': '저희는 플랫폼 접근권을 판매하지 않습니다. 귀사의 전용 AI 시스템을 계획하고 구축하며 유지관리까지 맡는 팀입니다. 실제 진행은 이렇게 이루어집니다.',
+      'how.hero.h1': '네 단계. <em>한 팀.</em>',
+      'how.hero.body': '플랫폼 접근권을 판매하지 않습니다. 귀사의 전용 AI 시스템을 계획하고 구축하며 유지관리까지 맡습니다. 실제 진행은 이렇게 이루어집니다.',
 
       'how.overview.p1.title': '진단',
       'how.overview.p1.meta': '무료 · 48시간 내 전달',
@@ -1024,7 +1020,7 @@
       /* ── SOVEREIGN ── */
       'sovv2.hero.eyebrow': '고민감도 워크플로우용',
       'sovv2.hero.h1': '반드시 <em>기밀로</em> 남아야 하는 업무를 위한 오프라인 AI',
-      'sovv2.hero.body': 'Smart Fellow Sovereign은 민감한 문서, 내부 분석, R&amp;D, 고객 파일, 다국어 업무를 위한 전용 AI 머신입니다. 로컬에서 실행되며 인터넷 없이도 운영할 수 있고, 팀이 명시적으로 제공한 데이터로만 작동합니다.',
+      'sovv2.hero.body': 'Sovereign은 민감한 업무를 위한 전용 AI 머신입니다. 로컬에서 실행되고 오프라인으로 운영할 수 있으며, 팀이 명시적으로 제공한 데이터로만 작동합니다.',
       'sovv2.hero.primary': '무료 AI 도입 진단 예약',
       'sovv2.hero.secondary': '해결하는 문제 보기',
 
@@ -1124,7 +1120,7 @@
       /* ── TECHNOLOGY (existing) ── */
       'techv2.hero.eyebrow': '내부 작동 원리',
       'techv2.hero.h1': '귀사의 전용 AI 팀을 움직이는 <em>관리형 로컬 AI 시스템.</em>',
-      'techv2.hero.body': '저희가 구축하는 전용 AI 시스템은 클라우드 챗봇 계정도, 팀이 직접 배포해야 하는 플랫폼도 아닙니다. 귀사 전용 하드웨어에서 로컬 모델로 돌아가고, 귀사 문서로 미세 조정되며, 클라우드는 실제로 도움이 될 때만 선택적으로 더합니다.',
+      'techv2.hero.body': '클라우드 챗봇이 아닙니다. 직접 배포하는 플랫폼도 아닙니다. 귀사 전용 하드웨어에서 로컬 모델로 돌아가고, 귀사 문서로 미세 조정되는 관리형 AI 시스템입니다. 클라우드는 선택입니다.',
       'techv2.hero.summary1.label': '기본 아키텍처',
       'techv2.hero.summary1.value': '로컬 기본값',
       'techv2.hero.summary2.label': '인터페이스',
