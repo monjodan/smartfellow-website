@@ -1,21 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://smartfellow.ai/en/</loc></url>
-  <url><loc>https://smartfellow.ai/en/how-we-work.html</loc></url>
-  <url><loc>https://smartfellow.ai/en/technology.html</loc></url>
-  <url><loc>https://smartfellow.ai/en/sovereign/</loc></url>
-  <url><loc>https://smartfellow.ai/en/use-cases/studio-monjo/</loc></url>
-  <url><loc>https://smartfellow.ai/en/assessment/</loc></url>
-  <url><loc>https://smartfellow.ai/fr/</loc></url>
-  <url><loc>https://smartfellow.ai/fr/how-we-work.html</loc></url>
-  <url><loc>https://smartfellow.ai/fr/technology.html</loc></url>
-  <url><loc>https://smartfellow.ai/fr/sovereign/</loc></url>
-  <url><loc>https://smartfellow.ai/fr/use-cases/studio-monjo/</loc></url>
-  <url><loc>https://smartfellow.ai/fr/assessment/</loc></url>
-  <url><loc>https://smartfellow.ai/ko/</loc></url>
-  <url><loc>https://smartfellow.ai/ko/how-we-work.html</loc></url>
-  <url><loc>https://smartfellow.ai/ko/technology.html</loc></url>
-  <url><loc>https://smartfellow.ai/ko/sovereign/</loc></url>
-  <url><loc>https://smartfellow.ai/ko/use-cases/studio-monjo/</loc></url>
-  <url><loc>https://smartfellow.ai/ko/assessment/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://smartfellow.ai/en/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/en/how-we-work/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/how-we-work/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/how-we-work/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/how-we-work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/how-we-work/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/en/technology/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/technology/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/technology/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/technology/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/technology/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/en/sovereign/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/sovereign/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/sovereign/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/sovereign/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/sovereign/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/en/use-cases/studio-monjo/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/studio-monjo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/use-cases/studio-monjo/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/use-cases/studio-monjo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/use-cases/studio-monjo/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/en/assessment/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/assessment/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/assessment/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/assessment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/assessment/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/fr/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/fr/how-we-work/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/how-we-work/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/how-we-work/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/how-we-work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/how-we-work/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/fr/technology/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/technology/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/technology/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/technology/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/technology/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/fr/sovereign/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/sovereign/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/sovereign/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/sovereign/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/sovereign/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/fr/use-cases/studio-monjo/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/studio-monjo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/use-cases/studio-monjo/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/use-cases/studio-monjo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/use-cases/studio-monjo/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/fr/assessment/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/assessment/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/assessment/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/assessment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/assessment/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/ko/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/ko/how-we-work/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/how-we-work/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/how-we-work/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/how-we-work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/how-we-work/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/ko/technology/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/technology/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/technology/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/technology/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/technology/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/ko/sovereign/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/sovereign/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/sovereign/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/sovereign/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/sovereign/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/ko/use-cases/studio-monjo/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/studio-monjo/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/use-cases/studio-monjo/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/use-cases/studio-monjo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/use-cases/studio-monjo/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/ko/assessment/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/assessment/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/assessment/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/assessment/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/assessment/"/>
+  </url>
 </urlset>

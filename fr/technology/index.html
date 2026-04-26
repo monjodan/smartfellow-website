@@ -3,24 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>L’architecture — Smart Fellow</title>
-<meta name="description" content="Comment fonctionnent les systèmes IA privés que nous construisons : modèles locaux affinés, matériel sur site, mémoire documentaire qui ne sort pas du bureau, et cloud uniquement si vous l’approuvez.">
+<title>L'architecture — IA privée sur site — Smart Fellow</title>
+<meta name="description" content="Comment fonctionnent les systèmes IA privés Smart Fellow : modèles locaux affinés, matériel sur site, mémoire documentaire interne au bureau.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://smartfellow.ai/fr/technology.html">
-<link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/technology.html">
-<link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/technology.html">
-<link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/technology.html">
-<link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/technology.html">
+<link rel="canonical" href="https://smartfellow.ai/fr/technology/">
+<link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/technology/">
+<link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/technology/">
+<link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/technology/">
+<link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/technology/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="L’architecture derrière Smart Fellow">
-<meta property="og:description" content="Modèles locaux affinés, matériel sur site, mémoire métier conservée, cloud optionnel — un modèle d’exploitation défendable en interne.">
-<meta property="og:url" content="https://smartfellow.ai/fr/technology.html">
+<meta property="og:title" content="L'architecture derrière Smart Fellow">
+<meta property="og:description" content="Modèles locaux affinés, matériel sur site, mémoire métier conservée, cloud optionnel — un modèle d'exploitation défendable en interne.">
+<meta property="og:url" content="https://smartfellow.ai/fr/technology/">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Smart Fellow">
+<meta property="og:image" content="https://smartfellow.ai/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="L’architecture derrière Smart Fellow">
-<meta name="twitter:description" content="Modèles locaux affinés, matériel sur site, mémoire métier conservée, cloud optionnel — un modèle d’exploitation défendable en interne.">
+<meta name="twitter:title" content="L'architecture derrière Smart Fellow">
+<meta name="twitter:description" content="Modèles locaux affinés, matériel sur site, mémoire métier conservée, cloud optionnel — un modèle d'exploitation défendable en interne.">
+<meta name="twitter:image" content="https://smartfellow.ai/og-image.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <link rel="stylesheet" href="/shared.css">
@@ -207,22 +212,23 @@
   }
 }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://smartfellow.ai/#organization","name":"Smart Fellow","url":"https://smartfellow.ai","logo":"https://smartfellow.ai/assets/smart-fellow-logo.svg","description":"Smart Fellow builds private AI teams for companies that care about their data — fine-tuned local models on hardware they own.","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"areaServed":{"@type":"Country","name":"South Korea"},"knowsLanguage":["en","ko","fr"]},{"@type":"WebPage","@id":"https://smartfellow.ai/fr/technology/#webpage","url":"https://smartfellow.ai/fr/technology/","name":"L'architecture — IA privée sur site — Smart Fellow","description":"Comment fonctionnent les systèmes IA privés Smart Fellow : modèles locaux affinés, matériel sur site, mémoire documentaire interne au bureau.","inLanguage":"fr","isPartOf":{"@type":"WebSite","@id":"https://smartfellow.ai/#website","name":"Smart Fellow","url":"https://smartfellow.ai","publisher":{"@id":"https://smartfellow.ai/#organization"}},"publisher":{"@id":"https://smartfellow.ai/#organization"}}]}</script>
 </head>
 <body>
 
 <nav>
   <a href="/fr/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" />Smart Fellow</a>
   <ul class="nav-links">
-    <li><a href="/how-we-work.html" data-i18n="nav.how">Comment nous travaillons</a></li>
-    <li><a href="/#blueprints" data-i18n="nav.blueprints">Ce que nous construisons</a></li>
-    <li><a href="/use-cases/studio-monjo/" data-i18n="nav.cases">Cas d'usage</a></li>
-    <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/fr/technology.html" class="active" data-i18n="nav.technology">Technologie</a></li>
-    <li><a href="/assessment/" data-i18n="nav.assessment">Diagnostic gratuit</a></li>
+    <li><a href="/fr/how-we-work/" data-i18n="nav.how">Comment nous travaillons</a></li>
+    <li><a href="/fr/#blueprints" data-i18n="nav.blueprints">Ce que nous construisons</a></li>
+    <li><a href="/fr/use-cases/studio-monjo/" data-i18n="nav.cases">Cas d'usage</a></li>
+    <li><a href="/fr/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/fr/technology/" class="active" data-i18n="nav.technology">Technologie</a></li>
+    <li><a href="/fr/assessment/" data-i18n="nav.assessment">Diagnostic gratuit</a></li>
   </ul>
   <div class="nav-right">
-    <div class="lang-switcher" role="group" aria-label="Choisir la langue"><a href="/en/technology.html" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/technology.html" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/technology.html" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
-    <a href="/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">Réserver un diagnostic</a>
+    <div class="lang-switcher" role="group" aria-label="Choisir la langue"><a href="/en/technology/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/technology/" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/technology/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+    <a href="/fr/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">Réserver un diagnostic</a>
   </div>
   <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -231,15 +237,15 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
-    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">Comment nous travaillons</a></li>
-    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">Ce que nous construisons</a></li>
-    <li><a href="/use-cases/studio-monjo/" onclick="closeMobileMenu()" data-i18n="nav.cases">Cas d'usage</a></li>
-    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/fr/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">Technologie</a></li>
-    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Diagnostic gratuit</a></li>
+    <li><a href="/fr/how-we-work/" onclick="closeMobileMenu()" data-i18n="nav.how">Comment nous travaillons</a></li>
+    <li><a href="/fr/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">Ce que nous construisons</a></li>
+    <li><a href="/fr/use-cases/studio-monjo/" onclick="closeMobileMenu()" data-i18n="nav.cases">Cas d'usage</a></li>
+    <li><a href="/fr/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/fr/technology/" onclick="closeMobileMenu()" data-i18n="nav.technology">Technologie</a></li>
+    <li><a href="/fr/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Diagnostic gratuit</a></li>
   </ul>
-  <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Réserver un diagnostic</a>
-  <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choisir la langue"><a href="/en/technology.html" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/technology.html" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/technology.html" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+  <a href="/fr/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Réserver un diagnostic</a>
+  <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choisir la langue"><a href="/en/technology/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/technology/" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/technology/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
 </div>
 
 <!-- Hero -->
@@ -467,7 +473,7 @@
       <h2 class="section-title reveal d1" data-i18n-html="techv2.cta.h2">Vu assez pour vouloir <em>un plan écrit ?</em></h2>
       <p class="lede reveal d2" data-i18n="techv2.cta.body">Réservez un diagnostic IA gratuit. Nous passons en revue vos flux de travail, vos exigences de sensibilité et vos besoins d'intégration, et nous vous laissons un rapport écrit et un devis fixe.</p>
       <div class="page-cta-actions reveal d3">
-        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="techv2.cta.primary">Réserver un diagnostic IA gratuit</a>
+        <a href="/fr/assessment/" class="btn-dark" data-open-assessment data-i18n="techv2.cta.primary">Réserver un diagnostic IA gratuit</a>
         <a href="/fr/" class="btn-outline" data-i18n="techv2.cta.secondary">Retour au site principal</a>
       </div>
       <div class="page-cta-note reveal d3" data-i18n="techv2.cta.note">Coréen · Anglais · Français · Sans engagement</div>
@@ -479,12 +485,12 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
-      <li><a href="/how-we-work.html" data-i18n="footer.how">Comment nous travaillons</a></li>
-      <li><a href="/#blueprints" data-i18n="footer.blueprints">Ce que nous construisons</a></li>
-      <li><a href="/use-cases/studio-monjo/" data-i18n="footer.cases">Cas d'usage</a></li>
-      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
-      <li><a href="/fr/technology.html" data-i18n="footer.tech">Technologie</a></li>
-      <li><a href="/assessment/" data-i18n="footer.contact">Diagnostic gratuit</a></li>
+      <li><a href="/fr/how-we-work/" data-i18n="footer.how">Comment nous travaillons</a></li>
+      <li><a href="/fr/#blueprints" data-i18n="footer.blueprints">Ce que nous construisons</a></li>
+      <li><a href="/fr/use-cases/studio-monjo/" data-i18n="footer.cases">Cas d'usage</a></li>
+      <li><a href="/fr/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/fr/technology/" data-i18n="footer.tech">Technologie</a></li>
+      <li><a href="/fr/assessment/" data-i18n="footer.contact">Diagnostic gratuit</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Séoul, Corée</span>
   </div>

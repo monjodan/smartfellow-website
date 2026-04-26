@@ -7,6 +7,7 @@ const frLocale = require('../data/fr-locale');
 
 const rootDir = path.resolve(__dirname, '..');
 const templatesDir = path.join(rootDir, 'templates');
+const buildDate = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
 function readTranslations() {
   const source = fs.readFileSync(path.join(rootDir, 'i18n.js'), 'utf8');
@@ -28,6 +29,10 @@ function escapeHtml(value) {
 
 function escapeAttribute(value) {
   return escapeHtml(value).replace(/"/g, '&quot;');
+}
+
+function escapeRegex(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function urlFor(locale, pageName) {
@@ -68,6 +73,7 @@ function buildSeo(pageName, locale) {
   const meta = siteData.pages[pageName].meta[locale];
   const localeMeta = siteData.localeMeta[locale];
   const canonical = absoluteUrl(urlFor(locale, pageName));
+  const ogImageUrl = absoluteUrl(siteData.site.ogImage || '/og-image.png');
   const alternates = siteData.localeOrder.map((targetLocale) => {
     const href = absoluteUrl(urlFor(targetLocale, pageName));
     const hreflang = siteData.localeMeta[targetLocale].lang;
@@ -92,11 +98,62 @@ function buildSeo(pageName, locale) {
     `<meta property="og:description" content="${escapeAttribute(meta.ogDescription)}">`,
     `<meta property="og:url" content="${canonical}">`,
     `<meta property="og:locale" content="${localeMeta.ogLocale}">`,
+    `<meta property="og:site_name" content="${escapeAttribute(siteData.site.name)}">`,
+    `<meta property="og:image" content="${ogImageUrl}">`,
+    '<meta property="og:image:width" content="1200">',
+    '<meta property="og:image:height" content="630">',
     alternateLocales,
     '<meta name="twitter:card" content="summary_large_image">',
     `<meta name="twitter:title" content="${escapeAttribute(meta.ogTitle)}">`,
-    `<meta name="twitter:description" content="${escapeAttribute(meta.ogDescription)}">`
+    `<meta name="twitter:description" content="${escapeAttribute(meta.ogDescription)}">`,
+    `<meta name="twitter:image" content="${ogImageUrl}">`
   ].filter(Boolean).join('\n');
+}
+
+function buildJsonLd(pageName, locale) {
+  const meta = siteData.pages[pageName].meta[locale];
+  const canonical = absoluteUrl(urlFor(locale, pageName));
+  const localeMeta = siteData.localeMeta[locale];
+
+  const organization = {
+    '@type': 'Organization',
+    '@id': `${siteData.site.baseUrl}/#organization`,
+    name: siteData.site.name,
+    url: siteData.site.baseUrl,
+    logo: absoluteUrl('/assets/smart-fellow-logo.svg'),
+    description: 'Smart Fellow builds private AI teams for companies that care about their data — fine-tuned local models on hardware they own.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Seoul',
+      addressCountry: 'KR'
+    },
+    areaServed: { '@type': 'Country', name: 'South Korea' },
+    knowsLanguage: ['en', 'ko', 'fr']
+  };
+
+  const webPage = {
+    '@type': 'WebPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: meta.title,
+    description: meta.description,
+    inLanguage: localeMeta.lang,
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${siteData.site.baseUrl}/#website`,
+      name: siteData.site.name,
+      url: siteData.site.baseUrl,
+      publisher: { '@id': `${siteData.site.baseUrl}/#organization` }
+    },
+    publisher: { '@id': `${siteData.site.baseUrl}/#organization` }
+  };
+
+  const graph = {
+    '@context': 'https://schema.org',
+    '@graph': [organization, webPage]
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(graph)}</script>`;
 }
 
 function buildConfigScript(locale) {
@@ -108,17 +165,35 @@ function buildLocaleScript(locale) {
   return '<script src="/data/fr-locale.js"></script>';
 }
 
+function localizeInternalLinks(html, locale) {
+  // Localize every internal page link to its locale-specific path.
+  // Order matters: more specific paths first, so /use-cases/studio-monjo/
+  // doesn't get partially matched by a /use-cases/ pattern.
+  const pages = Object.keys(siteData.pages)
+    .map((name) => ({ name, path: siteData.pages[name].path }))
+    .sort((a, b) => b.path.length - a.path.length);
+
+  pages.forEach(({ name, path: pagePath }) => {
+    if (pagePath === '/') return; // handled separately to avoid greedy match
+    const escaped = escapeRegex(pagePath);
+    html = html.replace(new RegExp(`href="${escaped}"`, 'g'), `href="${urlFor(locale, name)}"`);
+  });
+
+  // Home: only exact `href="/"` and home anchors
+  html = html.replace(/href="\/"/g, `href="${urlFor(locale, 'home')}"`);
+  html = html.replace(/href="\/(#[a-zA-Z0-9_-]+)"/g, (_m, anchor) => `href="${urlFor(locale, 'home')}${anchor}"`);
+
+  return html;
+}
+
 function transformTemplate(template, pageName, locale, localeStrings) {
   let html = replaceLocalizedBlocks(template, localeStrings);
   html = html.replace('<html lang="en">', `<html lang="${siteData.localeMeta[locale].lang}">`);
   html = html.replace(/<title[\s\S]*?<link rel="icon"/m, `${buildSeo(pageName, locale)}\n<link rel="icon"`);
+  html = html.replace('</head>', `${buildJsonLd(pageName, locale)}\n</head>`);
   html = html.replace(/href="shared\.css"/g, 'href="/shared.css"');
   html = html.replace(/src="i18n\.js"/g, 'src="/i18n.js"');
-  html = html.replace(/href="\/technology\.html"/g, `href="${urlFor(locale, 'technology')}"`);
-  html = html.replace(/href="\/"/g, `href="${urlFor(locale, 'home')}"`);
-  html = html.replace(/href="\/#how"/g, `href="${urlFor(locale, 'home')}#how"`);
-  html = html.replace(/href="\/#roles"/g, `href="${urlFor(locale, 'home')}#roles"`);
-  html = html.replace(/href="\/#contact"/g, `href="${urlFor(locale, 'home')}#contact"`);
+  html = localizeInternalLinks(html, locale);
   html = html.replace(/aria-label="Open menu"/g, `aria-label="${escapeAttribute(siteData.ui[locale].openMenu)}"`);
   html = html.replace(/<button id="lang-toggle"[\s\S]*?<\/button>/, buildLanguageSwitcher(locale, pageName, false));
   html = html.replace(/<button id="lang-toggle-mobile"[\s\S]*?<\/button>/, buildLanguageSwitcher(locale, pageName, true));
@@ -164,20 +239,118 @@ function buildRedirect(pageName) {
 `;
 }
 
+function buildLegacyRedirect(toPath) {
+  // Hard redirect (not locale-aware) for old .html paths that have been
+  // renamed. Sends crawlers and inbound links to the new canonical path.
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<title>Smart Fellow</title>
+<link rel="canonical" href="${absoluteUrl(toPath)}">
+<meta http-equiv="refresh" content="0; url=${toPath}">
+<script>window.location.replace('${toPath}');</script>
+</head>
+<body><p>Redirecting to <a href="${toPath}">${toPath}</a>…</p></body>
+</html>
+`;
+}
+
 function buildSitemap() {
-  const paths = [];
+  const entries = [];
   siteData.localeOrder.forEach((locale) => {
     Object.keys(siteData.pages).forEach((pageName) => {
-      paths.push(urlFor(locale, pageName));
+      entries.push({
+        loc: absoluteUrl(urlFor(locale, pageName)),
+        alternates: siteData.localeOrder.map((alt) => ({
+          hreflang: siteData.localeMeta[alt].lang,
+          href: absoluteUrl(urlFor(alt, pageName))
+        }))
+      });
     });
   });
-  const body = paths
-    .map((pathname) => `  <url><loc>${absoluteUrl(pathname)}</loc></url>`)
-    .join('\n');
+
+  const body = entries.map((entry) => {
+    const links = entry.alternates
+      .map((a) => `    <xhtml:link rel="alternate" hreflang="${a.hreflang}" href="${a.href}"/>`)
+      .join('\n');
+    const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${entry.alternates[0].href}"/>`;
+    return `  <url>\n    <loc>${entry.loc}</loc>\n    <lastmod>${buildDate}</lastmod>\n${links}\n${xDefault}\n  </url>`;
+  }).join('\n');
+
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${body}
 </urlset>
+`;
+}
+
+function buildRobotsTxt() {
+  return `# https://www.robotstxt.org/
+User-agent: *
+Allow: /
+
+Sitemap: ${absoluteUrl('/sitemap.xml')}
+`;
+}
+
+function build404() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — Smart Fellow</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="stylesheet" href="/shared.css">
+<style>
+  body { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 2rem; }
+  .nf {
+    max-width: 36rem;
+    text-align: center;
+  }
+  .nf-num {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .nf h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .nf p {
+    color: var(--ink-soft);
+    margin-bottom: 1.75rem;
+  }
+  .nf-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
+</head>
+<body>
+  <main class="nf">
+    <div class="nf-num">404</div>
+    <h1>This page doesn't exist.</h1>
+    <p>The link may be broken or the page may have moved. Try the home page, or book a free AI readiness review.</p>
+    <div class="nf-actions">
+      <a href="/" class="btn-dark">Home</a>
+      <a href="/assessment/" class="btn-outline">Book a free review</a>
+    </div>
+  </main>
+</body>
+</html>
 `;
 }
 
@@ -204,7 +377,16 @@ function buildSite() {
   Object.keys(siteData.pages).forEach((pageName) => {
     writeFile(rootOutputForPage(pageName), buildRedirect(pageName));
   });
+
+  // Legacy path redirects (e.g. /how-we-work.html -> /how-we-work/)
+  (siteData.legacyRedirects || []).forEach(({ from, to }) => {
+    const relativePath = from.replace(/^\//, '');
+    writeFile(relativePath, buildLegacyRedirect(to));
+  });
+
   writeFile('sitemap.xml', buildSitemap());
+  writeFile('robots.txt', buildRobotsTxt());
+  writeFile('404.html', build404());
 }
 
 buildSite();
