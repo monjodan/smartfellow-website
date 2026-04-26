@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Monjo — cinq coéquipiers IA, une seule machine locale — Smart Fellow</title>
+<meta name="description" content="Un cas réel Smart Fellow. Studio Monjo fait tourner toute l'entreprise sur une seule machine locale avec cinq coéquipiers IA — Brenda, Jason, Yuna, Mireille et Jun — qui vivent dans Telegram, KakaoTalk, Notion, Google Drive et law.go.kr, et livrent des fichiers Word, PowerPoint et Excel.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smartfellow.ai/fr/use-cases/studio-monjo/">
+<link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/studio-monjo/">
+<link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/use-cases/studio-monjo/">
+<link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/use-cases/studio-monjo/">
+<link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/use-cases/studio-monjo/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Studio Monjo — cinq coéquipiers IA, une seule machine locale">
+<meta property="og:description" content="Comment un petit studio de Séoul fait tourner assistance de direction, comptabilité, juridique, contenu et opérations sur une seule machine Smart Fellow locale.">
+<meta property="og:url" content="https://smartfellow.ai/fr/use-cases/studio-monjo/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Studio Monjo — cinq coéquipiers IA, une seule machine locale">
+<meta name="twitter:description" content="Comment un petit studio de Séoul fait tourner assistance de direction, comptabilité, juridique, contenu et opérations sur une seule machine Smart Fellow locale.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.case-hero {
+  padding: 5rem 0 3.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.case-hero .lede { margin-top: 1.25rem; max-width: 50rem; }
+
+.case-hero .hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+/* Reality strip */
+.case-band { border-bottom: 1px solid var(--line); }
+
+.case-band-inner {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 16px 0;
+  width: min(var(--container), calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.case-band-item {
+  font-size: 12px;
+  color: var(--ink-faint);
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px solid var(--line);
+  line-height: 1.4;
+}
+
+.case-band-item:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.case-band-item b {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+/* Team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  margin-top: 2.5rem;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.team-card {
+  background: var(--surface);
+  padding: 1.75rem 1.6rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: background 0.18s ease;
+}
+
+.team-card:hover { background: var(--paper-strong); }
+
+.team-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.team-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--accent-contrast);
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.team-avatar::after {
+  content: "";
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: #4ea872;
+  border: 2px solid var(--surface);
+}
+
+.team-card:hover .team-avatar::after {
+  background: #4ea872;
+}
+
+.team-avatar.is-brenda  { background: #1b4d3e; }
+.team-avatar.is-jason   { background: #8a6a3b; }
+.team-avatar.is-yuna    { background: #9c5468; }
+.team-avatar.is-mireille { background: #6e6291; }
+.team-avatar.is-jun     { background: #4d6985; }
+
+.team-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.team-role {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.team-quote {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  border-left: 2px solid var(--accent-soft);
+  padding-left: 0.85rem;
+}
+
+.team-where {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.team-where b {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.team-handles {
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.team-handles li {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.team-handles li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* Day-with-the-team — animated chat vignettes */
+.day-section { background: var(--surface-muted); }
+
+.chat-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.chat-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.chat-head .team-avatar {
+  width: 34px;
+  height: 34px;
+  font-size: 0.95rem;
+}
+
+.chat-head .team-avatar::after {
+  width: 8px;
+  height: 8px;
+  right: 0;
+  bottom: 0;
+}
+
+.chat-head-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.chat-head-status {
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-top: 2px;
+}
+
+.chat-head-channel {
+  margin-left: auto;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.chat-body {
+  padding: 1.1rem 1rem 1.2rem;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 220px;
+}
+
+.chat-msg {
+  max-width: 80%;
+  padding: 0.55rem 0.85rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.chat-msg.is-user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-bottom-right-radius: 4px;
+}
+
+.chat-msg.is-agent {
+  align-self: flex-start;
+  background: var(--paper-strong);
+  color: var(--ink);
+  border-bottom-left-radius: 4px;
+}
+
+.chat-msg.is-attachment {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  background: var(--surface-muted);
+  border: 1px dashed var(--line-strong);
+}
+
+.chat-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chat-typing {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.55rem 0.85rem;
+  background: var(--paper-strong);
+  border-radius: 14px;
+  border-bottom-left-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.chat-typing.show { opacity: 1; }
+
+.chat-typing span {
+  width: 6px;
+  height: 6px;
+  background: var(--ink-faint);
+  border-radius: 999px;
+  animation: chat-dot 1.2s infinite ease-in-out;
+}
+
+.chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes chat-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.35; }
+  30% { transform: translateY(-3px); opacity: 1; }
+}
+
+/* Logo strip — connected & ships-in */
+.logo-strip {
+  margin-top: 2rem;
+  padding: 1.75rem 1.75rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.logo-strip-row {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.18fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.logo-strip-row + .logo-strip-row {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.logo-strip-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 700;
+}
+
+.logo-tile-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+
+.logo-tile-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 56px;
+}
+
+.logo-tile {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-tile-wrap:hover .logo-tile { transform: translateY(-2px); }
+
+.logo-tile-name {
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.logo-tile[data-brand="telegram"] { background: #229ED9; }
+.logo-tile[data-brand="kakao"]    { background: #FEE500; color: #3C1E1E; }
+.logo-tile[data-brand="notion"]   { background: #fff; color: #111; box-shadow: inset 0 0 0 1px var(--line-strong); }
+.logo-tile[data-brand="drive"]    { background: linear-gradient(135deg, #FFCF22 0 33%, #1FA463 33% 66%, #4385F4 66% 100%); color: transparent; }
+.logo-tile[data-brand="calendar"] { background: #fff; color: #1A73E8; box-shadow: inset 0 0 0 1px var(--line-strong); font-size: 16px; }
+.logo-tile[data-brand="calendar"]::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 8px;
+  background: #EA4335;
+}
+.logo-tile[data-brand="gmail"]    { background: #fff; color: #EA4335; box-shadow: inset 0 0 0 1px var(--line-strong); }
+.logo-tile[data-brand="lawgokr"]  { background: #0A2540; color: #fff; font-size: 22px; font-family: Georgia, "Times New Roman", "Apple SD Gothic Neo", "Noto Sans KR", serif; font-weight: 700; }
+.logo-tile[data-brand="word"]     { background: #2B579A; }
+.logo-tile[data-brand="ppt"]      { background: #D24726; }
+.logo-tile[data-brand="excel"]    { background: #217346; }
+.logo-tile[data-brand="pdf"]      { background: #B30B00; font-size: 13px; letter-spacing: 0.02em; }
+
+@media (max-width: 600px) {
+  .logo-strip { padding: 1.25rem 1.25rem 1rem; }
+  .logo-strip-row { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+
+/* Integration map */
+.integration-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 2.25rem;
+}
+
+.integration-copy .lede { margin-top: 1rem; }
+
+.integration-map {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.integration-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.integration-row:last-child { border-bottom: 0; }
+
+.integration-row-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.integration-row-name {
+  color: var(--ink);
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+
+.integration-row-purpose {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+.integration-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 25px;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.integration-tag.is-local {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid #c9ddd4;
+}
+
+.integration-tag.is-bridge {
+  background: var(--surface-muted);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+}
+
+/* Founder pitch */
+.founder-pitch {
+  background: var(--paper-strong);
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.founder-checks {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.founder-checks li {
+  display: flex;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.founder-checks li::before {
+  content: "✓";
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.founder-aside {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.founder-aside .display-number {
+  margin-bottom: 0.5rem;
+}
+
+.founder-aside h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+}
+
+.founder-aside p {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+/* Pull quote */
+.case-quote {
+  margin-top: 3rem;
+  padding: 2rem 2.5rem;
+  background: var(--accent);
+  border-radius: var(--radius);
+  color: var(--accent-contrast);
+}
+
+.case-quote blockquote {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-style: italic;
+  line-height: 1.45;
+  color: rgba(247, 245, 239, 0.94);
+  margin-bottom: 0.75rem;
+}
+
+.case-quote cite {
+  font-size: 11px;
+  color: rgba(247, 245, 239, 0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+@media (max-width: 980px) {
+  .chat-grid { grid-template-columns: 1fr; }
+  .integration-grid,
+  .founder-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .case-hero { padding: 4rem 0 2.75rem; }
+  .case-quote { padding: 1.5rem 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-msg { opacity: 1; transform: none; }
+  .chat-typing { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/fr/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" />Smart Fellow</a>
+  <ul class="nav-links">
+    <li><a href="/how-we-work.html" data-i18n="nav.how">Comment nous travaillons</a></li>
+    <li><a href="/#blueprints" data-i18n="nav.blueprints">Ce que nous construisons</a></li>
+    <li><a href="/use-cases/studio-monjo/" class="active" data-i18n="nav.cases">Cas d'usage</a></li>
+    <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/fr/technology.html" data-i18n="nav.technology">Technologie</a></li>
+    <li><a href="/assessment/" data-i18n="nav.assessment">Diagnostic gratuit</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher" role="group" aria-label="Choisir la langue"><a href="/en/use-cases/studio-monjo/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/use-cases/studio-monjo/" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/use-cases/studio-monjo/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+    <a href="/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">Réserver un diagnostic</a>
+  </div>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <ul>
+    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">Comment nous travaillons</a></li>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">Ce que nous construisons</a></li>
+    <li><a href="/use-cases/studio-monjo/" onclick="closeMobileMenu()" data-i18n="nav.cases">Cas d'usage</a></li>
+    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/fr/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">Technologie</a></li>
+    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Diagnostic gratuit</a></li>
+  </ul>
+  <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Réserver un diagnostic</a>
+  <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choisir la langue"><a href="/en/use-cases/studio-monjo/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/use-cases/studio-monjo/" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/use-cases/studio-monjo/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+</div>
+
+<section class="case-hero">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="case.studio.hero.eyebrow">Cas d'usage · Studio Monjo</p>
+    <h1 class="hero-title reveal d1" data-i18n-html="case.studio.hero.h1">Cinq coéquipiers IA. <em>Une seule machine locale.</em></h1>
+    <p class="lede reveal d2" data-i18n="case.studio.hero.lede">Studio Monjo est un petit studio créatif à Séoul. Toute l'entreprise tourne sur une seule machine Smart Fellow — cinq coéquipiers IA nommés qui s'occupent de l'assistance de direction, de la comptabilité, du juridique, du contenu et des opérations. Ils vivent dans Telegram et KakaoTalk, travaillent dans Notion et Google Drive, consultent le droit coréen sur law.go.kr et livrent des fichiers Word, PowerPoint et Excel quand vous en avez besoin. Rien ne sort du bureau sans accord.</p>
+    <div class="hero-actions reveal d3">
+      <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="case.studio.hero.ctaPrimary">Réserver un diagnostic gratuit</a>
+      <a href="#team" class="btn-outline" data-i18n="case.studio.hero.ctaSecondary">Rencontrer l'équipe</a>
+    </div>
+  </div>
+</section>
+
+<div class="case-band">
+  <div class="case-band-inner">
+    <span class="case-band-item" data-i18n-html="case.studio.band.item1"><b>Une machine locale</b> — cinq coéquipiers</span>
+    <span class="case-band-item" data-i18n-html="case.studio.band.item2"><b>Telegram + KakaoTalk</b> — depuis le mobile</span>
+    <span class="case-band-item" data-i18n-html="case.studio.band.item3"><b>Notion · Drive · law.go.kr</b></span>
+    <span class="case-band-item" data-i18n-html="case.studio.band.item4"><b>Coréen · Anglais</b> bilingue</span>
+  </div>
+</div>
+
+<section class="section" id="team">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="case.studio.team.eyebrow">Rencontrez l'équipe</p>
+    <h2 class="section-title reveal d1" data-i18n-html="case.studio.team.h2">Cinq coéquipiers. <em>Chacun avec un nom, un poste et une personnalité.</em></h2>
+    <p class="lede reveal d2" data-i18n="case.studio.team.lede">Les agents Smart Fellow ne sont pas des chatbots avec une persona collée dessus. Ce sont des flux de travail — chacun affiné sur une partie spécifique de l'activité du studio, chacun avec ses propres fichiers, sa propre mémoire, ses propres règles. Les noms les rendent faciles à interpeller. Les personnalités reflètent leur façon de travailler.</p>
+
+    <div class="team-grid reveal d2">
+      <article class="team-card">
+        <div class="team-card-head">
+          <span class="team-avatar is-brenda" aria-hidden="true">B</span>
+          <div>
+            <div class="team-name" data-i18n="case.studio.team.brenda.name">Brenda</div>
+            <div class="team-role" data-i18n="case.studio.team.brenda.role">Assistante de direction</div>
+          </div>
+        </div>
+        <p class="team-quote" data-i18n="case.studio.team.brenda.quote">« Je tiens votre semaine en ordre. Plannings, notes de préparation, relances — c'est moi le calendrier. »</p>
+        <div class="team-where" data-i18n-html="case.studio.team.brenda.where">Vit dans <b>Telegram · KakaoTalk · Google Calendar · Gmail</b></div>
+        <ul class="team-handles">
+          <li data-i18n="case.studio.team.brenda.handle1">Coordination d'agenda entre contacts coréens et anglophones</li>
+          <li data-i18n="case.studio.team.brenda.handle2">Notes de préparation tirées de Drive et Gmail</li>
+          <li data-i18n="case.studio.team.brenda.handle3">Tri de la boîte de réception avec des réponses dans votre style</li>
+        </ul>
+      </article>
+
+      <article class="team-card">
+        <div class="team-card-head">
+          <span class="team-avatar is-jason" aria-hidden="true">J</span>
+          <div>
+            <div class="team-name" data-i18n="case.studio.team.jason.name">Jason</div>
+            <div class="team-role" data-i18n="case.studio.team.jason.role">Comptabilité &amp; gestion documentaire</div>
+          </div>
+        </div>
+        <p class="team-quote" data-i18n="case.studio.team.jason.quote">« Reçus, factures, nommage de fichiers. Envoyez-moi la photo — je trouverai le bon dossier. »</p>
+        <div class="team-where" data-i18n-html="case.studio.team.jason.where">Vit dans <b>Telegram · Google Drive · Gmail</b></div>
+        <ul class="team-handles">
+          <li data-i18n="case.studio.team.jason.handle1">Photos de reçus classées et étiquetées pour la prochaine clôture</li>
+          <li data-i18n="case.studio.team.jason.handle2">Brouillons de factures dans votre modèle, en KRW ou USD</li>
+          <li data-i18n="case.studio.team.jason.handle3">Rangement de Drive : noms cohérents, dossiers bien placés</li>
+        </ul>
+      </article>
+
+      <article class="team-card">
+        <div class="team-card-head">
+          <span class="team-avatar is-yuna" aria-hidden="true">Y</span>
+          <div>
+            <div class="team-name" data-i18n="case.studio.team.yuna.name">Yuna</div>
+            <div class="team-role" data-i18n="case.studio.team.yuna.role">Conseil juridique &amp; traduction</div>
+          </div>
+        </div>
+        <p class="team-quote" data-i18n="case.studio.team.yuna.quote">« Du coréen à l'anglais, du contrat au résumé, toujours en langage clair — et je signale ce qu'il faut renégocier. »</p>
+        <div class="team-where" data-i18n-html="case.studio.team.yuna.where">Vit dans <b>Telegram · Google Drive · law.go.kr</b></div>
+        <ul class="team-handles">
+          <li data-i18n="case.studio.team.yuna.handle1">Résumés en langage clair de NDA, MOU et contrats</li>
+          <li data-i18n="case.studio.team.yuna.handle2">Traduction coréen ↔ anglais selon votre glossaire maison</li>
+          <li data-i18n="case.studio.team.yuna.handle3">Recherches de textes de loi sur law.go.kr, avec citations</li>
+        </ul>
+      </article>
+
+      <article class="team-card">
+        <div class="team-card-head">
+          <span class="team-avatar is-mireille" aria-hidden="true">M</span>
+          <div>
+            <div class="team-name" data-i18n="case.studio.team.mireille.name">Mireille</div>
+            <div class="team-role" data-i18n="case.studio.team.mireille.role">Création de contenu</div>
+          </div>
+        </div>
+        <p class="team-quote" data-i18n="case.studio.team.mireille.quote">« Votre voix, votre style. Je tiens la charte éditoriale — pour que les brouillons sonnent comme vous. »</p>
+        <div class="team-where" data-i18n-html="case.studio.team.mireille.where">Vit dans <b>Telegram · Notion · Google Drive</b></div>
+        <ul class="team-handles">
+          <li data-i18n="case.studio.team.mireille.handle1">Brouillons à votre ton — légendes, posts, newsletters</li>
+          <li data-i18n="case.studio.team.mireille.handle2">Textes longs tirés de votre charte éditoriale Notion</li>
+          <li data-i18n="case.studio.team.mireille.handle3">Trois variantes : courte, moyenne, narrative</li>
+        </ul>
+      </article>
+
+      <article class="team-card">
+        <div class="team-card-head">
+          <span class="team-avatar is-jun" aria-hidden="true">J</span>
+          <div>
+            <div class="team-name" data-i18n="case.studio.team.jun.name">Jun</div>
+            <div class="team-role" data-i18n="case.studio.team.jun.role">Opérations · stocks &amp; inventaire</div>
+          </div>
+        </div>
+        <p class="team-quote" data-i18n="case.studio.team.jun.quote">« Comptages, expéditions, ce qui manque. Je tiens les comptes pour que vous n'ayez pas à le faire. »</p>
+        <div class="team-where" data-i18n-html="case.studio.team.jun.where">Vit dans <b>Telegram · Notion · Google Drive</b></div>
+        <ul class="team-handles">
+          <li data-i18n="case.studio.team.jun.handle1">Suivi de l'inventaire dans votre base Notion</li>
+          <li data-i18n="case.studio.team.jun.handle2">Alertes de stock bas et relances fournisseurs</li>
+          <li data-i18n="case.studio.team.jun.handle3">Journaux de commandes et brouillons de réassort dans votre format habituel</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section day-section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="case.studio.day.eyebrow">Une journée avec l'équipe</p>
+    <h2 class="section-title reveal d1" data-i18n-html="case.studio.day.h2">De vrais fils Telegram. <em>De vraies sorties.</em></h2>
+    <p class="lede reveal d2" data-i18n="case.studio.day.lede">Un aperçu de ce à quoi ressemble le Telegram du studio un mardi normal. Chaque agent a son propre fil. Les réponses sont courtes, parce que la plupart des demandes le sont.</p>
+
+    <div class="chat-grid">
+
+      <!-- Brenda: scheduling -->
+      <article class="chat-card chat-replay reveal">
+        <div class="chat-head">
+          <span class="team-avatar is-brenda" aria-hidden="true">B</span>
+          <div>
+            <div class="chat-head-name" data-i18n="case.studio.day.brenda.name">Brenda</div>
+            <div class="chat-head-status" data-i18n="case.studio.day.brenda.status">Assistante de direction · en ligne</div>
+          </div>
+          <span class="chat-head-channel">Telegram</span>
+        </div>
+        <div class="chat-body">
+          <div class="chat-msg is-user" data-i18n="case.studio.day.brenda.m1">Brenda, peux-tu trouver un créneau de 30 min avec Min-jun mardi ou mercredi prochain ?</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m2">Vous êtes tous les deux libres mer. 14:00–14:30 KST. Je lui envoie l'invitation avec le brief habituel ?</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.brenda.m3">Oui — et ressors les chiffres du dernier trimestre en contexte.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m4">Envoyé. Résumé Q1 joint, brief dans l'événement du calendrier. Je le relance 24h avant.</div>
+        </div>
+      </article>
+
+      <!-- Jason: receipt -->
+      <article class="chat-card chat-replay reveal d1">
+        <div class="chat-head">
+          <span class="team-avatar is-jason" aria-hidden="true">J</span>
+          <div>
+            <div class="chat-head-name" data-i18n="case.studio.day.jason.name">Jason</div>
+            <div class="chat-head-status" data-i18n="case.studio.day.jason.status">Comptabilité · en ligne</div>
+          </div>
+          <span class="chat-head-channel">Telegram</span>
+        </div>
+        <div class="chat-body">
+          <div class="chat-msg is-user is-attachment" data-i18n="case.studio.day.jason.m1">📎 receipt-photo.jpg</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.jason.m2">Classé sous 2026-04 · Déplacements. ₩42 300 · Café client · Starbucks Yeoksam. Sauvegardé sur Drive, étiqueté pour la clôture de mai.</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.jason.m3">Mets-le plutôt dans « Réunions clients — Acme ».</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.jason.m4">Fait. Ré-étiqueté et noté dans le grand livre Acme.</div>
+        </div>
+      </article>
+
+      <!-- Yuna: contract review -->
+      <article class="chat-card chat-replay reveal">
+        <div class="chat-head">
+          <span class="team-avatar is-yuna" aria-hidden="true">Y</span>
+          <div>
+            <div class="chat-head-name" data-i18n="case.studio.day.yuna.name">Yuna</div>
+            <div class="chat-head-status" data-i18n="case.studio.day.yuna.status">Juridique · en ligne</div>
+          </div>
+          <span class="chat-head-channel">Telegram</span>
+        </div>
+        <div class="chat-body">
+          <div class="chat-msg is-user" data-i18n="case.studio.day.yuna.m1">Yuna, résume ce NDA en français simple.</div>
+          <div class="chat-msg is-user is-attachment" data-i18n="case.studio.day.yuna.m2">📎 NDA_Acme_2026.pdf</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.yuna.m3">NDA mutuel sur cinq ans. Standard sauf clause 7 — non-sollicitation de leurs salariés sur deux ans, plus large que la version signée l'an dernier. À renégocier avant de signer.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.yuna.m4">Résumé complet sauvegardé : Drive · Juridique · NDA_Acme_resume.md</div>
+        </div>
+      </article>
+
+      <!-- Mireille: content draft -->
+      <article class="chat-card chat-replay reveal d1">
+        <div class="chat-head">
+          <span class="team-avatar is-mireille" aria-hidden="true">M</span>
+          <div>
+            <div class="chat-head-name" data-i18n="case.studio.day.mireille.name">Mireille</div>
+            <div class="chat-head-status" data-i18n="case.studio.day.mireille.status">Contenu · en ligne</div>
+          </div>
+          <span class="chat-head-channel">Telegram</span>
+        </div>
+        <div class="chat-body">
+          <div class="chat-msg is-user" data-i18n="case.studio.day.mireille.m1">Mireille, écris une légende de lancement pour la collection printemps, dans notre voix.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.mireille.m2">Trois brouillons dans Notion — court, moyen, narratif. Ton : la « confiance tranquille » utilisée pour la campagne d'automne. ~80 mots chacun.</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.mireille.m3">Rends le moyen un peu plus joueur.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.mireille.m4">Mis à jour. Même brouillon, rythme plus libre, un clin d'œil. Notion · Contenu · Printemps 2026.</div>
+        </div>
+      </article>
+
+      <!-- Jun: stock check -->
+      <article class="chat-card chat-replay reveal">
+        <div class="chat-head">
+          <span class="team-avatar is-jun" aria-hidden="true">J</span>
+          <div>
+            <div class="chat-head-name" data-i18n="case.studio.day.jun.name">Jun</div>
+            <div class="chat-head-status" data-i18n="case.studio.day.jun.status">Opérations · en ligne</div>
+          </div>
+          <span class="chat-head-channel">Telegram</span>
+        </div>
+        <div class="chat-body">
+          <div class="chat-msg is-user" data-i18n="case.studio.day.jun.m1">Jun, qu'est-ce qui manque ?</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.jun.m2">Trois articles sous le seuil : tote bags en lin (12 restants, réassort à 25), boîtes cadeaux (4 restants), réimpression du catalogue printemps (épuisé, dernier envoi il y a deux semaines).</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.jun.m3">Je rédige les bons de commande pour les fournisseurs habituels ?</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.jun.m4">Oui. Envoie les brouillons pour validation.</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="case-quote reveal">
+      <blockquote data-i18n="case.studio.day.quote">« Ce ne sont pas cinq outils. Ce sont cinq coéquipiers. Ils ont des prénoms parce que c'est comme ça que le studio en parle. »</blockquote>
+      <cite data-i18n="case.studio.day.attr">Studio Monjo · Séoul</cite>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="case.studio.tools.eyebrow">Comment tout est connecté</p>
+    <h2 class="section-title reveal d1" data-i18n-html="case.studio.tools.h2">Une machine au bureau. <em>Les outils que votre équipe utilise déjà.</em></h2>
+    <p class="lede reveal d2" data-i18n="case.studio.tools.lede">Le matériel est dans le studio. Telegram et KakaoTalk sont les portes d'entrée — chaque agent y répond. Les agents lisent et écrivent dans le même Notion, Google Drive et Google Calendar où vit déjà votre équipe. Ils consultent les textes coréens sur law.go.kr. Ils livrent dans les formats que vos clients attendent.</p>
+
+    <div class="logo-strip reveal d2">
+      <div class="logo-strip-row">
+        <span class="logo-strip-label" data-i18n="case.studio.logos.connected">Connecté à</span>
+        <div class="logo-tile-row">
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="telegram" aria-label="Telegram">T</span><span class="logo-tile-name">Telegram</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="kakao" aria-label="KakaoTalk">K</span><span class="logo-tile-name">KakaoTalk</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="notion" aria-label="Notion">N</span><span class="logo-tile-name">Notion</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="drive" aria-label="Google Drive"></span><span class="logo-tile-name">Drive</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="calendar" aria-label="Google Calendar">31</span><span class="logo-tile-name">Calendar</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="gmail" aria-label="Gmail">M</span><span class="logo-tile-name">Gmail</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="lawgokr" aria-label="law.go.kr">법</span><span class="logo-tile-name">law.go.kr</span></div>
+        </div>
+      </div>
+      <div class="logo-strip-row">
+        <span class="logo-strip-label" data-i18n="case.studio.logos.shipsIn">Livre en</span>
+        <div class="logo-tile-row">
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="word" aria-label="Microsoft Word">W</span><span class="logo-tile-name">Word</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="ppt" aria-label="Microsoft PowerPoint">P</span><span class="logo-tile-name">PowerPoint</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="excel" aria-label="Microsoft Excel">X</span><span class="logo-tile-name">Excel</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="pdf" aria-label="PDF">PDF</span><span class="logo-tile-name">PDF</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="integration-grid">
+      <div class="integration-copy">
+        <ul class="spec-list reveal d3">
+          <li data-i18n="case.studio.tools.point1">Telegram et KakaoTalk sont les portes d'entrée — depuis votre téléphone, le métro, où vous voulez.</li>
+          <li data-i18n="case.studio.tools.point2">Notion porte l'état opérationnel : charte éditoriale, inventaire, pages de projet.</li>
+          <li data-i18n="case.studio.tools.point3">Google Drive est la bibliothèque documentaire — reçus, contrats, brouillons.</li>
+          <li data-i18n="case.studio.tools.point4">Google Calendar et Gmail gèrent l'agenda et la boîte de réception.</li>
+          <li data-i18n="case.studio.tools.point5">law.go.kr est branché pour les recherches de textes et de jurisprudence coréenne, avec citations.</li>
+          <li data-i18n="case.studio.tools.point6">Livre dans Word, PowerPoint, Excel et PDF — les formats que vos clients attendent.</li>
+          <li data-i18n="case.studio.tools.point7">Le modèle et la mémoire documentaire restent sur la machine locale. Rien ne sort par défaut.</li>
+        </ul>
+      </div>
+      <div class="integration-map reveal d2">
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r1.name">Machine Smart Fellow</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r1.purpose">Modèle · mémoire · flux</span>
+          </div>
+          <span class="integration-tag is-local" data-i18n="case.studio.tools.map.r1.tag">Au bureau</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r2.name">Telegram</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r2.purpose">Conversation avec chaque agent</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r2.tag">Pont</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r2k.name">KakaoTalk</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r2k.purpose">Clients et partenaires coréens</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r2k.tag">Pont</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r3.name">Notion</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r3.purpose">Charte · inventaire · projets</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r3.tag">Connecté</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r4.name">Google Drive</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r4.purpose">Documents · reçus · brouillons</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r4.tag">Connecté</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r5.name">Google Calendar</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r5.purpose">Agendas · invitations · briefs</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r5.tag">Connecté</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r6.name">Gmail</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r6.purpose">Tri de boîte · réponses</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r6.tag">Connecté</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r6k.name">law.go.kr</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r6k.purpose">Recherches de textes coréens</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r6k.tag">Lecture seule</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r7.name">API de modèles cloud</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r7.purpose">LLM externes</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r7.tag">Désactivé par défaut</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section founder-pitch">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="case.studio.founder.eyebrow">Une offre pour les fondateurs en Corée</p>
+    <h2 class="section-title reveal d1" data-i18n-html="case.studio.founder.h2">Si vous dirigez une petite entreprise en Corée, <em>votre équipe peut ressembler à ça.</em></h2>
+    <p class="lede reveal d2" data-i18n="case.studio.founder.lede">Studio Monjo est une forme que cela peut prendre. Nous pouvons construire le même type d'équipe pour toute petite entreprise opérant en Corée — coréenne, anglophone, ou les deux. Même idée : une machine locale, des coéquipiers nommés, les outils que vous utilisez déjà. Postes, personnalités et fichiers à votre image.</p>
+
+    <div class="founder-grid">
+      <div>
+        <ul class="founder-checks reveal d3">
+          <li data-i18n="case.studio.founder.check1">Vous êtes fondateur ou petit opérateur, sans service IT et sans patience pour de nouvelles plateformes.</li>
+          <li data-i18n="case.studio.founder.check2">Vous travaillez déjà dans Telegram, KakaoTalk, Notion ou Google Workspace — et voulez de l'aide à l'intérieur de ces outils, pas à côté.</li>
+          <li data-i18n="case.studio.founder.check3">Vous gérez des documents, des clients et de la comptabilité en coréen — et au moins une partie en anglais aussi.</li>
+          <li data-i18n="case.studio.founder.check4">Vous tenez à ce que contrats, reçus et fichiers clients ne quittent pas le bureau ni n'aillent entraîner le modèle de quelqu'un d'autre.</li>
+          <li data-i18n="case.studio.founder.check5">Vous voulez une équipe qui apprend votre style, vos fournisseurs, vos clients — pas un assistant générique.</li>
+        </ul>
+      </div>
+      <aside class="founder-aside reveal d2">
+        <div class="display-number">01</div>
+        <h3 data-i18n="case.studio.founder.aside.title">Un point de départ — pas un forfait fixe</h3>
+        <p data-i18n="case.studio.founder.aside.body">Votre équipe ne sera pas Brenda, Jason, Yuna, Mireille et Jun, sauf si c'est vraiment ce dont votre activité a besoin. Ce qui compte, c'est la forme : des coéquipiers nommés, une machine locale, vos outils. Les rôles, les noms et les personnalités sont définis lors du diagnostic IA gratuit.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section section--green">
+  <div class="section-inner">
+    <div class="page-cta-inner">
+      <p class="eyebrow-light reveal" data-i18n="case.studio.cta.eyebrow">Commencez par le diagnostic gratuit</p>
+      <h2 class="section-title reveal d1" data-i18n-html="case.studio.cta.h2">Envie d'une équipe comme celle de Studio Monjo ? <em>Commencez par un plan écrit.</em></h2>
+      <p class="lede reveal d2" data-i18n="case.studio.cta.body">Le diagnostic IA est gratuit. Nous nous asseyons avec vous, regardons comment votre journée se passe vraiment, et écrivons quels coéquipiers aideraient, ce qu'ils feraient et combien coûterait la construction. Vous repartez avec un plan écrit — même si vous décidez de ne rien construire.</p>
+      <div class="page-cta-actions reveal d3">
+        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="case.studio.cta.primary">Réserver un diagnostic IA gratuit</a>
+        <a href="/how-we-work.html" class="btn-outline" data-i18n="case.studio.cta.secondary">Comment nous travaillons</a>
+      </div>
+      <div class="page-cta-note reveal d3" data-i18n="case.studio.cta.note">Coréen · Anglais · Français · Sans engagement</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smart Fellow</div>
+    <ul class="footer-links">
+      <li><a href="/how-we-work.html" data-i18n="footer.how">Comment nous travaillons</a></li>
+      <li><a href="/#blueprints" data-i18n="footer.blueprints">Ce que nous construisons</a></li>
+      <li><a href="/use-cases/studio-monjo/" data-i18n="footer.cases">Cas d'usage</a></li>
+      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/fr/technology.html" data-i18n="footer.tech">Technologie</a></li>
+      <li><a href="/assessment/" data-i18n="footer.contact">Diagnostic gratuit</a></li>
+    </ul>
+    <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Séoul, Corée</span>
+  </div>
+</footer>
+
+<script>window.SF_CONFIG={"locale":"fr"};</script>
+<script src="/data/fr-locale.js"></script>
+<script src="/i18n.js"></script>
+<script src="/assessment-modal.js" defer></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+
+/* Sequentially reveal chat messages when each card scrolls into view */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const chatObs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    chatObs.unobserve(entry.target);
+    const msgs = entry.target.querySelectorAll('.chat-msg');
+    if (reduceMotion) {
+      msgs.forEach((m) => m.classList.add('show'));
+      return;
+    }
+    let delay = 250;
+    msgs.forEach((m, i) => {
+      const isAgent = m.classList.contains('is-agent');
+      const prev = i > 0 ? msgs[i - 1] : null;
+      const prevWasUser = prev && prev.classList.contains('is-user');
+      const stagger = isAgent && prevWasUser ? 850 : 550;
+      delay += stagger;
+      setTimeout(() => m.classList.add('show'), delay);
+    });
+  });
+}, { threshold: 0.35 });
+
+document.querySelectorAll('.chat-replay').forEach((el) => chatObs.observe(el));
+
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
+
+navToggle.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+function closeMobileMenu() {
+  navMobile.classList.remove('open');
+  navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+(function () {
+  const navEl = document.querySelector('nav');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (navMobile.classList.contains('open')) {
+      lastY = y;
+      return;
+    }
+    if (Math.abs(y - lastY) < 8) return;
+    if (y <= 0 || y < lastY) {
+      navEl.classList.remove('nav-hidden');
+    } else {
+      navEl.classList.add('nav-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

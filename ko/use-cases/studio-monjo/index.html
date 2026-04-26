@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Monjo — AI 팀원 5명, 로컬 머신 1대 — Smart Fellow</title>
+<meta name="description" content="Smart Fellow 실제 구축 사례. Studio Monjo는 로컬 머신 단 한 대 위에서 5명의 AI 팀원 — Brenda, Jason, Yuna, Mireille, Jun — 과 회사 전체를 운영합니다. Telegram, 카카오톡, Notion, Google Drive, law.go.kr 에서 일하고 Word, PowerPoint, Excel 파일을 생성합니다.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smartfellow.ai/ko/use-cases/studio-monjo/">
+<link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/studio-monjo/">
+<link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/use-cases/studio-monjo/">
+<link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/use-cases/studio-monjo/">
+<link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/use-cases/studio-monjo/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Studio Monjo — AI 팀원 5명, 로컬 머신 1대">
+<meta property="og:description" content="서울의 작은 스튜디오가 한 대의 로컬 Smart Fellow 머신 위에서 비서, 회계, 법무, 콘텐츠, 운영까지 어떻게 운영하는지.">
+<meta property="og:url" content="https://smartfellow.ai/ko/use-cases/studio-monjo/">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Studio Monjo — AI 팀원 5명, 로컬 머신 1대">
+<meta name="twitter:description" content="서울의 작은 스튜디오가 한 대의 로컬 Smart Fellow 머신 위에서 비서, 회계, 법무, 콘텐츠, 운영까지 어떻게 운영하는지.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.case-hero {
+  padding: 5rem 0 3.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.case-hero .lede { margin-top: 1.25rem; max-width: 50rem; }
+
+.case-hero .hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+/* Reality strip */
+.case-band { border-bottom: 1px solid var(--line); }
+
+.case-band-inner {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 16px 0;
+  width: min(var(--container), calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.case-band-item {
+  font-size: 12px;
+  color: var(--ink-faint);
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px solid var(--line);
+  line-height: 1.4;
+}
+
+.case-band-item:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.case-band-item b {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+/* Team grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px;
+  margin-top: 2.5rem;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.team-card {
+  background: var(--surface);
+  padding: 1.75rem 1.6rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: background 0.18s ease;
+}
+
+.team-card:hover { background: var(--paper-strong); }
+
+.team-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.team-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--accent-contrast);
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.team-avatar::after {
+  content: "";
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: #4ea872;
+  border: 2px solid var(--surface);
+}
+
+.team-card:hover .team-avatar::after {
+  background: #4ea872;
+}
+
+.team-avatar.is-brenda  { background: #1b4d3e; }
+.team-avatar.is-jason   { background: #8a6a3b; }
+.team-avatar.is-yuna    { background: #9c5468; }
+.team-avatar.is-mireille { background: #6e6291; }
+.team-avatar.is-jun     { background: #4d6985; }
+
+.team-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.team-role {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.team-quote {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  border-left: 2px solid var(--accent-soft);
+  padding-left: 0.85rem;
+}
+
+.team-where {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.team-where b {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.team-handles {
+  list-style: none;
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.team-handles li {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.team-handles li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+/* Day-with-the-team — animated chat vignettes */
+.day-section { background: var(--surface-muted); }
+
+.chat-grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.chat-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.chat-head .team-avatar {
+  width: 34px;
+  height: 34px;
+  font-size: 0.95rem;
+}
+
+.chat-head .team-avatar::after {
+  width: 8px;
+  height: 8px;
+  right: 0;
+  bottom: 0;
+}
+
+.chat-head-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.chat-head-status {
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-top: 2px;
+}
+
+.chat-head-channel {
+  margin-left: auto;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.chat-body {
+  padding: 1.1rem 1rem 1.2rem;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 220px;
+}
+
+.chat-msg {
+  max-width: 80%;
+  padding: 0.55rem 0.85rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.chat-msg.is-user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-bottom-right-radius: 4px;
+}
+
+.chat-msg.is-agent {
+  align-self: flex-start;
+  background: var(--paper-strong);
+  color: var(--ink);
+  border-bottom-left-radius: 4px;
+}
+
+.chat-msg.is-attachment {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  background: var(--surface-muted);
+  border: 1px dashed var(--line-strong);
+}
+
+.chat-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chat-typing {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.55rem 0.85rem;
+  background: var(--paper-strong);
+  border-radius: 14px;
+  border-bottom-left-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.chat-typing.show { opacity: 1; }
+
+.chat-typing span {
+  width: 6px;
+  height: 6px;
+  background: var(--ink-faint);
+  border-radius: 999px;
+  animation: chat-dot 1.2s infinite ease-in-out;
+}
+
+.chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes chat-dot {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.35; }
+  30% { transform: translateY(-3px); opacity: 1; }
+}
+
+/* Logo strip — connected & ships-in */
+.logo-strip {
+  margin-top: 2rem;
+  padding: 1.75rem 1.75rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.logo-strip-row {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.18fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.logo-strip-row + .logo-strip-row {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.logo-strip-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 700;
+}
+
+.logo-tile-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+
+.logo-tile-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 56px;
+}
+
+.logo-tile {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-tile-wrap:hover .logo-tile { transform: translateY(-2px); }
+
+.logo-tile-name {
+  font-size: 11px;
+  color: var(--ink-soft);
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.logo-tile[data-brand="telegram"] { background: #229ED9; }
+.logo-tile[data-brand="kakao"]    { background: #FEE500; color: #3C1E1E; }
+.logo-tile[data-brand="notion"]   { background: #fff; color: #111; box-shadow: inset 0 0 0 1px var(--line-strong); }
+.logo-tile[data-brand="drive"]    { background: linear-gradient(135deg, #FFCF22 0 33%, #1FA463 33% 66%, #4385F4 66% 100%); color: transparent; }
+.logo-tile[data-brand="calendar"] { background: #fff; color: #1A73E8; box-shadow: inset 0 0 0 1px var(--line-strong); font-size: 16px; }
+.logo-tile[data-brand="calendar"]::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 8px;
+  background: #EA4335;
+}
+.logo-tile[data-brand="gmail"]    { background: #fff; color: #EA4335; box-shadow: inset 0 0 0 1px var(--line-strong); }
+.logo-tile[data-brand="lawgokr"]  { background: #0A2540; color: #fff; font-size: 22px; font-family: Georgia, "Times New Roman", "Apple SD Gothic Neo", "Noto Sans KR", serif; font-weight: 700; }
+.logo-tile[data-brand="word"]     { background: #2B579A; }
+.logo-tile[data-brand="ppt"]      { background: #D24726; }
+.logo-tile[data-brand="excel"]    { background: #217346; }
+.logo-tile[data-brand="pdf"]      { background: #B30B00; font-size: 13px; letter-spacing: 0.02em; }
+
+@media (max-width: 600px) {
+  .logo-strip { padding: 1.25rem 1.25rem 1rem; }
+  .logo-strip-row { grid-template-columns: 1fr; gap: 0.75rem; }
+}
+
+/* Integration map */
+.integration-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 2.25rem;
+}
+
+.integration-copy .lede { margin-top: 1rem; }
+
+.integration-map {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.integration-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.integration-row:last-child { border-bottom: 0; }
+
+.integration-row-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.integration-row-name {
+  color: var(--ink);
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+
+.integration-row-purpose {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+.integration-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 25px;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.integration-tag.is-local {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid #c9ddd4;
+}
+
+.integration-tag.is-bridge {
+  background: var(--surface-muted);
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+}
+
+/* Founder pitch */
+.founder-pitch {
+  background: var(--paper-strong);
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.founder-checks {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.founder-checks li {
+  display: flex;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.founder-checks li::before {
+  content: "✓";
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.founder-aside {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.founder-aside .display-number {
+  margin-bottom: 0.5rem;
+}
+
+.founder-aside h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+}
+
+.founder-aside p {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+/* Pull quote */
+.case-quote {
+  margin-top: 3rem;
+  padding: 2rem 2.5rem;
+  background: var(--accent);
+  border-radius: var(--radius);
+  color: var(--accent-contrast);
+}
+
+.case-quote blockquote {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-style: italic;
+  line-height: 1.45;
+  color: rgba(247, 245, 239, 0.94);
+  margin-bottom: 0.75rem;
+}
+
+.case-quote cite {
+  font-size: 11px;
+  color: rgba(247, 245, 239, 0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+@media (max-width: 980px) {
+  .chat-grid { grid-template-columns: 1fr; }
+  .integration-grid,
+  .founder-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .case-hero { padding: 4rem 0 2.75rem; }
+  .case-quote { padding: 1.5rem 1.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-msg { opacity: 1; transform: none; }
+  .chat-typing { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/ko/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" />Smart Fellow</a>
+  <ul class="nav-links">
+    <li><a href="/how-we-work.html" data-i18n="nav.how">진행 방식</a></li>
+    <li><a href="/#blueprints" data-i18n="nav.blueprints">만드는 것</a></li>
+    <li><a href="/use-cases/studio-monjo/" class="active" data-i18n="nav.cases">도입 사례</a></li>
+    <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/ko/technology.html" data-i18n="nav.technology">기술</a></li>
+    <li><a href="/assessment/" data-i18n="nav.assessment">무료 진단</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher" role="group" aria-label="언어 선택"><a href="/en/use-cases/studio-monjo/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/use-cases/studio-monjo/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/use-cases/studio-monjo/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
+    <a href="/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">무료 진단 예약</a>
+  </div>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <ul>
+    <li><a href="/how-we-work.html" onclick="closeMobileMenu()" data-i18n="nav.how">진행 방식</a></li>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">만드는 것</a></li>
+    <li><a href="/use-cases/studio-monjo/" onclick="closeMobileMenu()" data-i18n="nav.cases">도입 사례</a></li>
+    <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+    <li><a href="/ko/technology.html" onclick="closeMobileMenu()" data-i18n="nav.technology">기술</a></li>
+    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">무료 진단</a></li>
+  </ul>
+  <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">무료 진단 예약</a>
+  <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="언어 선택"><a href="/en/use-cases/studio-monjo/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/use-cases/studio-monjo/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/use-cases/studio-monjo/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
+</div>
+
+<section class="case-hero">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="case.studio.hero.eyebrow">도입 사례 · Studio Monjo</p>
+    <h1 class="hero-title reveal d1" data-i18n-html="case.studio.hero.h1">AI 팀원 5명. <em>로컬 머신 1대.</em></h1>
+    <p class="lede reveal d2" data-i18n="case.studio.hero.lede">Studio Monjo는 서울의 작은 크리에이티브 스튜디오입니다. 회사 전체가 단 한 대의 Smart Fellow 머신 위에서 돌아갑니다 — 비서, 회계, 법무, 콘텐츠, 운영을 맡은 5명의 이름 있는 AI 팀원과 함께. Telegram과 카카오톡에서 일하고, Notion과 Google Drive에서 문서를 다루며, law.go.kr에서 한국 법령을 찾아보고, 필요할 때 Word, PowerPoint, Excel 파일을 만들어 보냅니다. 허락 없이는 어떤 데이터도 사무실 밖으로 나가지 않습니다.</p>
+    <div class="hero-actions reveal d3">
+      <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="case.studio.hero.ctaPrimary">무료 진단 예약</a>
+      <a href="#team" class="btn-outline" data-i18n="case.studio.hero.ctaSecondary">팀 만나보기</a>
+    </div>
+  </div>
+</section>
+
+<div class="case-band">
+  <div class="case-band-inner">
+    <span class="case-band-item" data-i18n-html="case.studio.band.item1"><b>로컬 머신 1대</b> — 5명의 팀원</span>
+    <span class="case-band-item" data-i18n-html="case.studio.band.item2"><b>Telegram + 카카오톡</b> — 모바일 친화적</span>
+    <span class="case-band-item" data-i18n-html="case.studio.band.item3"><b>Notion · Drive · law.go.kr</b></span>
+    <span class="case-band-item" data-i18n-html="case.studio.band.item4"><b>한국어 · 영어</b> 이중 언어</span>
+  </div>
+</div>
+
+<section class="section" id="team">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="case.studio.team.eyebrow">팀을 소개합니다</p>
+    <h2 class="section-title reveal d1" data-i18n-html="case.studio.team.h2">5명의 팀원. <em>각자의 이름, 직무, 그리고 성격이 있습니다.</em></h2>
+    <p class="lede reveal d2" data-i18n="case.studio.team.lede">Smart Fellow 에이전트는 페르소나를 덧붙인 챗봇이 아닙니다. 워크플로우 자체입니다 — 각자가 스튜디오 운영의 특정 영역에 맞춰 미세 조정되어 있고, 자기 파일과 자기 메모리, 자기 규칙을 갖습니다. 이름이 있어 부르기 쉽고, 성격은 실제로 일하는 방식을 그대로 반영합니다.</p>
+
+    <div class="team-grid reveal d2">
+      <article class="team-card">
+        <div class="team-card-head">
+          <span class="team-avatar is-brenda" aria-hidden="true">B</span>
+          <div>
+            <div class="team-name" data-i18n="case.studio.team.brenda.name">Brenda</div>
+            <div class="team-role" data-i18n="case.studio.team.brenda.role">비서 (Executive Assistant)</div>
+          </div>
+        </div>
+        <p class="team-quote" data-i18n="case.studio.team.brenda.quote">"한 주를 정리해 드립니다. 일정, 미팅 준비 노트, 후속 조치 — 제가 캘린더입니다."</p>
+        <div class="team-where" data-i18n-html="case.studio.team.brenda.where">거주지 <b>Telegram · 카카오톡 · Google Calendar · Gmail</b></div>
+        <ul class="team-handles">
+          <li data-i18n="case.studio.team.brenda.handle1">한국어/영어 연락처를 아우르는 일정 조율</li>
+          <li data-i18n="case.studio.team.brenda.handle2">Drive와 Gmail에서 가져온 미팅 준비 노트</li>
+          <li data-i18n="case.studio.team.brenda.handle3">하우스 스타일에 맞춘 받은편지함 분류와 답장</li>
+        </ul>
+      </article>
+
+      <article class="team-card">
+        <div class="team-card-head">
+          <span class="team-avatar is-jason" aria-hidden="true">J</span>
+          <div>
+            <div class="team-name" data-i18n="case.studio.team.jason.name">Jason</div>
+            <div class="team-role" data-i18n="case.studio.team.jason.role">회계 &amp; 파일 관리</div>
+          </div>
+        </div>
+        <p class="team-quote" data-i18n="case.studio.team.jason.quote">"영수증, 인보이스, 파일명 — 사진만 보내주세요. 알맞은 폴더를 찾아드립니다."</p>
+        <div class="team-where" data-i18n-html="case.studio.team.jason.where">거주지 <b>Telegram · Google Drive · Gmail</b></div>
+        <ul class="team-handles">
+          <li data-i18n="case.studio.team.jason.handle1">다음 마감을 위해 영수증 사진 정리·태깅</li>
+          <li data-i18n="case.studio.team.jason.handle2">귀사 양식의 인보이스 초안 (KRW 또는 USD)</li>
+          <li data-i18n="case.studio.team.jason.handle3">Drive 정리: 일관된 파일명, 알맞은 폴더</li>
+        </ul>
+      </article>
+
+      <article class="team-card">
+        <div class="team-card-head">
+          <span class="team-avatar is-yuna" aria-hidden="true">Y</span>
+          <div>
+            <div class="team-name" data-i18n="case.studio.team.yuna.name">Yuna</div>
+            <div class="team-role" data-i18n="case.studio.team.yuna.role">법무 자문 &amp; 번역</div>
+          </div>
+        </div>
+        <p class="team-quote" data-i18n="case.studio.team.yuna.quote">"한국어에서 영어로, 계약서에서 요약으로, 항상 평이한 언어로 — 그리고 협상해야 할 부분은 표시해 둡니다."</p>
+        <div class="team-where" data-i18n-html="case.studio.team.yuna.where">거주지 <b>Telegram · Google Drive · law.go.kr</b></div>
+        <ul class="team-handles">
+          <li data-i18n="case.studio.team.yuna.handle1">NDA, MOU, 계약서의 평이한 언어 요약</li>
+          <li data-i18n="case.studio.team.yuna.handle2">하우스 용어집 기반 한국어 ↔ 영어 번역</li>
+          <li data-i18n="case.studio.team.yuna.handle3">law.go.kr 법령 조회와 인용 표시</li>
+        </ul>
+      </article>
+
+      <article class="team-card">
+        <div class="team-card-head">
+          <span class="team-avatar is-mireille" aria-hidden="true">M</span>
+          <div>
+            <div class="team-name" data-i18n="case.studio.team.mireille.name">Mireille</div>
+            <div class="team-role" data-i18n="case.studio.team.mireille.role">콘텐츠 제작</div>
+          </div>
+        </div>
+        <p class="team-quote" data-i18n="case.studio.team.mireille.quote">"귀사의 목소리, 귀사의 스타일. 브랜드 북을 제가 관리하니 초안이 귀사답게 나옵니다."</p>
+        <div class="team-where" data-i18n-html="case.studio.team.mireille.where">거주지 <b>Telegram · Notion · Google Drive</b></div>
+        <ul class="team-handles">
+          <li data-i18n="case.studio.team.mireille.handle1">귀사의 톤에 맞춘 캡션, 포스트, 뉴스레터 초안</li>
+          <li data-i18n="case.studio.team.mireille.handle2">Notion 브랜드 북에서 가져온 장문 콘텐츠</li>
+          <li data-i18n="case.studio.team.mireille.handle3">세 가지 변형 출력: 짧게, 중간, 스토리형</li>
+        </ul>
+      </article>
+
+      <article class="team-card">
+        <div class="team-card-head">
+          <span class="team-avatar is-jun" aria-hidden="true">J</span>
+          <div>
+            <div class="team-name" data-i18n="case.studio.team.jun.name">Jun</div>
+            <div class="team-role" data-i18n="case.studio.team.jun.role">운영 · 재고 &amp; 인벤토리</div>
+          </div>
+        </div>
+        <p class="team-quote" data-i18n="case.studio.team.jun.quote">"수량, 출고, 재고 부족 — 대신 챙겨드립니다."</p>
+        <div class="team-where" data-i18n-html="case.studio.team.jun.where">거주지 <b>Telegram · Notion · Google Drive</b></div>
+        <ul class="team-handles">
+          <li data-i18n="case.studio.team.jun.handle1">Notion 재고 데이터베이스 기반 인벤토리 추적</li>
+          <li data-i18n="case.studio.team.jun.handle2">재고 부족 알림과 공급사 후속 연락</li>
+          <li data-i18n="case.studio.team.jun.handle3">귀사 양식대로 주문 기록과 재발주 초안 작성</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section day-section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="case.studio.day.eyebrow">팀과 함께하는 하루</p>
+    <h2 class="section-title reveal d1" data-i18n-html="case.studio.day.h2">실제 Telegram 대화. <em>실제 결과물.</em></h2>
+    <p class="lede reveal d2" data-i18n="case.studio.day.lede">평범한 화요일에 스튜디오 Telegram이 어떻게 보이는지의 한 장면입니다. 에이전트마다 자기 스레드가 있습니다. 요청이 짧으니 답변도 짧습니다.</p>
+
+    <div class="chat-grid">
+
+      <!-- Brenda: scheduling -->
+      <article class="chat-card chat-replay reveal">
+        <div class="chat-head">
+          <span class="team-avatar is-brenda" aria-hidden="true">B</span>
+          <div>
+            <div class="chat-head-name" data-i18n="case.studio.day.brenda.name">Brenda</div>
+            <div class="chat-head-status" data-i18n="case.studio.day.brenda.status">비서 · 온라인</div>
+          </div>
+          <span class="chat-head-channel">Telegram</span>
+        </div>
+        <div class="chat-body">
+          <div class="chat-msg is-user" data-i18n="case.studio.day.brenda.m1">Brenda, 다음 주 화요일이나 수요일에 민준 님과 30분 미팅 잡을 수 있을까요?</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m2">두 분 모두 수요일 14:00–14:30 KST에 가능합니다. 평소 준비 브리프와 함께 초대장을 보낼까요?</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.brenda.m3">네 — 그리고 지난 분기 숫자도 배경 자료로 같이 첨부해 주세요.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m4">보냈습니다. Q1 요약 첨부, 캘린더 이벤트에 브리프 포함. 24시간 전에 리마인드 보내드릴게요.</div>
+        </div>
+      </article>
+
+      <!-- Jason: receipt -->
+      <article class="chat-card chat-replay reveal d1">
+        <div class="chat-head">
+          <span class="team-avatar is-jason" aria-hidden="true">J</span>
+          <div>
+            <div class="chat-head-name" data-i18n="case.studio.day.jason.name">Jason</div>
+            <div class="chat-head-status" data-i18n="case.studio.day.jason.status">회계 · 온라인</div>
+          </div>
+          <span class="chat-head-channel">Telegram</span>
+        </div>
+        <div class="chat-body">
+          <div class="chat-msg is-user is-attachment" data-i18n="case.studio.day.jason.m1">📎 receipt-photo.jpg</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.jason.m2">2026-04 · 출장 항목으로 분류했습니다. ₩42,300 · 커피 미팅 · 스타벅스 역삼점. Drive에 저장, 5월 마감용으로 태깅했습니다.</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.jason.m3">"클라이언트 미팅 — Acme"로 옮겨주세요.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.jason.m4">완료. 재태깅했고 Acme 비용 원장에 기록했습니다.</div>
+        </div>
+      </article>
+
+      <!-- Yuna: contract review -->
+      <article class="chat-card chat-replay reveal">
+        <div class="chat-head">
+          <span class="team-avatar is-yuna" aria-hidden="true">Y</span>
+          <div>
+            <div class="chat-head-name" data-i18n="case.studio.day.yuna.name">Yuna</div>
+            <div class="chat-head-status" data-i18n="case.studio.day.yuna.status">법무 · 온라인</div>
+          </div>
+          <span class="chat-head-channel">Telegram</span>
+        </div>
+        <div class="chat-body">
+          <div class="chat-msg is-user" data-i18n="case.studio.day.yuna.m1">Yuna, 이 NDA를 평이한 영어로 요약해 주세요.</div>
+          <div class="chat-msg is-user is-attachment" data-i18n="case.studio.day.yuna.m2">📎 NDA_Acme_2026.pdf</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.yuna.m3">5년 상호 NDA. 7조를 제외하고 표준 — 직원에 대한 2년 비유인(non-solicit) 조항이 작년에 서명한 버전보다 광범위합니다. 서명 전에 협상할 만합니다.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.yuna.m4">전체 요약 저장: Drive · Legal · NDA_Acme_summary.md</div>
+        </div>
+      </article>
+
+      <!-- Mireille: content draft -->
+      <article class="chat-card chat-replay reveal d1">
+        <div class="chat-head">
+          <span class="team-avatar is-mireille" aria-hidden="true">M</span>
+          <div>
+            <div class="chat-head-name" data-i18n="case.studio.day.mireille.name">Mireille</div>
+            <div class="chat-head-status" data-i18n="case.studio.day.mireille.status">콘텐츠 · 온라인</div>
+          </div>
+          <span class="chat-head-channel">Telegram</span>
+        </div>
+        <div class="chat-body">
+          <div class="chat-msg is-user" data-i18n="case.studio.day.mireille.m1">Mireille, 우리 톤으로 봄 컬렉션 런칭 캡션을 써주세요.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.mireille.m2">Notion에 세 가지 초안 — 짧게, 중간, 스토리형. 톤: 가을 캠페인에서 썼던 "조용한 자신감". 각 ~80자 내외.</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.mireille.m3">중간 버전을 좀 더 장난스럽게 만들어 주세요.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.mireille.m4">업데이트했습니다. 같은 초안에 리듬을 더 풀고 살짝 윙크 한 번. Notion · Content · Spring 2026.</div>
+        </div>
+      </article>
+
+      <!-- Jun: stock check -->
+      <article class="chat-card chat-replay reveal">
+        <div class="chat-head">
+          <span class="team-avatar is-jun" aria-hidden="true">J</span>
+          <div>
+            <div class="chat-head-name" data-i18n="case.studio.day.jun.name">Jun</div>
+            <div class="chat-head-status" data-i18n="case.studio.day.jun.status">운영 · 온라인</div>
+          </div>
+          <span class="chat-head-channel">Telegram</span>
+        </div>
+        <div class="chat-body">
+          <div class="chat-msg is-user" data-i18n="case.studio.day.jun.m1">Jun, 지금 부족한 게 뭐죠?</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.jun.m2">임계치 이하 3개 항목: 린넨 토트백 (12개 남음, 25개 시 재발주), 기프트 박스 (4개 남음), 봄 카탈로그 재인쇄 (재고 없음, 마지막 출고 2주 전).</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.jun.m3">평소 거래처에 발주서 초안을 작성할까요?</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.jun.m4">네. 검토용 초안을 보내주세요.</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="case-quote reveal">
+      <blockquote data-i18n="case.studio.day.quote">"이건 다섯 개의 도구가 아닙니다. 다섯 명의 팀원입니다. 스튜디오에서 그렇게 부르니까 이름도 있는 거고요."</blockquote>
+      <cite data-i18n="case.studio.day.attr">Studio Monjo · 서울</cite>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="case.studio.tools.eyebrow">연결 구조</p>
+    <h2 class="section-title reveal d1" data-i18n-html="case.studio.tools.h2">사무실의 머신 한 대. <em>이미 쓰던 도구들.</em></h2>
+    <p class="lede reveal d2" data-i18n="case.studio.tools.lede">하드웨어는 스튜디오 안에 있습니다. Telegram과 카카오톡이 입구입니다 — 모든 에이전트가 거기서 답합니다. 에이전트들은 팀이 이미 사용 중인 같은 Notion, Google Drive, Google Calendar에 읽고 씁니다. 한국 법령은 law.go.kr에서 조회합니다. 결과물은 클라이언트가 기대하는 포맷으로 보냅니다.</p>
+
+    <div class="logo-strip reveal d2">
+      <div class="logo-strip-row">
+        <span class="logo-strip-label" data-i18n="case.studio.logos.connected">연결된 도구</span>
+        <div class="logo-tile-row">
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="telegram" aria-label="Telegram">T</span><span class="logo-tile-name">Telegram</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="kakao" aria-label="KakaoTalk">K</span><span class="logo-tile-name">KakaoTalk</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="notion" aria-label="Notion">N</span><span class="logo-tile-name">Notion</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="drive" aria-label="Google Drive"></span><span class="logo-tile-name">Drive</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="calendar" aria-label="Google Calendar">31</span><span class="logo-tile-name">Calendar</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="gmail" aria-label="Gmail">M</span><span class="logo-tile-name">Gmail</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="lawgokr" aria-label="law.go.kr">법</span><span class="logo-tile-name">law.go.kr</span></div>
+        </div>
+      </div>
+      <div class="logo-strip-row">
+        <span class="logo-strip-label" data-i18n="case.studio.logos.shipsIn">출력 포맷</span>
+        <div class="logo-tile-row">
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="word" aria-label="Microsoft Word">W</span><span class="logo-tile-name">Word</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="ppt" aria-label="Microsoft PowerPoint">P</span><span class="logo-tile-name">PowerPoint</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="excel" aria-label="Microsoft Excel">X</span><span class="logo-tile-name">Excel</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="pdf" aria-label="PDF">PDF</span><span class="logo-tile-name">PDF</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="integration-grid">
+      <div class="integration-copy">
+        <ul class="spec-list reveal d3">
+          <li data-i18n="case.studio.tools.point1">Telegram과 카카오톡이 입구 — 휴대폰에서, 지하철에서, 어디서든 일할 수 있습니다.</li>
+          <li data-i18n="case.studio.tools.point2">Notion이 운영 상태를 담습니다: 브랜드 북, 인벤토리, 프로젝트 페이지.</li>
+          <li data-i18n="case.studio.tools.point3">Google Drive는 문서 라이브러리 — 영수증, 계약서, 초안.</li>
+          <li data-i18n="case.studio.tools.point4">Google Calendar와 Gmail이 일정과 받은편지함을 처리합니다.</li>
+          <li data-i18n="case.studio.tools.point5">law.go.kr이 연결되어 있어 한국 법령과 판례 조회를 인용과 함께 제공합니다.</li>
+          <li data-i18n="case.studio.tools.point6">Word, PowerPoint, Excel, PDF로 결과물을 보냅니다 — 클라이언트가 기대하는 포맷입니다.</li>
+          <li data-i18n="case.studio.tools.point7">모델과 문서 메모리는 로컬 머신에 머무릅니다. 기본적으로 외부로 나가지 않습니다.</li>
+        </ul>
+      </div>
+      <div class="integration-map reveal d2">
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r1.name">Smart Fellow 머신</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r1.purpose">모델 · 메모리 · 워크플로우</span>
+          </div>
+          <span class="integration-tag is-local" data-i18n="case.studio.tools.map.r1.tag">사무실 내</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r2.name">Telegram</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r2.purpose">에이전트와의 대화</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r2.tag">브리지</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r2k.name">카카오톡</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r2k.purpose">한국 클라이언트와 파트너</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r2k.tag">브리지</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r3.name">Notion</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r3.purpose">브랜드 북 · 인벤토리 · 프로젝트</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r3.tag">연결됨</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r4.name">Google Drive</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r4.purpose">문서 · 영수증 · 초안</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r4.tag">연결됨</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r5.name">Google Calendar</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r5.purpose">일정 · 초대 · 준비</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r5.tag">연결됨</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r6.name">Gmail</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r6.purpose">받은편지함 분류 · 답장</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r6.tag">연결됨</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r6k.name">law.go.kr</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r6k.purpose">한국 법령 · 판례 조회</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r6k.tag">읽기 전용</span>
+        </div>
+        <div class="integration-row">
+          <div class="integration-row-label">
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r7.name">클라우드 모델 API</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r7.purpose">외부 LLM</span>
+          </div>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r7.tag">기본 비활성</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section founder-pitch">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="case.studio.founder.eyebrow">한국에서 사업하는 창업자를 위한 제안</p>
+    <h2 class="section-title reveal d1" data-i18n-html="case.studio.founder.h2">한국에서 작은 회사를 운영하신다면, <em>귀사의 팀도 이렇게 보일 수 있습니다.</em></h2>
+    <p class="lede reveal d2" data-i18n="case.studio.founder.lede">Studio Monjo는 이 형태가 취할 수 있는 한 가지 모습입니다. 한국에서 운영하는 어떤 작은 회사든 — 한국어 중심, 영어 중심, 또는 둘 다 — 같은 종류의 팀을 구축해 드릴 수 있습니다. 같은 아이디어: 로컬 머신 한 대, 이름 있는 팀원들, 이미 쓰던 도구. 직무, 성격, 파일은 귀사에 맞춰 다르게 설계됩니다.</p>
+
+    <div class="founder-grid">
+      <div>
+        <ul class="founder-checks reveal d3">
+          <li data-i18n="case.studio.founder.check1">IT 부서가 없고 새 플랫폼을 학습할 여유도 없는 창업자나 소규모 운영자입니다.</li>
+          <li data-i18n="case.studio.founder.check2">이미 Telegram, 카카오톡, Notion 또는 Google Workspace에서 일하고 있고, 그 안에서 도움을 받고 싶습니다.</li>
+          <li data-i18n="case.studio.founder.check3">한국어 문서, 한국 클라이언트, 한국 회계를 다루며 일부는 영어로도 처리합니다.</li>
+          <li data-i18n="case.studio.founder.check4">계약서, 영수증, 클라이언트 파일이 사무실을 떠나거나 다른 회사 모델 학습 데이터로 쓰이지 않기를 바랍니다.</li>
+          <li data-i18n="case.studio.founder.check5">범용 비서가 아니라, 귀사의 스타일과 거래처, 고객을 학습하는 팀을 원합니다.</li>
+        </ul>
+      </div>
+      <aside class="founder-aside reveal d2">
+        <div class="display-number">01</div>
+        <h3 data-i18n="case.studio.founder.aside.title">출발점이지, 고정된 패키지가 아닙니다</h3>
+        <p data-i18n="case.studio.founder.aside.body">귀사에 정말 그것이 필요한 게 아니라면, 귀사의 팀이 Brenda, Jason, Yuna, Mireille, Jun이 될 필요는 없습니다. 핵심은 형태입니다 — 이름 있는 팀원, 로컬 머신, 귀사의 도구. 역할, 이름, 성격은 무료 AI 도입 진단에서 처음부터 함께 설계합니다.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section section--green">
+  <div class="section-inner">
+    <div class="page-cta-inner">
+      <p class="eyebrow-light reveal" data-i18n="case.studio.cta.eyebrow">무료 진단부터 시작하세요</p>
+      <h2 class="section-title reveal d1" data-i18n-html="case.studio.cta.h2">Studio Monjo 같은 팀이 필요하신가요? <em>서면 계획서로 시작하세요.</em></h2>
+      <p class="lede reveal d2" data-i18n="case.studio.cta.body">AI 도입 진단은 무료입니다. 함께 앉아 하루가 어떻게 흘러가는지 살펴보고, 어떤 팀원이 도움이 될지, 무엇을 할지, 구축에 얼마가 들지 적어드립니다. 구축하지 않기로 결정하셔도 서면 계획서를 가지고 가실 수 있습니다.</p>
+      <div class="page-cta-actions reveal d3">
+        <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="case.studio.cta.primary">무료 AI 도입 진단 예약</a>
+        <a href="/how-we-work.html" class="btn-outline" data-i18n="case.studio.cta.secondary">진행 방식</a>
+      </div>
+      <div class="page-cta-note reveal d3" data-i18n="case.studio.cta.note">한국어 · 영어 · 프랑스어 · 약정 없음</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smart Fellow</div>
+    <ul class="footer-links">
+      <li><a href="/how-we-work.html" data-i18n="footer.how">진행 방식</a></li>
+      <li><a href="/#blueprints" data-i18n="footer.blueprints">만드는 것</a></li>
+      <li><a href="/use-cases/studio-monjo/" data-i18n="footer.cases">도입 사례</a></li>
+      <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/ko/technology.html" data-i18n="footer.tech">기술</a></li>
+      <li><a href="/assessment/" data-i18n="footer.contact">무료 진단</a></li>
+    </ul>
+    <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · 서울, 대한민국</span>
+  </div>
+</footer>
+
+<script>window.SF_CONFIG={"locale":"ko"};</script>
+
+<script src="/i18n.js"></script>
+<script src="/assessment-modal.js" defer></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+
+/* Sequentially reveal chat messages when each card scrolls into view */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const chatObs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    chatObs.unobserve(entry.target);
+    const msgs = entry.target.querySelectorAll('.chat-msg');
+    if (reduceMotion) {
+      msgs.forEach((m) => m.classList.add('show'));
+      return;
+    }
+    let delay = 250;
+    msgs.forEach((m, i) => {
+      const isAgent = m.classList.contains('is-agent');
+      const prev = i > 0 ? msgs[i - 1] : null;
+      const prevWasUser = prev && prev.classList.contains('is-user');
+      const stagger = isAgent && prevWasUser ? 850 : 550;
+      delay += stagger;
+      setTimeout(() => m.classList.add('show'), delay);
+    });
+  });
+}, { threshold: 0.35 });
+
+document.querySelectorAll('.chat-replay').forEach((el) => chatObs.observe(el));
+
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
+
+navToggle.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+function closeMobileMenu() {
+  navMobile.classList.remove('open');
+  navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+(function () {
+  const navEl = document.querySelector('nav');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (navMobile.classList.contains('open')) {
+      lastY = y;
+      return;
+    }
+    if (Math.abs(y - lastY) < 8) return;
+    if (y <= 0 || y < lastY) {
+      navEl.classList.remove('nav-hidden');
+    } else {
+      navEl.classList.add('nav-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
