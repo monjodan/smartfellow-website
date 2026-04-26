@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Studio Monjo — cinq coéquipiers IA, une seule machine locale — Smart Fellow</title>
-<meta name="description" content="Un cas réel Smart Fellow. Studio Monjo fait tourner toute l'entreprise sur une seule machine locale avec cinq coéquipiers IA — Brenda, Jason, Yuna, Mireille et Jun — qui vivent dans Telegram, KakaoTalk, Notion, Google Drive et law.go.kr, et livrent des fichiers Word, PowerPoint et Excel.">
+<meta name="description" content="Un cas réel Smart Fellow. Studio Monjo fait tourner toute l'entreprise sur une seule machine locale avec cinq coéquipiers IA — Brenda, Jason, Yuna, Mireille et Jun — qui vivent dans Telegram, Notion, Google Drive, KakaoMap et law.go.kr, et livrent des fichiers Word, PowerPoint et Excel.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://smartfellow.ai/fr/use-cases/studio-monjo/">
 <link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/studio-monjo/">
@@ -71,28 +71,34 @@
   font-weight: 500;
 }
 
-/* Team grid */
+/* Team grid — flex with centered orphan rows */
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
   margin-top: 2.5rem;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
 }
 
 .team-card {
   background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
   padding: 1.75rem 1.6rem 1.6rem;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  transition: background 0.18s ease;
+  flex: 1 1 300px;
+  max-width: 380px;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
-.team-card:hover { background: var(--paper-strong); }
+.team-card:hover {
+  background: var(--surface);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--line-strong);
+}
 
 .team-card-head {
   display: flex;
@@ -668,7 +674,7 @@
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="case.studio.hero.eyebrow">Cas d'usage · Studio Monjo</p>
     <h1 class="hero-title reveal d1" data-i18n-html="case.studio.hero.h1">Cinq coéquipiers IA. <em>Une seule machine locale.</em></h1>
-    <p class="lede reveal d2" data-i18n="case.studio.hero.lede">Studio Monjo est un petit studio créatif à Séoul. Toute l'entreprise tourne sur une seule machine Smart Fellow — cinq coéquipiers IA nommés qui s'occupent de l'assistance de direction, de la comptabilité, du juridique, du contenu et des opérations. Ils vivent dans Telegram et KakaoTalk, travaillent dans Notion et Google Drive, consultent le droit coréen sur law.go.kr et livrent des fichiers Word, PowerPoint et Excel quand vous en avez besoin. Rien ne sort du bureau sans accord.</p>
+    <p class="lede reveal d2" data-i18n="case.studio.hero.lede">Studio Monjo est un petit studio créatif à Séoul. Toute l'entreprise tourne sur une seule machine Smart Fellow — cinq coéquipiers IA nommés qui s'occupent de l'assistance de direction, de la comptabilité, du juridique, du contenu et des opérations. Ils vivent dans Telegram, travaillent dans Notion et Google Drive, cherchent restaurants et temps de trajet sur KakaoMap, vérifient les textes coréens sur law.go.kr, et produisent des fichiers Word, PowerPoint et Excel pour les livrables clients. Rien ne sort du bureau sans accord.</p>
     <div class="hero-actions reveal d3">
       <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="case.studio.hero.ctaPrimary">Réserver un diagnostic gratuit</a>
       <a href="#team" class="btn-outline" data-i18n="case.studio.hero.ctaSecondary">Rencontrer l'équipe</a>
@@ -679,8 +685,8 @@
 <div class="case-band">
   <div class="case-band-inner">
     <span class="case-band-item" data-i18n-html="case.studio.band.item1"><b>Une machine locale</b> — cinq coéquipiers</span>
-    <span class="case-band-item" data-i18n-html="case.studio.band.item2"><b>Telegram + KakaoTalk</b> — depuis le mobile</span>
-    <span class="case-band-item" data-i18n-html="case.studio.band.item3"><b>Notion · Drive · law.go.kr</b></span>
+    <span class="case-band-item" data-i18n-html="case.studio.band.item2"><b>Telegram en priorité</b> — depuis le mobile</span>
+    <span class="case-band-item" data-i18n-html="case.studio.band.item3"><b>Notion · Drive · KakaoMap · law.go.kr</b></span>
     <span class="case-band-item" data-i18n-html="case.studio.band.item4"><b>Coréen · Anglais</b> bilingue</span>
   </div>
 </div>
@@ -700,12 +706,12 @@
             <div class="team-role" data-i18n="case.studio.team.brenda.role">Assistante de direction</div>
           </div>
         </div>
-        <p class="team-quote" data-i18n="case.studio.team.brenda.quote">« Je tiens votre semaine en ordre. Plannings, notes de préparation, relances — c'est moi le calendrier. »</p>
-        <div class="team-where" data-i18n-html="case.studio.team.brenda.where">Vit dans <b>Telegram · KakaoTalk · Google Calendar · Gmail</b></div>
+        <p class="team-quote" data-i18n="case.studio.team.brenda.quote">« Je tiens la semaine du studio en ordre. Plannings, lieux, temps de trajet, notes de préparation — c'est moi le calendrier. »</p>
+        <div class="team-where" data-i18n-html="case.studio.team.brenda.where">Vit dans <b>Telegram · KakaoMap · Google Calendar · Gmail</b></div>
         <ul class="team-handles">
           <li data-i18n="case.studio.team.brenda.handle1">Coordination d'agenda entre contacts coréens et anglophones</li>
-          <li data-i18n="case.studio.team.brenda.handle2">Notes de préparation tirées de Drive et Gmail</li>
-          <li data-i18n="case.studio.team.brenda.handle3">Tri de la boîte de réception avec des réponses dans votre style</li>
+          <li data-i18n="case.studio.team.brenda.handle2">Recherche de restaurants et cafés sur KakaoMap, avec temps de trajet pour les rendez-vous</li>
+          <li data-i18n="case.studio.team.brenda.handle3">Notes de préparation tirées de Drive, Gmail et du calendrier</li>
         </ul>
       </article>
 
@@ -717,12 +723,12 @@
             <div class="team-role" data-i18n="case.studio.team.jason.role">Comptabilité &amp; gestion documentaire</div>
           </div>
         </div>
-        <p class="team-quote" data-i18n="case.studio.team.jason.quote">« Reçus, factures, nommage de fichiers. Envoyez-moi la photo — je trouverai le bon dossier. »</p>
-        <div class="team-where" data-i18n-html="case.studio.team.jason.where">Vit dans <b>Telegram · Google Drive · Gmail</b></div>
+        <p class="team-quote" data-i18n="case.studio.team.jason.quote">« Reçus, factures, le modèle financier de l'entreprise. Je tiens les comptes à jour et les dossiers en ordre. »</p>
+        <div class="team-where" data-i18n-html="case.studio.team.jason.where">Vit dans <b>Telegram · Notion · Google Drive · Gmail</b></div>
         <ul class="team-handles">
           <li data-i18n="case.studio.team.jason.handle1">Photos de reçus classées et étiquetées pour la prochaine clôture</li>
-          <li data-i18n="case.studio.team.jason.handle2">Brouillons de factures dans votre modèle, en KRW ou USD</li>
-          <li data-i18n="case.studio.team.jason.handle3">Rangement de Drive : noms cohérents, dossiers bien placés</li>
+          <li data-i18n="case.studio.team.jason.handle2">Lit et met à jour le modèle financier de l'entreprise dans Notion à la demande</li>
+          <li data-i18n="case.studio.team.jason.handle3">Brouillons de factures dans le modèle du studio, en KRW ou USD</li>
         </ul>
       </article>
 
@@ -738,7 +744,7 @@
         <div class="team-where" data-i18n-html="case.studio.team.yuna.where">Vit dans <b>Telegram · Google Drive · law.go.kr</b></div>
         <ul class="team-handles">
           <li data-i18n="case.studio.team.yuna.handle1">Résumés en langage clair de NDA, MOU et contrats</li>
-          <li data-i18n="case.studio.team.yuna.handle2">Traduction coréen ↔ anglais selon votre glossaire maison</li>
+          <li data-i18n="case.studio.team.yuna.handle2">Traduction coréen ↔ anglais avec le glossaire du studio</li>
           <li data-i18n="case.studio.team.yuna.handle3">Recherches de textes de loi sur law.go.kr, avec citations</li>
         </ul>
       </article>
@@ -751,11 +757,11 @@
             <div class="team-role" data-i18n="case.studio.team.mireille.role">Création de contenu</div>
           </div>
         </div>
-        <p class="team-quote" data-i18n="case.studio.team.mireille.quote">« Votre voix, votre style. Je tiens la charte éditoriale — pour que les brouillons sonnent comme vous. »</p>
+        <p class="team-quote" data-i18n="case.studio.team.mireille.quote">« La voix du studio, le style du studio. Je tiens la charte éditoriale — pour que les brouillons sonnent comme Studio Monjo. »</p>
         <div class="team-where" data-i18n-html="case.studio.team.mireille.where">Vit dans <b>Telegram · Notion · Google Drive</b></div>
         <ul class="team-handles">
-          <li data-i18n="case.studio.team.mireille.handle1">Brouillons à votre ton — légendes, posts, newsletters</li>
-          <li data-i18n="case.studio.team.mireille.handle2">Textes longs tirés de votre charte éditoriale Notion</li>
+          <li data-i18n="case.studio.team.mireille.handle1">Brouillons au ton du studio — légendes, posts, newsletters</li>
+          <li data-i18n="case.studio.team.mireille.handle2">Textes longs tirés de la charte éditoriale Notion du studio</li>
           <li data-i18n="case.studio.team.mireille.handle3">Trois variantes : courte, moyenne, narrative</li>
         </ul>
       </article>
@@ -771,9 +777,9 @@
         <p class="team-quote" data-i18n="case.studio.team.jun.quote">« Comptages, expéditions, ce qui manque. Je tiens les comptes pour que vous n'ayez pas à le faire. »</p>
         <div class="team-where" data-i18n-html="case.studio.team.jun.where">Vit dans <b>Telegram · Notion · Google Drive</b></div>
         <ul class="team-handles">
-          <li data-i18n="case.studio.team.jun.handle1">Suivi de l'inventaire dans votre base Notion</li>
+          <li data-i18n="case.studio.team.jun.handle1">Suivi de l'inventaire dans la base Notion du studio</li>
           <li data-i18n="case.studio.team.jun.handle2">Alertes de stock bas et relances fournisseurs</li>
-          <li data-i18n="case.studio.team.jun.handle3">Journaux de commandes et brouillons de réassort dans votre format habituel</li>
+          <li data-i18n="case.studio.team.jun.handle3">Journaux de commandes et brouillons de réassort dans le format habituel de Studio Monjo</li>
         </ul>
       </article>
     </div>
@@ -799,10 +805,10 @@
           <span class="chat-head-channel">Telegram</span>
         </div>
         <div class="chat-body">
-          <div class="chat-msg is-user" data-i18n="case.studio.day.brenda.m1">Brenda, peux-tu trouver un créneau de 30 min avec Min-jun mardi ou mercredi prochain ?</div>
-          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m2">Vous êtes tous les deux libres mer. 14:00–14:30 KST. Je lui envoie l'invitation avec le brief habituel ?</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.brenda.m1">Brenda, trouve un créneau de 30 min avec Min-jun mardi ou mercredi prochain — quelque part près de Yeoksam.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m2">Vous êtes tous les deux libres mer. 14:00–14:30 KST. Cafe Onion Yeoksam est à 6 min du bureau sur KakaoMap — je le suggère dans l'invitation ?</div>
           <div class="chat-msg is-user" data-i18n="case.studio.day.brenda.m3">Oui — et ressors les chiffres du dernier trimestre en contexte.</div>
-          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m4">Envoyé. Résumé Q1 joint, brief dans l'événement du calendrier. Je le relance 24h avant.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m4">Envoyé. Résumé Q1 joint, lieu et temps de trajet dans l'invitation. Je le relance 24h avant.</div>
         </div>
       </article>
 
@@ -819,8 +825,8 @@
         <div class="chat-body">
           <div class="chat-msg is-user is-attachment" data-i18n="case.studio.day.jason.m1">📎 receipt-photo.jpg</div>
           <div class="chat-msg is-agent" data-i18n="case.studio.day.jason.m2">Classé sous 2026-04 · Déplacements. ₩42 300 · Café client · Starbucks Yeoksam. Sauvegardé sur Drive, étiqueté pour la clôture de mai.</div>
-          <div class="chat-msg is-user" data-i18n="case.studio.day.jason.m3">Mets-le plutôt dans « Réunions clients — Acme ».</div>
-          <div class="chat-msg is-agent" data-i18n="case.studio.day.jason.m4">Fait. Ré-étiqueté et noté dans le grand livre Acme.</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.jason.m3">Mets-le plutôt dans « Réunions clients — Acme », et rafraîchis le modèle financier.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.jason.m4">Fait. Ré-étiqueté dans Drive, noté dans le grand livre Acme, et reporté sur la colonne Q2 du modèle financier de l'entreprise dans Notion.</div>
         </div>
       </article>
 
@@ -889,15 +895,15 @@
 <section class="section">
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="case.studio.tools.eyebrow">Comment tout est connecté</p>
-    <h2 class="section-title reveal d1" data-i18n-html="case.studio.tools.h2">Une machine au bureau. <em>Les outils que votre équipe utilise déjà.</em></h2>
-    <p class="lede reveal d2" data-i18n="case.studio.tools.lede">Le matériel est dans le studio. Telegram et KakaoTalk sont les portes d'entrée — chaque agent y répond. Les agents lisent et écrivent dans le même Notion, Google Drive et Google Calendar où vit déjà votre équipe. Ils consultent les textes coréens sur law.go.kr. Ils livrent dans les formats que vos clients attendent.</p>
+    <h2 class="section-title reveal d1" data-i18n-html="case.studio.tools.h2">Une machine au bureau. <em>Les outils déjà en place du studio.</em></h2>
+    <p class="lede reveal d2" data-i18n="case.studio.tools.lede">Le matériel est dans le studio. Telegram est la porte d'entrée — chaque agent y répond. Les agents lisent et écrivent dans le même Notion, Google Drive et Google Calendar où vit déjà l'équipe du studio. Ils cherchent restaurants et temps de trajet sur KakaoMap, consultent les textes coréens sur law.go.kr, et livrent dans les formats que les clients de Studio Monjo attendent.</p>
 
     <div class="logo-strip reveal d2">
       <div class="logo-strip-row">
         <span class="logo-strip-label" data-i18n="case.studio.logos.connected">Connecté à</span>
         <div class="logo-tile-row">
           <div class="logo-tile-wrap"><span class="logo-tile" data-brand="telegram" aria-label="Telegram">T</span><span class="logo-tile-name">Telegram</span></div>
-          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="kakao" aria-label="KakaoTalk">K</span><span class="logo-tile-name">KakaoTalk</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="kakao" aria-label="KakaoMap">K</span><span class="logo-tile-name">KakaoMap</span></div>
           <div class="logo-tile-wrap"><span class="logo-tile" data-brand="notion" aria-label="Notion">N</span><span class="logo-tile-name">Notion</span></div>
           <div class="logo-tile-wrap"><span class="logo-tile" data-brand="drive" aria-label="Google Drive"></span><span class="logo-tile-name">Drive</span></div>
           <div class="logo-tile-wrap"><span class="logo-tile" data-brand="calendar" aria-label="Google Calendar">31</span><span class="logo-tile-name">Calendar</span></div>
@@ -919,12 +925,12 @@
     <div class="integration-grid">
       <div class="integration-copy">
         <ul class="spec-list reveal d3">
-          <li data-i18n="case.studio.tools.point1">Telegram et KakaoTalk sont les portes d'entrée — depuis votre téléphone, le métro, où vous voulez.</li>
-          <li data-i18n="case.studio.tools.point2">Notion porte l'état opérationnel : charte éditoriale, inventaire, pages de projet.</li>
+          <li data-i18n="case.studio.tools.point1">Telegram est la porte d'entrée — l'équipe travaille depuis le téléphone, le métro, n'importe où.</li>
+          <li data-i18n="case.studio.tools.point2">Notion porte l'état opérationnel : modèle financier de l'entreprise, charte éditoriale, inventaire, pages de projet.</li>
           <li data-i18n="case.studio.tools.point3">Google Drive est la bibliothèque documentaire — reçus, contrats, brouillons.</li>
           <li data-i18n="case.studio.tools.point4">Google Calendar et Gmail gèrent l'agenda et la boîte de réception.</li>
-          <li data-i18n="case.studio.tools.point5">law.go.kr est branché pour les recherches de textes et de jurisprudence coréenne, avec citations.</li>
-          <li data-i18n="case.studio.tools.point6">Livre dans Word, PowerPoint, Excel et PDF — les formats que vos clients attendent.</li>
+          <li data-i18n="case.studio.tools.point5">KakaoMap et law.go.kr couvrent les recherches spécifiques à la Corée — restaurants et temps de trajet pour les rendez-vous, textes et jurisprudence pour le juridique.</li>
+          <li data-i18n="case.studio.tools.point6">Livre dans Word, PowerPoint, Excel et PDF — les formats que les clients de Studio Monjo attendent.</li>
           <li data-i18n="case.studio.tools.point7">Le modèle et la mémoire documentaire restent sur la machine locale. Rien ne sort par défaut.</li>
         </ul>
       </div>
@@ -945,10 +951,10 @@
         </div>
         <div class="integration-row">
           <div class="integration-row-label">
-            <span class="integration-row-name" data-i18n="case.studio.tools.map.r2k.name">KakaoTalk</span>
-            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r2k.purpose">Clients et partenaires coréens</span>
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r2k.name">KakaoMap</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r2k.purpose">Restaurants · cafés · temps de trajet</span>
           </div>
-          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r2k.tag">Pont</span>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r2k.tag">Connecté</span>
         </div>
         <div class="integration-row">
           <div class="integration-row-label">

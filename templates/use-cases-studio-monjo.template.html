@@ -55,28 +55,34 @@
   font-weight: 500;
 }
 
-/* Team grid */
+/* Team grid — flex with centered orphan rows */
 .team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
   margin-top: 2.5rem;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
 }
 
 .team-card {
   background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
   padding: 1.75rem 1.6rem 1.6rem;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  transition: background 0.18s ease;
+  flex: 1 1 300px;
+  max-width: 380px;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
-.team-card:hover { background: var(--paper-strong); }
+.team-card:hover {
+  background: var(--surface);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--line-strong);
+}
 
 .team-card-head {
   display: flex;
@@ -652,7 +658,7 @@
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="case.studio.hero.eyebrow">Use cases · Studio Monjo</p>
     <h1 class="hero-title reveal d1" data-i18n-html="case.studio.hero.h1">Five AI teammates. <em>One local machine.</em></h1>
-    <p class="lede reveal d2" data-i18n="case.studio.hero.lede">Studio Monjo is a small creative studio in Seoul. The whole company runs on a single Smart Fellow machine — five named AI teammates handling executive support, accounting, legal, content, and operations. They live in Telegram and KakaoTalk, work in Notion and Google Drive, look up Korean law on law.go.kr, and ship Word, PowerPoint, and Excel files when you need them. Nothing leaves the office unless someone says so.</p>
+    <p class="lede reveal d2" data-i18n="case.studio.hero.lede">Studio Monjo is a small creative studio in Seoul. The whole company runs on a single Smart Fellow machine — five named AI teammates handling executive support, accounting, legal, content, and operations. They live in Telegram, work in Notion and Google Drive, look up restaurants and travel times on KakaoMap, check Korean statutes on law.go.kr, and produce Word, PowerPoint, and Excel files for client deliverables. Nothing leaves the office unless someone says so.</p>
     <div class="hero-actions reveal d3">
       <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="case.studio.hero.ctaPrimary">Book a free review</a>
       <a href="#team" class="btn-outline" data-i18n="case.studio.hero.ctaSecondary">Meet the team</a>
@@ -663,8 +669,8 @@
 <div class="case-band">
   <div class="case-band-inner">
     <span class="case-band-item" data-i18n-html="case.studio.band.item1"><b>One local machine</b> — five teammates</span>
-    <span class="case-band-item" data-i18n-html="case.studio.band.item2"><b>Telegram + KakaoTalk</b> — phone-friendly</span>
-    <span class="case-band-item" data-i18n-html="case.studio.band.item3"><b>Notion · Drive · law.go.kr</b></span>
+    <span class="case-band-item" data-i18n-html="case.studio.band.item2"><b>Telegram-first</b> — phone-friendly</span>
+    <span class="case-band-item" data-i18n-html="case.studio.band.item3"><b>Notion · Drive · KakaoMap · law.go.kr</b></span>
     <span class="case-band-item" data-i18n-html="case.studio.band.item4"><b>Korean · English</b> bilingual</span>
   </div>
 </div>
@@ -684,12 +690,12 @@
             <div class="team-role" data-i18n="case.studio.team.brenda.role">Executive Assistant</div>
           </div>
         </div>
-        <p class="team-quote" data-i18n="case.studio.team.brenda.quote">"I keep your week in order. Schedules, prep notes, follow-ups — I'm the calendar."</p>
-        <div class="team-where" data-i18n-html="case.studio.team.brenda.where">Lives in <b>Telegram · KakaoTalk · Google Calendar · Gmail</b></div>
+        <p class="team-quote" data-i18n="case.studio.team.brenda.quote">"I keep the studio's week in order. Schedules, venues, travel times, prep notes — I'm the calendar."</p>
+        <div class="team-where" data-i18n-html="case.studio.team.brenda.where">Lives in <b>Telegram · KakaoMap · Google Calendar · Gmail</b></div>
         <ul class="team-handles">
           <li data-i18n="case.studio.team.brenda.handle1">Calendar coordination across Korean and English contacts</li>
-          <li data-i18n="case.studio.team.brenda.handle2">Meeting prep notes pulled from Drive and Gmail</li>
-          <li data-i18n="case.studio.team.brenda.handle3">Inbox triage with house-style replies</li>
+          <li data-i18n="case.studio.team.brenda.handle2">Restaurant and cafe lookups on KakaoMap, with travel times for meetings</li>
+          <li data-i18n="case.studio.team.brenda.handle3">Meeting prep notes pulled from Drive, Gmail, and the calendar</li>
         </ul>
       </article>
 
@@ -701,12 +707,12 @@
             <div class="team-role" data-i18n="case.studio.team.jason.role">Accounting &amp; File Management</div>
           </div>
         </div>
-        <p class="team-quote" data-i18n="case.studio.team.jason.quote">"Receipts, invoices, file naming. Send me the photo — I'll find the right folder."</p>
-        <div class="team-where" data-i18n-html="case.studio.team.jason.where">Lives in <b>Telegram · Google Drive · Gmail</b></div>
+        <p class="team-quote" data-i18n="case.studio.team.jason.quote">"Receipts, invoices, the company's financial model. I keep the books current and the folders clean."</p>
+        <div class="team-where" data-i18n-html="case.studio.team.jason.where">Lives in <b>Telegram · Notion · Google Drive · Gmail</b></div>
         <ul class="team-handles">
           <li data-i18n="case.studio.team.jason.handle1">Receipt photos filed and tagged for the next close</li>
-          <li data-i18n="case.studio.team.jason.handle2">Invoice drafts in your template, in KRW or USD</li>
-          <li data-i18n="case.studio.team.jason.handle3">Drive cleanup: consistent names, right folders</li>
+          <li data-i18n="case.studio.team.jason.handle2">Reads and updates the company's financial model in Notion on demand</li>
+          <li data-i18n="case.studio.team.jason.handle3">Invoice drafts in the studio's template, in KRW or USD</li>
         </ul>
       </article>
 
@@ -722,7 +728,7 @@
         <div class="team-where" data-i18n-html="case.studio.team.yuna.where">Lives in <b>Telegram · Google Drive · law.go.kr</b></div>
         <ul class="team-handles">
           <li data-i18n="case.studio.team.yuna.handle1">Plain-language summaries of NDAs, MOUs, and contracts</li>
-          <li data-i18n="case.studio.team.yuna.handle2">Korean ↔ English translation in your house glossary</li>
+          <li data-i18n="case.studio.team.yuna.handle2">Korean ↔ English translation using the studio's glossary</li>
           <li data-i18n="case.studio.team.yuna.handle3">Statute lookups against law.go.kr with citations</li>
         </ul>
       </article>
@@ -735,11 +741,11 @@
             <div class="team-role" data-i18n="case.studio.team.mireille.role">Content Creation</div>
           </div>
         </div>
-        <p class="team-quote" data-i18n="case.studio.team.mireille.quote">"Your voice, your house style. I keep the brand book — so drafts come out sounding like you."</p>
+        <p class="team-quote" data-i18n="case.studio.team.mireille.quote">"The studio's voice, the studio's house style. I keep the brand book — so drafts come out sounding like Studio Monjo."</p>
         <div class="team-where" data-i18n-html="case.studio.team.mireille.where">Lives in <b>Telegram · Notion · Google Drive</b></div>
         <ul class="team-handles">
-          <li data-i18n="case.studio.team.mireille.handle1">Drafts in your tone — captions, posts, newsletters</li>
-          <li data-i18n="case.studio.team.mireille.handle2">Long-form writing pulled from your Notion brand book</li>
+          <li data-i18n="case.studio.team.mireille.handle1">Drafts in the studio's tone — captions, posts, newsletters</li>
+          <li data-i18n="case.studio.team.mireille.handle2">Long-form writing pulled from the studio's Notion brand book</li>
           <li data-i18n="case.studio.team.mireille.handle3">Three-variant outputs: short, medium, story-style</li>
         </ul>
       </article>
@@ -755,9 +761,9 @@
         <p class="team-quote" data-i18n="case.studio.team.jun.quote">"Counts, shipments, what's running low. I keep track so you don't have to."</p>
         <div class="team-where" data-i18n-html="case.studio.team.jun.where">Lives in <b>Telegram · Notion · Google Drive</b></div>
         <ul class="team-handles">
-          <li data-i18n="case.studio.team.jun.handle1">Inventory tracking against your Notion stock database</li>
+          <li data-i18n="case.studio.team.jun.handle1">Inventory tracking against the studio's Notion stock database</li>
           <li data-i18n="case.studio.team.jun.handle2">Low-stock alerts and supplier follow-ups</li>
-          <li data-i18n="case.studio.team.jun.handle3">Order logs and reorder drafts in your usual format</li>
+          <li data-i18n="case.studio.team.jun.handle3">Order logs and reorder drafts in Studio Monjo's usual format</li>
         </ul>
       </article>
     </div>
@@ -783,10 +789,10 @@
           <span class="chat-head-channel">Telegram</span>
         </div>
         <div class="chat-body">
-          <div class="chat-msg is-user" data-i18n="case.studio.day.brenda.m1">Brenda, can you find a 30-min slot with Min-jun next Tuesday or Wednesday?</div>
-          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m2">Both of you are free Wed 14:00–14:30 KST. Want me to send the invite with the usual prep brief?</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.brenda.m1">Brenda, find a 30-min slot with Min-jun next Tue or Wed — somewhere near Yeoksam.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m2">Both of you are free Wed 14:00–14:30 KST. Cafe Onion Yeoksam is 6 min from the office on KakaoMap — want me to suggest it in the invite?</div>
           <div class="chat-msg is-user" data-i18n="case.studio.day.brenda.m3">Yes — and pull last quarter's numbers as background.</div>
-          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m4">Sent. Q1 summary attached, brief in the calendar event. I'll nudge him 24h before.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.brenda.m4">Sent. Q1 summary attached, location and travel time in the invite. I'll nudge him 24h before.</div>
         </div>
       </article>
 
@@ -803,8 +809,8 @@
         <div class="chat-body">
           <div class="chat-msg is-user is-attachment" data-i18n="case.studio.day.jason.m1">📎 receipt-photo.jpg</div>
           <div class="chat-msg is-agent" data-i18n="case.studio.day.jason.m2">Filed under 2026-04 · Travel. ₩42,300 · Coffee meeting · Starbucks Yeoksam. Saved to Drive, tagged for the May close.</div>
-          <div class="chat-msg is-user" data-i18n="case.studio.day.jason.m3">Move it to "Client meetings — Acme" instead.</div>
-          <div class="chat-msg is-agent" data-i18n="case.studio.day.jason.m4">Done. Re-tagged and noted in the Acme expense ledger.</div>
+          <div class="chat-msg is-user" data-i18n="case.studio.day.jason.m3">Move it to "Client meetings — Acme" instead, and refresh the financial model.</div>
+          <div class="chat-msg is-agent" data-i18n="case.studio.day.jason.m4">Done. Re-tagged in Drive, logged in the Acme ledger, and rolled into the Q2 column of the company financial model in Notion.</div>
         </div>
       </article>
 
@@ -873,15 +879,15 @@
 <section class="section">
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="case.studio.tools.eyebrow">How it all connects</p>
-    <h2 class="section-title reveal d1" data-i18n-html="case.studio.tools.h2">One machine in the office. <em>The tools your team already uses.</em></h2>
-    <p class="lede reveal d2" data-i18n="case.studio.tools.lede">The hardware sits in the studio. Telegram and KakaoTalk are the front doors — every agent answers there. The agents read from and write to the same Notion, Google Drive, and Google Calendar your team already lives in. They look up Korean statutes on law.go.kr. They ship deliverables in the formats your clients expect.</p>
+    <h2 class="section-title reveal d1" data-i18n-html="case.studio.tools.h2">One machine in the office. <em>The studio's existing tools.</em></h2>
+    <p class="lede reveal d2" data-i18n="case.studio.tools.lede">The hardware sits in the studio. Telegram is the front door — every agent answers there. The agents read from and write to the same Notion, Google Drive, and Google Calendar the studio team already lives in. They check restaurants and travel times on KakaoMap, look up Korean statutes on law.go.kr, and produce deliverables in the formats Studio Monjo's clients expect.</p>
 
     <div class="logo-strip reveal d2">
       <div class="logo-strip-row">
         <span class="logo-strip-label" data-i18n="case.studio.logos.connected">Connected to</span>
         <div class="logo-tile-row">
           <div class="logo-tile-wrap"><span class="logo-tile" data-brand="telegram" aria-label="Telegram">T</span><span class="logo-tile-name">Telegram</span></div>
-          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="kakao" aria-label="KakaoTalk">K</span><span class="logo-tile-name">KakaoTalk</span></div>
+          <div class="logo-tile-wrap"><span class="logo-tile" data-brand="kakao" aria-label="KakaoMap">K</span><span class="logo-tile-name">KakaoMap</span></div>
           <div class="logo-tile-wrap"><span class="logo-tile" data-brand="notion" aria-label="Notion">N</span><span class="logo-tile-name">Notion</span></div>
           <div class="logo-tile-wrap"><span class="logo-tile" data-brand="drive" aria-label="Google Drive"></span><span class="logo-tile-name">Drive</span></div>
           <div class="logo-tile-wrap"><span class="logo-tile" data-brand="calendar" aria-label="Google Calendar">31</span><span class="logo-tile-name">Calendar</span></div>
@@ -903,12 +909,12 @@
     <div class="integration-grid">
       <div class="integration-copy">
         <ul class="spec-list reveal d3">
-          <li data-i18n="case.studio.tools.point1">Telegram and KakaoTalk are the front doors — work from your phone, the train, anywhere.</li>
-          <li data-i18n="case.studio.tools.point2">Notion holds operational state: brand book, inventory, project pages.</li>
+          <li data-i18n="case.studio.tools.point1">Telegram is the front door — the team works from their phones, the train, anywhere.</li>
+          <li data-i18n="case.studio.tools.point2">Notion holds operational state: the company's financial model, brand book, inventory, project pages.</li>
           <li data-i18n="case.studio.tools.point3">Google Drive is the document library — receipts, contracts, drafts.</li>
           <li data-i18n="case.studio.tools.point4">Google Calendar and Gmail handle scheduling and inbox work.</li>
-          <li data-i18n="case.studio.tools.point5">law.go.kr is plugged in for Korean statute and case lookups, with citations.</li>
-          <li data-i18n="case.studio.tools.point6">Ships deliverables in Word, PowerPoint, Excel, and PDF — the formats your clients expect.</li>
+          <li data-i18n="case.studio.tools.point5">KakaoMap and law.go.kr cover Korea-specific lookups — restaurants and travel times for meetings, statutes for legal work.</li>
+          <li data-i18n="case.studio.tools.point6">Produces deliverables in Word, PowerPoint, Excel, and PDF — the formats Studio Monjo's clients expect.</li>
           <li data-i18n="case.studio.tools.point7">The model and document memory stay on the local box. Nothing leaves by default.</li>
         </ul>
       </div>
@@ -929,10 +935,10 @@
         </div>
         <div class="integration-row">
           <div class="integration-row-label">
-            <span class="integration-row-name" data-i18n="case.studio.tools.map.r2k.name">KakaoTalk</span>
-            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r2k.purpose">Korean clients and partners</span>
+            <span class="integration-row-name" data-i18n="case.studio.tools.map.r2k.name">KakaoMap</span>
+            <span class="integration-row-purpose" data-i18n="case.studio.tools.map.r2k.purpose">Restaurants · cafés · travel times</span>
           </div>
-          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r2k.tag">Bridge</span>
+          <span class="integration-tag is-bridge" data-i18n="case.studio.tools.map.r2k.tag">Connected</span>
         </div>
         <div class="integration-row">
           <div class="integration-row-label">

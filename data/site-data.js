@@ -127,19 +127,19 @@ module.exports = {
       meta: {
         en: {
           title: 'Studio Monjo — five AI teammates, one local machine — Smart Fellow',
-          description: 'A real Smart Fellow build. Studio Monjo runs the whole company on a single local machine with five named AI teammates — Brenda, Jason, Yuna, Mireille, and Jun — working in Telegram, KakaoTalk, Notion, Google Drive, and law.go.kr, shipping Word, PowerPoint, and Excel deliverables.',
+          description: 'A real Smart Fellow build. Studio Monjo runs the whole company on a single local machine with five named AI teammates — Brenda, Jason, Yuna, Mireille, and Jun — working in Telegram, Notion, Google Drive, KakaoMap, and law.go.kr, and producing Word, PowerPoint, and Excel deliverables.',
           ogTitle: 'Studio Monjo — five AI teammates, one local machine',
           ogDescription: 'How a small Seoul studio runs executive support, accounting, legal, content, and operations on one local Smart Fellow machine.'
         },
         fr: {
           title: "Studio Monjo — cinq coéquipiers IA, une seule machine locale — Smart Fellow",
-          description: "Un cas réel Smart Fellow. Studio Monjo fait tourner toute l'entreprise sur une seule machine locale avec cinq coéquipiers IA — Brenda, Jason, Yuna, Mireille et Jun — qui vivent dans Telegram, KakaoTalk, Notion, Google Drive et law.go.kr, et livrent des fichiers Word, PowerPoint et Excel.",
+          description: "Un cas réel Smart Fellow. Studio Monjo fait tourner toute l'entreprise sur une seule machine locale avec cinq coéquipiers IA — Brenda, Jason, Yuna, Mireille et Jun — qui vivent dans Telegram, Notion, Google Drive, KakaoMap et law.go.kr, et livrent des fichiers Word, PowerPoint et Excel.",
           ogTitle: "Studio Monjo — cinq coéquipiers IA, une seule machine locale",
           ogDescription: "Comment un petit studio de Séoul fait tourner assistance de direction, comptabilité, juridique, contenu et opérations sur une seule machine Smart Fellow locale."
         },
         ko: {
           title: 'Studio Monjo — AI 팀원 5명, 로컬 머신 1대 — Smart Fellow',
-          description: 'Smart Fellow 실제 구축 사례. Studio Monjo는 로컬 머신 단 한 대 위에서 5명의 AI 팀원 — Brenda, Jason, Yuna, Mireille, Jun — 과 회사 전체를 운영합니다. Telegram, 카카오톡, Notion, Google Drive, law.go.kr 에서 일하고 Word, PowerPoint, Excel 파일을 생성합니다.',
+          description: 'Smart Fellow 실제 구축 사례. Studio Monjo는 로컬 머신 단 한 대 위에서 5명의 AI 팀원 — Brenda, Jason, Yuna, Mireille, Jun — 과 회사 전체를 운영합니다. Telegram, Notion, Google Drive, 카카오맵, law.go.kr 에서 일하고 Word, PowerPoint, Excel 파일을 생성합니다.',
           ogTitle: 'Studio Monjo — AI 팀원 5명, 로컬 머신 1대',
           ogDescription: '서울의 작은 스튜디오가 한 대의 로컬 Smart Fellow 머신 위에서 비서, 회계, 법무, 콘텐츠, 운영까지 어떻게 운영하는지.'
         }
