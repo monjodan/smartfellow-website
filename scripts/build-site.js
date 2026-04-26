@@ -121,7 +121,7 @@ function buildJsonLd(pageName, locale) {
     name: siteData.site.name,
     url: siteData.site.baseUrl,
     logo: absoluteUrl('/assets/smart-fellow-logo.svg'),
-    description: 'Smart Fellow builds private AI teams for companies that care about their data — fine-tuned local models on hardware they own.',
+    description: 'Smart Fellow builds private AI teams for companies that care about their data: fine-tuned local models on hardware they own.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Seoul',

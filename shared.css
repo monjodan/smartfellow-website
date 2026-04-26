@@ -1,4 +1,4 @@
-/* Smart Fellow — shared editorial system */
+/* Smart Fellow · shared editorial system */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -144,6 +144,96 @@ nav.nav-hidden { transform: translateY(-100%); }
 
 .btn-outline:hover {
   border-color: var(--ink-soft);
+}
+
+/* Nav dropdown (hover/focus on desktop) */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-dropdown-trigger::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translate(-1px, -1px);
+  opacity: 0.55;
+  transition: opacity 0.18s ease;
+}
+
+.nav-dropdown:hover .nav-dropdown-trigger::after,
+.nav-dropdown:focus-within .nav-dropdown-trigger::after {
+  opacity: 1;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  min-width: 320px;
+  margin-top: 0.5rem;
+  padding: 0.4rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 14px 36px rgba(19, 27, 22, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.12s ease;
+}
+
+.nav-dropdown-item:hover {
+  background: var(--surface-muted);
+}
+
+.nav-dropdown-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.nav-dropdown-desc {
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  line-height: 1.35;
+}
+
+.nav-dropdown-empty {
+  padding: 0.6rem 0.85rem;
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  font-style: italic;
 }
 
 .nav-hamburger {
@@ -566,7 +656,7 @@ footer .footer-logo {
   border-color: rgba(247, 245, 239, 0.7);
 }
 
-/* Role grid — v3 editorial style */
+/* Role grid · v3 editorial style */
 .role-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));

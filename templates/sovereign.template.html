@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Fellow Sovereign — Offline AI for Confidential Work</title>
+<title>Smart Fellow Sovereign. Offline AI for Confidential Work</title>
 <meta name="description" content="Smart Fellow Sovereign: fully offline AI for legal, diligence, R&D, and confidential work. No internet required. Prompts never reach external servers.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -25,7 +25,7 @@
   margin-top: 2rem;
 }
 
-/* Problem section — Q&A items */
+/* Problem section. Q&A items */
 .sov-boundary-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
@@ -146,7 +146,7 @@
   line-height: 1.6;
 }
 
-/* If stolen — security features */
+/* If stolen. Security features */
 .sov-security-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
@@ -216,12 +216,20 @@
 <nav>
   <a href="/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" /><span class="scramble-word" id="scramble-word">Smart</span>&nbsp;Fellow</a>
   <ul class="nav-links">
+    <li><a href="/#blueprints" data-i18n="nav.what">What we do</a></li>
+    <li class="nav-dropdown">
+      <a href="/use-cases/" class="nav-dropdown-trigger" data-i18n="nav.cases">Use cases</a>
+      <div class="nav-dropdown-menu" role="menu" aria-label="Use cases">
+        <a href="/use-cases/studio-monjo/" class="nav-dropdown-item" role="menuitem">
+          <span class="nav-dropdown-name" data-i18n="nav.cases.studioMonjo.name">Studio Monjo</span>
+          <span class="nav-dropdown-desc" data-i18n="nav.cases.studioMonjo.desc">AI team for a Seoul studio</span>
+        </a>
+        <span class="nav-dropdown-empty" data-i18n="nav.cases.more">More cases coming soon</span>
+      </div>
+    </li>
     <li><a href="/how-we-work/" data-i18n="nav.how">How we work</a></li>
-    <li><a href="/#blueprints" data-i18n="nav.blueprints">What we build</a></li>
-    <li><a href="/use-cases/studio-monjo/" data-i18n="nav.cases">Use cases</a></li>
+    <li><a href="/technology/" data-i18n="nav.architecture">Architecture</a></li>
     <li><a href="/sovereign/" class="is-active" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/technology/" data-i18n="nav.technology">Technology</a></li>
-    <li><a href="/assessment/" data-i18n="nav.assessment">Free review</a></li>
   </ul>
   <div class="nav-right">
     <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">한국어</button>
@@ -234,12 +242,11 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.what">What we do</a></li>
+    <li><a href="/use-cases/" onclick="closeMobileMenu()" data-i18n="nav.cases">Use cases</a></li>
     <li><a href="/how-we-work/" onclick="closeMobileMenu()" data-i18n="nav.how">How we work</a></li>
-    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">What we build</a></li>
-    <li><a href="/use-cases/studio-monjo/" onclick="closeMobileMenu()" data-i18n="nav.cases">Use cases</a></li>
+    <li><a href="/technology/" onclick="closeMobileMenu()" data-i18n="nav.architecture">Architecture</a></li>
     <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/technology/" onclick="closeMobileMenu()" data-i18n="nav.technology">Technology</a></li>
-    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Free review</a></li>
   </ul>
   <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Book a free review</a>
   <button id="lang-toggle-mobile" class="lang-toggle-mobile">한국어</button>
@@ -272,7 +279,7 @@
       </div>
       <div class="sov-qa-item">
         <div class="sov-qa-q"><span class="sov-qa-num">2</span><span data-i18n="sovv2.problem.q2">Who can access it?</span></div>
-        <p class="sov-qa-a" data-i18n="sovv2.problem.a2">Access is limited to authorised users and whatever policy scope you configure for the deployment — whether that is by session, user, project, or secure room.</p>
+        <p class="sov-qa-a" data-i18n="sovv2.problem.a2">Access is limited to authorised users and whatever policy scope you configure for the deployment: whether that is by session, user, project, or secure room.</p>
       </div>
       <div class="sov-qa-item">
         <div class="sov-qa-q"><span class="sov-qa-num">3</span><span data-i18n="sovv2.problem.q3">What happens if the machine is lost, stolen, or misused?</span></div>
@@ -286,7 +293,7 @@
   </div>
 </section>
 
-<!-- What changes vs standard — text + diagram -->
+<!-- What changes vs standard. Text + diagram -->
 <section class="section section--soft" id="what-changes">
   <div class="section-inner">
     <div class="sov-boundary-grid">
@@ -336,7 +343,7 @@
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="sovv2.cap.eyebrow">What it can do</p>
     <h2 class="section-title reveal d1" data-i18n-html="sovv2.cap.h2">Confidential work does not have <em>to be manual.</em></h2>
-    <p class="lede reveal d2" data-i18n="sovv2.cap.lead">Offline mode turns approved local material into useful work product — without sending documents outside the controlled environment.</p>
+    <p class="lede reveal d2" data-i18n="sovv2.cap.lead">Offline mode turns approved local material into useful work product. Without sending documents outside the controlled environment.</p>
 
     <div class="sov-cap-grid reveal d2">
       <div class="sov-cap-item">
@@ -353,7 +360,7 @@
       </div>
       <div class="sov-cap-item">
         <div class="sov-cap-title" data-i18n="sovv2.cap.c4.title">Translate and adapt</div>
-        <div class="sov-cap-body" data-i18n="sovv2.cap.c4.body">Work across Korean, English, and French while preserving business meaning — locally.</div>
+        <div class="sov-cap-body" data-i18n="sovv2.cap.c4.body">Work across Korean, English, and French while preserving business meaning. Locally.</div>
       </div>
       <div class="sov-cap-item">
         <div class="sov-cap-title" data-i18n="sovv2.cap.c5.title">Search local archives</div>
@@ -409,11 +416,11 @@
     <div class="grid-3" style="margin-top:2rem">
       <article class="card reveal">
         <h3 data-i18n="sovv2.use.card1.title">R&amp;D and trade secrets</h3>
-        <p data-i18n="sovv2.use.card1.body">Formulas, technical specifications, test data, manufacturing processes, SOPs, and supplier documents — reviewed locally, never uploaded.</p>
+        <p data-i18n="sovv2.use.card1.body">Formulas, technical specifications, test data, manufacturing processes, SOPs, and supplier documents: reviewed locally, never uploaded.</p>
       </article>
       <article class="card reveal d1">
         <h3 data-i18n="sovv2.use.card2.title">Client confidential work</h3>
-        <p data-i18n="sovv2.use.card2.body">Consulting reports, legal documents, accounting files, agency strategy, and client interviews — inside a controlled boundary.</p>
+        <p data-i18n="sovv2.use.card2.body">Consulting reports, legal documents, accounting files, agency strategy, and client interviews. Inside a controlled boundary.</p>
       </article>
       <article class="card reveal d2">
         <h3 data-i18n="sovv2.use.card3.title">Due diligence</h3>
@@ -421,15 +428,15 @@
       </article>
       <article class="card reveal">
         <h3 data-i18n="sovv2.use.card4.title">Internal investigations</h3>
-        <p data-i18n="sovv2.use.card4.body">Interview notes, timelines, evidence summaries, and sensitive internal findings — in a tighter operating perimeter.</p>
+        <p data-i18n="sovv2.use.card4.body">Interview notes, timelines, evidence summaries, and sensitive internal findings. In a tighter operating perimeter.</p>
       </article>
       <article class="card reveal d1">
         <h3 data-i18n="sovv2.use.card5.title">Board and leadership material</h3>
-        <p data-i18n="sovv2.use.card5.body">Strategy documents, restructuring plans, financial reports, and acquisition analysis — prepared and reviewed locally.</p>
+        <p data-i18n="sovv2.use.card5.body">Strategy documents, restructuring plans, financial reports, and acquisition analysis. Prepared and reviewed locally.</p>
       </article>
       <article class="card reveal d2">
         <h3 data-i18n="sovv2.use.card6.title">Cross-border confidential work</h3>
-        <p data-i18n="sovv2.use.card6.body">Korean, English, and French documents requiring translation, explanation, and business context — without cloud routing.</p>
+        <p data-i18n="sovv2.use.card6.body">Korean, English, and French documents requiring translation, explanation, and business context. Without cloud routing.</p>
       </article>
     </div>
   </div>
@@ -445,12 +452,12 @@
       <article class="step-card reveal">
         <div class="display-number">01</div>
         <h3 data-i18n="sovv2.deploy.step1.title">Define the workflow</h3>
-        <p data-i18n="sovv2.deploy.step1.body">Decide what work the machine is allowed to support — the materials, the users, and the retention rule. The boundary is set before anything goes live.</p>
+        <p data-i18n="sovv2.deploy.step1.body">Decide what work the machine is allowed to support: the materials, the users, and the retention rule. The boundary is set before anything goes live.</p>
       </article>
       <article class="step-card reveal d1">
         <div class="display-number">02</div>
         <h3 data-i18n="sovv2.deploy.step2.title">Configure the machine</h3>
-        <p data-i18n="sovv2.deploy.step2.body">Local models, approved document paths, user access, and memory policy — all configured before live matter work begins. We handle everything.</p>
+        <p data-i18n="sovv2.deploy.step2.body">Local models, approved document paths, user access, and memory policy. All configured before live matter work begins. We handle everything.</p>
       </article>
       <article class="step-card reveal d2">
         <div class="display-number">03</div>
@@ -481,11 +488,11 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
+      <li><a href="/#blueprints" data-i18n="footer.what">What we do</a></li>
+      <li><a href="/use-cases/" data-i18n="footer.cases">Use cases</a></li>
       <li><a href="/how-we-work/" data-i18n="footer.how">How we work</a></li>
-      <li><a href="/#blueprints" data-i18n="footer.blueprints">What we build</a></li>
-      <li><a href="/use-cases/studio-monjo/" data-i18n="footer.cases">Use cases</a></li>
+      <li><a href="/technology/" data-i18n="footer.architecture">Architecture</a></li>
       <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
-      <li><a href="/technology/" data-i18n="footer.tech">Technology</a></li>
       <li><a href="/assessment/" data-i18n="footer.contact">Free review</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>

@@ -33,6 +33,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/sovereign/"/>
   </url>
   <url>
+    <loc>https://smartfellow.ai/en/use-cases/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/use-cases/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/use-cases/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/use-cases/"/>
+  </url>
+  <url>
     <loc>https://smartfellow.ai/en/use-cases/studio-monjo/</loc>
     <lastmod>2026-04-26</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/studio-monjo/"/>
@@ -81,6 +89,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/sovereign/"/>
   </url>
   <url>
+    <loc>https://smartfellow.ai/fr/use-cases/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/use-cases/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/use-cases/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/use-cases/"/>
+  </url>
+  <url>
     <loc>https://smartfellow.ai/fr/use-cases/studio-monjo/</loc>
     <lastmod>2026-04-26</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/studio-monjo/"/>
@@ -127,6 +143,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/sovereign/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/sovereign/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/sovereign/"/>
+  </url>
+  <url>
+    <loc>https://smartfellow.ai/ko/use-cases/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/use-cases/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/use-cases/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/use-cases/"/>
   </url>
   <url>
     <loc>https://smartfellow.ai/ko/use-cases/studio-monjo/</loc>

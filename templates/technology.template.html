@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Technology — Smart Fellow</title>
+<title>The Technology. Smart Fellow</title>
 <meta name="description" content="How Smart Fellow works: local-first deployment, retained business memory, optional cloud use, and an operating model serious teams can defend internally.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -46,7 +46,7 @@
   font-weight: 500;
 }
 
-/* Skills grid — fixed 4 columns so no empty trailing cells */
+/* Skills grid. Fixed 4 columns so no empty trailing cells */
 .tech-skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -197,12 +197,20 @@
 <nav>
   <a href="/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" />Smart Fellow</a>
   <ul class="nav-links">
+    <li><a href="/#blueprints" data-i18n="nav.what">What we do</a></li>
+    <li class="nav-dropdown">
+      <a href="/use-cases/" class="nav-dropdown-trigger" data-i18n="nav.cases">Use cases</a>
+      <div class="nav-dropdown-menu" role="menu" aria-label="Use cases">
+        <a href="/use-cases/studio-monjo/" class="nav-dropdown-item" role="menuitem">
+          <span class="nav-dropdown-name" data-i18n="nav.cases.studioMonjo.name">Studio Monjo</span>
+          <span class="nav-dropdown-desc" data-i18n="nav.cases.studioMonjo.desc">AI team for a Seoul studio</span>
+        </a>
+        <span class="nav-dropdown-empty" data-i18n="nav.cases.more">More cases coming soon</span>
+      </div>
+    </li>
     <li><a href="/how-we-work/" data-i18n="nav.how">How we work</a></li>
-    <li><a href="/#blueprints" data-i18n="nav.blueprints">What we build</a></li>
-    <li><a href="/use-cases/studio-monjo/" data-i18n="nav.cases">Use cases</a></li>
+    <li><a href="/technology/" class="active" data-i18n="nav.architecture">Architecture</a></li>
     <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/technology/" class="active" data-i18n="nav.technology">Technology</a></li>
-    <li><a href="/assessment/" data-i18n="nav.assessment">Free review</a></li>
   </ul>
   <div class="nav-right">
     <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">한국어</button>
@@ -215,12 +223,11 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.what">What we do</a></li>
+    <li><a href="/use-cases/" onclick="closeMobileMenu()" data-i18n="nav.cases">Use cases</a></li>
     <li><a href="/how-we-work/" onclick="closeMobileMenu()" data-i18n="nav.how">How we work</a></li>
-    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">What we build</a></li>
-    <li><a href="/use-cases/studio-monjo/" onclick="closeMobileMenu()" data-i18n="nav.cases">Use cases</a></li>
+    <li><a href="/technology/" onclick="closeMobileMenu()" data-i18n="nav.architecture">Architecture</a></li>
     <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/technology/" onclick="closeMobileMenu()" data-i18n="nav.technology">Technology</a></li>
-    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Free review</a></li>
   </ul>
   <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Book a free review</a>
   <button id="lang-toggle-mobile" class="lang-toggle-mobile">한국어</button>
@@ -245,8 +252,8 @@
 <section class="section">
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="techv2.skills.eyebrow">Layer one</p>
-    <h2 class="section-title reveal d1" data-i18n-html="techv2.skills.h2">Skills — <em>what it already knows.</em></h2>
-    <p class="lede reveal d2" data-i18n="techv2.skills.lead">Every Smart Fellow arrives on day one with a library of pre-trained capabilities — things it can do immediately, without any setup from your team.</p>
+    <h2 class="section-title reveal d1" data-i18n-html="techv2.skills.h2">Skills. <em>What it already knows.</em></h2>
+    <p class="lede reveal d2" data-i18n="techv2.skills.lead">Every Smart Fellow arrives on day one with a library of pre-trained capabilities: things it can do immediately, without any setup from your team.</p>
 
     <div class="tech-skills-grid reveal d2">
       <div class="tech-skill-item" data-i18n="techv2.skills.s1">Document drafting</div>
@@ -259,7 +266,7 @@
       <div class="tech-skill-item" data-i18n="techv2.skills.s8">Report writing</div>
     </div>
 
-    <p class="tech-skill-note reveal d3" data-i18n="techv2.skills.note">Skills can be deepened or extended. When a client needs their Fellow to understand a specific domain — manufacturing specs, legal contract language, medical terminology, financial reporting — we train it directly on that material. It arrives knowing the job. It gets better at your job over time.</p>
+    <p class="tech-skill-note reveal d3" data-i18n="techv2.skills.note">Skills can be deepened or extended. When a client needs their Fellow to understand a specific domain: manufacturing specs, legal contract language, medical terminology, financial reporting. We train it directly on that material. It arrives knowing the job. It gets better at your job over time.</p>
   </div>
 </section>
 
@@ -267,13 +274,13 @@
 <section class="section section--soft">
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="techv2.memory.eyebrow">Layer two</p>
-    <h2 class="section-title reveal d1" data-i18n-html="techv2.memory.h2">Memory — <em>what it learns about you.</em></h2>
+    <h2 class="section-title reveal d1" data-i18n-html="techv2.memory.h2">Memory. <em>What it learns about you.</em></h2>
     <p class="lede reveal d2" data-i18n="techv2.memory.lead">A Smart Fellow has three kinds of memory, working together. The longer it stays, the richer its understanding of your business becomes.</p>
 
     <div class="grid-3" style="margin-top:2rem">
       <article class="card reveal">
         <h3 data-i18n="techv2.memory.card1.title">Short-term</h3>
-        <p data-i18n="techv2.memory.card1.body">The current conversation — everything said in this session. Context for right now.</p>
+        <p data-i18n="techv2.memory.card1.body">The current conversation. Everything said in this session. Context for right now.</p>
       </article>
       <article class="card reveal d1">
         <h3 data-i18n="techv2.memory.card2.title">Long-term</h3>
@@ -281,7 +288,7 @@
       </article>
       <article class="card reveal d2">
         <h3 data-i18n="techv2.memory.card3.title">Episodic</h3>
-        <p data-i18n="techv2.memory.card3.body">Specific events — "last Tuesday, the CEO asked for shorter reports" — used to inform future decisions and calibrate ongoing work.</p>
+        <p data-i18n="techv2.memory.card3.body">Specific events. "Last Tuesday, the CEO asked for shorter reports." Used to inform future decisions and calibrate ongoing work.</p>
       </article>
     </div>
 
@@ -295,14 +302,14 @@
     <div class="tech-layer-grid">
       <div>
         <p class="eyebrow reveal" data-i18n="techv2.character.eyebrow">Layer three</p>
-        <h2 class="section-title reveal d1" data-i18n-html="techv2.character.h2">Character — <em>how it shows up.</em></h2>
-        <p class="lede reveal d2" data-i18n="techv2.character.lead">The third layer is what makes your Fellow feel like a colleague rather than a search engine. Consistent values, tone, and working style — configured to match your company culture during onboarding.</p>
+        <h2 class="section-title reveal d1" data-i18n-html="techv2.character.h2">Character. <em>How it shows up.</em></h2>
+        <p class="lede reveal d2" data-i18n="techv2.character.lead">The third layer is what makes your Fellow feel like a colleague rather than a search engine. Consistent values, tone, and working style. Configured to match your company culture during onboarding.</p>
         <p class="section-copy reveal d3" style="margin-top:1rem" data-i18n="techv2.character.body">Professional and precise, or warm and conversational? Proactive or responsive? Bilingual with formal Korean defaults, or fully casual? These traits are set deliberately and remain consistent across every interaction, every day. They can be adjusted at any time.</p>
       </div>
 
       <div>
         <div class="tech-character-profile reveal d2">
-          <div class="char-profile-head" data-i18n="techv2.character.profile.head">Character profile — your Fellow</div>
+          <div class="char-profile-head" data-i18n="techv2.character.profile.head">Character profile. Your Fellow</div>
           <div class="char-row">
             <span class="char-row-label" data-i18n="techv2.character.profile.r1.label">Proactivity</span>
             <span class="char-row-value is-accent" data-i18n="techv2.character.profile.r1.value">High</span>
@@ -335,9 +342,9 @@
     <div class="tech-ownership-grid">
       <div>
         <p class="eyebrow reveal" data-i18n="techv2.ownership.eyebrow">Your hardware. Your data.</p>
-        <h2 class="section-title reveal d1" data-i18n-html="techv2.ownership.h2">The problem with most AI services isn't the cloud — it's that <em>the vendor controls the data.</em></h2>
-        <p class="lede reveal d2" data-i18n="techv2.ownership.lead">Smart Fellow starts as a managed local system on a dedicated Mac Studio reserved for your business alone. The model runs there. Your data stays there. You do not need an internet connection unless you want one — some clients operate fully air-gapped. Others layer in external AI providers for selected tasks.</p>
-        <p class="section-copy reveal d3" style="margin-top: 1rem" data-i18n="techv2.ownership.body">Apple's unified memory architecture means the model and the data it reasons over share the same memory pool — no bottleneck, faster inference, and a larger context window than most cloud setups at this price point. Either way, the data ownership model stays the same: yours, not ours, not a vendor's.</p>
+        <h2 class="section-title reveal d1" data-i18n-html="techv2.ownership.h2">The problem with most AI services isn't the cloud. It's that <em>the vendor controls the data.</em></h2>
+        <p class="lede reveal d2" data-i18n="techv2.ownership.lead">Smart Fellow starts as a managed local system on a dedicated Mac Studio reserved for your business alone. The model runs there. Your data stays there. You do not need an internet connection unless you want one. Some clients operate fully air-gapped. Others layer in external AI providers for selected tasks.</p>
+        <p class="section-copy reveal d3" style="margin-top: 1rem" data-i18n="techv2.ownership.body">Apple's unified memory architecture means the model and the data it reasons over share the same memory pool: no bottleneck, faster inference, and a larger context window than most cloud setups at this price point. Either way, the data ownership model stays the same: yours, not ours, not a vendor's.</p>
       </div>
 
       <div class="table-shell reveal d2">
@@ -400,7 +407,7 @@
         <p data-i18n="techv2.diff.card1.body">Your Fellow arrives with pre-trained skills that deepen over time as we train it on your industry, processes, and terminology.</p>
       </article>
       <article class="card reveal d1">
-        <h3 data-i18n="techv2.diff.card2.title">You own the data — not a vendor</h3>
+        <h3 data-i18n="techv2.diff.card2.title">You own the data. Not a vendor</h3>
         <p data-i18n="techv2.diff.card2.body">Local ownership without turning your team into an AI ops team. Need air-gapped? Done. Want selective external AI? You control what gets sent.</p>
       </article>
       <article class="card reveal d2">
@@ -409,7 +416,7 @@
       </article>
       <article class="card reveal d3">
         <h3 data-i18n="techv2.diff.card4.title">One predictable salary</h3>
-        <p data-i18n="techv2.diff.card4.body">No per-message fees. No token costs that scale with usage. One flat monthly salary per Fellow — you're never penalised for getting value from it.</p>
+        <p data-i18n="techv2.diff.card4.body">No per-message fees. No token costs that scale with usage. One flat monthly salary per Fellow. You're never penalised for getting value from it.</p>
       </article>
     </div>
   </div>
@@ -429,7 +436,7 @@
       </div>
       <div class="faq-item">
         <p class="faq-q" data-i18n="techv2.faq.q2">Can't I just use a team plan and share access?</p>
-        <p class="faq-a" data-i18n="techv2.faq.a2">You can — and some teams do. But shared access to a general model still means switching to a separate interface and using a tool that is not connected to your CRM, calendar, or internal systems. Your Fellow is already integrated, already contextual, and already working in the apps your team uses every day.</p>
+        <p class="faq-a" data-i18n="techv2.faq.a2">You can, and some teams do. But shared access to a general model still means switching to a separate interface and using a tool that is not connected to your CRM, calendar, or internal systems. Your Fellow is already integrated, already contextual, and already working in the apps your team uses every day.</p>
       </div>
       <div class="faq-item">
         <p class="faq-q" data-i18n="techv2.faq.q3">Is this just about being anti-cloud?</p>
@@ -437,7 +444,7 @@
       </div>
       <div class="faq-item">
         <p class="faq-q" data-i18n="techv2.faq.q4">Is a local model as capable as GPT-4?</p>
-        <p class="faq-a" data-i18n="techv2.faq.a4">For broad general knowledge, top cloud models are hard to beat. For your specific business tasks — drafting in your tone, knowing your clients, following your processes — a model fine-tuned on your business performs better than one that knows nothing about you. And Smart Fellow can optionally connect to external models when needed, so you do not have to choose.</p>
+        <p class="faq-a" data-i18n="techv2.faq.a4">For broad general knowledge, top cloud models are hard to beat. For your specific business tasks: drafting in your tone, knowing your clients, following your processes. A model fine-tuned on your business performs better than one that knows nothing about you. And Smart Fellow can optionally connect to external models when needed, so you do not have to choose.</p>
       </div>
     </div>
   </div>
@@ -463,11 +470,11 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
+      <li><a href="/#blueprints" data-i18n="footer.what">What we do</a></li>
+      <li><a href="/use-cases/" data-i18n="footer.cases">Use cases</a></li>
       <li><a href="/how-we-work/" data-i18n="footer.how">How we work</a></li>
-      <li><a href="/#blueprints" data-i18n="footer.blueprints">What we build</a></li>
-      <li><a href="/use-cases/studio-monjo/" data-i18n="footer.cases">Use cases</a></li>
+      <li><a href="/technology/" data-i18n="footer.architecture">Architecture</a></li>
       <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
-      <li><a href="/technology/" data-i18n="footer.tech">Technology</a></li>
       <li><a href="/assessment/" data-i18n="footer.contact">Free review</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>

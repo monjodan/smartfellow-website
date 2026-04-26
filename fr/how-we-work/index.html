@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comment nous travaillons — Smart Fellow</title>
+<title>Comment nous travaillons · Smart Fellow</title>
 <meta name="description" content="Quatre phases : diagnostic IA gratuit, devis à périmètre fixe, déploiement sur site avec vos outils, partenariat mensuel de maintenance.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://smartfellow.ai/fr/how-we-work/">
@@ -196,19 +196,27 @@
   .how-overview { grid-template-columns: 1fr; }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://smartfellow.ai/#organization","name":"Smart Fellow","url":"https://smartfellow.ai","logo":"https://smartfellow.ai/assets/smart-fellow-logo.svg","description":"Smart Fellow builds private AI teams for companies that care about their data — fine-tuned local models on hardware they own.","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"areaServed":{"@type":"Country","name":"South Korea"},"knowsLanguage":["en","ko","fr"]},{"@type":"WebPage","@id":"https://smartfellow.ai/fr/how-we-work/#webpage","url":"https://smartfellow.ai/fr/how-we-work/","name":"Comment nous travaillons — Smart Fellow","description":"Quatre phases : diagnostic IA gratuit, devis à périmètre fixe, déploiement sur site avec vos outils, partenariat mensuel de maintenance.","inLanguage":"fr","isPartOf":{"@type":"WebSite","@id":"https://smartfellow.ai/#website","name":"Smart Fellow","url":"https://smartfellow.ai","publisher":{"@id":"https://smartfellow.ai/#organization"}},"publisher":{"@id":"https://smartfellow.ai/#organization"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://smartfellow.ai/#organization","name":"Smart Fellow","url":"https://smartfellow.ai","logo":"https://smartfellow.ai/assets/smart-fellow-logo.svg","description":"Smart Fellow builds private AI teams for companies that care about their data: fine-tuned local models on hardware they own.","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"areaServed":{"@type":"Country","name":"South Korea"},"knowsLanguage":["en","ko","fr"]},{"@type":"WebPage","@id":"https://smartfellow.ai/fr/how-we-work/#webpage","url":"https://smartfellow.ai/fr/how-we-work/","name":"Comment nous travaillons · Smart Fellow","description":"Quatre phases : diagnostic IA gratuit, devis à périmètre fixe, déploiement sur site avec vos outils, partenariat mensuel de maintenance.","inLanguage":"fr","isPartOf":{"@type":"WebSite","@id":"https://smartfellow.ai/#website","name":"Smart Fellow","url":"https://smartfellow.ai","publisher":{"@id":"https://smartfellow.ai/#organization"}},"publisher":{"@id":"https://smartfellow.ai/#organization"}}]}</script>
 </head>
 <body>
 
 <nav>
   <a href="/fr/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" />Smart Fellow</a>
   <ul class="nav-links">
+    <li><a href="/fr/#blueprints" data-i18n="nav.what">Ce que nous faisons</a></li>
+    <li class="nav-dropdown">
+      <a href="/fr/use-cases/" class="nav-dropdown-trigger" data-i18n="nav.cases">Cas d'usage</a>
+      <div class="nav-dropdown-menu" role="menu" aria-label="Use cases">
+        <a href="/fr/use-cases/studio-monjo/" class="nav-dropdown-item" role="menuitem">
+          <span class="nav-dropdown-name" data-i18n="nav.cases.studioMonjo.name">Studio Monjo</span>
+          <span class="nav-dropdown-desc" data-i18n="nav.cases.studioMonjo.desc">Une équipe IA pour un studio à Séoul</span>
+        </a>
+        <span class="nav-dropdown-empty" data-i18n="nav.cases.more">D'autres cas à venir</span>
+      </div>
+    </li>
     <li><a href="/fr/how-we-work/" class="active" data-i18n="nav.how">Comment nous travaillons</a></li>
-    <li><a href="/fr/#blueprints" data-i18n="nav.blueprints">Ce que nous construisons</a></li>
-    <li><a href="/fr/use-cases/studio-monjo/" data-i18n="nav.cases">Cas d'usage</a></li>
+    <li><a href="/fr/technology/" data-i18n="nav.architecture">Architecture</a></li>
     <li><a href="/fr/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/fr/technology/" data-i18n="nav.technology">Technologie</a></li>
-    <li><a href="/fr/assessment/" data-i18n="nav.assessment">Diagnostic gratuit</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switcher" role="group" aria-label="Choisir la langue"><a href="/en/how-we-work/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/how-we-work/" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/how-we-work/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
@@ -221,12 +229,11 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
+    <li><a href="/fr/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.what">Ce que nous faisons</a></li>
+    <li><a href="/fr/use-cases/" onclick="closeMobileMenu()" data-i18n="nav.cases">Cas d'usage</a></li>
     <li><a href="/fr/how-we-work/" onclick="closeMobileMenu()" data-i18n="nav.how">Comment nous travaillons</a></li>
-    <li><a href="/fr/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">Ce que nous construisons</a></li>
-    <li><a href="/fr/use-cases/studio-monjo/" onclick="closeMobileMenu()" data-i18n="nav.cases">Cas d'usage</a></li>
+    <li><a href="/fr/technology/" onclick="closeMobileMenu()" data-i18n="nav.architecture">Architecture</a></li>
     <li><a href="/fr/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/fr/technology/" onclick="closeMobileMenu()" data-i18n="nav.technology">Technologie</a></li>
-    <li><a href="/fr/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Diagnostic gratuit</a></li>
   </ul>
   <a href="/fr/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Réserver un diagnostic</a>
   <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choisir la langue"><a href="/en/how-we-work/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/how-we-work/" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/how-we-work/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
@@ -295,7 +302,7 @@
         </div>
         <div class="phase-deliverables reveal d3">
           <strong data-i18n="how.p1.deliv.head">Ce que vous obtenez</strong>
-          <span data-i18n="how.p1.deliv.body">Un document identifiant vos flux de travail à plus fort levier, la bonne architecture sur site pour vos exigences de sensibilité, les risques à connaître, et — si nous recommandons d'avancer — un devis à périmètre fixe pour la construction et la maintenance mensuelle.</span>
+          <span data-i18n="how.p1.deliv.body">Un document identifiant vos flux de travail à plus fort levier, la bonne architecture sur site pour vos exigences de sensibilité, les risques à connaître, et. Si nous recommandons d'avancer. Un devis à périmètre fixe pour la construction et la maintenance mensuelle.</span>
         </div>
       </div>
     </div>
@@ -348,7 +355,7 @@
       <div class="phase-body">
         <p class="eyebrow reveal" data-i18n="how.p3.eyebrow">Phase 03 · Construire &amp; intégrer</p>
         <h2 class="section-title reveal d1" data-i18n-html="how.p3.h2">Matériel sur site. Modèles affinés sur vos données. <em>Intégrés aux outils que votre équipe utilise déjà.</em></h2>
-        <p class="section-copy reveal d2" data-i18n="how.p3.body1">Nous achetons et configurons le matériel, affinons des modèles locaux sur vos documents et vos flux de travail, et intégrons le système aux canaux que votre équipe utilise déjà — Slack, KakaoTalk, Teams, email, ou vos systèmes internes. Tout est installé sur place et validé dans votre environnement.</p>
+        <p class="section-copy reveal d2" data-i18n="how.p3.body1">Nous achetons et configurons le matériel, affinons des modèles locaux sur vos documents et vos flux de travail, et intégrons le système aux canaux que votre équipe utilise déjà. Slack, KakaoTalk, Teams, email, ou vos systèmes internes. Tout est installé sur place et validé dans votre environnement.</p>
         <p class="section-copy reveal d3" data-i18n="how.p3.body2">Vous êtes propriétaire du matériel. Vous êtes propriétaire des poids du modèle. Vous êtes propriétaire des données. Une fois la construction terminée, vous disposez d'un système IA privé qui continue de vous appartenir, même si notre relation se termine.</p>
       </div>
       <div>
@@ -364,7 +371,7 @@
           </div>
           <div class="phase-sidecar-row">
             <span class="phase-sidecar-label" data-i18n="how.p3.side.r3.label">Propriété</span>
-            <span class="phase-sidecar-value" data-i18n="how.p3.side.r3.value">Matériel, poids et données — à vous</span>
+            <span class="phase-sidecar-value" data-i18n="how.p3.side.r3.value">Matériel, poids et données: à vous</span>
           </div>
           <div class="phase-sidecar-row">
             <span class="phase-sidecar-label" data-i18n="how.p3.side.r4.label">Intégrations</span>
@@ -387,8 +394,8 @@
       <div class="phase-body">
         <p class="eyebrow reveal" data-i18n="how.p4.eyebrow">Phase 04 · Maintenir &amp; faire évoluer</p>
         <h2 class="section-title reveal d1" data-i18n-html="how.p4.h2">Un partenariat mensuel. <em>Pour que le système reste affûté.</em></h2>
-        <p class="section-copy reveal d2" data-i18n="how.p4.body1">Une fois le système en production, nous restons. Supervision, mises à jour des modèles, correctifs de sécurité, ajustements au fil de l'évolution de vos flux. Quand vous voulez que le système apprenne une nouvelle compétence ou prenne en charge un nouveau processus, nous l'entraînons — sans nouvelle mission, sans nouveau contrat.</p>
-        <p class="section-copy reveal d3" data-i18n="how.p4.body2">Les frais de maintenance sont fixes et prévisibles — pensés comme un partenariat continu, pas comme une facture récurrente. Vous pouvez mettre fin à la relation à tout moment ; le système reste à vous.</p>
+        <p class="section-copy reveal d2" data-i18n="how.p4.body1">Une fois le système en production, nous restons. Supervision, mises à jour des modèles, correctifs de sécurité, ajustements au fil de l'évolution de vos flux. Quand vous voulez que le système apprenne une nouvelle compétence ou prenne en charge un nouveau processus, nous l'entraînons: sans nouvelle mission, sans nouveau contrat.</p>
+        <p class="section-copy reveal d3" data-i18n="how.p4.body2">Les frais de maintenance sont fixes et prévisibles: pensés comme un partenariat continu, pas comme une facture récurrente. Vous pouvez mettre fin à la relation à tout moment ; le système reste à vous.</p>
       </div>
       <div>
         <div class="phase-sidecar reveal d2">
@@ -419,7 +426,7 @@
 
     <div class="pricing-note reveal">
       <p class="eyebrow-light" data-i18n="how.pricing.eyebrow">À propos du prix</p>
-      <p data-i18n="how.pricing.body">Le coût de construction et la maintenance mensuelle sont tous deux chiffrés après le diagnostic IA gratuit, parce que les deux dépendent du périmètre. Nous ne publions pas de grille — parce qu'il n'y en a pas — mais nous nous engageons sur des prix fixes, sans frais à l'usage et sans factures surprise. Si votre budget est un enjeu, dites-le nous pendant le diagnostic : nous concevrons en conséquence.</p>
+      <p data-i18n="how.pricing.body">Le coût de construction et la maintenance mensuelle sont tous deux chiffrés après le diagnostic IA gratuit, parce que les deux dépendent du périmètre. Nous ne publions pas de grille: parce qu'il n'y en a pas, mais nous nous engageons sur des prix fixes, sans frais à l'usage et sans factures surprise. Si votre budget est un enjeu, dites-le nous pendant le diagnostic : nous concevrons en conséquence.</p>
     </div>
   </div>
 </section>
@@ -430,7 +437,7 @@
     <div class="page-cta-inner">
       <p class="eyebrow-light reveal" data-i18n="how.cta.eyebrow">Commencez par le diagnostic gratuit</p>
       <h2 class="section-title reveal d1" data-i18n-html="how.cta.h2">Commencez par une conversation. <em>Décidez à partir d'un plan écrit.</em></h2>
-      <p class="lede reveal d2" data-i18n="how.cta.body">Le diagnostic IA est gratuit. Vous recevez le plan écrit dans les 48 heures après l'atelier — même si vous décidez de ne rien construire.</p>
+      <p class="lede reveal d2" data-i18n="how.cta.body">Le diagnostic IA est gratuit. Vous recevez le plan écrit dans les 48 heures après l'atelier. Même si vous décidez de ne rien construire.</p>
       <div class="page-cta-actions reveal d3">
         <a href="/fr/assessment/" class="btn-dark" data-open-assessment data-i18n="how.cta.primary">Réserver un diagnostic IA gratuit</a>
         <a href="/fr/" class="btn-outline" data-i18n="how.cta.secondary">Retour à l'accueil</a>
@@ -444,11 +451,11 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
+      <li><a href="/fr/#blueprints" data-i18n="footer.what">Ce que nous faisons</a></li>
+      <li><a href="/fr/use-cases/" data-i18n="footer.cases">Cas d'usage</a></li>
       <li><a href="/fr/how-we-work/" data-i18n="footer.how">Comment nous travaillons</a></li>
-      <li><a href="/fr/#blueprints" data-i18n="footer.blueprints">Ce que nous construisons</a></li>
-      <li><a href="/fr/use-cases/studio-monjo/" data-i18n="footer.cases">Cas d'usage</a></li>
+      <li><a href="/fr/technology/" data-i18n="footer.architecture">Architecture</a></li>
       <li><a href="/fr/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
-      <li><a href="/fr/technology/" data-i18n="footer.tech">Technologie</a></li>
       <li><a href="/fr/assessment/" data-i18n="footer.contact">Diagnostic gratuit</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Séoul, Corée</span>

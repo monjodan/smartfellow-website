@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>아키텍처 — 사내 전용 AI — Smart Fellow</title>
+<title>사내 전용 AI 아키텍처 · Smart Fellow</title>
 <meta name="description" content="Smart Fellow 전용 AI 시스템의 작동 방식: 미세 조정된 로컬 모델, 사내 하드웨어, 사무실을 벗어나지 않는 문서 메모리, 승인 기반 클라우드.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://smartfellow.ai/ko/technology/">
@@ -13,7 +13,7 @@
 <link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/technology/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Smart Fellow를 움직이는 아키텍처">
-<meta property="og:description" content="미세 조정된 로컬 모델, 사내 하드웨어, 사내 보존 메모리, 선택적 클라우드 — 내부적으로 납득시킬 수 있는 운영 모델.">
+<meta property="og:description" content="미세 조정된 로컬 모델, 사내 하드웨어, 사내 보존 메모리, 선택적 클라우드. 내부적으로 납득시킬 수 있는 운영 모델.">
 <meta property="og:url" content="https://smartfellow.ai/ko/technology/">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="Smart Fellow">
@@ -24,7 +24,7 @@
 <meta property="og:locale:alternate" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Smart Fellow를 움직이는 아키텍처">
-<meta name="twitter:description" content="미세 조정된 로컬 모델, 사내 하드웨어, 사내 보존 메모리, 선택적 클라우드 — 내부적으로 납득시킬 수 있는 운영 모델.">
+<meta name="twitter:description" content="미세 조정된 로컬 모델, 사내 하드웨어, 사내 보존 메모리, 선택적 클라우드. 내부적으로 납득시킬 수 있는 운영 모델.">
 <meta name="twitter:image" content="https://smartfellow.ai/og-image.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -67,7 +67,7 @@
   font-weight: 500;
 }
 
-/* Skills grid — fixed 4 columns so no empty trailing cells */
+/* Skills grid. Fixed 4 columns so no empty trailing cells */
 .tech-skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -212,19 +212,27 @@
   }
 }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://smartfellow.ai/#organization","name":"Smart Fellow","url":"https://smartfellow.ai","logo":"https://smartfellow.ai/assets/smart-fellow-logo.svg","description":"Smart Fellow builds private AI teams for companies that care about their data — fine-tuned local models on hardware they own.","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"areaServed":{"@type":"Country","name":"South Korea"},"knowsLanguage":["en","ko","fr"]},{"@type":"WebPage","@id":"https://smartfellow.ai/ko/technology/#webpage","url":"https://smartfellow.ai/ko/technology/","name":"아키텍처 — 사내 전용 AI — Smart Fellow","description":"Smart Fellow 전용 AI 시스템의 작동 방식: 미세 조정된 로컬 모델, 사내 하드웨어, 사무실을 벗어나지 않는 문서 메모리, 승인 기반 클라우드.","inLanguage":"ko","isPartOf":{"@type":"WebSite","@id":"https://smartfellow.ai/#website","name":"Smart Fellow","url":"https://smartfellow.ai","publisher":{"@id":"https://smartfellow.ai/#organization"}},"publisher":{"@id":"https://smartfellow.ai/#organization"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://smartfellow.ai/#organization","name":"Smart Fellow","url":"https://smartfellow.ai","logo":"https://smartfellow.ai/assets/smart-fellow-logo.svg","description":"Smart Fellow builds private AI teams for companies that care about their data: fine-tuned local models on hardware they own.","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"areaServed":{"@type":"Country","name":"South Korea"},"knowsLanguage":["en","ko","fr"]},{"@type":"WebPage","@id":"https://smartfellow.ai/ko/technology/#webpage","url":"https://smartfellow.ai/ko/technology/","name":"사내 전용 AI 아키텍처 · Smart Fellow","description":"Smart Fellow 전용 AI 시스템의 작동 방식: 미세 조정된 로컬 모델, 사내 하드웨어, 사무실을 벗어나지 않는 문서 메모리, 승인 기반 클라우드.","inLanguage":"ko","isPartOf":{"@type":"WebSite","@id":"https://smartfellow.ai/#website","name":"Smart Fellow","url":"https://smartfellow.ai","publisher":{"@id":"https://smartfellow.ai/#organization"}},"publisher":{"@id":"https://smartfellow.ai/#organization"}}]}</script>
 </head>
 <body>
 
 <nav>
   <a href="/ko/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" />Smart Fellow</a>
   <ul class="nav-links">
+    <li><a href="/ko/#blueprints" data-i18n="nav.what">무엇을 만드나</a></li>
+    <li class="nav-dropdown">
+      <a href="/ko/use-cases/" class="nav-dropdown-trigger" data-i18n="nav.cases">도입 사례</a>
+      <div class="nav-dropdown-menu" role="menu" aria-label="Use cases">
+        <a href="/ko/use-cases/studio-monjo/" class="nav-dropdown-item" role="menuitem">
+          <span class="nav-dropdown-name" data-i18n="nav.cases.studioMonjo.name">Studio Monjo</span>
+          <span class="nav-dropdown-desc" data-i18n="nav.cases.studioMonjo.desc">서울 스튜디오의 AI 팀</span>
+        </a>
+        <span class="nav-dropdown-empty" data-i18n="nav.cases.more">추가 사례 준비 중</span>
+      </div>
+    </li>
     <li><a href="/ko/how-we-work/" data-i18n="nav.how">진행 방식</a></li>
-    <li><a href="/ko/#blueprints" data-i18n="nav.blueprints">만드는 것</a></li>
-    <li><a href="/ko/use-cases/studio-monjo/" data-i18n="nav.cases">도입 사례</a></li>
+    <li><a href="/ko/technology/" class="active" data-i18n="nav.architecture">아키텍처</a></li>
     <li><a href="/ko/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/ko/technology/" class="active" data-i18n="nav.technology">기술</a></li>
-    <li><a href="/ko/assessment/" data-i18n="nav.assessment">무료 진단</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-switcher" role="group" aria-label="언어 선택"><a href="/en/technology/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/technology/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/technology/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
@@ -237,12 +245,11 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
+    <li><a href="/ko/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.what">무엇을 만드나</a></li>
+    <li><a href="/ko/use-cases/" onclick="closeMobileMenu()" data-i18n="nav.cases">도입 사례</a></li>
     <li><a href="/ko/how-we-work/" onclick="closeMobileMenu()" data-i18n="nav.how">진행 방식</a></li>
-    <li><a href="/ko/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">만드는 것</a></li>
-    <li><a href="/ko/use-cases/studio-monjo/" onclick="closeMobileMenu()" data-i18n="nav.cases">도입 사례</a></li>
+    <li><a href="/ko/technology/" onclick="closeMobileMenu()" data-i18n="nav.architecture">아키텍처</a></li>
     <li><a href="/ko/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/ko/technology/" onclick="closeMobileMenu()" data-i18n="nav.technology">기술</a></li>
-    <li><a href="/ko/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">무료 진단</a></li>
   </ul>
   <a href="/ko/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">무료 진단 예약</a>
   <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="언어 선택"><a href="/en/technology/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/technology/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/technology/" class="lang-option is-current" data-locale="ko" lang="ko" aria-current="page">한국어</a></div>
@@ -267,8 +274,8 @@
 <section class="section">
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="techv2.skills.eyebrow">첫 번째 레이어</p>
-    <h2 class="section-title reveal d1" data-i18n-html="techv2.skills.h2">기술 — <em>이미 알고 있는 것.</em></h2>
-    <p class="lede reveal d2" data-i18n="techv2.skills.lead">저희가 구축하는 모든 시스템은 첫날부터 사전 훈련된 역량 라이브러리를 갖추고 시작합니다 — 팀의 설정 없이 즉시 할 수 있는 것들.</p>
+    <h2 class="section-title reveal d1" data-i18n-html="techv2.skills.h2">기술. <em>이미 알고 있는 것.</em></h2>
+    <p class="lede reveal d2" data-i18n="techv2.skills.lead">저희가 구축하는 모든 시스템은 첫날부터 사전 훈련된 역량 라이브러리를 갖추고 시작합니다. 팀의 설정 없이 즉시 할 수 있는 것들.</p>
 
     <div class="tech-skills-grid reveal d2">
       <div class="tech-skill-item" data-i18n="techv2.skills.s1">문서 작성</div>
@@ -289,13 +296,13 @@
 <section class="section section--soft">
   <div class="section-inner">
     <p class="eyebrow reveal" data-i18n="techv2.memory.eyebrow">두 번째 레이어</p>
-    <h2 class="section-title reveal d1" data-i18n-html="techv2.memory.h2">기억 — <em>귀사에 대해 배우는 것.</em></h2>
+    <h2 class="section-title reveal d1" data-i18n-html="techv2.memory.h2">기억. <em>귀사에 대해 배우는 것.</em></h2>
     <p class="lede reveal d2" data-i18n="techv2.memory.lead">전용 AI 팀은 세 가지 종류의 기억을 함께 사용합니다. 함께할수록 비즈니스에 대한 이해가 풍부해집니다.</p>
 
     <div class="grid-3" style="margin-top:2rem">
       <article class="card reveal">
         <h3 data-i18n="techv2.memory.card1.title">단기</h3>
-        <p data-i18n="techv2.memory.card1.body">현재 대화 — 이 세션에서 말한 모든 것. 지금 이 순간의 컨텍스트.</p>
+        <p data-i18n="techv2.memory.card1.body">현재 대화. 이 세션에서 말한 모든 것. 지금 이 순간의 컨텍스트.</p>
       </article>
       <article class="card reveal d1">
         <h3 data-i18n="techv2.memory.card2.title">장기</h3>
@@ -303,7 +310,7 @@
       </article>
       <article class="card reveal d2">
         <h3 data-i18n="techv2.memory.card3.title">에피소드</h3>
-        <p data-i18n="techv2.memory.card3.body">특정 이벤트 — "지난 화요일 CEO가 더 짧은 보고서를 요청했습니다" — 향후 결정에 활용하고 진행 중인 업무를 조정합니다.</p>
+        <p data-i18n="techv2.memory.card3.body">특정 이벤트. "지난 화요일 CEO가 더 짧은 보고서를 요청했습니다." 향후 결정에 활용하고 진행 중인 업무를 조정합니다.</p>
       </article>
     </div>
 
@@ -317,14 +324,14 @@
     <div class="tech-layer-grid">
       <div>
         <p class="eyebrow reveal" data-i18n="techv2.character.eyebrow">세 번째 레이어</p>
-        <h2 class="section-title reveal d1" data-i18n-html="techv2.character.h2">캐릭터 — <em>나타나는 방식.</em></h2>
-        <p class="lede reveal d2" data-i18n="techv2.character.lead">세 번째 레이어는 시스템이 검색 엔진이 아닌 동료처럼 느껴지게 합니다. 일관된 가치, 톤, 업무 스타일 — 온보딩 중에 회사 문화에 맞게 설정됩니다.</p>
+        <h2 class="section-title reveal d1" data-i18n-html="techv2.character.h2">캐릭터. <em>나타나는 방식.</em></h2>
+        <p class="lede reveal d2" data-i18n="techv2.character.lead">세 번째 레이어는 시스템이 검색 엔진이 아닌 동료처럼 느껴지게 합니다. 일관된 가치, 톤, 업무 스타일. 온보딩 중에 회사 문화에 맞게 설정됩니다.</p>
         <p class="section-copy reveal d3" style="margin-top:1rem" data-i18n="techv2.character.body">전문적이고 정확하거나 따뜻하고 대화식? 능동적이거나 반응적? 공식 한국어 기본으로 이중 언어, 또는 완전히 캐주얼? 이러한 특성은 의도적으로 설정되고 매일 모든 상호작용에서 일관되게 유지됩니다. 언제든지 조정 가능합니다.</p>
       </div>
 
       <div>
         <div class="tech-character-profile reveal d2">
-          <div class="char-profile-head" data-i18n="techv2.character.profile.head">캐릭터 프로필 — 귀사의 시스템</div>
+          <div class="char-profile-head" data-i18n="techv2.character.profile.head">캐릭터 프로필. 귀사의 시스템</div>
           <div class="char-row">
             <span class="char-row-label" data-i18n="techv2.character.profile.r1.label">능동성</span>
             <span class="char-row-value is-accent" data-i18n="techv2.character.profile.r1.value">높음</span>
@@ -357,9 +364,9 @@
     <div class="tech-ownership-grid">
       <div>
         <p class="eyebrow reveal" data-i18n="techv2.ownership.eyebrow">귀사의 하드웨어. 귀사의 데이터.</p>
-        <h2 class="section-title reveal d1" data-i18n-html="techv2.ownership.h2">대부분의 AI 서비스 문제는 클라우드가 아닙니다 — <em>벤더가 데이터를 통제한다는 것입니다.</em></h2>
-        <p class="lede reveal d2" data-i18n="techv2.ownership.lead">Smart Fellow 구축은 귀사만을 위해 예약된 전용 하드웨어 위의 관리형 로컬 시스템으로 시작합니다. 모델은 그곳에서 실행되고 데이터도 그곳에 머뭅니다. 원하지 않으면 인터넷 연결이 필요하지 않습니다 — 완전한 에어갭으로 운영하는 고객도 있습니다. 다른 고객은 특정 작업에만 외부 AI 제공업체를 덧붙입니다.</p>
-        <p class="section-copy reveal d3" style="margin-top: 1rem" data-i18n="techv2.ownership.body">Apple의 통합 메모리 아키텍처는 모델과 추론하는 데이터가 같은 메모리 풀을 공유한다는 것을 의미합니다 — 병목 없음, 빠른 추론, 이 가격대의 대부분의 클라우드 설정보다 큰 컨텍스트 창. 어느 경우든 데이터 소유 구조는 같습니다. 귀사의 것일 뿐, 우리의 것도 벤더의 것도 아닙니다.</p>
+        <h2 class="section-title reveal d1" data-i18n-html="techv2.ownership.h2">대부분의 AI 서비스 문제는 클라우드가 아닙니다. <em>벤더가 데이터를 통제한다는 것입니다.</em></h2>
+        <p class="lede reveal d2" data-i18n="techv2.ownership.lead">Smart Fellow 구축은 귀사만을 위해 예약된 전용 하드웨어 위의 관리형 로컬 시스템으로 시작합니다. 모델은 그곳에서 실행되고 데이터도 그곳에 머뭅니다. 원하지 않으면 인터넷 연결이 필요하지 않습니다. 완전한 에어갭으로 운영하는 고객도 있습니다. 다른 고객은 특정 작업에만 외부 AI 제공업체를 덧붙입니다.</p>
+        <p class="section-copy reveal d3" style="margin-top: 1rem" data-i18n="techv2.ownership.body">Apple의 통합 메모리 아키텍처는 모델과 추론하는 데이터가 같은 메모리 풀을 공유한다는 것을 의미합니다. 병목 없음, 빠른 추론, 이 가격대의 대부분의 클라우드 설정보다 큰 컨텍스트 창. 어느 경우든 데이터 소유 구조는 같습니다. 귀사의 것일 뿐, 우리의 것도 벤더의 것도 아닙니다.</p>
       </div>
 
       <div class="table-shell reveal d2">
@@ -431,7 +438,7 @@
       </article>
       <article class="card reveal d3">
         <h3 data-i18n="techv2.diff.card4.title">예측 가능한 관계 하나</h3>
-        <p data-i18n="techv2.diff.card4.body">메시지당 요금 없음. 사용량에 따라 증가하는 토큰 비용 없음. 고정 구축 가격 하나와 정액 월 유지관리 하나 — 시스템에서 가치를 얻을수록 더 많이 내지 않습니다.</p>
+        <p data-i18n="techv2.diff.card4.body">메시지당 요금 없음. 사용량에 따라 증가하는 토큰 비용 없음. 고정 구축 가격 하나와 정액 월 유지관리 하나. 시스템에서 가치를 얻을수록 더 많이 내지 않습니다.</p>
       </article>
     </div>
   </div>
@@ -451,7 +458,7 @@
       </div>
       <div class="faq-item">
         <p class="faq-q" data-i18n="techv2.faq.q2">팀 플랜을 사용하고 접근 권한을 공유하면 안 되나요?</p>
-        <p class="faq-a" data-i18n="techv2.faq.a2">할 수 있습니다 — 일부 팀은 그렇게 합니다. 하지만 일반 모델에 대한 공유 접근은 여전히 별도 인터페이스로 전환하고 CRM, 캘린더, 또는 내부 시스템에 연결되지 않은 도구를 사용하는 것을 의미합니다. 전용 AI 팀은 이미 통합되어 있고, 이미 맥락이 있으며, 팀이 매일 사용하는 앱에서 이미 작동합니다.</p>
+        <p class="faq-a" data-i18n="techv2.faq.a2">할 수 있습니다. 일부 팀은 그렇게 합니다. 하지만 일반 모델에 대한 공유 접근은 여전히 별도 인터페이스로 전환하고 CRM, 캘린더, 또는 내부 시스템에 연결되지 않은 도구를 사용하는 것을 의미합니다. 전용 AI 팀은 이미 통합되어 있고, 이미 맥락이 있으며, 팀이 매일 사용하는 앱에서 이미 작동합니다.</p>
       </div>
       <div class="faq-item">
         <p class="faq-q" data-i18n="techv2.faq.q3">이것은 단지 반클라우드 입장인가요?</p>
@@ -459,7 +466,7 @@
       </div>
       <div class="faq-item">
         <p class="faq-q" data-i18n="techv2.faq.q4">로컬 모델이 GPT-4만큼 능력이 있나요?</p>
-        <p class="faq-a" data-i18n="techv2.faq.a4">광범위한 일반 지식에서 최고의 클라우드 모델은 이기기 어렵습니다. 귀사의 특정 비즈니스 작업 — 귀사의 톤으로 작성, 고객 파악, 프로세스 준수 — 에서는 비즈니스에 맞게 미세 조정된 모델이 귀사에 대해 아무것도 모르는 모델보다 더 잘 수행됩니다. 전용 AI 팀은 필요할 때 선택적으로 외부 모델에 연결할 수 있으므로 선택할 필요가 없습니다.</p>
+        <p class="faq-a" data-i18n="techv2.faq.a4">광범위한 일반 지식에서 최고의 클라우드 모델은 이기기 어렵습니다. 귀사의 특정 비즈니스 작업. 귀사의 톤으로 작성, 고객 파악, 프로세스 준수. 에서는 비즈니스에 맞게 미세 조정된 모델이 귀사에 대해 아무것도 모르는 모델보다 더 잘 수행됩니다. 전용 AI 팀은 필요할 때 선택적으로 외부 모델에 연결할 수 있으므로 선택할 필요가 없습니다.</p>
       </div>
     </div>
   </div>
@@ -485,11 +492,11 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
+      <li><a href="/ko/#blueprints" data-i18n="footer.what">무엇을 만드나</a></li>
+      <li><a href="/ko/use-cases/" data-i18n="footer.cases">도입 사례</a></li>
       <li><a href="/ko/how-we-work/" data-i18n="footer.how">진행 방식</a></li>
-      <li><a href="/ko/#blueprints" data-i18n="footer.blueprints">만드는 것</a></li>
-      <li><a href="/ko/use-cases/studio-monjo/" data-i18n="footer.cases">도입 사례</a></li>
+      <li><a href="/ko/technology/" data-i18n="footer.architecture">아키텍처</a></li>
       <li><a href="/ko/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
-      <li><a href="/ko/technology/" data-i18n="footer.tech">기술</a></li>
       <li><a href="/ko/assessment/" data-i18n="footer.contact">무료 진단</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · 서울, 대한민국</span>

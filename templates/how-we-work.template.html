@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="page.title">How we work — Smart Fellow</title>
+<title data-i18n="page.title">How we work. Smart Fellow</title>
 <meta name="description" content="Our four-phase engagement: a free AI Readiness Review, a fixed-scope design and quote, an on-site build and integration, and an ongoing monthly maintenance partnership.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
 <link rel="stylesheet" href="shared.css">
@@ -181,12 +181,20 @@
 <nav>
   <a href="/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" />Smart Fellow</a>
   <ul class="nav-links">
+    <li><a href="/#blueprints" data-i18n="nav.what">What we do</a></li>
+    <li class="nav-dropdown">
+      <a href="/use-cases/" class="nav-dropdown-trigger" data-i18n="nav.cases">Use cases</a>
+      <div class="nav-dropdown-menu" role="menu" aria-label="Use cases">
+        <a href="/use-cases/studio-monjo/" class="nav-dropdown-item" role="menuitem">
+          <span class="nav-dropdown-name" data-i18n="nav.cases.studioMonjo.name">Studio Monjo</span>
+          <span class="nav-dropdown-desc" data-i18n="nav.cases.studioMonjo.desc">AI team for a Seoul studio</span>
+        </a>
+        <span class="nav-dropdown-empty" data-i18n="nav.cases.more">More cases coming soon</span>
+      </div>
+    </li>
     <li><a href="/how-we-work/" class="active" data-i18n="nav.how">How we work</a></li>
-    <li><a href="/#blueprints" data-i18n="nav.blueprints">What we build</a></li>
-    <li><a href="/use-cases/studio-monjo/" data-i18n="nav.cases">Use cases</a></li>
+    <li><a href="/technology/" data-i18n="nav.architecture">Architecture</a></li>
     <li><a href="/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/technology/" data-i18n="nav.technology">Technology</a></li>
-    <li><a href="/assessment/" data-i18n="nav.assessment">Free review</a></li>
   </ul>
   <div class="nav-right">
     <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">한국어</button>
@@ -199,12 +207,11 @@
 
 <div class="nav-mobile" id="nav-mobile">
   <ul>
+    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.what">What we do</a></li>
+    <li><a href="/use-cases/" onclick="closeMobileMenu()" data-i18n="nav.cases">Use cases</a></li>
     <li><a href="/how-we-work/" onclick="closeMobileMenu()" data-i18n="nav.how">How we work</a></li>
-    <li><a href="/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.blueprints">What we build</a></li>
-    <li><a href="/use-cases/studio-monjo/" onclick="closeMobileMenu()" data-i18n="nav.cases">Use cases</a></li>
+    <li><a href="/technology/" onclick="closeMobileMenu()" data-i18n="nav.architecture">Architecture</a></li>
     <li><a href="/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
-    <li><a href="/technology/" onclick="closeMobileMenu()" data-i18n="nav.technology">Technology</a></li>
-    <li><a href="/assessment/" onclick="closeMobileMenu()" data-i18n="nav.assessment">Free review</a></li>
   </ul>
   <a href="/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Book a free review</a>
   <button id="lang-toggle-mobile" class="lang-toggle-mobile">한국어</button>
@@ -273,7 +280,7 @@
         </div>
         <div class="phase-deliverables reveal d3">
           <strong data-i18n="how.p1.deliv.head">What you get</strong>
-          <span data-i18n="how.p1.deliv.body">A document identifying your highest-leverage workflows, the right on-prem architecture for your sensitivity requirements, risks to be aware of, and — if we recommend moving forward — a fixed-scope quote for the build and the monthly maintenance.</span>
+          <span data-i18n="how.p1.deliv.body">A document identifying your highest-leverage workflows, the right on-prem architecture for your sensitivity requirements, risks to be aware of, and. If we recommend moving forward. A fixed-scope quote for the build and the monthly maintenance.</span>
         </div>
       </div>
     </div>
@@ -326,7 +333,7 @@
       <div class="phase-body">
         <p class="eyebrow reveal" data-i18n="how.p3.eyebrow">Phase 03 · Build &amp; integrate</p>
         <h2 class="section-title reveal d1" data-i18n-html="how.p3.h2">Hardware on-site. Models fine-tuned on your data. <em>Integrated into the tools your team already uses.</em></h2>
-        <p class="section-copy reveal d2" data-i18n="how.p3.body1">We procure and configure the hardware, fine-tune local models on your documents and workflows, and integrate the system into the channels your team already works in — Slack, KakaoTalk, Teams, email, or your internal systems. Everything is installed on-site and verified in your environment.</p>
+        <p class="section-copy reveal d2" data-i18n="how.p3.body1">We procure and configure the hardware, fine-tune local models on your documents and workflows, and integrate the system into the channels your team already works in. Slack, KakaoTalk, Teams, email, or your internal systems. Everything is installed on-site and verified in your environment.</p>
         <p class="section-copy reveal d3" data-i18n="how.p3.body2">You own the hardware. You own the model weights. You own the data. When the build is done, you have a private AI system that continues to belong to you even if our relationship ends.</p>
       </div>
       <div>
@@ -342,7 +349,7 @@
           </div>
           <div class="phase-sidecar-row">
             <span class="phase-sidecar-label" data-i18n="how.p3.side.r3.label">Ownership</span>
-            <span class="phase-sidecar-value" data-i18n="how.p3.side.r3.value">Hardware, weights, and data — yours</span>
+            <span class="phase-sidecar-value" data-i18n="how.p3.side.r3.value">Hardware, weights, and data. Yours</span>
           </div>
           <div class="phase-sidecar-row">
             <span class="phase-sidecar-label" data-i18n="how.p3.side.r4.label">Integrations</span>
@@ -365,8 +372,8 @@
       <div class="phase-body">
         <p class="eyebrow reveal" data-i18n="how.p4.eyebrow">Phase 04 · Maintain &amp; evolve</p>
         <h2 class="section-title reveal d1" data-i18n-html="how.p4.h2">A monthly partnership. <em>So the system stays sharp.</em></h2>
-        <p class="section-copy reveal d2" data-i18n="how.p4.body1">Once the system is live, we stay on. Monitoring, model updates, security patches, and tuning as your workflows evolve. When you want the system to learn a new skill or work with a new process, we train it — no new engagement, no new statement of work.</p>
-        <p class="section-copy reveal d3" data-i18n="how.p4.body2">The maintenance fee is flat and predictable — designed to feel like an ongoing partnership, not a recurring invoice. You can end the relationship at any time; the system still belongs to you.</p>
+        <p class="section-copy reveal d2" data-i18n="how.p4.body1">Once the system is live, we stay on. Monitoring, model updates, security patches, and tuning as your workflows evolve. When you want the system to learn a new skill or work with a new process, we train it: no new engagement, no new statement of work.</p>
+        <p class="section-copy reveal d3" data-i18n="how.p4.body2">The maintenance fee is flat and predictable: designed to feel like an ongoing partnership, not a recurring invoice. You can end the relationship at any time; the system still belongs to you.</p>
       </div>
       <div>
         <div class="phase-sidecar reveal d2">
@@ -397,7 +404,7 @@
 
     <div class="pricing-note reveal">
       <p class="eyebrow-light" data-i18n="how.pricing.eyebrow">A note on price</p>
-      <p data-i18n="how.pricing.body">Build cost and monthly maintenance are both quoted after the free AI Readiness Review, because both depend on scope. We do not publish a menu because there isn't one — but we do commit to fixed prices, no usage fees, and no surprise invoices. If your budget is a concern, tell us during the review and we will design to it.</p>
+      <p data-i18n="how.pricing.body">Build cost and monthly maintenance are both quoted after the free AI Readiness Review, because both depend on scope. We do not publish a menu because there isn't one, but we do commit to fixed prices, no usage fees, and no surprise invoices. If your budget is a concern, tell us during the review and we will design to it.</p>
     </div>
   </div>
 </section>
@@ -408,7 +415,7 @@
     <div class="page-cta-inner">
       <p class="eyebrow-light reveal" data-i18n="how.cta.eyebrow">Start with the free review</p>
       <h2 class="section-title reveal d1" data-i18n-html="how.cta.h2">Begin with a conversation. <em>Decide from a written plan.</em></h2>
-      <p class="lede reveal d2" data-i18n="how.cta.body">The AI Readiness Review is free. It takes one to two weeks. You leave with a written plan — even if you decide not to build anything.</p>
+      <p class="lede reveal d2" data-i18n="how.cta.body">The AI Readiness Review is free. It takes one to two weeks. You leave with a written plan. Even if you decide not to build anything.</p>
       <div class="page-cta-actions reveal d3">
         <a href="/assessment/" class="btn-dark" data-open-assessment data-i18n="how.cta.primary">Book a free AI readiness review</a>
         <a href="/" class="btn-outline" data-i18n="how.cta.secondary">Back to the home page</a>
@@ -422,11 +429,11 @@
   <div class="footer-inner">
     <div class="footer-logo">Smart Fellow</div>
     <ul class="footer-links">
+      <li><a href="/#blueprints" data-i18n="footer.what">What we do</a></li>
+      <li><a href="/use-cases/" data-i18n="footer.cases">Use cases</a></li>
       <li><a href="/how-we-work/" data-i18n="footer.how">How we work</a></li>
-      <li><a href="/#blueprints" data-i18n="footer.blueprints">What we build</a></li>
-      <li><a href="/use-cases/studio-monjo/" data-i18n="footer.cases">Use cases</a></li>
+      <li><a href="/technology/" data-i18n="footer.architecture">Architecture</a></li>
       <li><a href="/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
-      <li><a href="/technology/" data-i18n="footer.tech">Technology</a></li>
       <li><a href="/assessment/" data-i18n="footer.contact">Free review</a></li>
     </ul>
     <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>

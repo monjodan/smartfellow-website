@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cas d'usage · Smart Fellow</title>
+<meta name="description" content="Des cas réels Smart Fellow. Chaque cas montre comment une équipe IA privée prend forme dans une entreprise précise en Corée.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smartfellow.ai/fr/use-cases/">
+<link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/use-cases/">
+<link rel="alternate" hreflang="fr" href="https://smartfellow.ai/fr/use-cases/">
+<link rel="alternate" hreflang="ko" href="https://smartfellow.ai/ko/use-cases/">
+<link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/use-cases/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cas d'usage Smart Fellow">
+<meta property="og:description" content="Chaque build Smart Fellow est façonné par l'entreprise qui le fait tourner. Lisez comment de vraies équipes opèrent.">
+<meta property="og:url" content="https://smartfellow.ai/fr/use-cases/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Smart Fellow">
+<meta property="og:image" content="https://smartfellow.ai/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cas d'usage Smart Fellow">
+<meta name="twitter:description" content="Chaque build Smart Fellow est façonné par l'entreprise qui le fait tourner. Lisez comment de vraies équipes opèrent.">
+<meta name="twitter:image" content="https://smartfellow.ai/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link rel="stylesheet" href="/shared.css">
+<style>
+.cases-hero {
+  padding: 5rem 0 3.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.cases-hero .lede { margin-top: 1.25rem; max-width: 50rem; }
+
+.cases-list {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.case-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.75rem 1.6rem 1.6rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--line-strong);
+}
+
+.case-card-tag {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.case-card h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.case-card p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.case-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.case-card-chip {
+  font-size: 11px;
+  padding: 0.2rem 0.55rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  border: 1px solid #c9ddd4;
+  letter-spacing: 0.02em;
+}
+
+.case-card-cta {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.case-card-cta::after {
+  content: "→";
+  transition: transform 0.18s ease;
+}
+
+.case-card:hover .case-card-cta::after {
+  transform: translateX(3px);
+}
+
+.case-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.75rem 1.6rem;
+  background: var(--surface-muted);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+}
+
+.case-placeholder h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  line-height: 1.3;
+}
+
+.case-placeholder p {
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+  line-height: 1.6;
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://smartfellow.ai/#organization","name":"Smart Fellow","url":"https://smartfellow.ai","logo":"https://smartfellow.ai/assets/smart-fellow-logo.svg","description":"Smart Fellow builds private AI teams for companies that care about their data: fine-tuned local models on hardware they own.","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"areaServed":{"@type":"Country","name":"South Korea"},"knowsLanguage":["en","ko","fr"]},{"@type":"WebPage","@id":"https://smartfellow.ai/fr/use-cases/#webpage","url":"https://smartfellow.ai/fr/use-cases/","name":"Cas d'usage · Smart Fellow","description":"Des cas réels Smart Fellow. Chaque cas montre comment une équipe IA privée prend forme dans une entreprise précise en Corée.","inLanguage":"fr","isPartOf":{"@type":"WebSite","@id":"https://smartfellow.ai/#website","name":"Smart Fellow","url":"https://smartfellow.ai","publisher":{"@id":"https://smartfellow.ai/#organization"}},"publisher":{"@id":"https://smartfellow.ai/#organization"}}]}</script>
+</head>
+<body>
+
+<nav>
+  <a href="/fr/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" />Smart Fellow</a>
+  <ul class="nav-links">
+    <li><a href="/fr/#blueprints" data-i18n="nav.what">Ce que nous faisons</a></li>
+    <li class="nav-dropdown">
+      <a href="/fr/use-cases/" class="nav-dropdown-trigger active" data-i18n="nav.cases">Cas d'usage</a>
+      <div class="nav-dropdown-menu" role="menu" aria-label="Use cases">
+        <a href="/fr/use-cases/studio-monjo/" class="nav-dropdown-item" role="menuitem">
+          <span class="nav-dropdown-name" data-i18n="nav.cases.studioMonjo.name">Studio Monjo</span>
+          <span class="nav-dropdown-desc" data-i18n="nav.cases.studioMonjo.desc">Une équipe IA pour un studio à Séoul</span>
+        </a>
+        <span class="nav-dropdown-empty" data-i18n="nav.cases.more">D'autres cas à venir</span>
+      </div>
+    </li>
+    <li><a href="/fr/how-we-work/" data-i18n="nav.how">Comment nous travaillons</a></li>
+    <li><a href="/fr/technology/" data-i18n="nav.architecture">Architecture</a></li>
+    <li><a href="/fr/sovereign/" data-i18n="nav.sovereign">Sovereign</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher" role="group" aria-label="Choisir la langue"><a href="/en/use-cases/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/use-cases/" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/use-cases/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+    <a href="/fr/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">Réserver un diagnostic</a>
+  </div>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <ul>
+    <li><a href="/fr/#blueprints" onclick="closeMobileMenu()" data-i18n="nav.what">Ce que nous faisons</a></li>
+    <li><a href="/fr/use-cases/" onclick="closeMobileMenu()" data-i18n="nav.cases">Cas d'usage</a></li>
+    <li><a href="/fr/how-we-work/" onclick="closeMobileMenu()" data-i18n="nav.how">Comment nous travaillons</a></li>
+    <li><a href="/fr/technology/" onclick="closeMobileMenu()" data-i18n="nav.architecture">Architecture</a></li>
+    <li><a href="/fr/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Sovereign</a></li>
+  </ul>
+  <a href="/fr/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Réserver un diagnostic</a>
+  <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choisir la langue"><a href="/en/use-cases/" class="lang-option" data-locale="en" lang="en">English</a><a href="/fr/use-cases/" class="lang-option is-current" data-locale="fr" lang="fr" aria-current="page">Français</a><a href="/ko/use-cases/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+</div>
+
+<section class="cases-hero">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="cases.hero.eyebrow">Cas d'usage</p>
+    <h1 class="hero-title reveal d1" data-i18n-html="cases.hero.h1">De vrais builds. <em>De vraies équipes.</em></h1>
+    <p class="lede reveal d2" data-i18n="cases.hero.lede">Chaque build Smart Fellow prend la forme de l'entreprise qui le fait tourner. Le cas ci-dessous est celui que nous vivons au quotidien. D'autres suivront à mesure que de nouveaux builds passent en production.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="cases-list">
+
+      <a href="/fr/use-cases/studio-monjo/" class="case-card reveal">
+        <span class="case-card-tag" data-i18n="cases.studio.tag">Studio créatif · Séoul</span>
+        <h2 data-i18n="cases.studio.title">Studio Monjo</h2>
+        <p data-i18n="cases.studio.body">Cinq collègues IA nommés font tourner tout un studio créatif sur une seule machine locale Smart Fellow. Brenda, Jason, Yuna, Mireille et Jun couvrent assistance de direction, comptabilité, juridique, contenu et opérations.</p>
+        <div class="case-card-meta">
+          <span class="case-card-chip" data-i18n="cases.studio.chip1">Telegram</span>
+          <span class="case-card-chip" data-i18n="cases.studio.chip2">Notion</span>
+          <span class="case-card-chip" data-i18n="cases.studio.chip3">Drive</span>
+          <span class="case-card-chip" data-i18n="cases.studio.chip4">KakaoMap</span>
+          <span class="case-card-chip" data-i18n="cases.studio.chip5">law.go.kr</span>
+        </div>
+        <span class="case-card-cta" data-i18n="cases.studio.cta">Lire le cas d'usage</span>
+      </a>
+
+      <div class="case-placeholder reveal d1">
+        <h2 data-i18n="cases.placeholder.title">D'autres cas à venir</h2>
+        <p data-i18n="cases.placeholder.body">Nous mettons en forme les deux prochains builds. Si vous voulez en faire partie, commencez par un diagnostic IA gratuit.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--green">
+  <div class="section-inner">
+    <div class="page-cta-inner">
+      <p class="eyebrow-light reveal" data-i18n="cases.cta.eyebrow">Commencez par le diagnostic gratuit</p>
+      <h2 class="section-title reveal d1" data-i18n-html="cases.cta.h2">Envie d'un build comme celui-ci ? <em>Commencez par un plan écrit.</em></h2>
+      <p class="lede reveal d2" data-i18n="cases.cta.body">Le diagnostic IA est gratuit. Nous nous asseyons avec vous, regardons comment votre journée se passe vraiment, et écrivons quels collègues aideraient, ce qu'ils feraient, et combien coûterait la construction. Vous repartez avec un plan même si vous décidez de ne rien construire.</p>
+      <div class="page-cta-actions reveal d3">
+        <a href="/fr/assessment/" class="btn-dark" data-open-assessment data-i18n="cases.cta.primary">Réserver un diagnostic IA gratuit</a>
+        <a href="/fr/how-we-work/" class="btn-outline" data-i18n="cases.cta.secondary">Comment nous travaillons</a>
+      </div>
+      <div class="page-cta-note reveal d3" data-i18n="cases.cta.note">Coréen · Anglais · Français · Sans engagement</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smart Fellow</div>
+    <ul class="footer-links">
+      <li><a href="/fr/#blueprints" data-i18n="footer.what">Ce que nous faisons</a></li>
+      <li><a href="/fr/use-cases/" data-i18n="footer.cases">Cas d'usage</a></li>
+      <li><a href="/fr/how-we-work/" data-i18n="footer.how">Comment nous travaillons</a></li>
+      <li><a href="/fr/technology/" data-i18n="footer.architecture">Architecture</a></li>
+      <li><a href="/fr/sovereign/" data-i18n="footer.sovereign">Sovereign</a></li>
+      <li><a href="/fr/assessment/" data-i18n="footer.contact">Diagnostic gratuit</a></li>
+    </ul>
+    <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Séoul, Corée</span>
+  </div>
+</footer>
+
+<script>window.SF_CONFIG={"locale":"fr"};</script>
+<script src="/data/fr-locale.js"></script>
+<script src="/i18n.js"></script>
+<script src="/assessment-modal.js" defer></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
+
+navToggle.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+function closeMobileMenu() {
+  navMobile.classList.remove('open');
+  navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+(function () {
+  const navEl = document.querySelector('nav');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (navMobile.classList.contains('open')) {
+      lastY = y;
+      return;
+    }
+    if (Math.abs(y - lastY) < 8) return;
+    if (y <= 0 || y < lastY) {
+      navEl.classList.remove('nav-hidden');
+    } else {
+      navEl.classList.add('nav-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
