@@ -3,7 +3,6 @@ const path = require('path');
 const vm = require('vm');
 
 const siteData = require('../data/site-data');
-const frLocale = require('../data/fr-locale');
 
 const rootDir = path.resolve(__dirname, '..');
 const templatesDir = path.join(rootDir, 'templates');
@@ -11,13 +10,14 @@ const buildDate = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
 
 function readTranslations() {
   const source = fs.readFileSync(path.join(rootDir, 'i18n.js'), 'utf8');
-  const match = source.match(/const T = (\{[\s\S]*?\n  \});\n\n  var _extraLocales/m);
+  // T = { en, fr, ko } is now the only translations source. Extract it
+  // by matching from `const T = {` up to the matching `};` that closes it
+  // (the next `};` after the start, since locales objects use `},`).
+  const match = source.match(/const T = (\{[\s\S]*?\n  \});\n\n  \/\* ── LANG DETECTION/m);
   if (!match) {
     throw new Error('Could not extract translations from i18n.js');
   }
-  const locales = vm.runInNewContext(`(${match[1]})`);
-  locales.fr = frLocale;
-  return locales;
+  return vm.runInNewContext(`(${match[1]})`);
 }
 
 function escapeHtml(value) {
@@ -160,11 +160,6 @@ function buildConfigScript(locale) {
   return `<script>window.SF_CONFIG=${JSON.stringify({ locale })};</script>`;
 }
 
-function buildLocaleScript(locale) {
-  if (locale !== 'fr') return '';
-  return '<script src="/data/fr-locale.js"></script>';
-}
-
 function localizeInternalLinks(html, locale) {
   // Localize every internal page link to its locale-specific path.
   // Order matters: more specific paths first, so /use-cases/studio-monjo/
@@ -198,7 +193,7 @@ function transformTemplate(template, pageName, locale, localeStrings) {
   html = html.replace(/<button id="lang-toggle"[\s\S]*?<\/button>/, buildLanguageSwitcher(locale, pageName, false));
   html = html.replace(/<button id="lang-toggle-mobile"[\s\S]*?<\/button>/, buildLanguageSwitcher(locale, pageName, true));
   html = html.replace(/<script src="https:\/\/assets\.calendly\.com\/assets\/external\/widget\.js" async><\/script>/g, '');
-  html = html.replace(/<script src="\/i18n\.js"><\/script>/, `${buildConfigScript(locale)}\n${buildLocaleScript(locale)}\n<script src="/i18n.js"></script>`);
+  html = html.replace(/<script src="\/i18n\.js"><\/script>/, `${buildConfigScript(locale)}\n<script src="/i18n.js"></script>`);
 
   if (pageName === 'home' || pageName === 'sovereign') {
     html = html.replace('</body>', '<script src="https://assets.calendly.com/assets/external/widget.js" async></script>\n</body>');
