@@ -11,6 +11,7 @@
       'page.title': 'Smart Fellow. A private AI team, built for your company',
 
       /* NAV */
+      'nav.home':         'Home',
       'nav.cases':        'Use cases',
       'nav.how':          'How we work',
       'nav.technology':   'Technology',
@@ -26,6 +27,7 @@
       'nav.cases.more':               'More cases coming soon',
 
       /* FOOTER */
+      'footer.home':       'Home',
       'footer.cases':      'Use cases',
       'footer.how':        'How we work',
       'footer.technology': 'Technology',
@@ -710,6 +712,7 @@
 
     fr: {
       "page.title": "Smart Fellow. Une équipe IA privée, construite pour votre entreprise",
+      "nav.home": "Accueil",
       "nav.cases": "Cas d'usage",
       "nav.how": "Comment nous travaillons",
       "nav.technology": "Technologie",
@@ -723,6 +726,7 @@
       "nav.cases.studioMonjo.name": "Studio Monjo",
       "nav.cases.studioMonjo.desc": "Une équipe IA pour un studio à Séoul",
       "nav.cases.more": "D'autres cas à venir",
+      "footer.home": "Accueil",
       "footer.cases": "Cas d'usage",
       "footer.how": "Comment nous travaillons",
       "footer.technology": "Technologie",
@@ -1334,6 +1338,7 @@
 
     ko: {
       "page.title": "Smart Fellow · 한국 기업을 위한 프라이빗 AI",
+      "nav.home": "홈",
       "nav.cases": "도입 사례",
       "nav.how": "진행 방식",
       "nav.technology": "기술",
@@ -1347,6 +1352,7 @@
       "nav.cases.studioMonjo.name": "Studio Monjo",
       "nav.cases.studioMonjo.desc": "서울 스튜디오의 AI 팀 구축 사례",
       "nav.cases.more": "추가 사례 준비 중",
+      "footer.home": "홈",
       "footer.cases": "도입 사례",
       "footer.how": "진행 방식",
       "footer.technology": "기술",
