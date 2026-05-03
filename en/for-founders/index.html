@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For founders · A private AI team for your small business in Korea · Smart Fellow</title>
+<meta name="description" content="Stop renting other people's AI. Built for solo founders, freelancers, and small teams in Korea. The work of two to four hires, for a fraction of the cost. Korean, PIPA-clean, yours forever.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://smartfellow.ai/en/for-founders/">
+<link rel="alternate" hreflang="en" href="https://smartfellow.ai/en/for-founders/">
+<link rel="alternate" hreflang="x-default" href="https://smartfellow.ai/en/for-founders/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="For founders · A private AI team for your small business in Korea">
+<meta property="og:description" content="Stop renting other people's AI. Hire your own. The work of two to four hires, for a fraction of the cost. Korean, PIPA-clean, yours forever.">
+<meta property="og:url" content="https://smartfellow.ai/en/for-founders/">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Smart Fellow">
+<meta property="og:image" content="https://smartfellow.ai/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="For founders · A private AI team for your small business in Korea">
+<meta name="twitter:description" content="Stop renting other people's AI. Hire your own. The work of two to four hires, for a fraction of the cost.">
+<meta name="twitter:image" content="https://smartfellow.ai/og-image.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231b4d3e'/><text x='50' y='68' text-anchor='middle' font-family='Georgia,serif' font-size='52' font-weight='500' fill='white'>SF</text></svg>">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<link rel="stylesheet" href="/shared.css">
+<style>
+/* ── Hero ── */
+.fnd-hero {
+  padding: 5rem 0 4.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.fnd-hero-copy { max-width: 60rem; }
+
+.fnd-hero .lede { margin-top: 1rem; }
+
+.fnd-hero .hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+/* Reality strip under hero */
+.fnd-band { border-bottom: 1px solid var(--line); }
+
+.fnd-band-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 16px 0;
+  width: min(var(--container), calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.fnd-band-item {
+  font-size: 12px;
+  color: var(--ink-faint);
+  padding-right: 20px;
+  margin-right: 20px;
+  border-right: 1px solid var(--line);
+  line-height: 1.4;
+}
+
+.fnd-band-item:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.fnd-band-item b {
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+
+/* ── Qualifier section ── */
+.qualifier-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-top: 2.5rem;
+  overflow: hidden;
+}
+
+.qualifier-card {
+  background: var(--surface);
+  padding: 1.75rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.qualifier-num {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.qualifier-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.qualifier-body {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* ── Team mini cards (Studio Monjo proof) ── */
+.team-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.team-mini-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.team-mini-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--line-strong);
+}
+
+.team-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--accent-contrast);
+  flex-shrink: 0;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.team-avatar::after {
+  content: "";
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  background: #4ea872;
+  border: 2px solid var(--surface);
+}
+
+.team-avatar.is-brenda  { background: #1b4d3e; }
+.team-avatar.is-jason   { background: #8a6a3b; }
+.team-avatar.is-yuna    { background: #9c5468; }
+.team-avatar.is-mireille { background: #6e6291; }
+.team-avatar.is-jun     { background: #4d6985; }
+
+.team-mini-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.team-mini-role {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.team-mini-job {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  font-style: italic;
+  margin-top: 0.15rem;
+}
+
+.team-mini-cta {
+  margin-top: 1.75rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ── What you get tiles ── */
+.deliverable-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-top: 2.5rem;
+  overflow: hidden;
+}
+
+.deliverable-card {
+  background: var(--surface);
+  padding: 1.75rem 1.75rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.deliverable-tag {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.deliverable-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.deliverable-body {
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+/* ── The math section ── */
+.math-section { background: var(--surface-muted); }
+
+.math-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-top: 2.5rem;
+  overflow: hidden;
+}
+
+.math-col {
+  background: var(--surface);
+  padding: 1.85rem 1.6rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.math-col.is-result {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.math-col-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 700;
+}
+
+.math-col.is-result .math-col-label { color: rgba(247, 245, 239, 0.65); }
+
+.math-col-amount {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.math-col.is-result .math-col-amount { color: var(--accent-contrast); }
+
+.math-col-detail {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  border-top: 1px solid var(--line);
+  padding-top: 0.85rem;
+}
+
+.math-col.is-result .math-col-detail {
+  color: rgba(247, 245, 239, 0.85);
+  border-top-color: rgba(247, 245, 239, 0.18);
+}
+
+.math-col-detail + .math-col-detail {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.math-note {
+  margin-top: 1.5rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  max-width: 52rem;
+}
+
+/* ── Sovereignty (re-uses home pattern) ── */
+.fnd-sov-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.fnd-sov-copy .spec-list { margin-top: 1.6rem; }
+
+.fnd-diagram {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.sov-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.sov-row:last-child { border-bottom: 0; }
+
+.sov-row-label {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.sov-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 25px;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.sov-tag.is-local {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid #c9ddd4;
+}
+
+.sov-tag.is-muted {
+  background: var(--surface-muted);
+  color: var(--ink-faint);
+  border: 1px solid var(--line);
+}
+
+/* ── Process (4 phases) ── */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-top: 2.5rem;
+  overflow: hidden;
+}
+
+.process-card {
+  background: var(--surface);
+  padding: 1.75rem 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.process-when {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.process-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.process-body {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+.process-meta {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.process-cta {
+  margin-top: 1.75rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ── Objection bar ── */
+.objection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-top: 2.5rem;
+  overflow: hidden;
+}
+
+.objection-card {
+  background: var(--surface);
+  padding: 1.75rem 1.65rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.objection-q {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.objection-a {
+  font-size: 0.93rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* ── Who this isn't for ── */
+.notfor-section { background: var(--paper-strong); }
+
+.notfor-list {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+  max-width: 52rem;
+}
+
+.notfor-item {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  padding: 1.35rem 1.65rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  align-items: start;
+}
+
+.notfor-label {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.notfor-body {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* ── Pull quote ── */
+.fnd-quote {
+  margin-top: 3rem;
+  padding: 2rem 2.5rem;
+  background: var(--accent);
+  border-radius: var(--radius);
+  color: var(--accent-contrast);
+  max-width: 52rem;
+}
+
+.fnd-quote blockquote {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-style: italic;
+  line-height: 1.45;
+  color: rgba(247, 245, 239, 0.94);
+  margin-bottom: 0.75rem;
+}
+
+.fnd-quote cite {
+  font-size: 11px;
+  color: rgba(247, 245, 239, 0.5);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .team-mini-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 980px) {
+  .qualifier-grid,
+  .objection-grid { grid-template-columns: 1fr; }
+
+  .deliverable-grid { grid-template-columns: 1fr; }
+
+  .math-grid { grid-template-columns: 1fr; }
+
+  .fnd-sov-grid { grid-template-columns: 1fr; }
+
+  .process-grid { grid-template-columns: 1fr 1fr; }
+
+  .team-mini-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .notfor-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .process-grid { grid-template-columns: 1fr; }
+  .team-mini-grid { grid-template-columns: 1fr; }
+  .fnd-quote { padding: 1.5rem 1.5rem; }
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://smartfellow.ai/#organization","name":"Smart Fellow","url":"https://smartfellow.ai","logo":"https://smartfellow.ai/assets/smart-fellow-logo.svg","description":"Smart Fellow builds private AI teams for companies that care about their data: fine-tuned local models on hardware they own.","address":{"@type":"PostalAddress","addressLocality":"Seoul","addressCountry":"KR"},"areaServed":{"@type":"Country","name":"South Korea"},"knowsLanguage":["en","ko","fr"]},{"@type":"WebPage","@id":"https://smartfellow.ai/en/for-founders/#webpage","url":"https://smartfellow.ai/en/for-founders/","name":"For founders · A private AI team for your small business in Korea","description":"Stop renting other people's AI. Built for solo founders, freelancers, and small teams in Korea. The work of two to four hires, for a fraction of the cost.","inLanguage":"en","isPartOf":{"@type":"WebSite","@id":"https://smartfellow.ai/#website","name":"Smart Fellow","url":"https://smartfellow.ai","publisher":{"@id":"https://smartfellow.ai/#organization"}},"publisher":{"@id":"https://smartfellow.ai/#organization"}}]}</script>
+</head>
+<body>
+
+<nav>
+  <a href="/en/" class="nav-logo"><img src="/assets/smart-fellow-logo.svg" alt="" class="nav-logo-mark" aria-hidden="true" />Smart Fellow</a>
+  <ul class="nav-links">
+    <li><a href="/en/" data-i18n="nav.home">Home</a></li>
+    <li class="nav-dropdown">
+      <a href="/en/use-cases/" class="nav-dropdown-trigger" data-i18n="nav.cases">Use cases</a>
+      <div class="nav-dropdown-menu" role="menu" aria-label="Use cases">
+        <a href="/en/use-cases/studio-monjo/" class="nav-dropdown-item" role="menuitem">
+          <span class="nav-dropdown-name" data-i18n="nav.cases.studioMonjo.name">Studio Monjo</span>
+          <span class="nav-dropdown-desc" data-i18n="nav.cases.studioMonjo.desc">AI team for a Seoul studio</span>
+        </a>
+        <span class="nav-dropdown-empty" data-i18n="nav.cases.more">More cases coming soon</span>
+      </div>
+    </li>
+    <li><a href="/en/how-we-work/" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/en/technology/" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/en/sovereign/" data-i18n="nav.sovereign">Offline AI</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-switcher" role="group" aria-label="Choose language"><a href="/en/for-founders/" class="lang-option is-current" data-locale="en" lang="en" aria-current="page">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+    <a href="/en/assessment/" class="nav-cta" data-open-assessment data-i18n="nav.cta">Book a free review</a>
+  </div>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <ul>
+    <li><a href="/en/" onclick="closeMobileMenu()" data-i18n="nav.home">Home</a></li>
+    <li><a href="/en/use-cases/" onclick="closeMobileMenu()" data-i18n="nav.cases">Use cases</a></li>
+    <li><a href="/en/how-we-work/" onclick="closeMobileMenu()" data-i18n="nav.how">How we work</a></li>
+    <li><a href="/en/technology/" onclick="closeMobileMenu()" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="/en/sovereign/" onclick="closeMobileMenu()" data-i18n="nav.sovereign">Offline AI</a></li>
+  </ul>
+  <a href="/en/assessment/" class="nav-cta" onclick="closeMobileMenu()" data-open-assessment data-i18n="nav.cta">Book a free review</a>
+  <div class="lang-switcher lang-switcher-mobile" role="group" aria-label="Choose language"><a href="/en/for-founders/" class="lang-option is-current" data-locale="en" lang="en" aria-current="page">English</a><a href="/fr/" class="lang-option" data-locale="fr" lang="fr">Français</a><a href="/ko/" class="lang-option" data-locale="ko" lang="ko">한국어</a></div>
+</div>
+
+<!-- ════════════ Hero ════════════ -->
+<section class="fnd-hero">
+  <div class="page-shell">
+    <div class="fnd-hero-copy">
+      <p class="eyebrow reveal" data-i18n="founders.hero.eyebrow">For founders · Seoul · Korea</p>
+      <h1 class="hero-title reveal d1" data-i18n-html="founders.hero.h1">Stop renting other people's AI. <em>Hire your own.</em></h1>
+      <p class="lede reveal d2" data-i18n="founders.hero.sub">Built for solo founders, freelancers, and small teams running businesses in Korea. The work of two to four hires, for a fraction of the cost. Korean, PIPA-clean, yours forever.</p>
+      <div class="hero-actions reveal d3">
+        <a href="/en/assessment/" class="btn-dark" data-open-assessment data-i18n="founders.hero.ctaPrimary">Book a free AI readiness review</a>
+        <a href="#team" class="btn-outline" data-i18n="founders.hero.ctaSecondary">Meet a team that already exists</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="fnd-band">
+  <div class="fnd-band-inner">
+    <span class="fnd-band-item" data-i18n-html="founders.band.item1"><b>PIPA</b> compliant by design</span>
+    <span class="fnd-band-item" data-i18n-html="founders.band.item2"><b>One local machine</b>, owned by you</span>
+    <span class="fnd-band-item" data-i18n-html="founders.band.item3"><b>2–4 hires</b> of output</span>
+    <span class="fnd-band-item" data-i18n-html="founders.band.item4"><b>Korean · English</b> bilingual</span>
+  </div>
+</div>
+
+<!-- ════════════ Qualifier ════════════ -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="founders.qual.eyebrow">Is this for you?</p>
+    <h2 class="section-title reveal d1" data-i18n-html="founders.qual.h2">Built for small teams in Korea. <em>Especially if you weren't born here.</em></h2>
+    <p class="lede reveal d2" data-i18n="founders.qual.lead">We work best with founders running real businesses on the ground in Korea. Solo or small team. Real customer data. No IT department to call.</p>
+
+    <div class="qualifier-grid reveal d2">
+      <article class="qualifier-card">
+        <span class="qualifier-num">01</span>
+        <h3 class="qualifier-title" data-i18n="founders.qual.c1.title">Solo founder or small team in Korea</h3>
+        <p class="qualifier-body" data-i18n="founders.qual.c1.body">Freelancer, founder, or thirty-person team. Real customers, real revenue, real obligations. Too small for an IT department. Too busy for a new platform to learn.</p>
+      </article>
+      <article class="qualifier-card">
+        <span class="qualifier-num">02</span>
+        <h3 class="qualifier-title" data-i18n="founders.qual.c2.title">You handle Korean documents in English</h3>
+        <p class="qualifier-body" data-i18n="founders.qual.c2.body">Contracts in Korean. Clients in Korean. Statutes in Korean. Your team thinks in English. You can't read every page yourself. You need a second pair of eyes that speaks both.</p>
+      </article>
+      <article class="qualifier-card">
+        <span class="qualifier-num">03</span>
+        <h3 class="qualifier-title" data-i18n="founders.qual.c3.title">Your data can't leave the building</h3>
+        <p class="qualifier-body" data-i18n="founders.qual.c3.body">Customer files. Contracts. Accounting. PIPA, NDAs, common sense. Client documents shouldn't pass through someone else's servers. "Trust us" is not a compliance strategy.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ Studio Monjo proof ════════════ -->
+<section class="section section--soft" id="team">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="founders.team.eyebrow">A team that already exists</p>
+    <h2 class="section-title reveal d1" data-i18n-html="founders.team.h2">Brenda, Jason, Yuna, Mireille, and Jun. <em>Five teammates. One Seoul studio.</em></h2>
+    <p class="lede reveal d2" data-i18n="founders.team.lead">Studio Monjo is a small Seoul studio. The whole company runs on one Smart Fellow box. Five named teammates handle scheduling, accounting, legal, content, and operations. They live in Telegram and use the tools the studio already had.</p>
+
+    <div class="team-mini-grid reveal d2">
+      <article class="team-mini-card">
+        <span class="team-avatar is-brenda" aria-hidden="true">B</span>
+        <div class="team-mini-name" data-i18n="founders.team.brenda.name">Brenda</div>
+        <div class="team-mini-role" data-i18n="founders.team.brenda.role">Executive Assistant</div>
+        <p class="team-mini-job" data-i18n="founders.team.brenda.job">"Found you a Wednesday slot. Cafe Onion, 6 min away."</p>
+      </article>
+      <article class="team-mini-card">
+        <span class="team-avatar is-jason" aria-hidden="true">J</span>
+        <div class="team-mini-name" data-i18n="founders.team.jason.name">Jason</div>
+        <div class="team-mini-role" data-i18n="founders.team.jason.role">Accounting &amp; Files</div>
+        <p class="team-mini-job" data-i18n="founders.team.jason.job">"Receipt filed. Tagged for the May close."</p>
+      </article>
+      <article class="team-mini-card">
+        <span class="team-avatar is-yuna" aria-hidden="true">Y</span>
+        <div class="team-mini-name" data-i18n="founders.team.yuna.name">Yuna</div>
+        <div class="team-mini-role" data-i18n="founders.team.yuna.role">Legal &amp; Translation</div>
+        <p class="team-mini-job" data-i18n="founders.team.yuna.job">"NDA's clause 7 is too broad. Worth pushing back before you sign."</p>
+      </article>
+      <article class="team-mini-card">
+        <span class="team-avatar is-mireille" aria-hidden="true">M</span>
+        <div class="team-mini-name" data-i18n="founders.team.mireille.name">Mireille</div>
+        <div class="team-mini-role" data-i18n="founders.team.mireille.role">Content</div>
+        <p class="team-mini-job" data-i18n="founders.team.mireille.job">"Three drafts in your tone. Saved to Notion."</p>
+      </article>
+      <article class="team-mini-card">
+        <span class="team-avatar is-jun" aria-hidden="true">J</span>
+        <div class="team-mini-name" data-i18n="founders.team.jun.name">Jun</div>
+        <div class="team-mini-role" data-i18n="founders.team.jun.role">Operations</div>
+        <p class="team-mini-job" data-i18n="founders.team.jun.job">"Three items low. POs to your usual suppliers ready."</p>
+      </article>
+    </div>
+
+    <div class="team-mini-cta reveal d3">
+      <a href="/en/use-cases/studio-monjo/" class="btn-outline" data-i18n="founders.team.cta">Read the full Studio Monjo story</a>
+      <a href="/en/assessment/" class="btn-dark" data-open-assessment data-i18n="founders.team.ctaPrimary">Book a free review</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ What you actually get ════════════ -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="founders.deliv.eyebrow">What you actually get</p>
+    <h2 class="section-title reveal d1" data-i18n-html="founders.deliv.h2">Not software. <em>A team you own.</em></h2>
+    <p class="lede reveal d2" data-i18n="founders.deliv.lead">Not a SaaS subscription. Not an AI platform. Not a chatbot kit. We build, fine-tune, and install your AI team. You own the box. You own the model. You own the work.</p>
+
+    <div class="deliverable-grid reveal d2">
+      <article class="deliverable-card">
+        <span class="deliverable-tag" data-i18n="founders.deliv.c1.tag">A team, not a tool</span>
+        <h3 class="deliverable-title" data-i18n="founders.deliv.c1.title">Two to five named teammates</h3>
+        <p class="deliverable-body" data-i18n="founders.deliv.c1.body">Each with their own job, their own files, their own personality. They learn your suppliers, your clients, your terminology, your house style.</p>
+      </article>
+      <article class="deliverable-card">
+        <span class="deliverable-tag" data-i18n="founders.deliv.c2.tag">Hardware in your office</span>
+        <h3 class="deliverable-title" data-i18n="founders.deliv.c2.title">A dedicated Smart Fellow machine</h3>
+        <p class="deliverable-body" data-i18n="founders.deliv.c2.body">The model and your data live there, not in someone else's cloud. We pick the box, install it, and maintain it. You own it the day it ships.</p>
+      </article>
+      <article class="deliverable-card">
+        <span class="deliverable-tag" data-i18n="founders.deliv.c3.tag">Fine-tuned to you</span>
+        <h3 class="deliverable-title" data-i18n="founders.deliv.c3.title">Your documents, your tone, your rules</h3>
+        <p class="deliverable-body" data-i18n="founders.deliv.c3.body">The model is trained on your operation. It knows your business because your business is all it knows. No generic chatbot copy, no template responses.</p>
+      </article>
+      <article class="deliverable-card">
+        <span class="deliverable-tag" data-i18n="founders.deliv.c4.tag">We install. We maintain.</span>
+        <h3 class="deliverable-title" data-i18n="founders.deliv.c4.title">No platform to learn</h3>
+        <p class="deliverable-body" data-i18n="founders.deliv.c4.body">No IT staff to hire. No procurement loop. We do the build, ship the box, train the team, and stay on for monthly maintenance. One partner, end to end.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ The math ════════════ -->
+<section class="section math-section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="founders.math.eyebrow">The math</p>
+    <h2 class="section-title reveal d1" data-i18n-html="founders.math.h2">The output of two to four hires. <em>For less than the cost of one.</em></h2>
+    <p class="lede reveal d2" data-i18n="founders.math.lead">Hiring in Seoul is slow and expensive. A Smart Fellow team costs less than one of those salaries once it's built. No sick days. No leave. No onboarding.</p>
+
+    <div class="math-grid reveal d2">
+      <div class="math-col">
+        <span class="math-col-label" data-i18n="founders.math.c1.label">Hire one EA in Seoul</span>
+        <span class="math-col-amount" data-i18n="founders.math.c1.amount">~₩45–60M / year</span>
+        <p class="math-col-detail" data-i18n="founders.math.c1.d1">Plus benefits, plus severance, plus 15+ days of leave.</p>
+        <p class="math-col-detail" data-i18n="founders.math.c1.d2">Does one job, in one language, during business hours.</p>
+      </div>
+      <div class="math-col">
+        <span class="math-col-label" data-i18n="founders.math.c2.label">Hire a bookkeeper too</span>
+        <span class="math-col-amount" data-i18n="founders.math.c2.amount">+ ~₩40–55M / year</span>
+        <p class="math-col-detail" data-i18n="founders.math.c2.d1">Plus more benefits, more severance, more leave.</p>
+        <p class="math-col-detail" data-i18n="founders.math.c2.d2">Does another job. Now you also need a manager.</p>
+      </div>
+      <div class="math-col is-result">
+        <span class="math-col-label" data-i18n="founders.math.c3.label">A Smart Fellow team</span>
+        <span class="math-col-amount" data-i18n="founders.math.c3.amount">Less than one of those salaries</span>
+        <p class="math-col-detail" data-i18n="founders.math.c3.d1">Build once, then a flat monthly. No leave, no sick days, no onboarding.</p>
+        <p class="math-col-detail" data-i18n="founders.math.c3.d2">Does both jobs, plus three more. Bilingual by default.</p>
+      </div>
+    </div>
+
+    <p class="math-note reveal d3" data-i18n="founders.math.note">Most builds land below the annual cost of a single Seoul hire. Exact number scoped during the free review.</p>
+
+    <div class="hero-actions reveal d3" style="margin-top: 1.75rem;">
+      <a href="/en/assessment/" class="btn-dark" data-open-assessment data-i18n="founders.math.cta">Get a written quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ Sovereignty ════════════ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="fnd-sov-grid">
+      <div class="fnd-sov-copy">
+        <p class="eyebrow reveal" data-i18n="founders.sov.eyebrow">Your data stays where it belongs</p>
+        <h2 class="section-title reveal d1" data-i18n-html="founders.sov.h2">Customer files, contracts, accounting. <em>None of it leaves your office.</em></h2>
+        <p class="lede reveal d2" data-i18n="founders.sov.lead">Cloud AI runs your documents on someone else's servers. Smart Fellow runs on a dedicated machine inside your office. PIPA-compliant by architecture, not by promise.</p>
+        <ul class="spec-list reveal d3">
+          <li data-i18n="founders.sov.point1">PIPA-compliant by construction. Not a checkbox, a topology.</li>
+          <li data-i18n="founders.sov.point2">Safe for confidential client files, contracts, and Korean personal data.</li>
+          <li data-i18n="founders.sov.point3">Cloud models off by default. Your decision, on a per-task basis.</li>
+          <li data-i18n="founders.sov.point4">Air-gapped operation available if your work demands it.</li>
+        </ul>
+      </div>
+
+      <div class="fnd-diagram reveal d2">
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="founders.sov.diagram.row1.label">Hardware in your office</span>
+          <span class="sov-tag is-local" data-i18n="founders.sov.diagram.row1.value">You own it</span>
+        </div>
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="founders.sov.diagram.row2.label">Local AI model</span>
+          <span class="sov-tag is-local" data-i18n="founders.sov.diagram.row2.value">Fine-tuned on your data</span>
+        </div>
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="founders.sov.diagram.row3.label">Document memory</span>
+          <span class="sov-tag is-local" data-i18n="founders.sov.diagram.row3.value">Local</span>
+        </div>
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="founders.sov.diagram.row4.label">Business context</span>
+          <span class="sov-tag is-local" data-i18n="founders.sov.diagram.row4.value">Local</span>
+        </div>
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="founders.sov.diagram.row5.label">External servers</span>
+          <span class="sov-tag is-muted" data-i18n="founders.sov.diagram.row5.value">Never by default</span>
+        </div>
+        <div class="sov-row">
+          <span class="sov-row-label" data-i18n="founders.sov.diagram.row6.label">Cloud model APIs</span>
+          <span class="sov-tag is-muted" data-i18n="founders.sov.diagram.row6.value">Only if approved</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ Process ════════════ -->
+<section class="section section--soft">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="founders.process.eyebrow">What 30 days looks like</p>
+    <h2 class="section-title reveal d1" data-i18n-html="founders.process.h2">A workshop, an install, a working team. <em>Inside a month.</em></h2>
+    <p class="lede reveal d2" data-i18n="founders.process.lead">We don't sell a product, so there's nothing to "deploy." We assess, we build, we install, we maintain. One process, four phases.</p>
+
+    <div class="process-grid reveal d2">
+      <article class="process-card">
+        <span class="process-when" data-i18n="founders.process.p1.when">Week 1</span>
+        <h3 class="process-title" data-i18n="founders.process.p1.title">Assess</h3>
+        <p class="process-body" data-i18n="founders.process.p1.body">A 45-minute workshop, a look at your day, a written plan. We figure out which teammates would help and what they would do.</p>
+        <span class="process-meta" data-i18n="founders.process.p1.meta">Free · 48-hour turnaround</span>
+      </article>
+      <article class="process-card">
+        <span class="process-when" data-i18n="founders.process.p2.when">Week 1–2</span>
+        <h3 class="process-title" data-i18n="founders.process.p2.title">Quote</h3>
+        <p class="process-body" data-i18n="founders.process.p2.body">A fixed-scope proposal: who your teammates are, what they do, what it costs, when it ships. No surprises.</p>
+        <span class="process-meta" data-i18n="founders.process.p2.meta">Fixed quote · No surprises</span>
+      </article>
+      <article class="process-card">
+        <span class="process-when" data-i18n="founders.process.p3.when">Week 2–4</span>
+        <h3 class="process-title" data-i18n="founders.process.p3.title">Build &amp; install</h3>
+        <p class="process-body" data-i18n="founders.process.p3.body">Hardware on-site. Model fine-tuned on your data. Integrations into Telegram, KakaoTalk, Notion, Drive, whatever you already use.</p>
+        <span class="process-meta" data-i18n="founders.process.p3.meta">Typically 2–10 weeks</span>
+      </article>
+      <article class="process-card">
+        <span class="process-when" data-i18n="founders.process.p4.when">Day 30+</span>
+        <h3 class="process-title" data-i18n="founders.process.p4.title">Maintain</h3>
+        <p class="process-body" data-i18n="founders.process.p4.body">Monthly partnership: monitoring, updates, new skills trained on request, security patches. Predictable, not surprising.</p>
+        <span class="process-meta" data-i18n="founders.process.p4.meta">Ongoing · Flat monthly</span>
+      </article>
+    </div>
+
+    <div class="process-cta reveal d3">
+      <a href="/en/assessment/" class="btn-dark" data-open-assessment data-i18n="founders.process.cta">Book a free review</a>
+      <a href="/en/how-we-work/" class="btn-outline" data-i18n="founders.process.ctaSecondary">Read the full process</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ Objection bar ════════════ -->
+<section class="section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="founders.obj.eyebrow">The questions we get</p>
+    <h2 class="section-title reveal d1" data-i18n-html="founders.obj.h2">Three things founders ask <em>before they sign.</em></h2>
+
+    <div class="objection-grid reveal d2">
+      <article class="objection-card">
+        <p class="objection-q" data-i18n="founders.obj.c1.q">"I don't have IT."</p>
+        <p class="objection-a" data-i18n="founders.obj.c1.a">You don't need it. We pick the hardware, install it, and maintain it. Your job is to use the team. Not to run a server room.</p>
+      </article>
+      <article class="objection-card">
+        <p class="objection-q" data-i18n="founders.obj.c2.q">"Won't it cost a fortune?"</p>
+        <p class="objection-a" data-i18n="founders.obj.c2.a">No. The build is one-time. Maintenance is a flat monthly. Most builds land below the annual cost of a single Seoul hire, and replace the work of several.</p>
+      </article>
+      <article class="objection-card">
+        <p class="objection-q" data-i18n="founders.obj.c3.q">"Does it actually work in Korean?"</p>
+        <p class="objection-a" data-i18n="founders.obj.c3.a">Yes. Studio Monjo's team handles Korean contracts, KakaoMap lookups, law.go.kr citations, and Korean ↔ English every day. PIPA, KRW, KakaoTalk are all native.</p>
+      </article>
+    </div>
+
+    <div class="fnd-quote reveal d3">
+      <blockquote data-i18n="founders.obj.quote">"It's not five tools. It's five teammates. They have names because that's how the studio talks about them."</blockquote>
+      <cite data-i18n="founders.obj.attr">Studio Monjo · Seoul</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ Who this isn't for ════════════ -->
+<section class="section notfor-section">
+  <div class="section-inner">
+    <p class="eyebrow reveal" data-i18n="founders.notfor.eyebrow">Where we say no</p>
+    <h2 class="section-title reveal d1" data-i18n-html="founders.notfor.h2">Smart Fellow isn't right <em>for everyone.</em></h2>
+    <p class="lede reveal d2" data-i18n="founders.notfor.lead">We're honest about who we don't help. If any of these is you, ChatGPT, a SaaS subscription, or a Big Four contract will serve you better. We'll be the first to say so.</p>
+
+    <div class="notfor-list reveal d2">
+      <div class="notfor-item">
+        <div class="notfor-label" data-i18n="founders.notfor.i1.label">Fortune 500s and government bodies</div>
+        <p class="notfor-body" data-i18n="founders.notfor.i1.body">You need a procurement process, an enterprise vendor, and a security review we don't run. Talk to Samsung SDS, LG CNS, or the Korean arm of a global integrator.</p>
+      </div>
+      <div class="notfor-item">
+        <div class="notfor-label" data-i18n="founders.notfor.i2.label">DIY builders</div>
+        <p class="notfor-body" data-i18n="founders.notfor.i2.body">If you want to spin up models on your own GPU and fine-tune them yourself, do that. We're for people who want a partner running the whole thing, not a toolkit to assemble.</p>
+      </div>
+      <div class="notfor-item">
+        <div class="notfor-label" data-i18n="founders.notfor.i3.label">"AI for the next investor meeting"</div>
+        <p class="notfor-body" data-i18n="founders.notfor.i3.body">If you want a demo to show a board, this isn't the shape. We build operational systems that take six weeks to install. Not press releases.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ Final CTA ════════════ -->
+<section class="section section--green">
+  <div class="section-inner">
+    <div class="page-cta-inner">
+      <p class="eyebrow-light reveal" data-i18n="founders.cta.eyebrow">Start with the free review</p>
+      <h2 class="section-title reveal d1" data-i18n-html="founders.cta.h2">Want a team like Studio Monjo's? <em>Start with a written plan.</em></h2>
+      <p class="lede reveal d2" data-i18n="founders.cta.body">The AI Readiness Review is free. We sit down with you, look at how your day actually runs, and write up which teammates would help, what they would do, and what the build would cost. You leave with a written plan. Even if you decide not to build.</p>
+      <div class="page-cta-actions reveal d3">
+        <a href="/en/assessment/" class="btn-dark" data-open-assessment data-i18n="founders.cta.primary">Book a free AI readiness review</a>
+        <a href="/en/use-cases/studio-monjo/" class="btn-outline" data-i18n="founders.cta.secondary">Read Studio Monjo's full story</a>
+      </div>
+      <div class="page-cta-note reveal d3" data-i18n="founders.cta.note">English · Korean on request · No commitment required</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Smart Fellow</div>
+    <ul class="footer-links">
+      <li><a href="/en/" data-i18n="footer.home">Home</a></li>
+      <li><a href="/en/use-cases/" data-i18n="footer.cases">Use cases</a></li>
+      <li><a href="/en/how-we-work/" data-i18n="footer.how">How we work</a></li>
+      <li><a href="/en/technology/" data-i18n="footer.technology">Technology</a></li>
+      <li><a href="/en/sovereign/" data-i18n="footer.sovereign">Offline AI</a></li>
+      <li><a href="/en/assessment/" data-i18n="footer.contact">Free review</a></li>
+    </ul>
+    <span class="footer-copy" data-i18n="footer.copy">© 2026 Smart Fellow · Seoul, Korea</span>
+  </div>
+</footer>
+
+<script>window.SF_CONFIG={"locale":"en"};</script>
+<script src="/i18n.js"></script>
+<script src="/assessment-modal.js" defer></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach((el) => obs.observe(el));
+
+const navToggle = document.getElementById('nav-toggle');
+const navMobile = document.getElementById('nav-mobile');
+
+navToggle.addEventListener('click', () => {
+  const open = navMobile.classList.toggle('open');
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+
+function closeMobileMenu() {
+  navMobile.classList.remove('open');
+  navToggle.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+(function () {
+  const navEl = document.querySelector('nav');
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (navMobile.classList.contains('open')) {
+      lastY = y;
+      return;
+    }
+    if (Math.abs(y - lastY) < 8) return;
+    if (y <= 0 || y < lastY) {
+      navEl.classList.remove('nav-hidden');
+    } else {
+      navEl.classList.add('nav-hidden');
+    }
+    lastY = y;
+  }, { passive: true });
+})();
+</script>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
